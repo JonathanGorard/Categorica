@@ -2283,6 +2283,89 @@ AbstractStrictMonoidalCategory[Association["ArrowMappings" -> arrowMappings_Asso
            "ObjectEquivalences" -> quiverObjectEquivalences_List, "Objects" -> objects_List]]]], 
      "MorphismEquivalences" -> morphismEquivalences_List, "ObjectEquivalences" -> objectEquivalences_List, 
      "ObjectMappings" -> objectMappings_Association, "TensorProductSymbol" -> tensorProductSymbol_, 
+     "UnitObject" -> unitObject_]]["FullUnlabeledGraph"] := 
+  Module[{productArrows, domainMorphismAssociation, domainCompositions, imageMorphismAssociation, imageCompositions}, 
+    productArrows = Association[DeleteDuplicates[
+        Join[Thread[Catenate[Outer[tensorProductSymbol, First /@ Select[Normal[arrows], First[Last[#1]] =!= 
+                 Last[Last[#1]] & ], First /@ Select[Normal[arrows], First[Last[#1]] =!= Last[Last[#1]] & ]]] -> 
+           Thread[DirectedEdge[Catenate[Outer[tensorProductSymbol, (First[Last[#1]] & ) /@ Select[Normal[arrows], 
+                 First[Last[#1]] =!= Last[Last[#1]] & ], (First[Last[#1]] & ) /@ Select[Normal[arrows], 
+                 First[Last[#1]] =!= Last[Last[#1]] & ]]], Catenate[Outer[tensorProductSymbol, (Last[Last[#1]] & ) /@ 
+                Select[Normal[arrows], First[Last[#1]] =!= Last[Last[#1]] & ], (Last[Last[#1]] & ) /@ 
+                Select[Normal[arrows], First[Last[#1]] =!= Last[Last[#1]] & ]]]]]], 
+         Thread[Catenate[Outer[tensorProductSymbol, First /@ Select[Normal[arrows], First[Last[#1]] =!= 
+                 Last[Last[#1]] & ], identitySymbol /@ objects]] -> 
+           Thread[DirectedEdge[Catenate[Outer[tensorProductSymbol, (First[Last[#1]] & ) /@ Select[Normal[arrows], 
+                 First[Last[#1]] =!= Last[Last[#1]] & ], objects]], Catenate[Outer[tensorProductSymbol, 
+               (Last[Last[#1]] & ) /@ Select[Normal[arrows], First[Last[#1]] =!= Last[Last[#1]] & ], objects]]]]], 
+         Thread[Catenate[Outer[tensorProductSymbol, identitySymbol /@ objects, First /@ Select[Normal[arrows], 
+               First[Last[#1]] =!= Last[Last[#1]] & ]]] -> Thread[DirectedEdge[Catenate[Outer[tensorProductSymbol, 
+               objects, (First[Last[#1]] & ) /@ Select[Normal[arrows], First[Last[#1]] =!= Last[Last[#1]] & ]]], 
+             Catenate[Outer[tensorProductSymbol, objects, (Last[Last[#1]] & ) /@ Select[Normal[arrows], 
+                 First[Last[#1]] =!= Last[Last[#1]] & ]]]]]]]]]; domainMorphismAssociation = 
+      Association[Select[Normal[productArrows], First[Last[#1]] =!= Last[Last[#1]] & ]]; 
+     Do[domainCompositions = Select[Tuples[Normal[domainMorphismAssociation], 2], 
+         Last[Last[First[#1]]] === First[Last[Last[#1]]] & ]; 
+       (If[ !MemberQ[(StringDelete[ToString[First[#1]], {"(", ")", " "}] -> Last[#1] & ) /@ 
+             Normal[domainMorphismAssociation], StringDelete[ToString[compositionSymbol[First[Last[#1]], 
+                First[First[#1]]]], {"(", ")", " "}] -> DirectedEdge[First[Last[First[#1]]], Last[Last[Last[#1]]]]], 
+          domainMorphismAssociation = Association[Append[Normal[domainMorphismAssociation], 
+             compositionSymbol[First[Last[#1]], First[First[#1]]] -> DirectedEdge[First[Last[First[#1]]], Last[
+                Last[Last[#1]]]]]]] & ) /@ domainCompositions, 
+      Length[Catenate[Outer[tensorProductSymbol, objects, objects]]]]; domainMorphismAssociation = 
+      Association[Select[Normal[domainMorphismAssociation], Length[Flatten[{First[#1] /. compositionSymbol -> List}]] == 
+          Length[DeleteDuplicates[Flatten[{First[#1] /. compositionSymbol -> List}]]] & ]]; 
+     (If[ !MemberQ[Normal[domainMorphismAssociation], identitySymbol[#1] -> DirectedEdge[#1, #1]], 
+        domainMorphismAssociation = Association[Append[Normal[domainMorphismAssociation], 
+           identitySymbol[#1] -> DirectedEdge[#1, #1]]]] & ) /@ Catenate[Outer[tensorProductSymbol, objects, objects]]; 
+     domainMorphismAssociation = Association[DeleteDuplicates[Normal[domainMorphismAssociation] //. 
+         {compositionSymbol[tensorProductSymbol[x_, y_], tensorProductSymbol[z_, w_]] :> 
+           tensorProductSymbol[compositionSymbol[x, z], compositionSymbol[y, w]], 
+          compositionSymbol[x_, identitySymbol[y_]] :> x, compositionSymbol[identitySymbol[x_], y_] :> y, 
+          compositionSymbol[x_, compositionSymbol[y_, z_]] :> compositionSymbol[compositionSymbol[x, y], z]}]]; 
+     imageMorphismAssociation = Association[Select[Normal[Association[DeleteDuplicates[
+           Normal[productArrows] /. Normal[arrowMappings] /. Normal[objectMappings]]]], 
+        First[Last[#1]] =!= Last[Last[#1]] & ]]; 
+     Do[imageCompositions = Select[Tuples[Normal[imageMorphismAssociation], 2], 
+         Last[Last[First[#1]]] === First[Last[Last[#1]]] & ]; 
+       (If[ !MemberQ[(StringDelete[ToString[First[#1]], {"(", ")", " "}] -> Last[#1] & ) /@ 
+             Normal[imageMorphismAssociation], StringDelete[ToString[compositionSymbol[First[Last[#1]], 
+                First[First[#1]]]], {"(", ")", " "}] -> DirectedEdge[First[Last[First[#1]]], Last[Last[Last[#1]]]]], 
+          imageMorphismAssociation = Association[Append[Normal[imageMorphismAssociation], 
+             compositionSymbol[First[Last[#1]], First[First[#1]]] -> DirectedEdge[First[Last[First[#1]]], Last[
+                Last[Last[#1]]]]]]] & ) /@ imageCompositions, 
+      Length[DeleteDuplicates[Catenate[Outer[tensorProductSymbol, objects, objects]] /. Normal[objectMappings]]]]; 
+     imageMorphismAssociation = Association[Select[Normal[imageMorphismAssociation], 
+        Length[Flatten[{First[#1] /. compositionSymbol -> List}]] == 
+          Length[DeleteDuplicates[Flatten[{First[#1] /. compositionSymbol -> List}]]] & ]]; 
+     (If[ !MemberQ[Normal[imageMorphismAssociation], identitySymbol[#1] -> DirectedEdge[#1, #1]], 
+        imageMorphismAssociation = Association[Append[Normal[imageMorphismAssociation], identitySymbol[#1] -> 
+            DirectedEdge[#1, #1]]]] & ) /@ DeleteDuplicates[Catenate[Outer[tensorProductSymbol, objects, objects]] /. 
+        Normal[objectMappings]]; imageMorphismAssociation = 
+      Association[DeleteDuplicates[Normal[imageMorphismAssociation] //. 
+         {compositionSymbol[tensorProductSymbol[x_, y_], tensorProductSymbol[z_, w_]] :> 
+           tensorProductSymbol[compositionSymbol[x, z], compositionSymbol[y, w]], 
+          compositionSymbol[x_, identitySymbol[y_]] :> x, compositionSymbol[identitySymbol[x_], y_] :> y, 
+          compositionSymbol[x_, compositionSymbol[y_, z_]] :> compositionSymbol[compositionSymbol[x, y], z]}]]; 
+     EdgeTaggedGraph[Catenate[Outer[tensorProductSymbol, objects, objects]], (DirectedEdge @@ Last[#1] & ) /@ 
+        Normal[domainMorphismAssociation], VertexSize -> 0.3, VertexStyle -> Directive[Transparent, EdgeForm[None]], 
+       VertexLabels -> Placed["Name", Center], VertexLabelStyle -> Directive[Bold, 20], 
+       EdgeLabelStyle -> Directive[Bold, 20], EdgeStyle -> Directive[Black, Thick], 
+       GraphLayout -> {"LayeredDigraphEmbedding", "Orientation" -> Left}] -> 
+      EdgeTaggedGraph[DeleteDuplicates[Catenate[Outer[tensorProductSymbol, objects, objects]] /. Normal[objectMappings]], 
+       (DirectedEdge @@ Last[#1] & ) /@ Normal[imageMorphismAssociation], VertexSize -> 0.3, 
+       VertexStyle -> Directive[Transparent, EdgeForm[None]], VertexLabels -> Placed["Name", Center], 
+       VertexLabelStyle -> Directive[Bold, 20], EdgeLabelStyle -> Directive[Bold, 20], 
+       EdgeStyle -> Directive[Black, Thick], GraphLayout -> {"LayeredDigraphEmbedding", "Orientation" -> Left}]] /; 
+   SymbolName[abstractQuiver] === "AbstractQuiver" && SymbolName[abstractCategory] === "AbstractCategory"
+AbstractStrictMonoidalCategory[Association["ArrowMappings" -> arrowMappings_Association, 
+     "Category" -> (abstractCategory_)[Association["CompositionSymbol" -> compositionSymbol_, 
+        "IdentitySymbol" -> identitySymbol_, "MorphismEquivalences" -> categoryMorphismEquivalences_List, 
+        "ObjectEquivalences" -> categoryObjectEquivalences_List, "Quiver" -> (abstractQuiver_)[
+          Association["ArrowEquivalences" -> arrowEquivalences_List, "Arrows" -> arrows_Association, 
+           "ObjectEquivalences" -> quiverObjectEquivalences_List, "Objects" -> objects_List]]]], 
+     "MorphismEquivalences" -> morphismEquivalences_List, "ObjectEquivalences" -> objectEquivalences_List, 
+     "ObjectMappings" -> objectMappings_Association, "TensorProductSymbol" -> tensorProductSymbol_, 
      "UnitObject" -> unitObject_]]["ReducedLabeledGraph"] := 
   Module[{objectFunction, associatorEquations, leftUnitorEquations, rightUnitorEquations, monoidalEquations, 
      productArrows, domainMorphismAssociation, domainCompositions, morphismAssociation, compositions, imageObjects, 
@@ -2438,6 +2521,467 @@ AbstractStrictMonoidalCategory[Association["ArrowMappings" -> arrowMappings_Asso
            "ObjectEquivalences" -> quiverObjectEquivalences_List, "Objects" -> objects_List]]]], 
      "MorphismEquivalences" -> morphismEquivalences_List, "ObjectEquivalences" -> objectEquivalences_List, 
      "ObjectMappings" -> objectMappings_Association, "TensorProductSymbol" -> tensorProductSymbol_, 
+     "UnitObject" -> unitObject_]]["ReducedUnlabeledGraph"] := 
+  Module[{objectFunction, associatorEquations, leftUnitorEquations, rightUnitorEquations, monoidalEquations, 
+     productArrows, domainMorphismAssociation, domainCompositions, morphismAssociation, compositions, imageObjects, 
+     imageArrows, imageQuiverObjectEquivalences, imageObjectEquivalences, imageArrowEquivalences, 
+     imageMorphismEquivalences, imageMorphismAssociation, imageCompositions}, 
+    objectFunction = Join[Association[Thread[Keys[Association[(#1 -> #1 & ) /@ Catenate[Outer[tensorProductSymbol, 
+               reduceObjects[reduceObjects[objects, quiverObjectEquivalences], categoryObjectEquivalences], reduceObjects[
+                reduceObjects[objects, quiverObjectEquivalences], categoryObjectEquivalences]]]]] -> 
+          reduceObjectsWithDuplicates[reduceObjectsWithDuplicates[Values[Association[(#1 -> #1 & ) /@ Catenate[
+                Outer[tensorProductSymbol, reduceObjects[reduceObjects[objects, quiverObjectEquivalences], 
+                  categoryObjectEquivalences], reduceObjects[reduceObjects[objects, quiverObjectEquivalences], 
+                  categoryObjectEquivalences]]]]], quiverObjectEquivalences], categoryObjectEquivalences]]], 
+       Association[Thread[reduceObjectsWithDuplicates[reduceObjectsWithDuplicates[Keys[objectMappings], 
+            quiverObjectEquivalences], categoryObjectEquivalences] -> reduceObjectsWithDuplicates[
+           reduceObjectsWithDuplicates[Values[objectMappings], quiverObjectEquivalences], categoryObjectEquivalences]]]]; 
+     associatorEquations = DeleteDuplicates[Select[reduceObjects[
+         (tensorProductSymbol[#1[[1]], tensorProductSymbol[#1[[2]], #1[[3]]]] == tensorProductSymbol[
+              tensorProductSymbol[#1[[1]], #1[[2]]], #1[[3]]] /. Normal[objectFunction] & ) /@ 
+          Tuples[reduceObjects[reduceObjects[objects, quiverObjectEquivalences], categoryObjectEquivalences], 3], 
+         objectEquivalences], #1 =!= True & ]]; leftUnitorEquations = 
+      DeleteDuplicates[Select[reduceObjects[(tensorProductSymbol[unitObject, #1] == #1 /. Normal[objectFunction] & ) /@ 
+          reduceObjects[reduceObjects[objects, quiverObjectEquivalences], categoryObjectEquivalences], 
+         objectEquivalences], #1 =!= True & ]]; rightUnitorEquations = 
+      DeleteDuplicates[Select[reduceObjects[(tensorProductSymbol[#1, unitObject] == #1 /. Normal[objectFunction] & ) /@ 
+          reduceObjects[reduceObjects[objects, quiverObjectEquivalences], categoryObjectEquivalences], 
+         objectEquivalences], #1 =!= True & ]]; monoidalEquations = DeleteDuplicates[
+       Join[associatorEquations, leftUnitorEquations, rightUnitorEquations]]; 
+     productArrows = Association[DeleteDuplicates[
+        Join[Thread[Catenate[Outer[tensorProductSymbol, First /@ Select[Normal[arrows], First[Last[#1]] =!= 
+                 Last[Last[#1]] & ], First /@ Select[Normal[arrows], First[Last[#1]] =!= Last[Last[#1]] & ]]] -> 
+           Thread[DirectedEdge[Catenate[Outer[tensorProductSymbol, (First[Last[#1]] & ) /@ Select[Normal[arrows], 
+                 First[Last[#1]] =!= Last[Last[#1]] & ], (First[Last[#1]] & ) /@ Select[Normal[arrows], 
+                 First[Last[#1]] =!= Last[Last[#1]] & ]]], Catenate[Outer[tensorProductSymbol, (Last[Last[#1]] & ) /@ 
+                Select[Normal[arrows], First[Last[#1]] =!= Last[Last[#1]] & ], (Last[Last[#1]] & ) /@ 
+                Select[Normal[arrows], First[Last[#1]] =!= Last[Last[#1]] & ]]]]]], 
+         Thread[Catenate[Outer[tensorProductSymbol, First /@ Select[Normal[arrows], First[Last[#1]] =!= 
+                 Last[Last[#1]] & ], identitySymbol /@ objects]] -> 
+           Thread[DirectedEdge[Catenate[Outer[tensorProductSymbol, (First[Last[#1]] & ) /@ Select[Normal[arrows], 
+                 First[Last[#1]] =!= Last[Last[#1]] & ], objects]], Catenate[Outer[tensorProductSymbol, 
+               (Last[Last[#1]] & ) /@ Select[Normal[arrows], First[Last[#1]] =!= Last[Last[#1]] & ], objects]]]]], 
+         Thread[Catenate[Outer[tensorProductSymbol, identitySymbol /@ objects, First /@ Select[Normal[arrows], 
+               First[Last[#1]] =!= Last[Last[#1]] & ]]] -> Thread[DirectedEdge[Catenate[Outer[tensorProductSymbol, 
+               objects, (First[Last[#1]] & ) /@ Select[Normal[arrows], First[Last[#1]] =!= Last[Last[#1]] & ]]], 
+             Catenate[Outer[tensorProductSymbol, objects, (Last[Last[#1]] & ) /@ Select[Normal[arrows], 
+                 First[Last[#1]] =!= Last[Last[#1]] & ]]]]]]]]]; domainMorphismAssociation = 
+      Association[Select[Normal[reduceArrowsFinal[reduceArrowsInitial[productArrows, arrowEquivalences], 
+          quiverObjectEquivalences]], First[Last[#1]] =!= Last[Last[#1]] & ]]; 
+     Do[domainCompositions = Select[Tuples[Normal[domainMorphismAssociation], 2], 
+         Last[Last[First[#1]]] === First[Last[Last[#1]]] & ]; 
+       (If[ !MemberQ[(StringDelete[ToString[First[#1]], {"(", ")", " "}] -> Last[#1] & ) /@ 
+             Normal[domainMorphismAssociation], StringDelete[ToString[compositionSymbol[First[Last[#1]], 
+                First[First[#1]]]], {"(", ")", " "}] -> DirectedEdge[First[Last[First[#1]]], Last[Last[Last[#1]]]]], 
+          domainMorphismAssociation = Association[Append[Normal[domainMorphismAssociation], 
+             compositionSymbol[First[Last[#1]], First[First[#1]]] -> DirectedEdge[First[Last[First[#1]]], Last[
+                Last[Last[#1]]]]]]] & ) /@ domainCompositions, 
+      Length[reduceObjects[Catenate[Outer[tensorProductSymbol, objects, objects]], quiverObjectEquivalences]]]; 
+     domainMorphismAssociation = Association[Select[Normal[domainMorphismAssociation], 
+        Length[Flatten[{First[#1] /. compositionSymbol -> List}]] == 
+          Length[DeleteDuplicates[Flatten[{First[#1] /. compositionSymbol -> List}]]] & ]]; 
+     (If[ !MemberQ[Normal[domainMorphismAssociation], identitySymbol[#1] -> DirectedEdge[#1, #1]], 
+        domainMorphismAssociation = Association[Append[Normal[domainMorphismAssociation], 
+           identitySymbol[#1] -> DirectedEdge[#1, #1]]]] & ) /@ 
+      reduceObjects[Catenate[Outer[tensorProductSymbol, objects, objects]], quiverObjectEquivalences]; 
+     domainMorphismAssociation = Association[DeleteDuplicates[Normal[domainMorphismAssociation] //. 
+         {compositionSymbol[tensorProductSymbol[x_, y_], tensorProductSymbol[z_, w_]] :> 
+           tensorProductSymbol[compositionSymbol[x, z], compositionSymbol[y, w]], 
+          compositionSymbol[x_, identitySymbol[y_]] :> x, compositionSymbol[identitySymbol[x_], y_] :> y, 
+          compositionSymbol[x_, compositionSymbol[y_, z_]] :> compositionSymbol[compositionSymbol[x, y], z]}]]; 
+     morphismAssociation = Association[Select[Normal[arrows], First[Last[#1]] =!= Last[Last[#1]] & ]]; 
+     Do[compositions = Select[Tuples[Normal[morphismAssociation], 2], 
+         Last[Last[First[#1]]] === First[Last[Last[#1]]] & ]; 
+       (If[ !MemberQ[(StringDelete[ToString[First[#1]], {"(", ")", " "}] -> Last[#1] & ) /@ Normal[morphismAssociation], 
+            StringDelete[ToString[compositionSymbol[First[Last[#1]], First[First[#1]]]], {"(", ")", " "}] -> 
+             DirectedEdge[First[Last[First[#1]]], Last[Last[Last[#1]]]]], morphismAssociation = 
+           Association[Append[Normal[morphismAssociation], compositionSymbol[First[Last[#1]], First[First[#1]]] -> 
+              DirectedEdge[First[Last[First[#1]]], Last[Last[Last[#1]]]]]]] & ) /@ compositions, Length[objects]]; 
+     morphismAssociation = Association[Select[Normal[morphismAssociation], 
+        Length[Flatten[{First[#1] /. compositionSymbol -> List}]] == 
+          Length[DeleteDuplicates[Flatten[{First[#1] /. compositionSymbol -> List}]]] & ]]; 
+     (If[ !MemberQ[Normal[morphismAssociation], identitySymbol[#1] -> DirectedEdge[#1, #1]], 
+        morphismAssociation = Association[Append[Normal[morphismAssociation], identitySymbol[#1] -> 
+            DirectedEdge[#1, #1]]]] & ) /@ objects; imageObjects = DeleteDuplicates[
+       Catenate[Outer[tensorProductSymbol, objects, objects]] /. Normal[objectMappings]]; 
+     imageArrows = Association[DeleteDuplicates[Normal[productArrows] /. Normal[arrowMappings] /. 
+         Normal[objectMappings]]]; imageQuiverObjectEquivalences = 
+      Select[DeleteDuplicates[Join[Thread[Catenate[Outer[tensorProductSymbol, First /@ quiverObjectEquivalences, 
+               objects]] -> Catenate[Outer[tensorProductSymbol, Last /@ quiverObjectEquivalences, objects]]], 
+           Thread[Catenate[Outer[tensorProductSymbol, objects, First /@ quiverObjectEquivalences]] -> 
+             Catenate[Outer[tensorProductSymbol, objects, Last /@ quiverObjectEquivalences]]]] /. 
+          Normal[objectMappings]] /. Rule -> Equal, #1 =!= True & ]; imageObjectEquivalences = 
+      Select[DeleteDuplicates[Join[Thread[Catenate[Outer[tensorProductSymbol, First /@ categoryObjectEquivalences, 
+               objects]] -> Catenate[Outer[tensorProductSymbol, Last /@ categoryObjectEquivalences, objects]]], 
+           Thread[Catenate[Outer[tensorProductSymbol, objects, First /@ categoryObjectEquivalences]] -> 
+             Catenate[Outer[tensorProductSymbol, objects, Last /@ categoryObjectEquivalences]]]] /. 
+          Normal[objectMappings]] /. Rule -> Equal, #1 =!= True & ]; imageArrowEquivalences = 
+      Select[DeleteDuplicates[Join[Thread[Catenate[Outer[tensorProductSymbol, First /@ arrowEquivalences, First /@ 
+                Normal[arrows]]] -> Catenate[Outer[tensorProductSymbol, Last /@ arrowEquivalences, First /@ 
+                Normal[arrows]]]], Thread[Catenate[Outer[tensorProductSymbol, First /@ Normal[arrows], First /@ 
+                arrowEquivalences]] -> Catenate[Outer[tensorProductSymbol, First /@ Normal[arrows], Last /@ 
+                arrowEquivalences]]]] /. Normal[arrowMappings]] /. Rule -> Equal, #1 =!= True & ]; 
+     imageMorphismEquivalences = 
+      Select[DeleteDuplicates[Join[Thread[Catenate[Outer[tensorProductSymbol, First /@ categoryMorphismEquivalences, 
+                First /@ Normal[morphismAssociation]]] -> Catenate[Outer[tensorProductSymbol, 
+                Last /@ categoryMorphismEquivalences, First /@ Normal[morphismAssociation]]]], 
+            Thread[Catenate[Outer[tensorProductSymbol, First /@ Normal[morphismAssociation], First /@ 
+                 categoryMorphismEquivalences]] -> Catenate[Outer[tensorProductSymbol, First /@ 
+                 Normal[morphismAssociation], Last /@ categoryMorphismEquivalences]]]] /. Normal[arrowMappings] /. 
+          Normal[objectMappings]] /. Rule -> Equal, #1 =!= True & ]; imageMorphismAssociation = 
+      Association[Select[DeleteDuplicates[Normal[reduceArrowsFinal[reduceArrowsInitial[imageArrows, 
+            imageArrowEquivalences], imageQuiverObjectEquivalences]]], First[Last[#1]] =!= Last[Last[#1]] & ]]; 
+     Do[imageCompositions = Select[Tuples[Normal[imageMorphismAssociation], 2], 
+         Last[Last[First[#1]]] === First[Last[Last[#1]]] & ]; 
+       (If[ !MemberQ[(StringDelete[ToString[First[#1]], {"(", ")", " "}] -> Last[#1] & ) /@ 
+             Normal[imageMorphismAssociation], StringDelete[ToString[compositionSymbol[First[Last[#1]], 
+                First[First[#1]]]], {"(", ")", " "}] -> DirectedEdge[First[Last[First[#1]]], Last[Last[Last[#1]]]]], 
+          imageMorphismAssociation = Association[Append[Normal[imageMorphismAssociation], 
+             compositionSymbol[First[Last[#1]], First[First[#1]]] -> DirectedEdge[First[Last[First[#1]]], Last[
+                Last[Last[#1]]]]]]] & ) /@ imageCompositions, Length[reduceObjects[imageObjects, 
+        imageQuiverObjectEquivalences]]]; imageMorphismAssociation = 
+      Association[Select[Normal[imageMorphismAssociation], Length[Flatten[{First[#1] /. compositionSymbol -> List}]] == 
+          Length[DeleteDuplicates[Flatten[{First[#1] /. compositionSymbol -> List}]]] & ]]; 
+     (If[ !MemberQ[Normal[imageMorphismAssociation], identitySymbol[#1] -> DirectedEdge[#1, #1]], 
+        imageMorphismAssociation = Association[Append[Normal[imageMorphismAssociation], identitySymbol[#1] -> 
+            DirectedEdge[#1, #1]]]] & ) /@ reduceObjects[imageObjects, imageQuiverObjectEquivalences]; 
+     imageMorphismAssociation = Association[DeleteDuplicates[Normal[imageMorphismAssociation] //. 
+         {compositionSymbol[tensorProductSymbol[x_, y_], tensorProductSymbol[z_, w_]] :> 
+           tensorProductSymbol[compositionSymbol[x, z], compositionSymbol[y, w]], 
+          compositionSymbol[x_, identitySymbol[y_]] :> x, compositionSymbol[identitySymbol[x_], y_] :> y, 
+          compositionSymbol[x_, compositionSymbol[y_, z_]] :> compositionSymbol[compositionSymbol[x, y], z]}]]; 
+     EdgeTaggedGraph[reduceObjects[reduceObjects[Catenate[Outer[tensorProductSymbol, objects, objects]], 
+         quiverObjectEquivalences], categoryObjectEquivalences], (DirectedEdge @@ Last[#1] & ) /@ 
+        Normal[reduceArrowsFinal[reduceArrowsInitial[domainMorphismAssociation, categoryMorphismEquivalences], 
+          categoryObjectEquivalences]], VertexSize -> 0.3, VertexStyle -> Directive[Transparent, EdgeForm[None]], 
+       VertexLabels -> Placed["Name", Center], VertexLabelStyle -> Directive[Bold, 20], 
+       EdgeLabelStyle -> Directive[Bold, 20], EdgeStyle -> Directive[Black, Thick], 
+       GraphLayout -> {"LayeredDigraphEmbedding", "Orientation" -> Left}] -> 
+      EdgeTaggedGraph[reduceObjects[reduceObjects[reduceObjects[reduceObjects[imageObjects, 
+           imageQuiverObjectEquivalences], imageObjectEquivalences], monoidalEquations], objectEquivalences], 
+       (DirectedEdge @@ Last[#1] & ) /@ Normal[reduceArrowsFinal[reduceArrowsFinal[reduceArrowsFinal[
+            reduceArrowsInitial[reduceArrowsInitial[imageMorphismAssociation, imageMorphismEquivalences], 
+             morphismEquivalences], imageObjectEquivalences], monoidalEquations], objectEquivalences]], 
+       VertexSize -> 0.3, VertexStyle -> Directive[Transparent, EdgeForm[None]], VertexLabels -> Placed["Name", Center], 
+       VertexLabelStyle -> Directive[Bold, 20], EdgeLabelStyle -> Directive[Bold, 20], 
+       EdgeStyle -> Directive[Black, Thick], GraphLayout -> {"LayeredDigraphEmbedding", "Orientation" -> Left}]] /; 
+   SymbolName[abstractQuiver] === "AbstractQuiver" && SymbolName[abstractCategory] === "AbstractCategory"
+AbstractStrictMonoidalCategory[Association["ArrowMappings" -> arrowMappings_Association, 
+     "Category" -> (abstractCategory_)[Association["CompositionSymbol" -> compositionSymbol_, 
+        "IdentitySymbol" -> identitySymbol_, "MorphismEquivalences" -> categoryMorphismEquivalences_List, 
+        "ObjectEquivalences" -> categoryObjectEquivalences_List, "Quiver" -> (abstractQuiver_)[
+          Association["ArrowEquivalences" -> arrowEquivalences_List, "Arrows" -> arrows_Association, 
+           "ObjectEquivalences" -> quiverObjectEquivalences_List, "Objects" -> objects_List]]]], 
+     "MorphismEquivalences" -> morphismEquivalences_List, "ObjectEquivalences" -> objectEquivalences_List, 
+     "ObjectMappings" -> objectMappings_Association, "TensorProductSymbol" -> tensorProductSymbol_, 
+     "UnitObject" -> unitObject_]]["SimpleLabeledGraph"] := 
+  Module[{productArrows, domainMorphismAssociation, domainCompositions, imageMorphismAssociation, imageCompositions}, 
+    productArrows = Association[DeleteDuplicates[
+        Join[Thread[Catenate[Outer[tensorProductSymbol, First /@ Select[Normal[arrows], First[Last[#1]] =!= 
+                 Last[Last[#1]] & ], First /@ Select[Normal[arrows], First[Last[#1]] =!= Last[Last[#1]] & ]]] -> 
+           Thread[DirectedEdge[Catenate[Outer[tensorProductSymbol, (First[Last[#1]] & ) /@ Select[Normal[arrows], 
+                 First[Last[#1]] =!= Last[Last[#1]] & ], (First[Last[#1]] & ) /@ Select[Normal[arrows], 
+                 First[Last[#1]] =!= Last[Last[#1]] & ]]], Catenate[Outer[tensorProductSymbol, (Last[Last[#1]] & ) /@ 
+                Select[Normal[arrows], First[Last[#1]] =!= Last[Last[#1]] & ], (Last[Last[#1]] & ) /@ 
+                Select[Normal[arrows], First[Last[#1]] =!= Last[Last[#1]] & ]]]]]], 
+         Thread[Catenate[Outer[tensorProductSymbol, First /@ Select[Normal[arrows], First[Last[#1]] =!= 
+                 Last[Last[#1]] & ], identitySymbol /@ objects]] -> 
+           Thread[DirectedEdge[Catenate[Outer[tensorProductSymbol, (First[Last[#1]] & ) /@ Select[Normal[arrows], 
+                 First[Last[#1]] =!= Last[Last[#1]] & ], objects]], Catenate[Outer[tensorProductSymbol, 
+               (Last[Last[#1]] & ) /@ Select[Normal[arrows], First[Last[#1]] =!= Last[Last[#1]] & ], objects]]]]], 
+         Thread[Catenate[Outer[tensorProductSymbol, identitySymbol /@ objects, First /@ Select[Normal[arrows], 
+               First[Last[#1]] =!= Last[Last[#1]] & ]]] -> Thread[DirectedEdge[Catenate[Outer[tensorProductSymbol, 
+               objects, (First[Last[#1]] & ) /@ Select[Normal[arrows], First[Last[#1]] =!= Last[Last[#1]] & ]]], 
+             Catenate[Outer[tensorProductSymbol, objects, (Last[Last[#1]] & ) /@ Select[Normal[arrows], 
+                 First[Last[#1]] =!= Last[Last[#1]] & ]]]]]]]]]; domainMorphismAssociation = 
+      Association[Select[Normal[productArrows], First[Last[#1]] =!= Last[Last[#1]] & ]]; 
+     Do[domainCompositions = Select[Tuples[Normal[domainMorphismAssociation], 2], 
+         Last[Last[First[#1]]] === First[Last[Last[#1]]] & ]; 
+       (If[ !MemberQ[(StringDelete[ToString[First[#1]], {"(", ")", " "}] -> Last[#1] & ) /@ 
+             Normal[domainMorphismAssociation], StringDelete[ToString[compositionSymbol[First[Last[#1]], 
+                First[First[#1]]]], {"(", ")", " "}] -> DirectedEdge[First[Last[First[#1]]], Last[Last[Last[#1]]]]], 
+          domainMorphismAssociation = Association[Append[Normal[domainMorphismAssociation], 
+             compositionSymbol[First[Last[#1]], First[First[#1]]] -> DirectedEdge[First[Last[First[#1]]], Last[
+                Last[Last[#1]]]]]]] & ) /@ domainCompositions, 
+      Length[Catenate[Outer[tensorProductSymbol, objects, objects]]]]; domainMorphismAssociation = 
+      Association[Select[Normal[domainMorphismAssociation], Length[Flatten[{First[#1] /. compositionSymbol -> List}]] == 
+          Length[DeleteDuplicates[Flatten[{First[#1] /. compositionSymbol -> List}]]] & ]]; 
+     domainMorphismAssociation = Association[DeleteDuplicates[Normal[domainMorphismAssociation] //. 
+         {compositionSymbol[tensorProductSymbol[x_, y_], tensorProductSymbol[z_, w_]] :> 
+           tensorProductSymbol[compositionSymbol[x, z], compositionSymbol[y, w]], 
+          compositionSymbol[x_, identitySymbol[y_]] :> x, compositionSymbol[identitySymbol[x_], y_] :> y, 
+          compositionSymbol[x_, compositionSymbol[y_, z_]] :> compositionSymbol[compositionSymbol[x, y], z]}]]; 
+     imageMorphismAssociation = Association[Select[Normal[Association[DeleteDuplicates[
+           Normal[productArrows] /. Normal[arrowMappings] /. Normal[objectMappings]]]], 
+        First[Last[#1]] =!= Last[Last[#1]] & ]]; 
+     Do[imageCompositions = Select[Tuples[Normal[imageMorphismAssociation], 2], 
+         Last[Last[First[#1]]] === First[Last[Last[#1]]] & ]; 
+       (If[ !MemberQ[(StringDelete[ToString[First[#1]], {"(", ")", " "}] -> Last[#1] & ) /@ 
+             Normal[imageMorphismAssociation], StringDelete[ToString[compositionSymbol[First[Last[#1]], 
+                First[First[#1]]]], {"(", ")", " "}] -> DirectedEdge[First[Last[First[#1]]], Last[Last[Last[#1]]]]], 
+          imageMorphismAssociation = Association[Append[Normal[imageMorphismAssociation], 
+             compositionSymbol[First[Last[#1]], First[First[#1]]] -> DirectedEdge[First[Last[First[#1]]], Last[
+                Last[Last[#1]]]]]]] & ) /@ imageCompositions, 
+      Length[DeleteDuplicates[Catenate[Outer[tensorProductSymbol, objects, objects]] /. Normal[objectMappings]]]]; 
+     imageMorphismAssociation = Association[Select[Normal[imageMorphismAssociation], 
+        Length[Flatten[{First[#1] /. compositionSymbol -> List}]] == 
+          Length[DeleteDuplicates[Flatten[{First[#1] /. compositionSymbol -> List}]]] & ]]; 
+     imageMorphismAssociation = Association[DeleteDuplicates[Normal[imageMorphismAssociation] //. 
+         {compositionSymbol[tensorProductSymbol[x_, y_], tensorProductSymbol[z_, w_]] :> 
+           tensorProductSymbol[compositionSymbol[x, z], compositionSymbol[y, w]], 
+          compositionSymbol[x_, identitySymbol[y_]] :> x, compositionSymbol[identitySymbol[x_], y_] :> y, 
+          compositionSymbol[x_, compositionSymbol[y_, z_]] :> compositionSymbol[compositionSymbol[x, y], z]}]]; 
+     EdgeTaggedGraph[Catenate[Outer[tensorProductSymbol, objects, objects]], 
+       (Labeled[DirectedEdge @@ Last[#1], Placed[First[#1], 0.5]] & ) /@ 
+        Select[DeleteDuplicatesBy[Normal[domainMorphismAssociation], DirectedEdge @@ Last[#1] & ], 
+         First[Last[#1]] =!= Last[Last[#1]] & ], VertexSize -> 0.3, VertexStyle -> Directive[Transparent, 
+         EdgeForm[None]], VertexLabels -> Placed["Name", Center], VertexLabelStyle -> Directive[Bold, 20], 
+       EdgeLabelStyle -> Directive[Bold, 20], EdgeStyle -> Directive[Black, Thick], 
+       GraphLayout -> {"LayeredDigraphEmbedding", "Orientation" -> Left}] -> 
+      EdgeTaggedGraph[DeleteDuplicates[Catenate[Outer[tensorProductSymbol, objects, objects]] /. Normal[objectMappings]], 
+       (Labeled[DirectedEdge @@ Last[#1], Placed[First[#1], 0.5]] & ) /@ 
+        Select[DeleteDuplicatesBy[Normal[imageMorphismAssociation], DirectedEdge @@ Last[#1] & ], 
+         First[Last[#1]] =!= Last[Last[#1]] & ], VertexSize -> 0.3, VertexStyle -> Directive[Transparent, 
+         EdgeForm[None]], VertexLabels -> Placed["Name", Center], VertexLabelStyle -> Directive[Bold, 20], 
+       EdgeLabelStyle -> Directive[Bold, 20], EdgeStyle -> Directive[Black, Thick], 
+       GraphLayout -> {"LayeredDigraphEmbedding", "Orientation" -> Left}]] /; 
+   SymbolName[abstractQuiver] === "AbstractQuiver" && SymbolName[abstractCategory] === "AbstractCategory"
+AbstractStrictMonoidalCategory[Association["ArrowMappings" -> arrowMappings_Association, 
+     "Category" -> (abstractCategory_)[Association["CompositionSymbol" -> compositionSymbol_, 
+        "IdentitySymbol" -> identitySymbol_, "MorphismEquivalences" -> categoryMorphismEquivalences_List, 
+        "ObjectEquivalences" -> categoryObjectEquivalences_List, "Quiver" -> (abstractQuiver_)[
+          Association["ArrowEquivalences" -> arrowEquivalences_List, "Arrows" -> arrows_Association, 
+           "ObjectEquivalences" -> quiverObjectEquivalences_List, "Objects" -> objects_List]]]], 
+     "MorphismEquivalences" -> morphismEquivalences_List, "ObjectEquivalences" -> objectEquivalences_List, 
+     "ObjectMappings" -> objectMappings_Association, "TensorProductSymbol" -> tensorProductSymbol_, 
+     "UnitObject" -> unitObject_]]["SimpleUnlabeledGraph"] := 
+  Module[{productArrows, domainMorphismAssociation, domainCompositions, imageMorphismAssociation, imageCompositions}, 
+    productArrows = Association[DeleteDuplicates[
+        Join[Thread[Catenate[Outer[tensorProductSymbol, First /@ Select[Normal[arrows], First[Last[#1]] =!= 
+                 Last[Last[#1]] & ], First /@ Select[Normal[arrows], First[Last[#1]] =!= Last[Last[#1]] & ]]] -> 
+           Thread[DirectedEdge[Catenate[Outer[tensorProductSymbol, (First[Last[#1]] & ) /@ Select[Normal[arrows], 
+                 First[Last[#1]] =!= Last[Last[#1]] & ], (First[Last[#1]] & ) /@ Select[Normal[arrows], 
+                 First[Last[#1]] =!= Last[Last[#1]] & ]]], Catenate[Outer[tensorProductSymbol, (Last[Last[#1]] & ) /@ 
+                Select[Normal[arrows], First[Last[#1]] =!= Last[Last[#1]] & ], (Last[Last[#1]] & ) /@ 
+                Select[Normal[arrows], First[Last[#1]] =!= Last[Last[#1]] & ]]]]]], 
+         Thread[Catenate[Outer[tensorProductSymbol, First /@ Select[Normal[arrows], First[Last[#1]] =!= 
+                 Last[Last[#1]] & ], identitySymbol /@ objects]] -> 
+           Thread[DirectedEdge[Catenate[Outer[tensorProductSymbol, (First[Last[#1]] & ) /@ Select[Normal[arrows], 
+                 First[Last[#1]] =!= Last[Last[#1]] & ], objects]], Catenate[Outer[tensorProductSymbol, 
+               (Last[Last[#1]] & ) /@ Select[Normal[arrows], First[Last[#1]] =!= Last[Last[#1]] & ], objects]]]]], 
+         Thread[Catenate[Outer[tensorProductSymbol, identitySymbol /@ objects, First /@ Select[Normal[arrows], 
+               First[Last[#1]] =!= Last[Last[#1]] & ]]] -> Thread[DirectedEdge[Catenate[Outer[tensorProductSymbol, 
+               objects, (First[Last[#1]] & ) /@ Select[Normal[arrows], First[Last[#1]] =!= Last[Last[#1]] & ]]], 
+             Catenate[Outer[tensorProductSymbol, objects, (Last[Last[#1]] & ) /@ Select[Normal[arrows], 
+                 First[Last[#1]] =!= Last[Last[#1]] & ]]]]]]]]]; domainMorphismAssociation = 
+      Association[Select[Normal[productArrows], First[Last[#1]] =!= Last[Last[#1]] & ]]; 
+     Do[domainCompositions = Select[Tuples[Normal[domainMorphismAssociation], 2], 
+         Last[Last[First[#1]]] === First[Last[Last[#1]]] & ]; 
+       (If[ !MemberQ[(StringDelete[ToString[First[#1]], {"(", ")", " "}] -> Last[#1] & ) /@ 
+             Normal[domainMorphismAssociation], StringDelete[ToString[compositionSymbol[First[Last[#1]], 
+                First[First[#1]]]], {"(", ")", " "}] -> DirectedEdge[First[Last[First[#1]]], Last[Last[Last[#1]]]]], 
+          domainMorphismAssociation = Association[Append[Normal[domainMorphismAssociation], 
+             compositionSymbol[First[Last[#1]], First[First[#1]]] -> DirectedEdge[First[Last[First[#1]]], Last[
+                Last[Last[#1]]]]]]] & ) /@ domainCompositions, 
+      Length[Catenate[Outer[tensorProductSymbol, objects, objects]]]]; domainMorphismAssociation = 
+      Association[Select[Normal[domainMorphismAssociation], Length[Flatten[{First[#1] /. compositionSymbol -> List}]] == 
+          Length[DeleteDuplicates[Flatten[{First[#1] /. compositionSymbol -> List}]]] & ]]; 
+     domainMorphismAssociation = Association[DeleteDuplicates[Normal[domainMorphismAssociation] //. 
+         {compositionSymbol[tensorProductSymbol[x_, y_], tensorProductSymbol[z_, w_]] :> 
+           tensorProductSymbol[compositionSymbol[x, z], compositionSymbol[y, w]], 
+          compositionSymbol[x_, identitySymbol[y_]] :> x, compositionSymbol[identitySymbol[x_], y_] :> y, 
+          compositionSymbol[x_, compositionSymbol[y_, z_]] :> compositionSymbol[compositionSymbol[x, y], z]}]]; 
+     imageMorphismAssociation = Association[Select[Normal[Association[DeleteDuplicates[
+           Normal[productArrows] /. Normal[arrowMappings] /. Normal[objectMappings]]]], 
+        First[Last[#1]] =!= Last[Last[#1]] & ]]; 
+     Do[imageCompositions = Select[Tuples[Normal[imageMorphismAssociation], 2], 
+         Last[Last[First[#1]]] === First[Last[Last[#1]]] & ]; 
+       (If[ !MemberQ[(StringDelete[ToString[First[#1]], {"(", ")", " "}] -> Last[#1] & ) /@ 
+             Normal[imageMorphismAssociation], StringDelete[ToString[compositionSymbol[First[Last[#1]], 
+                First[First[#1]]]], {"(", ")", " "}] -> DirectedEdge[First[Last[First[#1]]], Last[Last[Last[#1]]]]], 
+          imageMorphismAssociation = Association[Append[Normal[imageMorphismAssociation], 
+             compositionSymbol[First[Last[#1]], First[First[#1]]] -> DirectedEdge[First[Last[First[#1]]], Last[
+                Last[Last[#1]]]]]]] & ) /@ imageCompositions, 
+      Length[DeleteDuplicates[Catenate[Outer[tensorProductSymbol, objects, objects]] /. Normal[objectMappings]]]]; 
+     imageMorphismAssociation = Association[Select[Normal[imageMorphismAssociation], 
+        Length[Flatten[{First[#1] /. compositionSymbol -> List}]] == 
+          Length[DeleteDuplicates[Flatten[{First[#1] /. compositionSymbol -> List}]]] & ]]; 
+     imageMorphismAssociation = Association[DeleteDuplicates[Normal[imageMorphismAssociation] //. 
+         {compositionSymbol[tensorProductSymbol[x_, y_], compositionSymbol[z_, w_]] :> tensorProductSymbol[
+            compositionSymbol[x, z], compositionSymbol[y, w]], compositionSymbol[x_, identitySymbol[y_]] :> x, 
+          compositionSymbol[identitySymbol[x_], y_] :> y, compositionSymbol[x_, compositionSymbol[y_, z_]] :> 
+           compositionSymbol[compositionSymbol[x, y], z]}]]; 
+     EdgeTaggedGraph[Catenate[Outer[tensorProductSymbol, objects, objects]], (DirectedEdge @@ Last[#1] & ) /@ 
+        Select[DeleteDuplicatesBy[Normal[domainMorphismAssociation], DirectedEdge @@ Last[#1] & ], 
+         First[Last[#1]] =!= Last[Last[#1]] & ], VertexSize -> 0.3, VertexStyle -> Directive[Transparent, 
+         EdgeForm[None]], VertexLabels -> Placed["Name", Center], VertexLabelStyle -> Directive[Bold, 20], 
+       EdgeLabelStyle -> Directive[Bold, 20], EdgeStyle -> Directive[Black, Thick], 
+       GraphLayout -> {"LayeredDigraphEmbedding", "Orientation" -> Left}] -> 
+      EdgeTaggedGraph[DeleteDuplicates[Catenate[Outer[tensorProductSymbol, objects, objects]] /. Normal[objectMappings]], 
+       (DirectedEdge @@ Last[#1] & ) /@ Select[DeleteDuplicatesBy[Normal[imageMorphismAssociation], 
+          DirectedEdge @@ Last[#1] & ], First[Last[#1]] =!= Last[Last[#1]] & ], VertexSize -> 0.3, 
+       VertexStyle -> Directive[Transparent, EdgeForm[None]], VertexLabels -> Placed["Name", Center], 
+       VertexLabelStyle -> Directive[Bold, 20], EdgeLabelStyle -> Directive[Bold, 20], 
+       EdgeStyle -> Directive[Black, Thick], GraphLayout -> {"LayeredDigraphEmbedding", "Orientation" -> Left}]] /; 
+   SymbolName[abstractQuiver] === "AbstractQuiver" && SymbolName[abstractCategory] === "AbstractCategory"
+AbstractStrictMonoidalCategory[Association["ArrowMappings" -> arrowMappings_Association, 
+     "Category" -> (abstractCategory_)[Association["CompositionSymbol" -> compositionSymbol_, 
+        "IdentitySymbol" -> identitySymbol_, "MorphismEquivalences" -> categoryMorphismEquivalences_List, 
+        "ObjectEquivalences" -> categoryObjectEquivalences_List, "Quiver" -> (abstractQuiver_)[
+          Association["ArrowEquivalences" -> arrowEquivalences_List, "Arrows" -> arrows_Association, 
+           "ObjectEquivalences" -> quiverObjectEquivalences_List, "Objects" -> objects_List]]]], 
+     "MorphismEquivalences" -> morphismEquivalences_List, "ObjectEquivalences" -> objectEquivalences_List, 
+     "ObjectMappings" -> objectMappings_Association, "TensorProductSymbol" -> tensorProductSymbol_, 
+     "UnitObject" -> unitObject_]]["ReducedSimpleLabeledGraph"] := 
+  Module[{objectFunction, associatorEquations, leftUnitorEquations, rightUnitorEquations, monoidalEquations, 
+     productArrows, domainMorphismAssociation, domainCompositions, morphismAssociation, compositions, imageObjects, 
+     imageArrows, imageQuiverObjectEquivalences, imageObjectEquivalences, imageArrowEquivalences, 
+     imageMorphismEquivalences, imageMorphismAssociation, imageCompositions}, 
+    objectFunction = Join[Association[Thread[Keys[Association[(#1 -> #1 & ) /@ Catenate[Outer[tensorProductSymbol, 
+               reduceObjects[reduceObjects[objects, quiverObjectEquivalences], categoryObjectEquivalences], reduceObjects[
+                reduceObjects[objects, quiverObjectEquivalences], categoryObjectEquivalences]]]]] -> 
+          reduceObjectsWithDuplicates[reduceObjectsWithDuplicates[Values[Association[(#1 -> #1 & ) /@ Catenate[
+                Outer[tensorProductSymbol, reduceObjects[reduceObjects[objects, quiverObjectEquivalences], 
+                  categoryObjectEquivalences], reduceObjects[reduceObjects[objects, quiverObjectEquivalences], 
+                  categoryObjectEquivalences]]]]], quiverObjectEquivalences], categoryObjectEquivalences]]], 
+       Association[Thread[reduceObjectsWithDuplicates[reduceObjectsWithDuplicates[Keys[objectMappings], 
+            quiverObjectEquivalences], categoryObjectEquivalences] -> reduceObjectsWithDuplicates[
+           reduceObjectsWithDuplicates[Values[objectMappings], quiverObjectEquivalences], categoryObjectEquivalences]]]]; 
+     associatorEquations = DeleteDuplicates[Select[reduceObjects[
+         (tensorProductSymbol[#1[[1]], tensorProductSymbol[#1[[2]], #1[[3]]]] == tensorProductSymbol[
+              tensorProductSymbol[#1[[1]], #1[[2]]], #1[[3]]] /. Normal[objectFunction] & ) /@ 
+          Tuples[reduceObjects[reduceObjects[objects, quiverObjectEquivalences], categoryObjectEquivalences], 3], 
+         objectEquivalences], #1 =!= True & ]]; leftUnitorEquations = 
+      DeleteDuplicates[Select[reduceObjects[(tensorProductSymbol[unitObject, #1] == #1 /. Normal[objectFunction] & ) /@ 
+          reduceObjects[reduceObjects[objects, quiverObjectEquivalences], categoryObjectEquivalences], 
+         objectEquivalences], #1 =!= True & ]]; rightUnitorEquations = 
+      DeleteDuplicates[Select[reduceObjects[(tensorProductSymbol[#1, unitObject] == #1 /. Normal[objectFunction] & ) /@ 
+          reduceObjects[reduceObjects[objects, quiverObjectEquivalences], categoryObjectEquivalences], 
+         objectEquivalences], #1 =!= True & ]]; monoidalEquations = DeleteDuplicates[
+       Join[associatorEquations, leftUnitorEquations, rightUnitorEquations]]; 
+     productArrows = Association[DeleteDuplicates[
+        Join[Thread[Catenate[Outer[tensorProductSymbol, First /@ Select[Normal[arrows], First[Last[#1]] =!= 
+                 Last[Last[#1]] & ], First /@ Select[Normal[arrows], First[Last[#1]] =!= Last[Last[#1]] & ]]] -> 
+           Thread[DirectedEdge[Catenate[Outer[tensorProductSymbol, (First[Last[#1]] & ) /@ Select[Normal[arrows], 
+                 First[Last[#1]] =!= Last[Last[#1]] & ], (First[Last[#1]] & ) /@ Select[Normal[arrows], 
+                 First[Last[#1]] =!= Last[Last[#1]] & ]]], Catenate[Outer[tensorProductSymbol, (Last[Last[#1]] & ) /@ 
+                Select[Normal[arrows], First[Last[#1]] =!= Last[Last[#1]] & ], (Last[Last[#1]] & ) /@ 
+                Select[Normal[arrows], First[Last[#1]] =!= Last[Last[#1]] & ]]]]]], 
+         Thread[Catenate[Outer[tensorProductSymbol, First /@ Select[Normal[arrows], First[Last[#1]] =!= 
+                 Last[Last[#1]] & ], identitySymbol /@ objects]] -> 
+           Thread[DirectedEdge[Catenate[Outer[tensorProductSymbol, (First[Last[#1]] & ) /@ Select[Normal[arrows], 
+                 First[Last[#1]] =!= Last[Last[#1]] & ], objects]], Catenate[Outer[tensorProductSymbol, 
+               (Last[Last[#1]] & ) /@ Select[Normal[arrows], First[Last[#1]] =!= Last[Last[#1]] & ], objects]]]]], 
+         Thread[Catenate[Outer[tensorProductSymbol, identitySymbol /@ objects, First /@ Select[Normal[arrows], 
+               First[Last[#1]] =!= Last[Last[#1]] & ]]] -> Thread[DirectedEdge[Catenate[Outer[tensorProductSymbol, 
+               objects, (First[Last[#1]] & ) /@ Select[Normal[arrows], First[Last[#1]] =!= Last[Last[#1]] & ]]], 
+             Catenate[Outer[tensorProductSymbol, objects, (Last[Last[#1]] & ) /@ Select[Normal[arrows], 
+                 First[Last[#1]] =!= Last[Last[#1]] & ]]]]]]]]]; domainMorphismAssociation = 
+      Association[Select[Normal[reduceArrowsFinal[reduceArrowsInitial[productArrows, arrowEquivalences], 
+          quiverObjectEquivalences]], First[Last[#1]] =!= Last[Last[#1]] & ]]; 
+     Do[domainCompositions = Select[Tuples[Normal[domainMorphismAssociation], 2], 
+         Last[Last[First[#1]]] === First[Last[Last[#1]]] & ]; 
+       (If[ !MemberQ[(StringDelete[ToString[First[#1]], {"(", ")", " "}] -> Last[#1] & ) /@ 
+             Normal[domainMorphismAssociation], StringDelete[ToString[compositionSymbol[First[Last[#1]], 
+                First[First[#1]]]], {"(", ")", " "}] -> DirectedEdge[First[Last[First[#1]]], Last[Last[Last[#1]]]]], 
+          domainMorphismAssociation = Association[Append[Normal[domainMorphismAssociation], 
+             compositionSymbol[First[Last[#1]], First[First[#1]]] -> DirectedEdge[First[Last[First[#1]]], Last[
+                Last[Last[#1]]]]]]] & ) /@ domainCompositions, 
+      Length[reduceObjects[Catenate[Outer[tensorProductSymbol, objects, objects]], quiverObjectEquivalences]]]; 
+     domainMorphismAssociation = Association[Select[Normal[domainMorphismAssociation], 
+        Length[Flatten[{First[#1] /. compositionSymbol -> List}]] == 
+          Length[DeleteDuplicates[Flatten[{First[#1] /. compositionSymbol -> List}]]] & ]]; 
+     domainMorphismAssociation = Association[DeleteDuplicates[Normal[domainMorphismAssociation] //. 
+         {compositionSymbol[tensorProductSymbol[x_, y_], tensorProductSymbol[z_, w_]] :> 
+           tensorProductSymbol[compositionSymbol[x, z], compositionSymbol[y, w]], 
+          compositionSymbol[x_, identitySymbol[y_]] :> x, compositionSymbol[identitySymbol[x_], y_] :> y, 
+          compositionSymbol[x_, compositionSymbol[y_, z_]] :> compositionSymbol[compositionSymbol[x, y], z]}]]; 
+     morphismAssociation = Association[Select[Normal[arrows], First[Last[#1]] =!= Last[Last[#1]] & ]]; 
+     Do[compositions = Select[Tuples[Normal[morphismAssociation], 2], 
+         Last[Last[First[#1]]] === First[Last[Last[#1]]] & ]; 
+       (If[ !MemberQ[(StringDelete[ToString[First[#1]], {"(", ")", " "}] -> Last[#1] & ) /@ Normal[morphismAssociation], 
+            StringDelete[ToString[compositionSymbol[First[Last[#1]], First[First[#1]]]], {"(", ")", " "}] -> 
+             DirectedEdge[First[Last[First[#1]]], Last[Last[Last[#1]]]]], morphismAssociation = 
+           Association[Append[Normal[morphismAssociation], compositionSymbol[First[Last[#1]], First[First[#1]]] -> 
+              DirectedEdge[First[Last[First[#1]]], Last[Last[Last[#1]]]]]]] & ) /@ compositions, Length[objects]]; 
+     morphismAssociation = Association[Select[Normal[morphismAssociation], 
+        Length[Flatten[{First[#1] /. compositionSymbol -> List}]] == 
+          Length[DeleteDuplicates[Flatten[{First[#1] /. compositionSymbol -> List}]]] & ]]; 
+     (If[ !MemberQ[Normal[morphismAssociation], identitySymbol[#1] -> DirectedEdge[#1, #1]], 
+        morphismAssociation = Association[Append[Normal[morphismAssociation], identitySymbol[#1] -> 
+            DirectedEdge[#1, #1]]]] & ) /@ objects; imageObjects = DeleteDuplicates[
+       Catenate[Outer[tensorProductSymbol, objects, objects]] /. Normal[objectMappings]]; 
+     imageArrows = Association[DeleteDuplicates[Normal[productArrows] /. Normal[arrowMappings] /. 
+         Normal[objectMappings]]]; imageQuiverObjectEquivalences = 
+      Select[DeleteDuplicates[Join[Thread[Catenate[Outer[tensorProductSymbol, First /@ quiverObjectEquivalences, 
+               objects]] -> Catenate[Outer[tensorProductSymbol, Last /@ quiverObjectEquivalences, objects]]], 
+           Thread[Catenate[Outer[tensorProductSymbol, objects, First /@ quiverObjectEquivalences]] -> 
+             Catenate[Outer[tensorProductSymbol, objects, Last /@ quiverObjectEquivalences]]]] /. 
+          Normal[objectMappings]] /. Rule -> Equal, #1 =!= True & ]; imageObjectEquivalences = 
+      Select[DeleteDuplicates[Join[Thread[Catenate[Outer[tensorProductSymbol, First /@ categoryObjectEquivalences, 
+               objects]] -> Catenate[Outer[tensorProductSymbol, Last /@ categoryObjectEquivalences, objects]]], 
+           Thread[Catenate[Outer[tensorProductSymbol, objects, First /@ categoryObjectEquivalences]] -> 
+             Catenate[Outer[tensorProductSymbol, objects, Last /@ categoryObjectEquivalences]]]] /. 
+          Normal[objectMappings]] /. Rule -> Equal, #1 =!= True & ]; imageArrowEquivalences = 
+      Select[DeleteDuplicates[Join[Thread[Catenate[Outer[tensorProductSymbol, First /@ arrowEquivalences, First /@ 
+                Normal[arrows]]] -> Catenate[Outer[tensorProductSymbol, Last /@ arrowEquivalences, First /@ 
+                Normal[arrows]]]], Thread[Catenate[Outer[tensorProductSymbol, First /@ Normal[arrows], First /@ 
+                arrowEquivalences]] -> Catenate[Outer[tensorProductSymbol, First /@ Normal[arrows], Last /@ 
+                arrowEquivalences]]]] /. Normal[arrowMappings]] /. Rule -> Equal, #1 =!= True & ]; 
+     imageMorphismEquivalences = 
+      Select[DeleteDuplicates[Join[Thread[Catenate[Outer[tensorProductSymbol, First /@ categoryMorphismEquivalences, 
+                First /@ Normal[morphismAssociation]]] -> Catenate[Outer[tensorProductSymbol, 
+                Last /@ categoryMorphismEquivalences, First /@ Normal[morphismAssociation]]]], 
+            Thread[Catenate[Outer[tensorProductSymbol, First /@ Normal[morphismAssociation], First /@ 
+                 categoryMorphismEquivalences]] -> Catenate[Outer[tensorProductSymbol, First /@ 
+                 Normal[morphismAssociation], Last /@ categoryMorphismEquivalences]]]] /. Normal[arrowMappings] /. 
+          Normal[objectMappings]] /. Rule -> Equal, #1 =!= True & ]; imageMorphismAssociation = 
+      Association[Select[DeleteDuplicates[Normal[reduceArrowsFinal[reduceArrowsInitial[imageArrows, 
+            imageArrowEquivalences], imageQuiverObjectEquivalences]]], First[Last[#1]] =!= Last[Last[#1]] & ]]; 
+     Do[imageCompositions = Select[Tuples[Normal[imageMorphismAssociation], 2], 
+         Last[Last[First[#1]]] === First[Last[Last[#1]]] & ]; 
+       (If[ !MemberQ[(StringDelete[ToString[First[#1]], {"(", ")", " "}] -> Last[#1] & ) /@ 
+             Normal[imageMorphismAssociation], StringDelete[ToString[compositionSymbol[First[Last[#1]], 
+                First[First[#1]]]], {"(", ")", " "}] -> DirectedEdge[First[Last[First[#1]]], Last[Last[Last[#1]]]]], 
+          imageMorphismAssociation = Association[Append[Normal[imageMorphismAssociation], 
+             compositionSymbol[First[Last[#1]], First[First[#1]]] -> DirectedEdge[First[Last[First[#1]]], Last[
+                Last[Last[#1]]]]]]] & ) /@ imageCompositions, Length[reduceObjects[imageObjects, 
+        imageQuiverObjectEquivalences]]]; imageMorphismAssociation = 
+      Association[Select[Normal[imageMorphismAssociation], Length[Flatten[{First[#1] /. compositionSymbol -> List}]] == 
+          Length[DeleteDuplicates[Flatten[{First[#1] /. compositionSymbol -> List}]]] & ]]; 
+     imageMorphismAssociation = Association[DeleteDuplicates[Normal[imageMorphismAssociation] //. 
+         {compositionSymbol[tensorProductSymbol[x_, y_], tensorProductSymbol[z_, w_]] :> 
+           tensorProductSymbol[compositionSymbol[x, z], compositionSymbol[y, w]], 
+          compositionSymbol[x_, identitySymbol[y_]] :> x, compositionSymbol[identitySymbol[x_], y_] :> y, 
+          compositionSymbol[x_, compositionSymbol[y_, z_]] :> compositionSymbol[compositionSymbol[x, y], z]}]]; 
+     EdgeTaggedGraph[reduceObjects[reduceObjects[Catenate[Outer[tensorProductSymbol, objects, objects]], 
+         quiverObjectEquivalences], categoryObjectEquivalences], 
+       (Labeled[DirectedEdge @@ Last[#1], Placed[First[#1], 0.5]] & ) /@ 
+        Normal[reduceArrowsFinal[reduceArrowsInitial[Association[Select[DeleteDuplicatesBy[
+              Normal[domainMorphismAssociation], DirectedEdge @@ Last[#1] & ], First[Last[#1]] =!= Last[Last[#1]] & ]], 
+           categoryMorphismEquivalences], categoryObjectEquivalences]], VertexSize -> 0.3, 
+       VertexStyle -> Directive[Transparent, EdgeForm[None]], VertexLabels -> Placed["Name", Center], 
+       VertexLabelStyle -> Directive[Bold, 20], EdgeLabelStyle -> Directive[Bold, 20], 
+       EdgeStyle -> Directive[Black, Thick], GraphLayout -> {"LayeredDigraphEmbedding", "Orientation" -> Left}] -> 
+      EdgeTaggedGraph[reduceObjects[reduceObjects[reduceObjects[reduceObjects[imageObjects, 
+           imageQuiverObjectEquivalences], imageObjectEquivalences], monoidalEquations], objectEquivalences], 
+       (Labeled[DirectedEdge @@ Last[#1], Placed[First[#1], 0.5]] & ) /@ 
+        Normal[reduceArrowsFinal[reduceArrowsFinal[reduceArrowsInitial[reduceArrowsInitial[reduceArrowsInitial[
+              Association[Select[DeleteDuplicatesBy[Normal[imageMorphismAssociation], DirectedEdge @@ Last[#1] & ], 
+                First[Last[#1]] =!= Last[Last[#1]] & ]], imageMorphismEquivalences], morphismEquivalences], 
+            imageObjectEquivalences], monoidalEquations], objectEquivalences]], VertexSize -> 0.3, 
+       VertexStyle -> Directive[Transparent, EdgeForm[None]], VertexLabels -> Placed["Name", Center], 
+       VertexLabelStyle -> Directive[Bold, 20], EdgeLabelStyle -> Directive[Bold, 20], 
+       EdgeStyle -> Directive[Black, Thick], GraphLayout -> {"LayeredDigraphEmbedding", "Orientation" -> Left}]] /; 
+   SymbolName[abstractQuiver] === "AbstractQuiver" && SymbolName[abstractCategory] === "AbstractCategory"
+AbstractStrictMonoidalCategory[Association["ArrowMappings" -> arrowMappings_Association, 
+     "Category" -> (abstractCategory_)[Association["CompositionSymbol" -> compositionSymbol_, 
+        "IdentitySymbol" -> identitySymbol_, "MorphismEquivalences" -> categoryMorphismEquivalences_List, 
+        "ObjectEquivalences" -> categoryObjectEquivalences_List, "Quiver" -> (abstractQuiver_)[
+          Association["ArrowEquivalences" -> arrowEquivalences_List, "Arrows" -> arrows_Association, 
+           "ObjectEquivalences" -> quiverObjectEquivalences_List, "Objects" -> objects_List]]]], 
+     "MorphismEquivalences" -> morphismEquivalences_List, "ObjectEquivalences" -> objectEquivalences_List, 
+     "ObjectMappings" -> objectMappings_Association, "TensorProductSymbol" -> tensorProductSymbol_, 
      "UnitObject" -> unitObject_]]["AssociationForm"] := 
   Association["Category" -> ResourceFunction["AbstractCategory"][Association["CompositionSymbol" -> compositionSymbol, 
        "IdentitySymbol" -> identitySymbol, "MorphismEquivalences" -> categoryMorphismEquivalences, 
@@ -2447,6 +2991,27 @@ AbstractStrictMonoidalCategory[Association["ArrowMappings" -> arrowMappings_Asso
     "ArrowMappings" -> arrowMappings, "TensorProductSymbol" -> tensorProductSymbol, "UnitObject" -> unitObject, 
     "ObjectEquivalences" -> objectEquivalences, "MorphismEquivalences" -> morphismEquivalences] /; 
    SymbolName[abstractQuiver] === "AbstractQuiver" && SymbolName[abstractCategory] === "AbstractCategory"
+AbstractStrictMonoidalCategory[Association["ArrowMappings" -> arrowMappings_Association, 
+     "Category" -> (abstractCategory_)[Association["CompositionSymbol" -> compositionSymbol_, 
+        "IdentitySymbol" -> identitySymbol_, "MorphismEquivalences" -> categoryMorphismEquivalences_List, 
+        "ObjectEquivalences" -> categoryObjectEquivalences_List, "Quiver" -> (abstractQuiver_)[
+          Association["ArrowEquivalences" -> arrowEquivalences_List, "Arrows" -> arrows_Association, 
+           "ObjectEquivalences" -> quiverObjectEquivalences_List, "Objects" -> objects_List]]]], 
+     "MorphismEquivalences" -> morphismEquivalences_List, "ObjectEquivalences" -> objectEquivalences_List, 
+     "ObjectMappings" -> objectMappings_Association, "TensorProductSymbol" -> tensorProductSymbol_, 
+     "UnitObject" -> unitObject_]]["Properties"] := {"ObjectCount", "MorphismCount", "ObjectEquivalences", 
+    "ObjectEquivalenceCount", "MorphismEquivalences", "MorphismEquivalenceCount", "ReducedObjectCount", 
+    "ReducedMorphismCount", "TensorProductSymbol", "UnitObject", "Category", "DualStrictMonoidalCategory", 
+    "ObjectMappings", "ObjectMappingCount", "ReducedObjectMappings", "ReducedObjectMappingCount", "ArrowMappings", 
+    "ArrowMappingCount", "MorphismMappings", "MorphismMappingCount", "ReducedMorphismMappings", 
+    "ReducedMorphismMappingCount", "ValidStrictMonoidalCategoryQ", "FullLabeledStringDiagrams", 
+    "FullUnlabeledStringDiagrams", "ReducedLabeledStringDiagrams", "ReducedUnlabeledStringDiagrams", 
+    "AssociatorEquations", "ReducedAssociatorEquations", "LeftUnitorEquations", "ReducedLeftUnitorEquations", 
+    "RightUnitorEquations", "ReducedRightUnitorEquations", "CommutativeDiagramQ", "CommutativityEquations", 
+    "ReducedCommutativityEquations", "FullLabeledGraph", "FullUnlabeledGraph", "ReducedLabeledGraph", 
+    "ReducedUnlabeledGraph", "SimpleLabeledGraph", "SimpleUnlabeledGraph", "ReducedSimpleLabeledGraph", 
+    "ReducedSimpleUnlabeledGraph", "AssociationForm", "Properties"} /; SymbolName[abstractQuiver] === "AbstractQuiver" && 
+    SymbolName[abstractCategory] === "AbstractCategory"
 AbstractStrictMonoidalCategory /: 
   MakeBoxes[abstractStrictMonoidalCategory:AbstractStrictMonoidalCategory[
       Association["ArrowMappings" -> arrowMappings_Association, "Category" -> (abstractCategory_)[
@@ -2839,3 +3404,153 @@ AbstractStrictMonoidalCategory[strictMonoidalCategory_Association] :=
     KeyExistsQ[strictMonoidalCategory, "TensorProductSymbol"] && KeyExistsQ[strictMonoidalCategory, "UnitObject"] && 
     KeyExistsQ[strictMonoidalCategory, "ObjectEquivalences"] && KeyExistsQ[strictMonoidalCategory, 
      "MorphismEquivalences"] && Keys[KeySort[strictMonoidalCategory]] =!= Keys[strictMonoidalCategory]
+AbstractStrictMonoidalCategory[AbstractStrictMonoidalCategory[Association["ArrowMappings" -> arrowMappings_Association, 
+     "Category" -> (abstractCategory_)[Association["CompositionSymbol" -> compositionSymbol_, 
+        "IdentitySymbol" -> identitySymbol_, "MorphismEquivalences" -> categoryMorphismEquivalences_List, 
+        "ObjectEquivalences" -> categoryObjectEquivalences_List, "Quiver" -> (abstractQuiver_)[
+          Association["ArrowEquivalences" -> arrowEquivalences_List, "Arrows" -> arrows_Association, 
+           "ObjectEquivalences" -> quiverObjectEquivalences_List, "Objects" -> objects_List]]]], 
+     "MorphismEquivalences" -> morphismEquivalences_List, "ObjectEquivalences" -> objectEquivalences_List, 
+     "ObjectMappings" -> objectMappings_Association, "TensorProductSymbol" -> tensorProductSymbol_, 
+     "UnitObject" -> unitObject_]], newObjectEquivalences_List] := 
+  AbstractStrictMonoidalCategory[Association["ArrowMappings" -> arrowMappings, 
+     "Category" -> ResourceFunction["AbstractCategory"][Association["CompositionSymbol" -> compositionSymbol, 
+        "IdentitySymbol" -> identitySymbol, "MorphismEquivalences" -> categoryMorphismEquivalences, 
+        "ObjectEquivalences" -> categoryObjectEquivalences, "Quiver" -> ResourceFunction["AbstractQuiver"][
+          Association["ArrowEquivalences" -> arrowEquivalences, "Arrows" -> arrows, "ObjectEquivalences" -> 
+            quiverObjectEquivalences, "Objects" -> objects]]]], "MorphismEquivalences" -> morphismEquivalences, 
+     "ObjectEquivalences" -> newObjectEquivalences, "ObjectMappings" -> objectMappings, 
+     "TensorProductSymbol" -> tensorProductSymbol, "UnitObject" -> unitObject]] /; 
+   SymbolName[abstractQuiver] === "AbstractQuiver" && SymbolName[abstractCategory] === "AbstractCategory"
+AbstractStrictMonoidalCategory[AbstractStrictMonoidalCategory[Association["ArrowMappings" -> arrowMappings_Association, 
+     "Category" -> (abstractCategory_)[Association["CompositionSymbol" -> compositionSymbol_, 
+        "IdentitySymbol" -> identitySymbol_, "MorphismEquivalences" -> categoryMorphismEquivalences_List, 
+        "ObjectEquivalences" -> categoryObjectEquivalences_List, "Quiver" -> (abstractQuiver_)[
+          Association["ArrowEquivalences" -> arrowEquivalences_List, "Arrows" -> arrows_Association, 
+           "ObjectEquivalences" -> quiverObjectEquivalences_List, "Objects" -> objects_List]]]], 
+     "MorphismEquivalences" -> morphismEquivalences_List, "ObjectEquivalences" -> objectEquivalences_List, 
+     "ObjectMappings" -> objectMappings_Association, "TensorProductSymbol" -> tensorProductSymbol_, 
+     "UnitObject" -> unitObject_]], newObjectEquivalences_List, newMorphismEquivalences_List] := 
+  AbstractStrictMonoidalCategory[Association["ArrowMappings" -> arrowMappings, 
+     "Category" -> ResourceFunction["AbstractCategory"][Association["CompositionSymbol" -> compositionSymbol, 
+        "IdentitySymbol" -> identitySymbol, "MorphismEquivalences" -> categoryMorphismEquivalences, 
+        "ObjectEquivalences" -> categoryObjectEquivalences, "Quiver" -> ResourceFunction["AbstractQuiver"][
+          Association["ArrowEquivalences" -> arrowEquivalences, "Arrows" -> arrows, "ObjectEquivalences" -> 
+            quiverObjectEquivalences, "Objects" -> objects]]]], "MorphismEquivalences" -> newMorphismEquivalences, 
+     "ObjectEquivalences" -> newObjectEquivalences, "ObjectMappings" -> objectMappings, 
+     "TensorProductSymbol" -> tensorProductSymbol, "UnitObject" -> unitObject]] /; 
+   SymbolName[abstractQuiver] === "AbstractQuiver" && SymbolName[abstractCategory] === "AbstractCategory"
+AbstractStrictMonoidalCategory[AbstractStrictMonoidalCategory[Association["ArrowMappings" -> arrowMappings_Association, 
+     "Category" -> (abstractCategory_)[Association["CompositionSymbol" -> compositionSymbol_, 
+        "IdentitySymbol" -> identitySymbol_, "MorphismEquivalences" -> categoryMorphismEquivalences_List, 
+        "ObjectEquivalences" -> categoryObjectEquivalences_List, "Quiver" -> (abstractQuiver_)[
+          Association["ArrowEquivalences" -> arrowEquivalences_List, "Arrows" -> arrows_Association, 
+           "ObjectEquivalences" -> quiverObjectEquivalences_List, "Objects" -> objects_List]]]], 
+     "MorphismEquivalences" -> morphismEquivalences_List, "ObjectEquivalences" -> objectEquivalences_List, 
+     "ObjectMappings" -> objectMappings_Association, "TensorProductSymbol" -> tensorProductSymbol_, 
+     "UnitObject" -> unitObject_]], newTensorProductSymbol_] := 
+  AbstractStrictMonoidalCategory[Association["ArrowMappings" -> arrowMappings, 
+     "Category" -> ResourceFunction["AbstractCategory"][Association["CompositionSymbol" -> compositionSymbol, 
+        "IdentitySymbol" -> identitySymbol, "MorphismEquivalences" -> categoryMorphismEquivalences, 
+        "ObjectEquivalences" -> categoryObjectEquivalences, "Quiver" -> ResourceFunction["AbstractQuiver"][
+          Association["ArrowEquivalences" -> arrowEquivalences, "Arrows" -> arrows, "ObjectEquivalences" -> 
+            quiverObjectEquivalences, "Objects" -> objects]]]], "MorphismEquivalences" -> morphismEquivalences, 
+     "ObjectEquivalences" -> objectEquivalences, "ObjectMappings" -> objectMappings, 
+     "TensorProductSymbol" -> newTensorProductSymbol, "UnitObject" -> unitObject]] /; 
+   SymbolName[abstractQuiver] === "AbstractQuiver" && SymbolName[abstractCategory] === "AbstractCategory" && 
+     !ListQ[newTensorProductSymbol]
+AbstractStrictMonoidalCategory[AbstractStrictMonoidalCategory[Association["ArrowMappings" -> arrowMappings_Association, 
+     "Category" -> (abstractCategory_)[Association["CompositionSymbol" -> compositionSymbol_, 
+        "IdentitySymbol" -> identitySymbol_, "MorphismEquivalences" -> categoryMorphismEquivalences_List, 
+        "ObjectEquivalences" -> categoryObjectEquivalences_List, "Quiver" -> (abstractQuiver_)[
+          Association["ArrowEquivalences" -> arrowEquivalences_List, "Arrows" -> arrows_Association, 
+           "ObjectEquivalences" -> quiverObjectEquivalences_List, "Objects" -> objects_List]]]], 
+     "MorphismEquivalences" -> morphismEquivalences_List, "ObjectEquivalences" -> objectEquivalences_List, 
+     "ObjectMappings" -> objectMappings_Association, "TensorProductSymbol" -> tensorProductSymbol_, 
+     "UnitObject" -> unitObject_]], newTensorProductSymbol_, newObjectEquivalences_List] := 
+  AbstractStrictMonoidalCategory[Association["ArrowMappings" -> arrowMappings, 
+     "Category" -> ResourceFunction["AbstractCategory"][Association["CompositionSymbol" -> compositionSymbol, 
+        "IdentitySymbol" -> identitySymbol, "MorphismEquivalences" -> categoryMorphismEquivalences, 
+        "ObjectEquivalences" -> categoryObjectEquivalences, "Quiver" -> ResourceFunction["AbstractQuiver"][
+          Association["ArrowEquivalences" -> arrowEquivalences, "Arrows" -> arrows, "ObjectEquivalences" -> 
+            quiverObjectEquivalences, "Objects" -> objects]]]], "MorphismEquivalences" -> morphismEquivalences, 
+     "ObjectEquivalences" -> newObjectEquivalences, "ObjectMappings" -> objectMappings, 
+     "TensorProductSymbol" -> newTensorProductSymbol, "UnitObject" -> unitObject]] /; 
+   SymbolName[abstractQuiver] === "AbstractQuiver" && SymbolName[abstractCategory] === "AbstractCategory" && 
+     !ListQ[newTensorProductSymbol]
+AbstractStrictMonoidalCategory[AbstractStrictMonoidalCategory[Association["ArrowMappings" -> arrowMappings_Association, 
+     "Category" -> (abstractCategory_)[Association["CompositionSymbol" -> compositionSymbol_, 
+        "IdentitySymbol" -> identitySymbol_, "MorphismEquivalences" -> categoryMorphismEquivalences_List, 
+        "ObjectEquivalences" -> categoryObjectEquivalences_List, "Quiver" -> (abstractQuiver_)[
+          Association["ArrowEquivalences" -> arrowEquivalences_List, "Arrows" -> arrows_Association, 
+           "ObjectEquivalences" -> quiverObjectEquivalences_List, "Objects" -> objects_List]]]], 
+     "MorphismEquivalences" -> morphismEquivalences_List, "ObjectEquivalences" -> objectEquivalences_List, 
+     "ObjectMappings" -> objectMappings_Association, "TensorProductSymbol" -> tensorProductSymbol_, 
+     "UnitObject" -> unitObject_]], newTensorProductSymbol_, newObjectEquivalences_List, newMorphismEquivalences_List] := 
+  AbstractStrictMonoidalCategory[Association["ArrowMappings" -> arrowMappings, 
+     "Category" -> ResourceFunction["AbstractCategory"][Association["CompositionSymbol" -> compositionSymbol, 
+        "IdentitySymbol" -> identitySymbol, "MorphismEquivalences" -> categoryMorphismEquivalences, 
+        "ObjectEquivalences" -> categoryObjectEquivalences, "Quiver" -> ResourceFunction["AbstractQuiver"][
+          Association["ArrowEquivalences" -> arrowEquivalences, "Arrows" -> arrows, "ObjectEquivalences" -> 
+            quiverObjectEquivalences, "Objects" -> objects]]]], "MorphismEquivalences" -> newMorphismEquivalences, 
+     "ObjectEquivalences" -> newObjectEquivalences, "ObjectMappings" -> objectMappings, 
+     "TensorProductSymbol" -> newTensorProductSymbol, "UnitObject" -> unitObject]] /; 
+   SymbolName[abstractQuiver] === "AbstractQuiver" && SymbolName[abstractCategory] === "AbstractCategory" && 
+     !ListQ[newTensorProductSymbol]
+AbstractStrictMonoidalCategory[AbstractStrictMonoidalCategory[Association["ArrowMappings" -> arrowMappings_Association, 
+     "Category" -> (abstractCategory_)[Association["CompositionSymbol" -> compositionSymbol_, 
+        "IdentitySymbol" -> identitySymbol_, "MorphismEquivalences" -> categoryMorphismEquivalences_List, 
+        "ObjectEquivalences" -> categoryObjectEquivalences_List, "Quiver" -> (abstractQuiver_)[
+          Association["ArrowEquivalences" -> arrowEquivalences_List, "Arrows" -> arrows_Association, 
+           "ObjectEquivalences" -> quiverObjectEquivalences_List, "Objects" -> objects_List]]]], 
+     "MorphismEquivalences" -> morphismEquivalences_List, "ObjectEquivalences" -> objectEquivalences_List, 
+     "ObjectMappings" -> objectMappings_Association, "TensorProductSymbol" -> tensorProductSymbol_, 
+     "UnitObject" -> unitObject_]], newTensorProductSymbol_, newUnitObject_] := 
+  AbstractStrictMonoidalCategory[Association["ArrowMappings" -> arrowMappings, 
+     "Category" -> ResourceFunction["AbstractCategory"][Association["CompositionSymbol" -> compositionSymbol, 
+        "IdentitySymbol" -> identitySymbol, "MorphismEquivalences" -> categoryMorphismEquivalences, 
+        "ObjectEquivalences" -> categoryObjectEquivalences, "Quiver" -> ResourceFunction["AbstractQuiver"][
+          Association["ArrowEquivalences" -> arrowEquivalences, "Arrows" -> arrows, "ObjectEquivalences" -> 
+            quiverObjectEquivalences, "Objects" -> objects]]]], "MorphismEquivalences" -> morphismEquivalences, 
+     "ObjectEquivalences" -> objectEquivalences, "ObjectMappings" -> objectMappings, 
+     "TensorProductSymbol" -> newTensorProductSymbol, "UnitObject" -> newUnitObject]] /; 
+   SymbolName[abstractQuiver] === "AbstractQuiver" && SymbolName[abstractCategory] === "AbstractCategory" && 
+     !ListQ[newTensorProductSymbol] &&  !ListQ[newUnitObject]
+AbstractStrictMonoidalCategory[AbstractStrictMonoidalCategory[Association["ArrowMappings" -> arrowMappings_Association, 
+     "Category" -> (abstractCategory_)[Association["CompositionSymbol" -> compositionSymbol_, 
+        "IdentitySymbol" -> identitySymbol_, "MorphismEquivalences" -> categoryMorphismEquivalences_List, 
+        "ObjectEquivalences" -> categoryObjectEquivalences_List, "Quiver" -> (abstractQuiver_)[
+          Association["ArrowEquivalences" -> arrowEquivalences_List, "Arrows" -> arrows_Association, 
+           "ObjectEquivalences" -> quiverObjectEquivalences_List, "Objects" -> objects_List]]]], 
+     "MorphismEquivalences" -> morphismEquivalences_List, "ObjectEquivalences" -> objectEquivalences_List, 
+     "ObjectMappings" -> objectMappings_Association, "TensorProductSymbol" -> tensorProductSymbol_, 
+     "UnitObject" -> unitObject_]], newTensorProductSymbol_, newUnitObject_, newObjectEquivalences_List] := 
+  AbstractStrictMonoidalCategory[Association["ArrowMappings" -> arrowMappings, 
+     "Category" -> ResourceFunction["AbstractCategory"][Association["CompositionSymbol" -> compositionSymbol, 
+        "IdentitySymbol" -> identitySymbol, "MorphismEquivalences" -> categoryMorphismEquivalences, 
+        "ObjectEquivalences" -> categoryObjectEquivalences, "Quiver" -> ResourceFunction["AbstractQuiver"][
+          Association["ArrowEquivalences" -> arrowEquivalences, "Arrows" -> arrows, "ObjectEquivalences" -> 
+            quiverObjectEquivalences, "Objects" -> objects]]]], "MorphismEquivalences" -> morphismEquivalences, 
+     "ObjectEquivalences" -> newObjectEquivalences, "ObjectMappings" -> objectMappings, 
+     "TensorProductSymbol" -> newTensorProductSymbol, "UnitObject" -> newUnitObject]] /; 
+   SymbolName[abstractQuiver] === "AbstractQuiver" && SymbolName[abstractCategory] === "AbstractCategory" && 
+     !ListQ[newTensorProductSymbol] &&  !ListQ[newUnitObject]
+AbstractStrictMonoidalCategory[AbstractStrictMonoidalCategory[Association["ArrowMappings" -> arrowMappings_Association, 
+     "Category" -> (abstractCategory_)[Association["CompositionSymbol" -> compositionSymbol_, 
+        "IdentitySymbol" -> identitySymbol_, "MorphismEquivalences" -> categoryMorphismEquivalences_List, 
+        "ObjectEquivalences" -> categoryObjectEquivalences_List, "Quiver" -> (abstractQuiver_)[
+          Association["ArrowEquivalences" -> arrowEquivalences_List, "Arrows" -> arrows_Association, 
+           "ObjectEquivalences" -> quiverObjectEquivalences_List, "Objects" -> objects_List]]]], 
+     "MorphismEquivalences" -> morphismEquivalences_List, "ObjectEquivalences" -> objectEquivalences_List, 
+     "ObjectMappings" -> objectMappings_Association, "TensorProductSymbol" -> tensorProductSymbol_, 
+     "UnitObject" -> unitObject_]], newTensorProductSymbol_, newUnitObject_, newObjectEquivalences_List, 
+   newMorphismEquivalences_List] := AbstractStrictMonoidalCategory[Association["ArrowMappings" -> arrowMappings, 
+     "Category" -> ResourceFunction["AbstractCategory"][Association["CompositionSymbol" -> compositionSymbol, 
+        "IdentitySymbol" -> identitySymbol, "MorphismEquivalences" -> categoryMorphismEquivalences, 
+        "ObjectEquivalences" -> categoryObjectEquivalences, "Quiver" -> ResourceFunction["AbstractQuiver"][
+          Association["ArrowEquivalences" -> arrowEquivalences, "Arrows" -> arrows, "ObjectEquivalences" -> 
+            quiverObjectEquivalences, "Objects" -> objects]]]], "MorphismEquivalences" -> newMorphismEquivalences, 
+     "ObjectEquivalences" -> newObjectEquivalences, "ObjectMappings" -> objectMappings, 
+     "TensorProductSymbol" -> newTensorProductSymbol, "UnitObject" -> newUnitObject]] /; 
+   SymbolName[abstractQuiver] === "AbstractQuiver" && SymbolName[abstractCategory] === "AbstractCategory" && 
+     !ListQ[newTensorProductSymbol] &&  !ListQ[newUnitObject]
