@@ -2202,7 +2202,7 @@ AbstractStrictMonoidalCategory[Association["ArrowMappings" -> arrowMappings_Asso
      "ObjectMappings" -> objectMappings_Association, "TensorProductSymbol" -> tensorProductSymbol_, 
      "UnitObject" -> unitObject_]]["StrictSymmetricMonoidalCategoryQ"] := 
   Module[{objectFunction, associatorEquations, leftUnitorEquations, rightUnitorEquations, monoidalEquations, 
-     imageQuiverObjectEquivalences, imageObjectEquivalences, objectEquivalenceGraph, isStrictSymmetricMonoidalCategory}, 
+     imageQuiverObjectEquivalences, imageObjectEquivalences, objectEquivalenceGraph, reducedSymmetryEquations}, 
     objectFunction = Join[Association[Thread[Keys[Association[(#1 -> #1 & ) /@ Catenate[Outer[tensorProductSymbol, 
                reduceObjects[reduceObjects[objects, quiverObjectEquivalences], categoryObjectEquivalences], reduceObjects[
                 reduceObjects[objects, quiverObjectEquivalences], categoryObjectEquivalences]]]]] -> 
@@ -2239,14 +2239,19 @@ AbstractStrictMonoidalCategory[Association["ArrowMappings" -> arrowMappings_Asso
              Join[imageQuiverObjectEquivalences, imageObjectEquivalences, monoidalEquations, objectEquivalences]], 
             {1}]]]], (UndirectedEdge[#1, #1] & ) /@ DeleteDuplicates[
           Catenate[Outer[tensorProductSymbol, objects, objects]] /. Normal[objectMappings]]]]; 
-     isStrictSymmetricMonoidalCategory = True; 
+     reducedSymmetryEquations = {}; 
      (Module[{tuple = #1}, If[MemberQ[VertexList[objectEquivalenceGraph], tensorProductSymbol[First[tuple], 
              Last[tuple]] /. Normal[objectMappings]] && MemberQ[VertexList[objectEquivalenceGraph], 
            tensorProductSymbol[Last[tuple], First[tuple]] /. Normal[objectMappings]], 
          If[Length[FindShortestPath[objectEquivalenceGraph, tensorProductSymbol[First[tuple], Last[tuple]] /. 
               Normal[objectMappings], tensorProductSymbol[Last[tuple], First[tuple]] /. Normal[objectMappings]]] == 0, 
-          isStrictSymmetricMonoidalCategory = False], isStrictSymmetricMonoidalCategory = False]] & ) /@ 
-      Tuples[objects, 2]; isStrictSymmetricMonoidalCategory] /; SymbolName[abstractQuiver] === "AbstractQuiver" && 
+          reducedSymmetryEquations = Append[reducedSymmetryEquations, tensorProductSymbol[First[tuple], Last[tuple]] == 
+              tensorProductSymbol[Last[tuple], First[tuple]] /. Normal[objectMappings]]], 
+         reducedSymmetryEquations = Append[reducedSymmetryEquations, tensorProductSymbol[First[tuple], Last[tuple]] == 
+             tensorProductSymbol[Last[tuple], First[tuple]] /. Normal[objectMappings]]]] & ) /@ Tuples[objects, 2]; 
+     Length[DeleteDuplicates[Sort /@ Select[reduceObjects[reduceObjects[reduceObjects[reduceObjects[
+              reducedSymmetryEquations, imageQuiverObjectEquivalences], imageObjectEquivalences], monoidalEquations], 
+           objectEquivalences], #1 =!= True & ]]] == 0] /; SymbolName[abstractQuiver] === "AbstractQuiver" && 
     SymbolName[abstractCategory] === "AbstractCategory"
 AbstractStrictMonoidalCategory[Association["ArrowMappings" -> arrowMappings_Association, 
      "Category" -> (abstractCategory_)[Association["CompositionSymbol" -> compositionSymbol_, 
@@ -2317,10 +2322,9 @@ AbstractStrictMonoidalCategory[Association["ArrowMappings" -> arrowMappings_Asso
               tensorProductSymbol[Last[tuple], First[tuple]] /. Normal[objectMappings]]], 
          reducedSymmetryEquations = Append[reducedSymmetryEquations, tensorProductSymbol[First[tuple], Last[tuple]] == 
              tensorProductSymbol[Last[tuple], First[tuple]] /. Normal[objectMappings]]]] & ) /@ Tuples[objects, 2]; 
-     reducedSymmetryEquations = DeleteDuplicates[
-       Sort /@ Select[reduceObjects[reduceObjects[reduceObjects[reduceObjects[reducedSymmetryEquations, 
-             imageQuiverObjectEquivalences], imageObjectEquivalences], monoidalEquations], objectEquivalences], 
-         #1 =!= True & ]]] /; SymbolName[abstractQuiver] === "AbstractQuiver" && 
+     DeleteDuplicates[Sort /@ Select[reduceObjects[reduceObjects[reduceObjects[reduceObjects[reducedSymmetryEquations, 
+            imageQuiverObjectEquivalences], imageObjectEquivalences], monoidalEquations], objectEquivalences], 
+        #1 =!= True & ]]] /; SymbolName[abstractQuiver] === "AbstractQuiver" && 
     SymbolName[abstractCategory] === "AbstractCategory"
 AbstractStrictMonoidalCategory[Association["ArrowMappings" -> arrowMappings_Association, 
      "Category" -> (abstractCategory_)[Association["CompositionSymbol" -> compositionSymbol_, 
