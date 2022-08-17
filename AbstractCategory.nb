@@ -10,14 +10,73 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       161,          7]
-NotebookDataLength[   1345685,      31537]
-NotebookOptionsPosition[   1334489,      31353]
-NotebookOutlinePosition[   1334919,      31370]
-CellTagsIndexPosition[   1334876,      31367]
+NotebookDataLength[   1320321,      30869]
+NotebookOptionsPosition[   1309007,      30683]
+NotebookOutlinePosition[   1309435,      30700]
+CellTagsIndexPosition[   1309392,      30697]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
 Notebook[{
+Cell[BoxData[
+ RowBox[{
+  RowBox[{"(*", " ", 
+   RowBox[{
+    RowBox[{
+    "assumes", " ", "all", " ", "equivalences", " ", "are", " ", "of", " ", 
+     "the", " ", "form", " ", "x"}], " ", "\[Equal]", " ", 
+    RowBox[{"y", " ", 
+     RowBox[{"(", 
+      RowBox[{"no", " ", "chains", " ", "of", " ", "equations"}], ")"}]}]}], 
+   " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"equivalenceClasses", "[", 
+     RowBox[{"set_List", ",", " ", "elementEquivalences_List"}], "]"}], ":=", 
+    RowBox[{"ConnectedComponents", "[", 
+     RowBox[{"Graph", "[", 
+      RowBox[{"set", ",", 
+       RowBox[{"UndirectedEdge", "@@@", 
+        RowBox[{"Select", "[", 
+         RowBox[{"elementEquivalences", ",", 
+          RowBox[{
+           RowBox[{"SubsetQ", "[", 
+            RowBox[{"set", ",", 
+             RowBox[{"List", "@@", "#"}]}], "]"}], "&"}]}], "]"}]}]}], "]"}], 
+     "]"}]}], "\[IndentingNewLine]", 
+   RowBox[{"(*", " ", 
+    RowBox[{
+    "maps", " ", "each", " ", "element", " ", "to", " ", "the", " ", 
+     "representative", " ", "of", " ", "its", " ", "equivalence", " ", 
+     "class", " ", "as", " ", "determined", " ", "by", " ", 
+     "representativeSelectionFunction"}], " ", "*)"}], "\[IndentingNewLine]", 
+   RowBox[{
+    RowBox[{"elementsToClassRepresentatives", "[", 
+     RowBox[{"set_List", ",", "elementEquivalences_List", ",", " ", 
+      RowBox[{
+       RowBox[{"representativeSelectionFunction_", ":", 
+        RowBox[{"#", "[", 
+         RowBox[{"[", "1", "]"}], "]"}]}], "&"}]}], "]"}], ":=", 
+    RowBox[{"Flatten", "[", 
+     RowBox[{
+      RowBox[{
+       RowBox[{"Thread", "[", 
+        RowBox[{"#", "\[Rule]", 
+         RowBox[{"ConstantArray", "[", 
+          RowBox[{"representativeSelectionFunction", ",", 
+           RowBox[{"Length", "[", "#", "]"}]}], "]"}]}], "]"}], "&"}], "/@", 
+      RowBox[{"equivalenceClasses", "[", 
+       RowBox[{"set", ",", "elementEquivalences"}], "]"}]}], 
+     "]"}]}]}]}]], "Input",
+ InitializationCell->True,
+ CellChangeTimes->{{3.869659608343315*^9, 3.8696596125491343`*^9}, {
+  3.869660060730999*^9, 3.869660128437865*^9}, {3.8696602984762187`*^9, 
+  3.8696603337979093`*^9}, {3.8696625847556553`*^9, 3.8696628003759327`*^9}, {
+  3.8696629401997023`*^9, 3.8696629441983843`*^9}, {3.869663343202415*^9, 
+  3.869663343702314*^9}, {3.869733805886835*^9, 3.8697338868693895`*^9}},
+ CellLabel->
+  "In[399]:=",ExpressionUUID->"7f263dd8-07d2-4f48-bb3c-a295618a6fe2"],
+
 Cell[BoxData[{
  RowBox[{
   RowBox[{"reduceObjects", "[", 
@@ -118,9 +177,8 @@ Cell[BoxData[{
     "0"}]}]}]}], "Input",
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
-   3.8696583718202224`*^9, 3.86965837319483*^9}, 
-   3.8696584117148066`*^9},ExpressionUUID->"7fce9d87-8bea-48d7-b406-\
-fed3cdda1897"],
+   3.8696583718202224`*^9, 3.86965837319483*^9}, 3.8696584117148066`*^9},
+ CellLabel->"In[3]:=",ExpressionUUID->"7fce9d87-8bea-48d7-b406-fed3cdda1897"],
 
 Cell[BoxData[{
  RowBox[{
@@ -191,8 +249,8 @@ Cell[BoxData[{
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.869658434742017*^9}},ExpressionUUID->"8aabc7ba-f3a6-4233-b01f-\
-e4d08c305e9c"],
+  3.869658434742017*^9}},
+ CellLabel->"In[9]:=",ExpressionUUID->"8aabc7ba-f3a6-4233-b01f-e4d08c305e9c"],
 
 Cell[BoxData[
  RowBox[{
@@ -391,8 +449,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.8696584397370977`*^9}},ExpressionUUID->"d39e8a1d-8c65-46e3-a504-\
-f42383d51c74"],
+  3.8696584397370977`*^9}},
+ CellLabel->"In[11]:=",ExpressionUUID->"d39e8a1d-8c65-46e3-a504-f42383d51c74"],
 
 Cell[BoxData[
  RowBox[{
@@ -583,8 +641,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.8696584455949163`*^9}},ExpressionUUID->"f3d7a6a9-5253-43ad-a7a5-\
-18910a5e700c"],
+  3.8696584455949163`*^9}},
+ CellLabel->"In[12]:=",ExpressionUUID->"f3d7a6a9-5253-43ad-a7a5-18910a5e700c"],
 
 Cell[BoxData[
  RowBox[{
@@ -779,8 +837,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.869658451172077*^9}},ExpressionUUID->"57039bef-d7ed-4873-91d6-\
-486d723e8f02"],
+  3.869658451172077*^9}},
+ CellLabel->"In[13]:=",ExpressionUUID->"57039bef-d7ed-4873-91d6-486d723e8f02"],
 
 Cell[BoxData[
  RowBox[{
@@ -972,8 +1030,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.869658456160365*^9}},ExpressionUUID->"861d22ac-0f4b-4e81-bfc5-\
-79658aa7ba12"],
+  3.869658456160365*^9}},
+ CellLabel->"In[14]:=",ExpressionUUID->"861d22ac-0f4b-4e81-bfc5-79658aa7ba12"],
 
 Cell[BoxData[{
  RowBox[{
@@ -1121,8 +1179,8 @@ Cell[BoxData[{
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.869658485003538*^9}},ExpressionUUID->"0ab6b7fb-1394-472c-b1c4-\
-16ad6f744dd5"],
+  3.869658485003538*^9}},
+ CellLabel->"In[15]:=",ExpressionUUID->"0ab6b7fb-1394-472c-b1c4-16ad6f744dd5"],
 
 Cell[BoxData[{
  RowBox[{
@@ -1203,224 +1261,209 @@ Cell[BoxData[{
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.8696585010510387`*^9}},ExpressionUUID->"be966cff-ad28-4f1e-a25a-\
-8a4e2c453732"],
+  3.8696585010510387`*^9}},
+ CellLabel->"In[19]:=",ExpressionUUID->"be966cff-ad28-4f1e-a25a-8a4e2c453732"],
 
 Cell[BoxData[
  RowBox[{
-  RowBox[{
-   RowBox[{"AbstractCategory", "[", 
-    RowBox[{"Association", "[", 
-     RowBox[{
-      RowBox[{"\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol_"}], 
-      ",", 
-      RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol_"}], ",", 
-      RowBox[{
-      "\"\<MorphismEquivalences\>\"", "\[Rule]", 
-       "morphismEquivalences_List"}], ",", 
-      RowBox[{
-      "\"\<ObjectEquivalences\>\"", "\[Rule]", "objectEquivalences_List"}], 
-      ",", 
-      RowBox[{"\"\<Quiver\>\"", "\[Rule]", 
-       RowBox[{
-        RowBox[{"(", "abstractQuiver_", ")"}], "[", 
-        RowBox[{"Association", "[", 
-         RowBox[{
-          RowBox[{
-          "\"\<ArrowEquivalences\>\"", "\[Rule]", "arrowEquivalences_List"}], 
-          ",", 
-          RowBox[{"\"\<Arrows\>\"", "\[Rule]", "arrows_Association"}], ",", 
-          RowBox[{
-          "\"\<ObjectEquivalences\>\"", "\[Rule]", 
-           "quiverObjectEquivalences_List"}], ",", 
-          RowBox[{"\"\<Objects\>\"", "\[Rule]", "objects_List"}]}], "]"}], 
-        "]"}]}]}], "]"}], "]"}], "[", "\"\<ReducedMorphismAssociation\>\"", 
-   "]"}], ":=", 
-  RowBox[{
-   RowBox[{"Module", "[", 
-    RowBox[{
-     RowBox[{"{", 
-      RowBox[{"morphismAssociation", ",", "compositions"}], "}"}], ",", 
-     RowBox[{
-      RowBox[{"morphismAssociation", "=", 
-       RowBox[{"Association", "[", 
-        RowBox[{"Select", "[", 
-         RowBox[{
-          RowBox[{"Normal", "[", 
-           RowBox[{"reduceArrowsFinal", "[", 
-            RowBox[{
-             RowBox[{"reduceArrowsInitial", "[", 
-              RowBox[{"arrows", ",", "arrowEquivalences"}], "]"}], ",", 
-             "quiverObjectEquivalences"}], "]"}], "]"}], ",", 
-          RowBox[{
-           RowBox[{
-            RowBox[{"First", "[", 
-             RowBox[{"Last", "[", "#1", "]"}], "]"}], "=!=", 
-            RowBox[{"Last", "[", 
-             RowBox[{"Last", "[", "#1", "]"}], "]"}]}], "&"}]}], "]"}], 
-        "]"}]}], ";", "\[IndentingNewLine]", 
-      RowBox[{"Do", "[", 
-       RowBox[{
-        RowBox[{
-         RowBox[{"compositions", "=", 
-          RowBox[{"Select", "[", 
-           RowBox[{
-            RowBox[{"Tuples", "[", 
-             RowBox[{
-              RowBox[{"Normal", "[", "morphismAssociation", "]"}], ",", "2"}],
-              "]"}], ",", 
-            RowBox[{
-             RowBox[{
-              RowBox[{"Last", "[", 
-               RowBox[{"Last", "[", 
-                RowBox[{"First", "[", "#1", "]"}], "]"}], "]"}], "===", 
-              RowBox[{"First", "[", 
-               RowBox[{"Last", "[", 
-                RowBox[{"Last", "[", "#1", "]"}], "]"}], "]"}]}], "&"}]}], 
-           "]"}]}], ";", "\[IndentingNewLine]", 
-         RowBox[{
-          RowBox[{"(", 
-           RowBox[{
-            RowBox[{"If", "[", 
-             RowBox[{
-              RowBox[{"!", 
-               RowBox[{"MemberQ", "[", 
-                RowBox[{
-                 RowBox[{
-                  RowBox[{"(", 
-                   RowBox[{
-                    RowBox[{
-                    RowBox[{"StringDelete", "[", 
-                    RowBox[{
-                    RowBox[{"ToString", "[", 
-                    RowBox[{"First", "[", "#1", "]"}], "]"}], ",", 
-                    RowBox[{"{", 
-                    RowBox[{"\"\<(\>\"", ",", "\"\<)\>\"", ",", "\"\< \>\""}],
-                     "}"}]}], "]"}], "\[Rule]", 
-                    RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
-                  RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
-                 RowBox[{
-                  RowBox[{"StringDelete", "[", 
-                   RowBox[{
-                    RowBox[{"ToString", "[", 
-                    RowBox[{"compositionSymbol", "[", 
-                    RowBox[{
-                    RowBox[{"First", "[", 
-                    RowBox[{"Last", "[", "#1", "]"}], "]"}], ",", 
-                    RowBox[{"First", "[", 
-                    RowBox[{"First", "[", "#1", "]"}], "]"}]}], "]"}], "]"}], 
-                    ",", 
-                    RowBox[{"{", 
-                    RowBox[{"\"\<(\>\"", ",", "\"\<)\>\"", ",", "\"\< \>\""}],
-                     "}"}]}], "]"}], "\[Rule]", 
-                  RowBox[{"DirectedEdge", "[", 
-                   RowBox[{
-                    RowBox[{"First", "[", 
-                    RowBox[{"Last", "[", 
-                    RowBox[{"First", "[", "#1", "]"}], "]"}], "]"}], ",", 
-                    RowBox[{"Last", "[", 
-                    RowBox[{"Last", "[", 
-                    RowBox[{"Last", "[", "#1", "]"}], "]"}], "]"}]}], 
-                   "]"}]}]}], "]"}]}], ",", 
-              RowBox[{"morphismAssociation", "=", 
-               RowBox[{"Association", "[", 
-                RowBox[{"Append", "[", 
-                 RowBox[{
-                  RowBox[{"Normal", "[", "morphismAssociation", "]"}], ",", 
-                  RowBox[{
-                   RowBox[{"compositionSymbol", "[", 
-                    RowBox[{
-                    RowBox[{"First", "[", 
-                    RowBox[{"Last", "[", "#1", "]"}], "]"}], ",", 
-                    RowBox[{"First", "[", 
-                    RowBox[{"First", "[", "#1", "]"}], "]"}]}], "]"}], 
-                   "\[Rule]", 
-                   RowBox[{"DirectedEdge", "[", 
-                    RowBox[{
-                    RowBox[{"First", "[", 
-                    RowBox[{"Last", "[", 
-                    RowBox[{"First", "[", "#1", "]"}], "]"}], "]"}], ",", 
-                    RowBox[{"Last", "[", 
-                    RowBox[{"Last", "[", 
-                    RowBox[{"Last", "[", "#1", "]"}], "]"}], "]"}]}], 
-                    "]"}]}]}], "]"}], "]"}]}]}], "]"}], "&"}], ")"}], "/@", 
-          "compositions"}]}], ",", 
-        RowBox[{"Length", "[", 
-         RowBox[{"reduceObjects", "[", 
-          RowBox[{"objects", ",", "quiverObjectEquivalences"}], "]"}], 
-         "]"}]}], "]"}], ";", 
-      RowBox[{"morphismAssociation", "=", 
-       RowBox[{"Association", "[", 
-        RowBox[{"Select", "[", 
-         RowBox[{
-          RowBox[{"Normal", "[", "morphismAssociation", "]"}], ",", 
-          RowBox[{
-           RowBox[{
-            RowBox[{"Length", "[", 
-             RowBox[{"Flatten", "[", 
-              RowBox[{"{", 
-               RowBox[{
-                RowBox[{"First", "[", "#1", "]"}], "/.", 
-                RowBox[{"compositionSymbol", "\[Rule]", "List"}]}], "}"}], 
-              "]"}], "]"}], "\[Equal]", 
-            RowBox[{"Length", "[", 
-             RowBox[{"DeleteDuplicates", "[", 
-              RowBox[{"Flatten", "[", 
-               RowBox[{"{", 
-                RowBox[{
-                 RowBox[{"First", "[", "#1", "]"}], "/.", 
-                 RowBox[{"compositionSymbol", "\[Rule]", "List"}]}], "}"}], 
-               "]"}], "]"}], "]"}]}], "&"}]}], "]"}], "]"}]}], ";", 
-      "\[IndentingNewLine]", 
-      RowBox[{
-       RowBox[{"(", 
-        RowBox[{
-         RowBox[{"If", "[", 
-          RowBox[{
-           RowBox[{"!", 
-            RowBox[{"MemberQ", "[", 
-             RowBox[{
-              RowBox[{"Normal", "[", "morphismAssociation", "]"}], ",", 
-              RowBox[{
-               RowBox[{"identitySymbol", "[", "#1", "]"}], "\[Rule]", 
-               RowBox[{"DirectedEdge", "[", 
-                RowBox[{"#1", ",", "#1"}], "]"}]}]}], "]"}]}], ",", 
-           RowBox[{"morphismAssociation", "=", 
-            RowBox[{"Association", "[", 
-             RowBox[{"Append", "[", 
-              RowBox[{
-               RowBox[{"Normal", "[", "morphismAssociation", "]"}], ",", 
-               RowBox[{
-                RowBox[{"identitySymbol", "[", "#1", "]"}], "\[Rule]", 
-                RowBox[{"DirectedEdge", "[", 
-                 RowBox[{"#1", ",", "#1"}], "]"}]}]}], "]"}], "]"}]}]}], 
-          "]"}], "&"}], ")"}], "/@", 
-       RowBox[{"reduceObjects", "[", 
-        RowBox[{"objects", ",", "quiverObjectEquivalences"}], "]"}]}], ";", 
-      "\[IndentingNewLine]", 
-      RowBox[{"Association", "[", 
-       RowBox[{
-        RowBox[{"(", 
-         RowBox[{
-          RowBox[{
-           RowBox[{"First", "[", "#1", "]"}], "\[Rule]", 
-           RowBox[{"DirectedEdge", "@@", 
-            RowBox[{"Last", "[", "#1", "]"}]}]}], "&"}], ")"}], "/@", 
-        RowBox[{"Normal", "[", 
-         RowBox[{"reduceArrowsFinal", "[", 
-          RowBox[{
-           RowBox[{"reduceArrowsInitial", "[", 
-            RowBox[{"morphismAssociation", ",", "morphismEquivalences"}], 
-            "]"}], ",", "objectEquivalences"}], "]"}], "]"}]}], "]"}]}]}], 
-    "]"}], "/;", 
+  RowBox[{"(*", " ", 
    RowBox[{
-    RowBox[{"SymbolName", "[", "abstractQuiver", "]"}], "===", 
-    "\"\<AbstractQuiver\>\""}]}]}]], "Input",
+    RowBox[{
+     RowBox[{"1.", " ", "f"}], "\[Equal]", 
+     RowBox[{
+     "g", " ", "can", " ", "only", " ", "be", " ", "included", " ", "in", " ",
+       "morphismEquivalences", " ", "or", " ", "arrowEquivalences", " ", "if",
+       " ", "the", " ", "domain", " ", "and"}]}], ",", " ", "respectively", 
+    ",", " ", 
+    RowBox[{
+    "codomain", " ", "of", " ", "f", " ", "and", " ", "g", " ", "are", " ", 
+     RowBox[{"equal", ".", " ", "\[IndentingNewLine]", " ", "2."}], " ", 
+     "Not", " ", "only", " ", "quiverObjectEquivalences"}], ",", " ", 
+    RowBox[{
+    "but", " ", "also", " ", "any", " ", "additional", " ", 
+     "objectEquivalences", " ", "are", " ", 
+     RowBox[{"used", ".", "\[IndentingNewLine]", " ", "3."}], " ", "Assumes", 
+     " ", "that", " ", "identity", " ", "symbols", " ", "only", " ", "appear",
+      " ", 
+     RowBox[{"over", "/", "around"}], " ", 
+     RowBox[{"(", 
+      RowBox[{
+       RowBox[{"i", ".", "e", ".", " ", "are"}], " ", "the", " ", "head", " ",
+        "of"}], ")"}], " ", "identity", " ", 
+     RowBox[{"morphisms", "."}]}]}], " ", "*)"}], "\[IndentingNewLine]", 
+  RowBox[{
+   RowBox[{
+    RowBox[{"AbstractCategory", "[", 
+     RowBox[{"Association", "[", 
+      RowBox[{
+       RowBox[{"\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol_"}],
+        ",", 
+       RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol_"}], ",", 
+       RowBox[{
+       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
+        "morphismEquivalences_List"}], ",", 
+       RowBox[{
+       "\"\<ObjectEquivalences\>\"", "\[Rule]", "objectEquivalences_List"}], 
+       ",", 
+       RowBox[{"\"\<Quiver\>\"", "\[Rule]", 
+        RowBox[{
+         RowBox[{"(", "abstractQuiver_", ")"}], "[", 
+         RowBox[{"Association", "[", 
+          RowBox[{
+           RowBox[{
+           "\"\<ArrowEquivalences\>\"", "\[Rule]", "arrowEquivalences_List"}],
+            ",", 
+           RowBox[{"\"\<Arrows\>\"", "\[Rule]", "arrows_Association"}], ",", 
+           RowBox[{
+           "\"\<ObjectEquivalences\>\"", "\[Rule]", 
+            "quiverObjectEquivalences_List"}], ",", 
+           RowBox[{"\"\<Objects\>\"", "\[Rule]", "objects_List"}]}], "]"}], 
+         "]"}]}]}], "]"}], "]"}], "[", "\"\<ReducedMorphismAssociation\>\"", 
+    "]"}], ":=", 
+   RowBox[{
+    RowBox[{"Module", "[", 
+     RowBox[{
+      RowBox[{"{", 
+       RowBox[{
+       "morphismAssociation", ",", "morphismsBetweenReducedObjects", ",", 
+        "rep", ",", "reducedMorphismMappings", ",", "identityMorphisms"}], 
+       "}"}], ",", "\[IndentingNewLine]", 
+      RowBox[{
+       RowBox[{"morphismAssociation", "=", 
+        RowBox[{
+         RowBox[{"AbstractCategory", "[", 
+          RowBox[{"Association", "[", 
+           RowBox[{
+            RowBox[{
+            "\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol"}], 
+            ",", 
+            RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol"}], 
+            ",", 
+            RowBox[{
+            "\"\<MorphismEquivalences\>\"", "\[Rule]", 
+             "morphismEquivalences"}], ",", 
+            RowBox[{
+            "\"\<ObjectEquivalences\>\"", "\[Rule]", "objectEquivalences"}], 
+            ",", 
+            RowBox[{"\"\<Quiver\>\"", "\[Rule]", 
+             RowBox[{
+              RowBox[{"(", "abstractQuiver", ")"}], "[", 
+              RowBox[{"Association", "[", 
+               RowBox[{
+                RowBox[{
+                "\"\<ArrowEquivalences\>\"", "\[Rule]", "arrowEquivalences"}],
+                 ",", 
+                RowBox[{"\"\<Arrows\>\"", "\[Rule]", "arrows"}], ",", 
+                RowBox[{
+                "\"\<ObjectEquivalences\>\"", "\[Rule]", 
+                 "quiverObjectEquivalences"}], ",", 
+                RowBox[{"\"\<Objects\>\"", "\[Rule]", "objects"}]}], "]"}], 
+              "]"}]}]}], "]"}], "]"}], "[", "\"\<MorphismAssociation\>\"", 
+         "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"rep", "=", 
+        RowBox[{"elementsToClassRepresentatives", "[", 
+         RowBox[{"objects", ",", 
+          RowBox[{"Union", "[", 
+           RowBox[{"quiverObjectEquivalences", ",", "objectEquivalences"}], 
+           "]"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"morphismsBetweenReducedObjects", "=", 
+        RowBox[{
+         RowBox[{"Normal", "[", "morphismAssociation", "]"}], "/.", "rep"}]}],
+        ";", "\[IndentingNewLine]", 
+       RowBox[{"identityMorphisms", "=", 
+        RowBox[{"Select", "[", 
+         RowBox[{
+          RowBox[{"Keys", "[", "morphismsBetweenReducedObjects", "]"}], ",", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Head", "[", "#", "]"}], "===", "identitySymbol"}], 
+           "&"}]}], "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"reducedMorphismMappings", "=", 
+        RowBox[{"elementsToClassRepresentatives", "[", 
+         RowBox[{
+          RowBox[{"Keys", "[", "morphismsBetweenReducedObjects", "]"}], ",", 
+          RowBox[{
+           RowBox[{"Union", "[", 
+            RowBox[{"arrowEquivalences", ",", "morphismEquivalences"}], "]"}],
+            "/.", "rep"}], ",", "\[IndentingNewLine]", 
+          RowBox[{
+           RowBox[{"If", "[", 
+            RowBox[{
+             RowBox[{
+              RowBox[{"Intersection", "[", 
+               RowBox[{"#", ",", "identityMorphisms"}], "]"}], "\[NotEqual]", 
+              RowBox[{"{", "}"}]}], ",", 
+             RowBox[{
+              RowBox[{"Intersection", "[", 
+               RowBox[{"#", ",", "identityMorphisms"}], "]"}], "[", 
+              RowBox[{"[", "1", "]"}], "]"}], ",", "\[IndentingNewLine]", 
+             RowBox[{"If", "[", 
+              RowBox[{
+               RowBox[{
+                RowBox[{"Length", "[", 
+                 RowBox[{"Intersection", "[", 
+                  RowBox[{"#", ",", 
+                   RowBox[{"Keys", "[", "arrows", "]"}]}], "]"}], "]"}], ">", 
+                "0"}], ",", 
+               RowBox[{
+                RowBox[{"Intersection", "[", 
+                 RowBox[{"#", ",", 
+                  RowBox[{"Keys", "[", "arrows", "]"}]}], "]"}], "[", 
+                RowBox[{"[", "1", "]"}], "]"}], ",", 
+               RowBox[{"#", "[", 
+                RowBox[{"[", "1", "]"}], "]"}]}], "]"}]}], "]"}], "&"}]}], 
+         "]"}]}], ";", "\[IndentingNewLine]", 
+       RowBox[{"(*", 
+        RowBox[{
+         RowBox[{"Print", "[", 
+          RowBox[{
+           RowBox[{
+            RowBox[{"Union", "[", 
+             RowBox[{"arrowEquivalences", ",", "morphismEquivalences"}], 
+             "]"}], "/.", "rep"}], ",", "morphismsBetweenReducedObjects", ",",
+            "reducedMorphismMappings"}], "]"}], ";"}], "*)"}], 
+       "\[IndentingNewLine]", 
+       RowBox[{"DeleteDuplicates", "[", 
+        RowBox[{
+         RowBox[{"Normal", "[", "morphismsBetweenReducedObjects", "]"}], "/.",
+          "reducedMorphismMappings"}], "]"}]}]}], "\[IndentingNewLine]", 
+     "]"}], "/;", 
+    RowBox[{
+     RowBox[{"SymbolName", "[", "abstractQuiver", "]"}], "===", 
+     "\"\<AbstractQuiver\>\""}]}]}]}]], "Input",
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
-  3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.86965850699564*^9}},ExpressionUUID->"27e607d8-22df-4f50-8e1f-\
-fb17b4c7f34f"],
+   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
+   3.86965850699564*^9}, 3.869660518177416*^9, 3.869660883710164*^9, {
+   3.869661058022204*^9, 3.8696611208596125`*^9}, {3.8696611681237507`*^9, 
+   3.8696613292074485`*^9}, {3.869661372712085*^9, 3.8696614237289743`*^9}, {
+   3.869661481491197*^9, 3.8696614979432735`*^9}, {3.8696618966839743`*^9, 
+   3.8696619425669265`*^9}, {3.8696619746313314`*^9, 
+   3.8696619992120113`*^9}, {3.8696620654589844`*^9, 3.869662070275713*^9}, {
+   3.869662148298448*^9, 3.869662473408304*^9}, {3.869662546742429*^9, 
+   3.8696625696901655`*^9}, {3.869662855346778*^9, 3.86966285779904*^9}, {
+   3.869663011445099*^9, 3.8696630717780066`*^9}, {3.8696631058008394`*^9, 
+   3.8696631075659475`*^9}, {3.8696632608572617`*^9, 3.86966328397657*^9}, {
+   3.8696633534103727`*^9, 3.8696634148443403`*^9}, {3.8696634706331515`*^9, 
+   3.869663472226405*^9}, {3.869663842010158*^9, 3.8696638532517085`*^9}, 
+   3.8696639446669717`*^9, {3.8696640793204904`*^9, 3.8696640868821325`*^9}, {
+   3.869664133456748*^9, 3.8696642036318045`*^9}, {3.8696642337100253`*^9, 
+   3.8696642918593583`*^9}, {3.8696644436211634`*^9, 3.869664615961034*^9}, {
+   3.869664646812314*^9, 3.869664676329508*^9}, {3.8696647196936827`*^9, 
+   3.8696647430526733`*^9}, {3.869664917406932*^9, 3.869664926665507*^9}, {
+   3.869664959471919*^9, 3.8696650579401107`*^9}, {3.869665138155035*^9, 
+   3.8696652242002487`*^9}, {3.8697340732690496`*^9, 
+   3.8697340743623924`*^9}, {3.869734108273116*^9, 3.8697341277994957`*^9}, {
+   3.8697342071904325`*^9, 3.8697343210833073`*^9}, {3.8697343710880704`*^9, 
+   3.869734399155766*^9}, {3.8697346535143943`*^9, 3.8697347292558403`*^9}, {
+   3.869734778258713*^9, 3.869734974510638*^9}, {3.8697350605997753`*^9, 
+   3.8697350958809667`*^9}, {3.869735126272195*^9, 3.869735335767025*^9}, {
+   3.869735390602247*^9, 3.869735393382518*^9}, {3.8697354266954136`*^9, 
+   3.8697354641557903`*^9}, {3.8697354968619385`*^9, 3.869735690797891*^9}, {
+   3.869735748601697*^9, 3.8697358097170334`*^9}, {3.8697358622903013`*^9, 
+   3.8697359163823233`*^9}, {3.8697367189721985`*^9, 3.8697367227716823`*^9}},
+ CellLabel->
+  "In[459]:=",ExpressionUUID->"7941ced0-5d2a-4091-ac97-8c48d5326baf"],
 
 Cell[BoxData[
  RowBox[{
@@ -1452,182 +1495,43 @@ Cell[BoxData[
           RowBox[{"\"\<Objects\>\"", "\[Rule]", "objects_List"}]}], "]"}], 
         "]"}]}]}], "]"}], "]"}], "[", "\"\<ReducedMorphismNames\>\"", "]"}], ":=", 
   RowBox[{
-   RowBox[{"Module", "[", 
+   RowBox[{"Keys", "[", 
     RowBox[{
-     RowBox[{"{", 
-      RowBox[{"morphismAssociation", ",", "compositions"}], "}"}], ",", 
-     RowBox[{
-      RowBox[{"morphismAssociation", "=", 
-       RowBox[{"Association", "[", 
-        RowBox[{"Select", "[", 
-         RowBox[{
-          RowBox[{"Normal", "[", 
-           RowBox[{"reduceArrowsFinal", "[", 
-            RowBox[{
-             RowBox[{"reduceArrowsInitial", "[", 
-              RowBox[{"arrows", ",", "arrowEquivalences"}], "]"}], ",", 
-             "quiverObjectEquivalences"}], "]"}], "]"}], ",", 
-          RowBox[{
-           RowBox[{
-            RowBox[{"First", "[", 
-             RowBox[{"Last", "[", "#1", "]"}], "]"}], "=!=", 
-            RowBox[{"Last", "[", 
-             RowBox[{"Last", "[", "#1", "]"}], "]"}]}], "&"}]}], "]"}], 
-        "]"}]}], ";", "\[IndentingNewLine]", 
-      RowBox[{"Do", "[", 
+     RowBox[{"AbstractCategory", "[", 
+      RowBox[{"Association", "[", 
        RowBox[{
+        RowBox[{"\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol"}],
+         ",", 
+        RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol"}], ",", 
         RowBox[{
-         RowBox[{"compositions", "=", 
-          RowBox[{"Select", "[", 
+        "\"\<MorphismEquivalences\>\"", "\[Rule]", "morphismEquivalences"}], 
+        ",", 
+        RowBox[{
+        "\"\<ObjectEquivalences\>\"", "\[Rule]", "objectEquivalences"}], ",", 
+        RowBox[{"\"\<Quiver\>\"", "\[Rule]", 
+         RowBox[{
+          RowBox[{"(", "abstractQuiver", ")"}], "[", 
+          RowBox[{"Association", "[", 
            RowBox[{
-            RowBox[{"Tuples", "[", 
-             RowBox[{
-              RowBox[{"Normal", "[", "morphismAssociation", "]"}], ",", "2"}],
-              "]"}], ",", 
             RowBox[{
-             RowBox[{
-              RowBox[{"Last", "[", 
-               RowBox[{"Last", "[", 
-                RowBox[{"First", "[", "#1", "]"}], "]"}], "]"}], "===", 
-              RowBox[{"First", "[", 
-               RowBox[{"Last", "[", 
-                RowBox[{"Last", "[", "#1", "]"}], "]"}], "]"}]}], "&"}]}], 
-           "]"}]}], ";", "\[IndentingNewLine]", 
-         RowBox[{
-          RowBox[{"(", 
-           RowBox[{
-            RowBox[{"If", "[", 
-             RowBox[{
-              RowBox[{"!", 
-               RowBox[{"MemberQ", "[", 
-                RowBox[{
-                 RowBox[{
-                  RowBox[{"(", 
-                   RowBox[{
-                    RowBox[{
-                    RowBox[{"StringDelete", "[", 
-                    RowBox[{
-                    RowBox[{"ToString", "[", 
-                    RowBox[{"First", "[", "#1", "]"}], "]"}], ",", 
-                    RowBox[{"{", 
-                    RowBox[{"\"\<(\>\"", ",", "\"\<)\>\"", ",", "\"\< \>\""}],
-                     "}"}]}], "]"}], "\[Rule]", 
-                    RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
-                  RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
-                 RowBox[{
-                  RowBox[{"StringDelete", "[", 
-                   RowBox[{
-                    RowBox[{"ToString", "[", 
-                    RowBox[{"compositionSymbol", "[", 
-                    RowBox[{
-                    RowBox[{"First", "[", 
-                    RowBox[{"Last", "[", "#1", "]"}], "]"}], ",", 
-                    RowBox[{"First", "[", 
-                    RowBox[{"First", "[", "#1", "]"}], "]"}]}], "]"}], "]"}], 
-                    ",", 
-                    RowBox[{"{", 
-                    RowBox[{"\"\<(\>\"", ",", "\"\<)\>\"", ",", "\"\< \>\""}],
-                     "}"}]}], "]"}], "\[Rule]", 
-                  RowBox[{"DirectedEdge", "[", 
-                   RowBox[{
-                    RowBox[{"First", "[", 
-                    RowBox[{"Last", "[", 
-                    RowBox[{"First", "[", "#1", "]"}], "]"}], "]"}], ",", 
-                    RowBox[{"Last", "[", 
-                    RowBox[{"Last", "[", 
-                    RowBox[{"Last", "[", "#1", "]"}], "]"}], "]"}]}], 
-                   "]"}]}]}], "]"}]}], ",", 
-              RowBox[{"morphismAssociation", "=", 
-               RowBox[{"Association", "[", 
-                RowBox[{"Append", "[", 
-                 RowBox[{
-                  RowBox[{"Normal", "[", "morphismAssociation", "]"}], ",", 
-                  RowBox[{
-                   RowBox[{"compositionSymbol", "[", 
-                    RowBox[{
-                    RowBox[{"First", "[", 
-                    RowBox[{"Last", "[", "#1", "]"}], "]"}], ",", 
-                    RowBox[{"First", "[", 
-                    RowBox[{"First", "[", "#1", "]"}], "]"}]}], "]"}], 
-                   "\[Rule]", 
-                   RowBox[{"DirectedEdge", "[", 
-                    RowBox[{
-                    RowBox[{"First", "[", 
-                    RowBox[{"Last", "[", 
-                    RowBox[{"First", "[", "#1", "]"}], "]"}], "]"}], ",", 
-                    RowBox[{"Last", "[", 
-                    RowBox[{"Last", "[", 
-                    RowBox[{"Last", "[", "#1", "]"}], "]"}], "]"}]}], 
-                    "]"}]}]}], "]"}], "]"}]}]}], "]"}], "&"}], ")"}], "/@", 
-          "compositions"}]}], ",", 
-        RowBox[{"Length", "[", 
-         RowBox[{"reduceObjects", "[", 
-          RowBox[{"objects", ",", "quiverObjectEquivalences"}], "]"}], 
-         "]"}]}], "]"}], ";", 
-      RowBox[{"morphismAssociation", "=", 
-       RowBox[{"Association", "[", 
-        RowBox[{"Select", "[", 
-         RowBox[{
-          RowBox[{"Normal", "[", "morphismAssociation", "]"}], ",", 
-          RowBox[{
-           RowBox[{
-            RowBox[{"Length", "[", 
-             RowBox[{"Flatten", "[", 
-              RowBox[{"{", 
-               RowBox[{
-                RowBox[{"First", "[", "#1", "]"}], "/.", 
-                RowBox[{"compositionSymbol", "\[Rule]", "List"}]}], "}"}], 
-              "]"}], "]"}], "\[Equal]", 
-            RowBox[{"Length", "[", 
-             RowBox[{"DeleteDuplicates", "[", 
-              RowBox[{"Flatten", "[", 
-               RowBox[{"{", 
-                RowBox[{
-                 RowBox[{"First", "[", "#1", "]"}], "/.", 
-                 RowBox[{"compositionSymbol", "\[Rule]", "List"}]}], "}"}], 
-               "]"}], "]"}], "]"}]}], "&"}]}], "]"}], "]"}]}], ";", 
-      "\[IndentingNewLine]", 
-      RowBox[{
-       RowBox[{"(", 
-        RowBox[{
-         RowBox[{"If", "[", 
-          RowBox[{
-           RowBox[{"!", 
-            RowBox[{"MemberQ", "[", 
-             RowBox[{
-              RowBox[{"Normal", "[", "morphismAssociation", "]"}], ",", 
-              RowBox[{
-               RowBox[{"identitySymbol", "[", "#1", "]"}], "\[Rule]", 
-               RowBox[{"DirectedEdge", "[", 
-                RowBox[{"#1", ",", "#1"}], "]"}]}]}], "]"}]}], ",", 
-           RowBox[{"morphismAssociation", "=", 
-            RowBox[{"Association", "[", 
-             RowBox[{"Append", "[", 
-              RowBox[{
-               RowBox[{"Normal", "[", "morphismAssociation", "]"}], ",", 
-               RowBox[{
-                RowBox[{"identitySymbol", "[", "#1", "]"}], "\[Rule]", 
-                RowBox[{"DirectedEdge", "[", 
-                 RowBox[{"#1", ",", "#1"}], "]"}]}]}], "]"}], "]"}]}]}], 
-          "]"}], "&"}], ")"}], "/@", 
-       RowBox[{"reduceObjects", "[", 
-        RowBox[{"objects", ",", "quiverObjectEquivalences"}], "]"}]}], ";", 
-      "\[IndentingNewLine]", 
-      RowBox[{"First", "/@", 
-       RowBox[{"Normal", "[", 
-        RowBox[{"reduceArrowsFinal", "[", 
-         RowBox[{
-          RowBox[{"reduceArrowsInitial", "[", 
-           RowBox[{"morphismAssociation", ",", "morphismEquivalences"}], 
-           "]"}], ",", "objectEquivalences"}], "]"}], "]"}]}]}]}], "]"}], "/;", 
+            "\"\<ArrowEquivalences\>\"", "\[Rule]", "arrowEquivalences"}], 
+            ",", 
+            RowBox[{"\"\<Arrows\>\"", "\[Rule]", "arrows"}], ",", 
+            RowBox[{
+            "\"\<ObjectEquivalences\>\"", "\[Rule]", 
+             "quiverObjectEquivalences"}], ",", 
+            RowBox[{"\"\<Objects\>\"", "\[Rule]", "objects"}]}], "]"}], 
+          "]"}]}]}], "]"}], "]"}], "[", "\"\<ReducedMorphismAssociation\>\"", 
+     "]"}], "]"}], "/;", 
    RowBox[{
     RowBox[{"SymbolName", "[", "abstractQuiver", "]"}], "===", 
     "\"\<AbstractQuiver\>\""}]}]}]], "Input",
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.869658531824397*^9}},ExpressionUUID->"5ff6d2bd-2222-4328-87f0-\
-2d094b4f909a"],
+  3.869658531824397*^9}, {3.8697369855843325`*^9, 3.869737038506383*^9}},
+ CellLabel->
+  "In[479]:=",ExpressionUUID->"5ff6d2bd-2222-4328-87f0-2d094b4f909a"],
 
 Cell[BoxData[
  RowBox[{
@@ -1659,186 +1563,43 @@ Cell[BoxData[
           RowBox[{"\"\<Objects\>\"", "\[Rule]", "objects_List"}]}], "]"}], 
         "]"}]}]}], "]"}], "]"}], "[", "\"\<ReducedMorphismEdges\>\"", "]"}], ":=", 
   RowBox[{
-   RowBox[{"Module", "[", 
+   RowBox[{"Values", "[", 
     RowBox[{
-     RowBox[{"{", 
-      RowBox[{"morphismAssociation", ",", "compositions"}], "}"}], ",", 
-     RowBox[{
-      RowBox[{"morphismAssociation", "=", 
-       RowBox[{"Association", "[", 
-        RowBox[{"Select", "[", 
-         RowBox[{
-          RowBox[{"Normal", "[", 
-           RowBox[{"reduceArrowsFinal", "[", 
-            RowBox[{
-             RowBox[{"reduceArrowsInitial", "[", 
-              RowBox[{"arrows", ",", "arrowEquivalences"}], "]"}], ",", 
-             "quiverObjectEquivalences"}], "]"}], "]"}], ",", 
-          RowBox[{
-           RowBox[{
-            RowBox[{"First", "[", 
-             RowBox[{"Last", "[", "#1", "]"}], "]"}], "=!=", 
-            RowBox[{"Last", "[", 
-             RowBox[{"Last", "[", "#1", "]"}], "]"}]}], "&"}]}], "]"}], 
-        "]"}]}], ";", "\[IndentingNewLine]", 
-      RowBox[{"Do", "[", 
+     RowBox[{"AbstractCategory", "[", 
+      RowBox[{"Association", "[", 
        RowBox[{
+        RowBox[{"\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol"}],
+         ",", 
+        RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol"}], ",", 
         RowBox[{
-         RowBox[{"compositions", "=", 
-          RowBox[{"Select", "[", 
+        "\"\<MorphismEquivalences\>\"", "\[Rule]", "morphismEquivalences"}], 
+        ",", 
+        RowBox[{
+        "\"\<ObjectEquivalences\>\"", "\[Rule]", "objectEquivalences"}], ",", 
+        RowBox[{"\"\<Quiver\>\"", "\[Rule]", 
+         RowBox[{
+          RowBox[{"(", "abstractQuiver", ")"}], "[", 
+          RowBox[{"Association", "[", 
            RowBox[{
-            RowBox[{"Tuples", "[", 
-             RowBox[{
-              RowBox[{"Normal", "[", "morphismAssociation", "]"}], ",", "2"}],
-              "]"}], ",", 
             RowBox[{
-             RowBox[{
-              RowBox[{"Last", "[", 
-               RowBox[{"Last", "[", 
-                RowBox[{"First", "[", "#1", "]"}], "]"}], "]"}], "===", 
-              RowBox[{"First", "[", 
-               RowBox[{"Last", "[", 
-                RowBox[{"Last", "[", "#1", "]"}], "]"}], "]"}]}], "&"}]}], 
-           "]"}]}], ";", "\[IndentingNewLine]", 
-         RowBox[{
-          RowBox[{"(", 
-           RowBox[{
-            RowBox[{"If", "[", 
-             RowBox[{
-              RowBox[{"!", 
-               RowBox[{"MemberQ", "[", 
-                RowBox[{
-                 RowBox[{
-                  RowBox[{"(", 
-                   RowBox[{
-                    RowBox[{
-                    RowBox[{"StringDelete", "[", 
-                    RowBox[{
-                    RowBox[{"ToString", "[", 
-                    RowBox[{"First", "[", "#1", "]"}], "]"}], ",", 
-                    RowBox[{"{", 
-                    RowBox[{"\"\<(\>\"", ",", "\"\<)\>\"", ",", "\"\< \>\""}],
-                     "}"}]}], "]"}], "\[Rule]", 
-                    RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
-                  RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
-                 RowBox[{
-                  RowBox[{"StringDelete", "[", 
-                   RowBox[{
-                    RowBox[{"ToString", "[", 
-                    RowBox[{"compositionSymbol", "[", 
-                    RowBox[{
-                    RowBox[{"First", "[", 
-                    RowBox[{"Last", "[", "#1", "]"}], "]"}], ",", 
-                    RowBox[{"First", "[", 
-                    RowBox[{"First", "[", "#1", "]"}], "]"}]}], "]"}], "]"}], 
-                    ",", 
-                    RowBox[{"{", 
-                    RowBox[{"\"\<(\>\"", ",", "\"\<)\>\"", ",", "\"\< \>\""}],
-                     "}"}]}], "]"}], "\[Rule]", 
-                  RowBox[{"DirectedEdge", "[", 
-                   RowBox[{
-                    RowBox[{"First", "[", 
-                    RowBox[{"Last", "[", 
-                    RowBox[{"First", "[", "#1", "]"}], "]"}], "]"}], ",", 
-                    RowBox[{"Last", "[", 
-                    RowBox[{"Last", "[", 
-                    RowBox[{"Last", "[", "#1", "]"}], "]"}], "]"}]}], 
-                   "]"}]}]}], "]"}]}], ",", 
-              RowBox[{"morphismAssociation", "=", 
-               RowBox[{"Association", "[", 
-                RowBox[{"Append", "[", 
-                 RowBox[{
-                  RowBox[{"Normal", "[", "morphismAssociation", "]"}], ",", 
-                  RowBox[{
-                   RowBox[{"compositionSymbol", "[", 
-                    RowBox[{
-                    RowBox[{"First", "[", 
-                    RowBox[{"Last", "[", "#1", "]"}], "]"}], ",", 
-                    RowBox[{"First", "[", 
-                    RowBox[{"First", "[", "#1", "]"}], "]"}]}], "]"}], 
-                   "\[Rule]", 
-                   RowBox[{"DirectedEdge", "[", 
-                    RowBox[{
-                    RowBox[{"First", "[", 
-                    RowBox[{"Last", "[", 
-                    RowBox[{"First", "[", "#1", "]"}], "]"}], "]"}], ",", 
-                    RowBox[{"Last", "[", 
-                    RowBox[{"Last", "[", 
-                    RowBox[{"Last", "[", "#1", "]"}], "]"}], "]"}]}], 
-                    "]"}]}]}], "]"}], "]"}]}]}], "]"}], "&"}], ")"}], "/@", 
-          "compositions"}]}], ",", 
-        RowBox[{"Length", "[", 
-         RowBox[{"reduceObjects", "[", 
-          RowBox[{"objects", ",", "quiverObjectEquivalences"}], "]"}], 
-         "]"}]}], "]"}], ";", 
-      RowBox[{"morphismAssociation", "=", 
-       RowBox[{"Association", "[", 
-        RowBox[{"Select", "[", 
-         RowBox[{
-          RowBox[{"Normal", "[", "morphismAssociation", "]"}], ",", 
-          RowBox[{
-           RowBox[{
-            RowBox[{"Length", "[", 
-             RowBox[{"Flatten", "[", 
-              RowBox[{"{", 
-               RowBox[{
-                RowBox[{"First", "[", "#1", "]"}], "/.", 
-                RowBox[{"compositionSymbol", "\[Rule]", "List"}]}], "}"}], 
-              "]"}], "]"}], "\[Equal]", 
-            RowBox[{"Length", "[", 
-             RowBox[{"DeleteDuplicates", "[", 
-              RowBox[{"Flatten", "[", 
-               RowBox[{"{", 
-                RowBox[{
-                 RowBox[{"First", "[", "#1", "]"}], "/.", 
-                 RowBox[{"compositionSymbol", "\[Rule]", "List"}]}], "}"}], 
-               "]"}], "]"}], "]"}]}], "&"}]}], "]"}], "]"}]}], ";", 
-      "\[IndentingNewLine]", 
-      RowBox[{
-       RowBox[{"(", 
-        RowBox[{
-         RowBox[{"If", "[", 
-          RowBox[{
-           RowBox[{"!", 
-            RowBox[{"MemberQ", "[", 
-             RowBox[{
-              RowBox[{"Normal", "[", "morphismAssociation", "]"}], ",", 
-              RowBox[{
-               RowBox[{"identitySymbol", "[", "#1", "]"}], "\[Rule]", 
-               RowBox[{"DirectedEdge", "[", 
-                RowBox[{"#1", ",", "#1"}], "]"}]}]}], "]"}]}], ",", 
-           RowBox[{"morphismAssociation", "=", 
-            RowBox[{"Association", "[", 
-             RowBox[{"Append", "[", 
-              RowBox[{
-               RowBox[{"Normal", "[", "morphismAssociation", "]"}], ",", 
-               RowBox[{
-                RowBox[{"identitySymbol", "[", "#1", "]"}], "\[Rule]", 
-                RowBox[{"DirectedEdge", "[", 
-                 RowBox[{"#1", ",", "#1"}], "]"}]}]}], "]"}], "]"}]}]}], 
-          "]"}], "&"}], ")"}], "/@", 
-       RowBox[{"reduceObjects", "[", 
-        RowBox[{"objects", ",", "quiverObjectEquivalences"}], "]"}]}], ";", 
-      "\[IndentingNewLine]", 
-      RowBox[{
-       RowBox[{"(", 
-        RowBox[{
-         RowBox[{"DirectedEdge", "@@", 
-          RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
-       RowBox[{"Normal", "[", 
-        RowBox[{"reduceArrowsFinal", "[", 
-         RowBox[{
-          RowBox[{"reduceArrowsInitial", "[", 
-           RowBox[{"morphismAssociation", ",", "morphismEquivalences"}], 
-           "]"}], ",", "objectEquivalences"}], "]"}], "]"}]}]}]}], "]"}], "/;", 
+            "\"\<ArrowEquivalences\>\"", "\[Rule]", "arrowEquivalences"}], 
+            ",", 
+            RowBox[{"\"\<Arrows\>\"", "\[Rule]", "arrows"}], ",", 
+            RowBox[{
+            "\"\<ObjectEquivalences\>\"", "\[Rule]", 
+             "quiverObjectEquivalences"}], ",", 
+            RowBox[{"\"\<Objects\>\"", "\[Rule]", "objects"}]}], "]"}], 
+          "]"}]}]}], "]"}], "]"}], "[", "\"\<ReducedMorphismAssociation\>\"", 
+     "]"}], "]"}], "/;", 
    RowBox[{
     RowBox[{"SymbolName", "[", "abstractQuiver", "]"}], "===", 
     "\"\<AbstractQuiver\>\""}]}]}]], "Input",
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.8696585447865896`*^9}},ExpressionUUID->"e76f80ca-3b53-429f-869c-\
-3e44ee8b7e88"],
+  3.8696585447865896`*^9}, {3.869737051954054*^9, 3.869737056334353*^9}},
+ CellLabel->
+  "In[478]:=",ExpressionUUID->"e76f80ca-3b53-429f-869c-3e44ee8b7e88"],
 
 Cell[BoxData[
  RowBox[{
@@ -1870,183 +1631,43 @@ Cell[BoxData[
           RowBox[{"\"\<Objects\>\"", "\[Rule]", "objects_List"}]}], "]"}], 
         "]"}]}]}], "]"}], "]"}], "[", "\"\<ReducedMorphismCount\>\"", "]"}], ":=", 
   RowBox[{
-   RowBox[{"Module", "[", 
+   RowBox[{"Length", "[", 
     RowBox[{
-     RowBox[{"{", 
-      RowBox[{"morphismAssociation", ",", "compositions"}], "}"}], ",", 
-     RowBox[{
-      RowBox[{"morphismAssociation", "=", 
-       RowBox[{"Association", "[", 
-        RowBox[{"Select", "[", 
-         RowBox[{
-          RowBox[{"Normal", "[", 
-           RowBox[{"reduceArrowsFinal", "[", 
-            RowBox[{
-             RowBox[{"reduceArrowsInitial", "[", 
-              RowBox[{"arrows", ",", "arrowEquivalences"}], "]"}], ",", 
-             "quiverObjectEquivalences"}], "]"}], "]"}], ",", 
-          RowBox[{
-           RowBox[{
-            RowBox[{"First", "[", 
-             RowBox[{"Last", "[", "#1", "]"}], "]"}], "=!=", 
-            RowBox[{"Last", "[", 
-             RowBox[{"Last", "[", "#1", "]"}], "]"}]}], "&"}]}], "]"}], 
-        "]"}]}], ";", "\[IndentingNewLine]", 
-      RowBox[{"Do", "[", 
+     RowBox[{"AbstractCategory", "[", 
+      RowBox[{"Association", "[", 
        RowBox[{
+        RowBox[{"\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol"}],
+         ",", 
+        RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol"}], ",", 
         RowBox[{
-         RowBox[{"compositions", "=", 
-          RowBox[{"Select", "[", 
+        "\"\<MorphismEquivalences\>\"", "\[Rule]", "morphismEquivalences"}], 
+        ",", 
+        RowBox[{
+        "\"\<ObjectEquivalences\>\"", "\[Rule]", "objectEquivalences"}], ",", 
+        RowBox[{"\"\<Quiver\>\"", "\[Rule]", 
+         RowBox[{
+          RowBox[{"(", "abstractQuiver", ")"}], "[", 
+          RowBox[{"Association", "[", 
            RowBox[{
-            RowBox[{"Tuples", "[", 
-             RowBox[{
-              RowBox[{"Normal", "[", "morphismAssociation", "]"}], ",", "2"}],
-              "]"}], ",", 
             RowBox[{
-             RowBox[{
-              RowBox[{"Last", "[", 
-               RowBox[{"Last", "[", 
-                RowBox[{"First", "[", "#1", "]"}], "]"}], "]"}], "===", 
-              RowBox[{"First", "[", 
-               RowBox[{"Last", "[", 
-                RowBox[{"Last", "[", "#1", "]"}], "]"}], "]"}]}], "&"}]}], 
-           "]"}]}], ";", "\[IndentingNewLine]", 
-         RowBox[{
-          RowBox[{"(", 
-           RowBox[{
-            RowBox[{"If", "[", 
-             RowBox[{
-              RowBox[{"!", 
-               RowBox[{"MemberQ", "[", 
-                RowBox[{
-                 RowBox[{
-                  RowBox[{"(", 
-                   RowBox[{
-                    RowBox[{
-                    RowBox[{"StringDelete", "[", 
-                    RowBox[{
-                    RowBox[{"ToString", "[", 
-                    RowBox[{"First", "[", "#1", "]"}], "]"}], ",", 
-                    RowBox[{"{", 
-                    RowBox[{"\"\<(\>\"", ",", "\"\<)\>\"", ",", "\"\< \>\""}],
-                     "}"}]}], "]"}], "\[Rule]", 
-                    RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
-                  RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
-                 RowBox[{
-                  RowBox[{"StringDelete", "[", 
-                   RowBox[{
-                    RowBox[{"ToString", "[", 
-                    RowBox[{"compositionSymbol", "[", 
-                    RowBox[{
-                    RowBox[{"First", "[", 
-                    RowBox[{"Last", "[", "#1", "]"}], "]"}], ",", 
-                    RowBox[{"First", "[", 
-                    RowBox[{"First", "[", "#1", "]"}], "]"}]}], "]"}], "]"}], 
-                    ",", 
-                    RowBox[{"{", 
-                    RowBox[{"\"\<(\>\"", ",", "\"\<)\>\"", ",", "\"\< \>\""}],
-                     "}"}]}], "]"}], "\[Rule]", 
-                  RowBox[{"DirectedEdge", "[", 
-                   RowBox[{
-                    RowBox[{"First", "[", 
-                    RowBox[{"Last", "[", 
-                    RowBox[{"First", "[", "#1", "]"}], "]"}], "]"}], ",", 
-                    RowBox[{"Last", "[", 
-                    RowBox[{"Last", "[", 
-                    RowBox[{"Last", "[", "#1", "]"}], "]"}], "]"}]}], 
-                   "]"}]}]}], "]"}]}], ",", 
-              RowBox[{"morphismAssociation", "=", 
-               RowBox[{"Association", "[", 
-                RowBox[{"Append", "[", 
-                 RowBox[{
-                  RowBox[{"Normal", "[", "morphismAssociation", "]"}], ",", 
-                  RowBox[{
-                   RowBox[{"compositionSymbol", "[", 
-                    RowBox[{
-                    RowBox[{"First", "[", 
-                    RowBox[{"Last", "[", "#1", "]"}], "]"}], ",", 
-                    RowBox[{"First", "[", 
-                    RowBox[{"First", "[", "#1", "]"}], "]"}]}], "]"}], 
-                   "\[Rule]", 
-                   RowBox[{"DirectedEdge", "[", 
-                    RowBox[{
-                    RowBox[{"First", "[", 
-                    RowBox[{"Last", "[", 
-                    RowBox[{"First", "[", "#1", "]"}], "]"}], "]"}], ",", 
-                    RowBox[{"Last", "[", 
-                    RowBox[{"Last", "[", 
-                    RowBox[{"Last", "[", "#1", "]"}], "]"}], "]"}]}], 
-                    "]"}]}]}], "]"}], "]"}]}]}], "]"}], "&"}], ")"}], "/@", 
-          "compositions"}]}], ",", 
-        RowBox[{"Length", "[", 
-         RowBox[{"reduceObjects", "[", 
-          RowBox[{"objects", ",", "quiverObjectEquivalences"}], "]"}], 
-         "]"}]}], "]"}], ";", 
-      RowBox[{"morphismAssociation", "=", 
-       RowBox[{"Association", "[", 
-        RowBox[{"Select", "[", 
-         RowBox[{
-          RowBox[{"Normal", "[", "morphismAssociation", "]"}], ",", 
-          RowBox[{
-           RowBox[{
-            RowBox[{"Length", "[", 
-             RowBox[{"Flatten", "[", 
-              RowBox[{"{", 
-               RowBox[{
-                RowBox[{"First", "[", "#1", "]"}], "/.", 
-                RowBox[{"compositionSymbol", "\[Rule]", "List"}]}], "}"}], 
-              "]"}], "]"}], "\[Equal]", 
-            RowBox[{"Length", "[", 
-             RowBox[{"DeleteDuplicates", "[", 
-              RowBox[{"Flatten", "[", 
-               RowBox[{"{", 
-                RowBox[{
-                 RowBox[{"First", "[", "#1", "]"}], "/.", 
-                 RowBox[{"compositionSymbol", "\[Rule]", "List"}]}], "}"}], 
-               "]"}], "]"}], "]"}]}], "&"}]}], "]"}], "]"}]}], ";", 
-      "\[IndentingNewLine]", 
-      RowBox[{
-       RowBox[{"(", 
-        RowBox[{
-         RowBox[{"If", "[", 
-          RowBox[{
-           RowBox[{"!", 
-            RowBox[{"MemberQ", "[", 
-             RowBox[{
-              RowBox[{"Normal", "[", "morphismAssociation", "]"}], ",", 
-              RowBox[{
-               RowBox[{"identitySymbol", "[", "#1", "]"}], "\[Rule]", 
-               RowBox[{"DirectedEdge", "[", 
-                RowBox[{"#1", ",", "#1"}], "]"}]}]}], "]"}]}], ",", 
-           RowBox[{"morphismAssociation", "=", 
-            RowBox[{"Association", "[", 
-             RowBox[{"Append", "[", 
-              RowBox[{
-               RowBox[{"Normal", "[", "morphismAssociation", "]"}], ",", 
-               RowBox[{
-                RowBox[{"identitySymbol", "[", "#1", "]"}], "\[Rule]", 
-                RowBox[{"DirectedEdge", "[", 
-                 RowBox[{"#1", ",", "#1"}], "]"}]}]}], "]"}], "]"}]}]}], 
-          "]"}], "&"}], ")"}], "/@", 
-       RowBox[{"reduceObjects", "[", 
-        RowBox[{"objects", ",", "quiverObjectEquivalences"}], "]"}]}], ";", 
-      "\[IndentingNewLine]", 
-      RowBox[{"Length", "[", 
-       RowBox[{"Normal", "[", 
-        RowBox[{"reduceArrowsFinal", "[", 
-         RowBox[{
-          RowBox[{"reduceArrowsInitial", "[", 
-           RowBox[{"morphismAssociation", ",", "morphismEquivalences"}], 
-           "]"}], ",", "objectEquivalences"}], "]"}], "]"}], "]"}]}]}], "]"}],
-    "/;", 
+            "\"\<ArrowEquivalences\>\"", "\[Rule]", "arrowEquivalences"}], 
+            ",", 
+            RowBox[{"\"\<Arrows\>\"", "\[Rule]", "arrows"}], ",", 
+            RowBox[{
+            "\"\<ObjectEquivalences\>\"", "\[Rule]", 
+             "quiverObjectEquivalences"}], ",", 
+            RowBox[{"\"\<Objects\>\"", "\[Rule]", "objects"}]}], "]"}], 
+          "]"}]}]}], "]"}], "]"}], "[", "\"\<ReducedMorphismAssociation\>\"", 
+     "]"}], "]"}], "/;", 
    RowBox[{
     RowBox[{"SymbolName", "[", "abstractQuiver", "]"}], "===", 
     "\"\<AbstractQuiver\>\""}]}]}]], "Input",
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.8696585492556844`*^9}},ExpressionUUID->"c53853cf-fc32-48bf-894c-\
-eeb8580a494b"],
+  3.8696585492556844`*^9}, {3.86973714682242*^9, 3.8697371672967243`*^9}},
+ CellLabel->
+  "In[492]:=",ExpressionUUID->"c53853cf-fc32-48bf-894c-eeb8580a494b"],
 
 Cell[BoxData[
  RowBox[{
@@ -2238,8 +1859,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.8696585534260616`*^9}},ExpressionUUID->"aef927fb-7f1e-4cbf-a81e-\
-717c1f30fbfa"],
+  3.8696585534260616`*^9}},
+ CellLabel->"In[26]:=",ExpressionUUID->"aef927fb-7f1e-4cbf-a81e-717c1f30fbfa"],
 
 Cell[BoxData[
  RowBox[{
@@ -2423,8 +2044,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.869658946480502*^9}},ExpressionUUID->"0d772db2-faa8-4640-bd7a-\
-c2eed01187ff"],
+  3.869658946480502*^9}},
+ CellLabel->"In[27]:=",ExpressionUUID->"0d772db2-faa8-4640-bd7a-c2eed01187ff"],
 
 Cell[BoxData[
  RowBox[{
@@ -2612,8 +2233,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.869658946480502*^9}},ExpressionUUID->"a7370945-53f1-4692-8fb0-\
-d0f2517b5123"],
+  3.869658946480502*^9}},
+ CellLabel->"In[28]:=",ExpressionUUID->"a7370945-53f1-4692-8fb0-d0f2517b5123"],
 
 Cell[BoxData[
  RowBox[{
@@ -2795,8 +2416,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.8696589439284163`*^9}},ExpressionUUID->"a5d0783c-f3ce-4b41-9fd3-\
-b130e6f883d2"],
+  3.8696589439284163`*^9}},
+ CellLabel->"In[29]:=",ExpressionUUID->"a5d0783c-f3ce-4b41-9fd3-b130e6f883d2"],
 
 Cell[BoxData[
  RowBox[{
@@ -3000,8 +2621,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.8696589407842445`*^9}},ExpressionUUID->"c6983cd0-d3a5-447a-9c99-\
-01d6f75e7ee1"],
+  3.8696589407842445`*^9}},
+ CellLabel->"In[30]:=",ExpressionUUID->"c6983cd0-d3a5-447a-9c99-01d6f75e7ee1"],
 
 Cell[BoxData[
  RowBox[{
@@ -3198,8 +2819,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.869658938357884*^9}},ExpressionUUID->"d2bf08ce-66ca-4e24-bb80-\
-7bdaa5403350"],
+  3.869658938357884*^9}},
+ CellLabel->"In[31]:=",ExpressionUUID->"d2bf08ce-66ca-4e24-bb80-7bdaa5403350"],
 
 Cell[BoxData[
  RowBox[{
@@ -3400,8 +3021,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.8696589351710243`*^9}},ExpressionUUID->"c20c69d4-65ad-4e90-921e-\
-87904058c0bd"],
+  3.8696589351710243`*^9}},
+ CellLabel->"In[32]:=",ExpressionUUID->"c20c69d4-65ad-4e90-921e-87904058c0bd"],
 
 Cell[BoxData[
  RowBox[{
@@ -3598,8 +3219,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.869658933319693*^9}},ExpressionUUID->"1699e10f-a326-49bd-8a01-\
-0704e1c16ca6"],
+  3.869658933319693*^9}},
+ CellLabel->"In[33]:=",ExpressionUUID->"1699e10f-a326-49bd-8a01-0704e1c16ca6"],
 
 Cell[BoxData[{
  RowBox[{
@@ -3803,8 +3424,8 @@ Cell[BoxData[{
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.8696589262133484`*^9}},ExpressionUUID->"a89d7cb5-5190-40d4-a104-\
-25350594c059"],
+  3.8696589262133484`*^9}},
+ CellLabel->"In[34]:=",ExpressionUUID->"a89d7cb5-5190-40d4-a104-25350594c059"],
 
 Cell[BoxData[
  RowBox[{
@@ -4009,8 +3630,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.8696589222289257`*^9}},ExpressionUUID->"75820726-92d0-40f1-abc8-\
-869c625fdee0"],
+  3.8696589222289257`*^9}},
+ CellLabel->"In[38]:=",ExpressionUUID->"75820726-92d0-40f1-abc8-869c625fdee0"],
 
 Cell[BoxData[
  RowBox[{
@@ -4232,8 +3853,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.869658914501993*^9}},ExpressionUUID->"9ecafd3e-6249-4b5c-bc33-\
-664458084771"],
+  3.869658914501993*^9}},
+ CellLabel->"In[39]:=",ExpressionUUID->"9ecafd3e-6249-4b5c-bc33-664458084771"],
 
 Cell[BoxData[
  RowBox[{
@@ -4511,8 +4132,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.8696589115206356`*^9}},ExpressionUUID->"1cd2bc4b-7209-4a3f-b295-\
-1e4e09fe0cf5"],
+  3.8696589115206356`*^9}},
+ CellLabel->"In[40]:=",ExpressionUUID->"1cd2bc4b-7209-4a3f-b295-1e4e09fe0cf5"],
 
 Cell[BoxData[
  RowBox[{
@@ -4822,8 +4443,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.8696589082414923`*^9}},ExpressionUUID->"6891424c-8dc1-4f40-b87d-\
-3378d9dadafb"],
+  3.8696589082414923`*^9}},
+ CellLabel->"In[41]:=",ExpressionUUID->"6891424c-8dc1-4f40-b87d-3378d9dadafb"],
 
 Cell[BoxData[
  RowBox[{
@@ -5040,8 +4661,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.8696589042374225`*^9}},ExpressionUUID->"296f885d-ee1d-4c8b-aa05-\
-f4f066748ee4"],
+  3.8696589042374225`*^9}},
+ CellLabel->"In[42]:=",ExpressionUUID->"296f885d-ee1d-4c8b-aa05-f4f066748ee4"],
 
 Cell[BoxData[
  RowBox[{
@@ -5263,8 +4884,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.869658899918117*^9}},ExpressionUUID->"0c102125-85ea-4afa-b528-\
-b41d13132dc8"],
+  3.869658899918117*^9}},
+ CellLabel->"In[43]:=",ExpressionUUID->"0c102125-85ea-4afa-b528-b41d13132dc8"],
 
 Cell[BoxData[
  RowBox[{
@@ -5501,8 +5122,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.8696588931675806`*^9}},ExpressionUUID->"3d63ef53-0b46-4b59-b221-\
-e6d6278f80de"],
+  3.8696588931675806`*^9}},
+ CellLabel->"In[44]:=",ExpressionUUID->"3d63ef53-0b46-4b59-b221-e6d6278f80de"],
 
 Cell[BoxData[
  RowBox[{
@@ -5846,8 +5467,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.8696588891141205`*^9}},ExpressionUUID->"783ab603-a697-48b9-bcd2-\
-82c6fd74e767"],
+  3.8696588891141205`*^9}},
+ CellLabel->"In[45]:=",ExpressionUUID->"783ab603-a697-48b9-bcd2-82c6fd74e767"],
 
 Cell[BoxData[
  RowBox[{
@@ -6357,8 +5978,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.8696588857422123`*^9}},ExpressionUUID->"f9c84fca-b923-45db-a8d2-\
-e0cb12aba546"],
+  3.8696588857422123`*^9}},
+ CellLabel->"In[46]:=",ExpressionUUID->"f9c84fca-b923-45db-a8d2-e0cb12aba546"],
 
 Cell[BoxData[
  RowBox[{
@@ -6702,8 +6323,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.8696588820819564`*^9}},ExpressionUUID->"215be85e-4524-4d2b-a322-\
-77528f628530"],
+  3.8696588820819564`*^9}},
+ CellLabel->"In[47]:=",ExpressionUUID->"215be85e-4524-4d2b-a322-77528f628530"],
 
 Cell[BoxData[
  RowBox[{
@@ -7213,8 +6834,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.8696588789018774`*^9}},ExpressionUUID->"b368744f-7d7d-4553-9706-\
-ddf077210cf5"],
+  3.8696588789018774`*^9}},
+ CellLabel->"In[48]:=",ExpressionUUID->"b368744f-7d7d-4553-9706-ddf077210cf5"],
 
 Cell[BoxData[
  RowBox[{
@@ -7651,8 +7272,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.8696588744146748`*^9}},ExpressionUUID->"6831d880-0520-4d0d-950a-\
-d01d32379c78"],
+  3.8696588744146748`*^9}},
+ CellLabel->"In[49]:=",ExpressionUUID->"6831d880-0520-4d0d-950a-d01d32379c78"],
 
 Cell[BoxData[
  RowBox[{
@@ -8254,8 +7875,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.8696588705638447`*^9}},ExpressionUUID->"7bb361fb-ad51-4bc0-80c5-\
-cc9850126c08"],
+  3.8696588705638447`*^9}},
+ CellLabel->"In[50]:=",ExpressionUUID->"7bb361fb-ad51-4bc0-80c5-cc9850126c08"],
 
 Cell[BoxData[
  RowBox[{
@@ -8606,8 +8227,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.8696588653752437`*^9}},ExpressionUUID->"09d0b4df-6ac9-430b-a674-\
-b4cb692f665b"],
+  3.8696588653752437`*^9}},
+ CellLabel->"In[51]:=",ExpressionUUID->"09d0b4df-6ac9-430b-a674-b4cb692f665b"],
 
 Cell[BoxData[
  RowBox[{
@@ -9124,8 +8745,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.8696588620351505`*^9}},ExpressionUUID->"bcc742fa-ea86-4d0a-8b40-\
-bfbb95f6aef6"],
+  3.8696588620351505`*^9}},
+ CellLabel->"In[52]:=",ExpressionUUID->"bcc742fa-ea86-4d0a-8b40-bfbb95f6aef6"],
 
 Cell[BoxData[
  RowBox[{
@@ -9486,8 +9107,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.8696588580217724`*^9}},ExpressionUUID->"1d360be5-3667-4ef1-86e3-\
-4667af4eacaa"],
+  3.8696588580217724`*^9}},
+ CellLabel->"In[53]:=",ExpressionUUID->"1d360be5-3667-4ef1-86e3-4667af4eacaa"],
 
 Cell[BoxData[
  RowBox[{
@@ -10011,8 +9632,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.8696588546198673`*^9}},ExpressionUUID->"33a82e4e-af31-4c3f-9f9e-\
-fbb63f4d94ca"],
+  3.8696588546198673`*^9}},
+ CellLabel->"In[54]:=",ExpressionUUID->"33a82e4e-af31-4c3f-9f9e-fbb63f4d94ca"],
 
 Cell[BoxData[
  RowBox[{
@@ -10364,8 +9985,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.869658849156955*^9}},ExpressionUUID->"b38a9e4f-f561-420e-b147-\
-5b013e94a00a"],
+  3.869658849156955*^9}},
+ CellLabel->"In[55]:=",ExpressionUUID->"b38a9e4f-f561-420e-b147-5b013e94a00a"],
 
 Cell[BoxData[
  RowBox[{
@@ -10881,8 +10502,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.8696588451776714`*^9}},ExpressionUUID->"b3f1e58f-1f74-44c8-8495-\
-d19967e5abf5"],
+  3.8696588451776714`*^9}},
+ CellLabel->"In[56]:=",ExpressionUUID->"b3f1e58f-1f74-44c8-8495-d19967e5abf5"],
 
 Cell[BoxData[
  RowBox[{
@@ -11243,8 +10864,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.8696588402802677`*^9}},ExpressionUUID->"e980166c-100d-4834-ae62-\
-6d85de107ff8"],
+  3.8696588402802677`*^9}},
+ CellLabel->"In[57]:=",ExpressionUUID->"e980166c-100d-4834-ae62-6d85de107ff8"],
 
 Cell[BoxData[
  RowBox[{
@@ -11768,8 +11389,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.8696588344067197`*^9}},ExpressionUUID->"d0fa67a3-8852-40cc-9528-\
-9f87fa677484"],
+  3.8696588344067197`*^9}},
+ CellLabel->"In[58]:=",ExpressionUUID->"d0fa67a3-8852-40cc-9528-9f87fa677484"],
 
 Cell[BoxData[
  RowBox[{
@@ -12186,8 +11807,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.8696588256247005`*^9}},ExpressionUUID->"a25e7717-95e6-4cc3-8405-\
-bcc06b19c645"],
+  3.8696588256247005`*^9}},
+ CellLabel->"In[59]:=",ExpressionUUID->"a25e7717-95e6-4cc3-8405-bcc06b19c645"],
 
 Cell[BoxData[
  RowBox[{
@@ -12770,8 +12391,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.869658820879014*^9}},ExpressionUUID->"e620a891-bc6f-46e1-a812-\
-c06f442a248e"],
+  3.869658820879014*^9}},
+ CellLabel->"In[60]:=",ExpressionUUID->"e620a891-bc6f-46e1-a812-c06f442a248e"],
 
 Cell[BoxData[
  RowBox[{
@@ -13190,8 +12811,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.869658814439966*^9}},ExpressionUUID->"5578d223-9b00-4224-83b1-\
-d42df3c0437b"],
+  3.869658814439966*^9}},
+ CellLabel->"In[61]:=",ExpressionUUID->"5578d223-9b00-4224-83b1-d42df3c0437b"],
 
 Cell[BoxData[
  RowBox[{
@@ -13773,8 +13394,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.8696588074432063`*^9}},ExpressionUUID->"977ac369-ae26-45c0-a5cc-\
-35f2bda21bd2"],
+  3.8696588074432063`*^9}},
+ CellLabel->"In[62]:=",ExpressionUUID->"977ac369-ae26-45c0-a5cc-35f2bda21bd2"],
 
 Cell[BoxData[
  RowBox[{
@@ -14019,8 +13640,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.8696587968349533`*^9}},ExpressionUUID->"91738216-0dea-4c9f-a42a-\
-6c330aeb3568"],
+  3.8696587968349533`*^9}},
+ CellLabel->"In[63]:=",ExpressionUUID->"91738216-0dea-4c9f-a42a-6c330aeb3568"],
 
 Cell[BoxData[
  RowBox[{
@@ -14280,8 +13901,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.869658793658185*^9}},ExpressionUUID->"d8bb9db2-d9fd-4092-aa9e-\
-d9fcfc970258"],
+  3.869658793658185*^9}},
+ CellLabel->"In[64]:=",ExpressionUUID->"d8bb9db2-d9fd-4092-aa9e-d9fcfc970258"],
 
 Cell[BoxData[
  RowBox[{
@@ -14713,8 +14334,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.8696587904464893`*^9}},ExpressionUUID->"919dd566-8045-4e67-9da9-\
-442c80202b0e"],
+  3.8696587904464893`*^9}},
+ CellLabel->"In[65]:=",ExpressionUUID->"919dd566-8045-4e67-9da9-442c80202b0e"],
 
 Cell[BoxData[
  RowBox[{
@@ -15312,8 +14933,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.869658786375822*^9}},ExpressionUUID->"54bfca44-1e8b-4689-8feb-\
-d1c42f57e6f0"],
+  3.869658786375822*^9}},
+ CellLabel->"In[66]:=",ExpressionUUID->"54bfca44-1e8b-4689-8feb-d1c42f57e6f0"],
 
 Cell[BoxData[
  RowBox[{
@@ -15554,8 +15175,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.8696587820129604`*^9}},ExpressionUUID->"2f1b86f1-daef-4f94-a72f-\
-32dc060f9c15"],
+  3.8696587820129604`*^9}},
+ CellLabel->"In[67]:=",ExpressionUUID->"2f1b86f1-daef-4f94-a72f-32dc060f9c15"],
 
 Cell[BoxData[
  RowBox[{
@@ -15822,8 +15443,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.869658778834621*^9}},ExpressionUUID->"bffbb52e-a2c8-4ce1-9fc4-\
-b5ba193a39f2"],
+  3.869658778834621*^9}},
+ CellLabel->"In[68]:=",ExpressionUUID->"bffbb52e-a2c8-4ce1-9fc4-b5ba193a39f2"],
 
 Cell[BoxData[
  RowBox[{
@@ -16318,8 +15939,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.869658775380231*^9}},ExpressionUUID->"4c1ec37c-d1ab-4569-a808-\
-c826942bf515"],
+  3.869658775380231*^9}},
+ CellLabel->"In[69]:=",ExpressionUUID->"4c1ec37c-d1ab-4569-a808-c826942bf515"],
 
 Cell[BoxData[
  RowBox[{
@@ -17006,8 +16627,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.869658771631194*^9}},ExpressionUUID->"ed23709c-3839-485a-aace-\
-bade43a7b6c7"],
+  3.869658771631194*^9}},
+ CellLabel->"In[70]:=",ExpressionUUID->"ed23709c-3839-485a-aace-bade43a7b6c7"],
 
 Cell[BoxData[
  RowBox[{
@@ -17248,8 +16869,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.8696587624518795`*^9}},ExpressionUUID->"f5c06695-13b4-452b-983d-\
-2ed3d45a529b"],
+  3.8696587624518795`*^9}},
+ CellLabel->"In[71]:=",ExpressionUUID->"f5c06695-13b4-452b-983d-2ed3d45a529b"],
 
 Cell[BoxData[
  RowBox[{
@@ -17517,8 +17138,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.869658759191887*^9}},ExpressionUUID->"f306e402-d45a-4737-9dd5-\
-5f5e241d8c67"],
+  3.869658759191887*^9}},
+ CellLabel->"In[72]:=",ExpressionUUID->"f306e402-d45a-4737-9dd5-5f5e241d8c67"],
 
 Cell[BoxData[
  RowBox[{
@@ -18014,8 +17635,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.869658755681585*^9}},ExpressionUUID->"d57270ca-8f4b-48b0-9808-\
-b199dc21a082"],
+  3.869658755681585*^9}},
+ CellLabel->"In[73]:=",ExpressionUUID->"d57270ca-8f4b-48b0-9808-b199dc21a082"],
 
 Cell[BoxData[
  RowBox[{
@@ -18702,8 +18323,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.869658750473281*^9}},ExpressionUUID->"1d0fe121-540c-4f05-b50e-\
-3f9cf253a180"],
+  3.869658750473281*^9}},
+ CellLabel->"In[74]:=",ExpressionUUID->"1d0fe121-540c-4f05-b50e-3f9cf253a180"],
 
 Cell[BoxData[
  RowBox[{
@@ -18978,8 +18599,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.869658745201257*^9}},ExpressionUUID->"59d94e00-7ff5-44bb-99ef-\
-f8566891b70e"],
+  3.869658745201257*^9}},
+ CellLabel->"In[75]:=",ExpressionUUID->"59d94e00-7ff5-44bb-99ef-f8566891b70e"],
 
 Cell[BoxData[
  RowBox[{
@@ -19290,8 +18911,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.869658740507044*^9}},ExpressionUUID->"66e14e96-d97a-49b2-884d-\
-92ea8a4d6d56"],
+  3.869658740507044*^9}},
+ CellLabel->"In[76]:=",ExpressionUUID->"66e14e96-d97a-49b2-884d-92ea8a4d6d56"],
 
 Cell[BoxData[
  RowBox[{
@@ -19849,8 +19470,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.869658736679063*^9}},ExpressionUUID->"192ffcad-800c-479f-a4c4-\
-ccb26d62f866"],
+  3.869658736679063*^9}},
+ CellLabel->"In[77]:=",ExpressionUUID->"192ffcad-800c-479f-a4c4-ccb26d62f866"],
 
 Cell[BoxData[
  RowBox[{
@@ -20619,8 +20240,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.869658730945198*^9}},ExpressionUUID->"998561fd-a479-4f76-91ec-\
-967d9b1f7b9d"],
+  3.869658730945198*^9}},
+ CellLabel->"In[78]:=",ExpressionUUID->"998561fd-a479-4f76-91ec-967d9b1f7b9d"],
 
 Cell[BoxData[
  RowBox[{
@@ -20935,8 +20556,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.8696587224034863`*^9}},ExpressionUUID->"d2365d11-77c1-4f80-b5e1-\
-8e63e007a021"],
+  3.8696587224034863`*^9}},
+ CellLabel->"In[79]:=",ExpressionUUID->"d2365d11-77c1-4f80-b5e1-8e63e007a021"],
 
 Cell[BoxData[
  RowBox[{
@@ -21295,8 +20916,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.8696587147984147`*^9}},ExpressionUUID->"c06bb836-baf1-421d-9a32-\
-d3820dc36cd8"],
+  3.8696587147984147`*^9}},
+ CellLabel->"In[80]:=",ExpressionUUID->"c06bb836-baf1-421d-9a32-d3820dc36cd8"],
 
 Cell[BoxData[
  RowBox[{
@@ -21823,8 +21444,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.869658711077965*^9}},ExpressionUUID->"2f51730a-b19f-4097-9f28-\
-5895ce9c4003"],
+  3.869658711077965*^9}},
+ CellLabel->"In[81]:=",ExpressionUUID->"2f51730a-b19f-4097-9f28-5895ce9c4003"],
 
 Cell[BoxData[{
  RowBox[{
@@ -22707,8 +22328,8 @@ Cell[BoxData[{
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.869658706834494*^9}},ExpressionUUID->"24ba81d7-5bd8-4f99-90e1-\
-aedbadca0fad"],
+  3.869658706834494*^9}},
+ CellLabel->"In[82]:=",ExpressionUUID->"24ba81d7-5bd8-4f99-90e1-aedbadca0fad"],
 
 Cell[BoxData[
  RowBox[{
@@ -23177,8 +22798,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.8696586973322725`*^9}},ExpressionUUID->"64950165-21de-4dad-9464-\
-cfeb6217ef2a"],
+  3.8696586973322725`*^9}},
+ CellLabel->"In[84]:=",ExpressionUUID->"64950165-21de-4dad-9464-cfeb6217ef2a"],
 
 Cell[BoxData[
  RowBox[{
@@ -23812,8 +23433,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.86965868971646*^9}},ExpressionUUID->"31930fe5-93ff-4f72-8cf1-\
-52fe64a2c710"],
+  3.86965868971646*^9}},
+ CellLabel->"In[85]:=",ExpressionUUID->"31930fe5-93ff-4f72-8cf1-52fe64a2c710"],
 
 Cell[BoxData[
  RowBox[{
@@ -24027,8 +23648,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.8696586827668123`*^9}},ExpressionUUID->"b0edc585-33b2-4fc1-8696-\
-bd7639e1b447"],
+  3.8696586827668123`*^9}},
+ CellLabel->"In[86]:=",ExpressionUUID->"b0edc585-33b2-4fc1-8696-bd7639e1b447"],
 
 Cell[BoxData[
  RowBox[{
@@ -24274,8 +23895,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.8696586783302655`*^9}},ExpressionUUID->"6951b17b-3f57-464a-bcd9-\
-bf6e2f3258fc"],
+  3.8696586783302655`*^9}},
+ CellLabel->"In[87]:=",ExpressionUUID->"6951b17b-3f57-464a-bcd9-bf6e2f3258fc"],
 
 Cell[BoxData[
  RowBox[{
@@ -25094,8 +24715,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.8696586743404417`*^9}},ExpressionUUID->"7a1e342b-b2f3-4587-8abf-\
-35e9bcf3a84a"],
+  3.8696586743404417`*^9}},
+ CellLabel->"In[88]:=",ExpressionUUID->"7a1e342b-b2f3-4587-8abf-35e9bcf3a84a"],
 
 Cell[BoxData[
  RowBox[{
@@ -25707,8 +25328,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.8696586671374583`*^9}},ExpressionUUID->"af1165dd-a131-458d-854e-\
-d5c6abaa436b"],
+  3.8696586671374583`*^9}},
+ CellLabel->"In[89]:=",ExpressionUUID->"af1165dd-a131-458d-854e-d5c6abaa436b"],
 
 Cell[BoxData[
  RowBox[{
@@ -25976,8 +25597,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.8696586616427584`*^9}},ExpressionUUID->"d3e7943a-0729-48f2-b559-\
-05347bbfd179"],
+  3.8696586616427584`*^9}},
+ CellLabel->"In[90]:=",ExpressionUUID->"d3e7943a-0729-48f2-b559-05347bbfd179"],
 
 Cell[BoxData[
  RowBox[{
@@ -26284,8 +25905,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.8696586571777663`*^9}},ExpressionUUID->"8e542dea-1b67-4227-a250-\
-4ccd3e9a463e"],
+  3.8696586571777663`*^9}},
+ CellLabel->"In[91]:=",ExpressionUUID->"8e542dea-1b67-4227-a250-4ccd3e9a463e"],
 
 Cell[BoxData[
  RowBox[{
@@ -26510,8 +26131,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.869658650923259*^9}},ExpressionUUID->"ebc55b8a-d86d-4e9d-8e42-\
-7bc917b103bc"],
+  3.869658650923259*^9}},
+ CellLabel->"In[92]:=",ExpressionUUID->"ebc55b8a-d86d-4e9d-8e42-7bc917b103bc"],
 
 Cell[BoxData[
  RowBox[{
@@ -26730,8 +26351,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.8696586460430145`*^9}},ExpressionUUID->"e9db3d31-f384-4d57-8877-\
-401cd8af0fc5"],
+  3.8696586460430145`*^9}},
+ CellLabel->"In[93]:=",ExpressionUUID->"e9db3d31-f384-4d57-8877-401cd8af0fc5"],
 
 Cell[BoxData[
  RowBox[{
@@ -26765,172 +26386,49 @@ Cell[BoxData[
   RowBox[{
    RowBox[{"Module", "[", 
     RowBox[{
-     RowBox[{"{", 
-      RowBox[{"morphismAssociation", ",", "compositions"}], "}"}], ",", 
+     RowBox[{"{", "reducedMorphismAssociation", "}"}], ",", 
+     "\[IndentingNewLine]", 
      RowBox[{
-      RowBox[{"morphismAssociation", "=", 
-       RowBox[{"Association", "[", 
-        RowBox[{"Select", "[", 
-         RowBox[{
-          RowBox[{"Normal", "[", 
-           RowBox[{"reduceArrowsFinal", "[", 
-            RowBox[{
-             RowBox[{"reduceArrowsInitial", "[", 
-              RowBox[{"arrows", ",", "arrowEquivalences"}], "]"}], ",", 
-             "quiverObjectEquivalences"}], "]"}], "]"}], ",", 
-          RowBox[{
-           RowBox[{
-            RowBox[{"First", "[", 
-             RowBox[{"Last", "[", "#1", "]"}], "]"}], "=!=", 
-            RowBox[{"Last", "[", 
-             RowBox[{"Last", "[", "#1", "]"}], "]"}]}], "&"}]}], "]"}], 
-        "]"}]}], ";", "\[IndentingNewLine]", 
-      RowBox[{"Do", "[", 
+      RowBox[{"reducedMorphismAssociation", "=", 
        RowBox[{
-        RowBox[{
-         RowBox[{"compositions", "=", 
-          RowBox[{"Select", "[", 
+        RowBox[{"AbstractCategory", "[", 
+         RowBox[{"Association", "[", 
+          RowBox[{
            RowBox[{
-            RowBox[{"Tuples", "[", 
-             RowBox[{
-              RowBox[{"Normal", "[", "morphismAssociation", "]"}], ",", "2"}],
-              "]"}], ",", 
+           "\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol"}], ",", 
+           RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol"}], 
+           ",", 
+           RowBox[{
+           "\"\<MorphismEquivalences\>\"", "\[Rule]", 
+            "morphismEquivalences"}], ",", 
+           RowBox[{
+           "\"\<ObjectEquivalences\>\"", "\[Rule]", "objectEquivalences"}], 
+           ",", 
+           RowBox[{"\"\<Quiver\>\"", "\[Rule]", 
             RowBox[{
-             RowBox[{
-              RowBox[{"Last", "[", 
-               RowBox[{"Last", "[", 
-                RowBox[{"First", "[", "#1", "]"}], "]"}], "]"}], "===", 
-              RowBox[{"First", "[", 
-               RowBox[{"Last", "[", 
-                RowBox[{"Last", "[", "#1", "]"}], "]"}], "]"}]}], "&"}]}], 
-           "]"}]}], ";", "\[IndentingNewLine]", 
-         RowBox[{
-          RowBox[{"(", 
-           RowBox[{
-            RowBox[{"If", "[", 
-             RowBox[{
-              RowBox[{"!", 
-               RowBox[{"MemberQ", "[", 
-                RowBox[{
-                 RowBox[{
-                  RowBox[{"(", 
-                   RowBox[{
-                    RowBox[{
-                    RowBox[{"StringDelete", "[", 
-                    RowBox[{
-                    RowBox[{"ToString", "[", 
-                    RowBox[{"First", "[", "#1", "]"}], "]"}], ",", 
-                    RowBox[{"{", 
-                    RowBox[{"\"\<(\>\"", ",", "\"\<)\>\"", ",", "\"\< \>\""}],
-                     "}"}]}], "]"}], "\[Rule]", 
-                    RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
-                  RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
-                 RowBox[{
-                  RowBox[{"StringDelete", "[", 
-                   RowBox[{
-                    RowBox[{"ToString", "[", 
-                    RowBox[{"compositionSymbol", "[", 
-                    RowBox[{
-                    RowBox[{"First", "[", 
-                    RowBox[{"Last", "[", "#1", "]"}], "]"}], ",", 
-                    RowBox[{"First", "[", 
-                    RowBox[{"First", "[", "#1", "]"}], "]"}]}], "]"}], "]"}], 
-                    ",", 
-                    RowBox[{"{", 
-                    RowBox[{"\"\<(\>\"", ",", "\"\<)\>\"", ",", "\"\< \>\""}],
-                     "}"}]}], "]"}], "\[Rule]", 
-                  RowBox[{"DirectedEdge", "[", 
-                   RowBox[{
-                    RowBox[{"First", "[", 
-                    RowBox[{"Last", "[", 
-                    RowBox[{"First", "[", "#1", "]"}], "]"}], "]"}], ",", 
-                    RowBox[{"Last", "[", 
-                    RowBox[{"Last", "[", 
-                    RowBox[{"Last", "[", "#1", "]"}], "]"}], "]"}]}], 
-                   "]"}]}]}], "]"}]}], ",", 
-              RowBox[{"morphismAssociation", "=", 
-               RowBox[{"Association", "[", 
-                RowBox[{"Append", "[", 
-                 RowBox[{
-                  RowBox[{"Normal", "[", "morphismAssociation", "]"}], ",", 
-                  RowBox[{
-                   RowBox[{"compositionSymbol", "[", 
-                    RowBox[{
-                    RowBox[{"First", "[", 
-                    RowBox[{"Last", "[", "#1", "]"}], "]"}], ",", 
-                    RowBox[{"First", "[", 
-                    RowBox[{"First", "[", "#1", "]"}], "]"}]}], "]"}], 
-                   "\[Rule]", 
-                   RowBox[{"DirectedEdge", "[", 
-                    RowBox[{
-                    RowBox[{"First", "[", 
-                    RowBox[{"Last", "[", 
-                    RowBox[{"First", "[", "#1", "]"}], "]"}], "]"}], ",", 
-                    RowBox[{"Last", "[", 
-                    RowBox[{"Last", "[", 
-                    RowBox[{"Last", "[", "#1", "]"}], "]"}], "]"}]}], 
-                    "]"}]}]}], "]"}], "]"}]}]}], "]"}], "&"}], ")"}], "/@", 
-          "compositions"}]}], ",", 
-        RowBox[{"Length", "[", 
-         RowBox[{"reduceObjects", "[", 
-          RowBox[{"objects", ",", "quiverObjectEquivalences"}], "]"}], 
-         "]"}]}], "]"}], ";", 
-      RowBox[{"morphismAssociation", "=", 
-       RowBox[{"Association", "[", 
-        RowBox[{"Select", "[", 
-         RowBox[{
-          RowBox[{"Normal", "[", "morphismAssociation", "]"}], ",", 
-          RowBox[{
-           RowBox[{
-            RowBox[{"Length", "[", 
-             RowBox[{"Flatten", "[", 
-              RowBox[{"{", 
-               RowBox[{
-                RowBox[{"First", "[", "#1", "]"}], "/.", 
-                RowBox[{"compositionSymbol", "\[Rule]", "List"}]}], "}"}], 
-              "]"}], "]"}], "\[Equal]", 
-            RowBox[{"Length", "[", 
-             RowBox[{"DeleteDuplicates", "[", 
-              RowBox[{"Flatten", "[", 
-               RowBox[{"{", 
-                RowBox[{
-                 RowBox[{"First", "[", "#1", "]"}], "/.", 
-                 RowBox[{"compositionSymbol", "\[Rule]", "List"}]}], "}"}], 
-               "]"}], "]"}], "]"}]}], "&"}]}], "]"}], "]"}]}], ";", 
-      "\[IndentingNewLine]", 
-      RowBox[{
-       RowBox[{"(", 
-        RowBox[{
-         RowBox[{"If", "[", 
-          RowBox[{
-           RowBox[{"!", 
-            RowBox[{"MemberQ", "[", 
-             RowBox[{
-              RowBox[{"Normal", "[", "morphismAssociation", "]"}], ",", 
+             RowBox[{"(", "abstractQuiver", ")"}], "[", 
+             RowBox[{"Association", "[", 
               RowBox[{
-               RowBox[{"identitySymbol", "[", "#1", "]"}], "\[Rule]", 
-               RowBox[{"DirectedEdge", "[", 
-                RowBox[{"#1", ",", "#1"}], "]"}]}]}], "]"}]}], ",", 
-           RowBox[{"morphismAssociation", "=", 
-            RowBox[{"Association", "[", 
-             RowBox[{"Append", "[", 
-              RowBox[{
-               RowBox[{"Normal", "[", "morphismAssociation", "]"}], ",", 
                RowBox[{
-                RowBox[{"identitySymbol", "[", "#1", "]"}], "\[Rule]", 
-                RowBox[{"DirectedEdge", "[", 
-                 RowBox[{"#1", ",", "#1"}], "]"}]}]}], "]"}], "]"}]}]}], 
-          "]"}], "&"}], ")"}], "/@", 
-       RowBox[{"reduceObjects", "[", 
-        RowBox[{"objects", ",", "quiverObjectEquivalences"}], "]"}]}], ";", 
+               "\"\<ArrowEquivalences\>\"", "\[Rule]", "arrowEquivalences"}], 
+               ",", 
+               RowBox[{"\"\<Arrows\>\"", "\[Rule]", "arrows"}], ",", 
+               RowBox[{
+               "\"\<ObjectEquivalences\>\"", "\[Rule]", 
+                "quiverObjectEquivalences"}], ",", 
+               RowBox[{"\"\<Objects\>\"", "\[Rule]", "objects"}]}], "]"}], 
+             "]"}]}]}], "]"}], "]"}], "[", 
+        "\"\<ReducedMorphismAssociation\>\"", "]"}]}], ";", 
       "\[IndentingNewLine]", 
       RowBox[{"EdgeTaggedGraph", "[", 
        RowBox[{
-        RowBox[{"reduceObjects", "[", 
-         RowBox[{
-          RowBox[{"reduceObjects", "[", 
-           RowBox[{"objects", ",", "quiverObjectEquivalences"}], "]"}], ",", 
-          "objectEquivalences"}], "]"}], ",", 
+        RowBox[{"DeleteDuplicates", "[", 
+         RowBox[{"objects", "/.", 
+          RowBox[{"elementsToClassRepresentatives", "[", 
+           RowBox[{"objects", ",", 
+            RowBox[{"Union", "[", 
+             RowBox[{"objectEquivalences", ",", "quiverObjectEquivalences"}], 
+             "]"}]}], "]"}]}], "]"}], ",", "\[IndentingNewLine]", 
         RowBox[{
          RowBox[{"(", 
           RowBox[{
@@ -26942,12 +26440,8 @@ Cell[BoxData[
               RowBox[{
                RowBox[{"First", "[", "#1", "]"}], ",", "0.5"}], "]"}]}], 
             "]"}], "&"}], ")"}], "/@", 
-         RowBox[{"Normal", "[", 
-          RowBox[{"reduceArrowsFinal", "[", 
-           RowBox[{
-            RowBox[{"reduceArrowsInitial", "[", 
-             RowBox[{"morphismAssociation", ",", "morphismEquivalences"}], 
-             "]"}], ",", "objectEquivalences"}], "]"}], "]"}]}], ",", 
+         RowBox[{"Normal", "[", "reducedMorphismAssociation", "]"}]}], ",", 
+        "\[IndentingNewLine]", 
         RowBox[{"VertexSize", "\[Rule]", "0.3"}], ",", 
         RowBox[{"VertexStyle", "\[Rule]", 
          RowBox[{"Directive", "[", 
@@ -26976,8 +26470,11 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.8696586414932327`*^9}},ExpressionUUID->"929554fc-e034-4c47-875e-\
-fe85767df8b3"],
+  3.8696586414932327`*^9}, {3.869737331378084*^9, 3.8697373431543694`*^9}, {
+  3.86973739046599*^9, 3.8697374090072327`*^9}, {3.8697374405634947`*^9, 
+  3.8697375439015694`*^9}},
+ CellLabel->
+  "In[505]:=",ExpressionUUID->"929554fc-e034-4c47-875e-fe85767df8b3"],
 
 Cell[BoxData[
  RowBox[{
@@ -27008,217 +26505,47 @@ Cell[BoxData[
            "quiverObjectEquivalences_List"}], ",", 
           RowBox[{"\"\<Objects\>\"", "\[Rule]", "objects_List"}]}], "]"}], 
         "]"}]}]}], "]"}], "]"}], "[", "\"\<ReducedUnlabeledGraph\>\"", "]"}], 
-  ":=", 
+  ":=", "\[IndentingNewLine]", 
   RowBox[{
-   RowBox[{"Module", "[", 
+   RowBox[{"EdgeTaggedGraph", "[", 
     RowBox[{
-     RowBox[{"{", 
-      RowBox[{"morphismAssociation", ",", "compositions"}], "}"}], ",", 
      RowBox[{
-      RowBox[{"morphismAssociation", "=", 
+      RowBox[{"AbstractCategory", "[", 
        RowBox[{"Association", "[", 
-        RowBox[{"Select", "[", 
-         RowBox[{
-          RowBox[{"Normal", "[", 
-           RowBox[{"reduceArrowsFinal", "[", 
-            RowBox[{
-             RowBox[{"reduceArrowsInitial", "[", 
-              RowBox[{"arrows", ",", "arrowEquivalences"}], "]"}], ",", 
-             "quiverObjectEquivalences"}], "]"}], "]"}], ",", 
-          RowBox[{
-           RowBox[{
-            RowBox[{"First", "[", 
-             RowBox[{"Last", "[", "#1", "]"}], "]"}], "=!=", 
-            RowBox[{"Last", "[", 
-             RowBox[{"Last", "[", "#1", "]"}], "]"}]}], "&"}]}], "]"}], 
-        "]"}]}], ";", "\[IndentingNewLine]", 
-      RowBox[{"Do", "[", 
-       RowBox[{
         RowBox[{
-         RowBox[{"compositions", "=", 
-          RowBox[{"Select", "[", 
-           RowBox[{
-            RowBox[{"Tuples", "[", 
-             RowBox[{
-              RowBox[{"Normal", "[", "morphismAssociation", "]"}], ",", "2"}],
-              "]"}], ",", 
+         RowBox[{
+         "\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol"}], ",", 
+         RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol"}], ",", 
+         RowBox[{
+         "\"\<MorphismEquivalences\>\"", "\[Rule]", "morphismEquivalences"}], 
+         ",", 
+         RowBox[{
+         "\"\<ObjectEquivalences\>\"", "\[Rule]", "objectEquivalences"}], ",", 
+         RowBox[{"\"\<Quiver\>\"", "\[Rule]", 
+          RowBox[{
+           RowBox[{"(", "abstractQuiver", ")"}], "[", 
+           RowBox[{"Association", "[", 
             RowBox[{
              RowBox[{
-              RowBox[{"Last", "[", 
-               RowBox[{"Last", "[", 
-                RowBox[{"First", "[", "#1", "]"}], "]"}], "]"}], "===", 
-              RowBox[{"First", "[", 
-               RowBox[{"Last", "[", 
-                RowBox[{"Last", "[", "#1", "]"}], "]"}], "]"}]}], "&"}]}], 
-           "]"}]}], ";", "\[IndentingNewLine]", 
-         RowBox[{
-          RowBox[{"(", 
-           RowBox[{
-            RowBox[{"If", "[", 
+             "\"\<ArrowEquivalences\>\"", "\[Rule]", "arrowEquivalences"}], 
+             ",", 
+             RowBox[{"\"\<Arrows\>\"", "\[Rule]", "arrows"}], ",", 
              RowBox[{
-              RowBox[{"!", 
-               RowBox[{"MemberQ", "[", 
-                RowBox[{
-                 RowBox[{
-                  RowBox[{"(", 
-                   RowBox[{
-                    RowBox[{
-                    RowBox[{"StringDelete", "[", 
-                    RowBox[{
-                    RowBox[{"ToString", "[", 
-                    RowBox[{"First", "[", "#1", "]"}], "]"}], ",", 
-                    RowBox[{"{", 
-                    RowBox[{"\"\<(\>\"", ",", "\"\<)\>\"", ",", "\"\< \>\""}],
-                     "}"}]}], "]"}], "\[Rule]", 
-                    RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
-                  RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
-                 RowBox[{
-                  RowBox[{"StringDelete", "[", 
-                   RowBox[{
-                    RowBox[{"ToString", "[", 
-                    RowBox[{"compositionSymbol", "[", 
-                    RowBox[{
-                    RowBox[{"First", "[", 
-                    RowBox[{"Last", "[", "#1", "]"}], "]"}], ",", 
-                    RowBox[{"First", "[", 
-                    RowBox[{"First", "[", "#1", "]"}], "]"}]}], "]"}], "]"}], 
-                    ",", 
-                    RowBox[{"{", 
-                    RowBox[{"\"\<(\>\"", ",", "\"\<)\>\"", ",", "\"\< \>\""}],
-                     "}"}]}], "]"}], "\[Rule]", 
-                  RowBox[{"DirectedEdge", "[", 
-                   RowBox[{
-                    RowBox[{"First", "[", 
-                    RowBox[{"Last", "[", 
-                    RowBox[{"First", "[", "#1", "]"}], "]"}], "]"}], ",", 
-                    RowBox[{"Last", "[", 
-                    RowBox[{"Last", "[", 
-                    RowBox[{"Last", "[", "#1", "]"}], "]"}], "]"}]}], 
-                   "]"}]}]}], "]"}]}], ",", 
-              RowBox[{"morphismAssociation", "=", 
-               RowBox[{"Association", "[", 
-                RowBox[{"Append", "[", 
-                 RowBox[{
-                  RowBox[{"Normal", "[", "morphismAssociation", "]"}], ",", 
-                  RowBox[{
-                   RowBox[{"compositionSymbol", "[", 
-                    RowBox[{
-                    RowBox[{"First", "[", 
-                    RowBox[{"Last", "[", "#1", "]"}], "]"}], ",", 
-                    RowBox[{"First", "[", 
-                    RowBox[{"First", "[", "#1", "]"}], "]"}]}], "]"}], 
-                   "\[Rule]", 
-                   RowBox[{"DirectedEdge", "[", 
-                    RowBox[{
-                    RowBox[{"First", "[", 
-                    RowBox[{"Last", "[", 
-                    RowBox[{"First", "[", "#1", "]"}], "]"}], "]"}], ",", 
-                    RowBox[{"Last", "[", 
-                    RowBox[{"Last", "[", 
-                    RowBox[{"Last", "[", "#1", "]"}], "]"}], "]"}]}], 
-                    "]"}]}]}], "]"}], "]"}]}]}], "]"}], "&"}], ")"}], "/@", 
-          "compositions"}]}], ",", 
-        RowBox[{"Length", "[", 
-         RowBox[{"reduceObjects", "[", 
-          RowBox[{"objects", ",", "quiverObjectEquivalences"}], "]"}], 
-         "]"}]}], "]"}], ";", 
-      RowBox[{"morphismAssociation", "=", 
-       RowBox[{"Association", "[", 
-        RowBox[{"Select", "[", 
-         RowBox[{
-          RowBox[{"Normal", "[", "morphismAssociation", "]"}], ",", 
-          RowBox[{
-           RowBox[{
-            RowBox[{"Length", "[", 
-             RowBox[{"Flatten", "[", 
-              RowBox[{"{", 
-               RowBox[{
-                RowBox[{"First", "[", "#1", "]"}], "/.", 
-                RowBox[{"compositionSymbol", "\[Rule]", "List"}]}], "}"}], 
-              "]"}], "]"}], "\[Equal]", 
-            RowBox[{"Length", "[", 
-             RowBox[{"DeleteDuplicates", "[", 
-              RowBox[{"Flatten", "[", 
-               RowBox[{"{", 
-                RowBox[{
-                 RowBox[{"First", "[", "#1", "]"}], "/.", 
-                 RowBox[{"compositionSymbol", "\[Rule]", "List"}]}], "}"}], 
-               "]"}], "]"}], "]"}]}], "&"}]}], "]"}], "]"}]}], ";", 
-      "\[IndentingNewLine]", 
-      RowBox[{
-       RowBox[{"(", 
-        RowBox[{
-         RowBox[{"If", "[", 
-          RowBox[{
-           RowBox[{"!", 
-            RowBox[{"MemberQ", "[", 
-             RowBox[{
-              RowBox[{"Normal", "[", "morphismAssociation", "]"}], ",", 
-              RowBox[{
-               RowBox[{"identitySymbol", "[", "#1", "]"}], "\[Rule]", 
-               RowBox[{"DirectedEdge", "[", 
-                RowBox[{"#1", ",", "#1"}], "]"}]}]}], "]"}]}], ",", 
-           RowBox[{"morphismAssociation", "=", 
-            RowBox[{"Association", "[", 
-             RowBox[{"Append", "[", 
-              RowBox[{
-               RowBox[{"Normal", "[", "morphismAssociation", "]"}], ",", 
-               RowBox[{
-                RowBox[{"identitySymbol", "[", "#1", "]"}], "\[Rule]", 
-                RowBox[{"DirectedEdge", "[", 
-                 RowBox[{"#1", ",", "#1"}], "]"}]}]}], "]"}], "]"}]}]}], 
-          "]"}], "&"}], ")"}], "/@", 
-       RowBox[{"reduceObjects", "[", 
-        RowBox[{"objects", ",", "quiverObjectEquivalences"}], "]"}]}], ";", 
-      "\[IndentingNewLine]", 
-      RowBox[{"EdgeTaggedGraph", "[", 
-       RowBox[{
-        RowBox[{"reduceObjects", "[", 
-         RowBox[{
-          RowBox[{"reduceObjects", "[", 
-           RowBox[{"objects", ",", "quiverObjectEquivalences"}], "]"}], ",", 
-          "objectEquivalences"}], "]"}], ",", 
-        RowBox[{
-         RowBox[{"(", 
-          RowBox[{
-           RowBox[{"DirectedEdge", "@@", 
-            RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
-         RowBox[{"Normal", "[", 
-          RowBox[{"reduceArrowsFinal", "[", 
-           RowBox[{
-            RowBox[{"reduceArrowsInitial", "[", 
-             RowBox[{"morphismAssociation", ",", "morphismEquivalences"}], 
-             "]"}], ",", "objectEquivalences"}], "]"}], "]"}]}], ",", 
-        RowBox[{"VertexSize", "\[Rule]", "0.3"}], ",", 
-        RowBox[{"VertexStyle", "\[Rule]", 
-         RowBox[{"Directive", "[", 
-          RowBox[{"Transparent", ",", 
-           RowBox[{"EdgeForm", "[", "None", "]"}]}], "]"}]}], ",", 
-        RowBox[{"VertexLabels", "\[Rule]", 
-         RowBox[{"Placed", "[", 
-          RowBox[{"\"\<Name\>\"", ",", "Center"}], "]"}]}], ",", 
-        RowBox[{"VertexLabelStyle", "\[Rule]", 
-         RowBox[{"Directive", "[", 
-          RowBox[{"Bold", ",", "20"}], "]"}]}], ",", 
-        RowBox[{"EdgeLabelStyle", "\[Rule]", 
-         RowBox[{"Directive", "[", 
-          RowBox[{"Bold", ",", "20"}], "]"}]}], ",", 
-        RowBox[{"EdgeStyle", "\[Rule]", 
-         RowBox[{"Directive", "[", 
-          RowBox[{"Black", ",", "Thick"}], "]"}]}], ",", 
-        RowBox[{"GraphLayout", "\[Rule]", 
-         RowBox[{"{", 
-          RowBox[{"\"\<LayeredDigraphEmbedding\>\"", ",", 
-           RowBox[{"\"\<Orientation\>\"", "\[Rule]", "Left"}]}], "}"}]}]}], 
-       "]"}]}]}], "]"}], "/;", 
+             "\"\<ObjectEquivalences\>\"", "\[Rule]", 
+              "quiverObjectEquivalences"}], ",", 
+             RowBox[{"\"\<Objects\>\"", "\[Rule]", "objects"}]}], "]"}], 
+           "]"}]}]}], "]"}], "]"}], "[", "\"\<ReducedLabeledGraph\>\"", "]"}],
+      ",", 
+     RowBox[{"EdgeLabels", "\[Rule]", "None"}]}], "]"}], "/;", 
    RowBox[{
     RowBox[{"SymbolName", "[", "abstractQuiver", "]"}], "===", 
     "\"\<AbstractQuiver\>\""}]}]}]], "Input",
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.869658636424027*^9}},ExpressionUUID->"c22b2659-38cb-4207-b514-\
-d761f145bd43"],
+  3.869658636424027*^9}, {3.869737800345337*^9, 3.8697378452791214`*^9}},
+ CellLabel->
+  "In[531]:=",ExpressionUUID->"c22b2659-38cb-4207-b514-d761f145bd43"],
 
 Cell[BoxData[
  RowBox[{
@@ -27434,8 +26761,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.869658632307721*^9}},ExpressionUUID->"11f9d24a-7979-4039-bd09-\
-f7720b72824c"],
+  3.869658632307721*^9}},
+ CellLabel->"In[96]:=",ExpressionUUID->"11f9d24a-7979-4039-bd09-f7720b72824c"],
 
 Cell[BoxData[
  RowBox[{
@@ -27642,8 +26969,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.8696586298221993`*^9}},ExpressionUUID->"d1ce130b-8a43-47fe-bb10-\
-5692bddc9c25"],
+  3.8696586298221993`*^9}},
+ CellLabel->"In[97]:=",ExpressionUUID->"d1ce130b-8a43-47fe-bb10-5692bddc9c25"],
 
 Cell[BoxData[
  RowBox[{
@@ -27879,8 +27206,8 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.869658623962433*^9}},ExpressionUUID->"8dab4de3-c008-4ca5-863f-\
-dadadb4a1a54"],
+  3.869658623962433*^9}},
+ CellLabel->"In[98]:=",ExpressionUUID->"8dab4de3-c008-4ca5-863f-dadadb4a1a54"],
 
 Cell[BoxData[{
  RowBox[{
@@ -28162,8 +27489,8 @@ Cell[BoxData[{
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.8696586148392267`*^9}},ExpressionUUID->"bee19db7-009e-46c3-84f5-\
-28a8718a4350"],
+  3.8696586148392267`*^9}},
+ CellLabel->"In[99]:=",ExpressionUUID->"bee19db7-009e-46c3-84f5-28a8718a4350"],
 
 Cell[BoxData[
  RowBox[{
@@ -28256,8 +27583,9 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.8696585932417946`*^9}},ExpressionUUID->"5f95ea34-4289-4f1b-bd41-\
-81b28c90f8f4"],
+  3.8696585932417946`*^9}},
+ CellLabel->
+  "In[101]:=",ExpressionUUID->"5f95ea34-4289-4f1b-bd41-81b28c90f8f4"],
 
 Cell[BoxData[
  RowBox[{"AbstractCategory", "/:", 
@@ -28713,8 +28041,9 @@ Cell[BoxData[
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.8696585881984053`*^9}},ExpressionUUID->"976308e5-bca0-439c-ad76-\
-ed75aa566830"],
+  3.8696585881984053`*^9}},
+ CellLabel->
+  "In[102]:=",ExpressionUUID->"976308e5-bca0-439c-ad76-ed75aa566830"],
 
 Cell[BoxData[{
  RowBox[{
@@ -31348,11 +30677,12 @@ Cell[BoxData[{
  InitializationCell->True,
  CellChangeTimes->{{3.8696581935317817`*^9, 3.8696581935474014`*^9}, {
   3.8696583718202224`*^9, 3.86965837319483*^9}, {3.8696584117148066`*^9, 
-  3.8696585792035475`*^9}},ExpressionUUID->"83264349-b5df-4338-97df-\
-38ea84c1151b"]
+  3.8696585792035475`*^9}},
+ CellLabel->
+  "In[103]:=",ExpressionUUID->"83264349-b5df-4338-97df-38ea84c1151b"]
 },
-WindowSize->{1600, 817},
-WindowMargins->{{-8, Automatic}, {Automatic, -8}},
+WindowSize->{1584, 801},
+WindowMargins->{{0, Automatic}, {Automatic, 0}},
 Magnification:>1.3 Inherited,
 FrontEndVersion->"12.1 for Microsoft Windows (64-bit) (March 20, 2020)",
 StyleDefinitions->"Default.nb",
@@ -31369,175 +30699,177 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[561, 20, 3906, 102, 333, "Input",ExpressionUUID->"7fce9d87-8bea-48d7-b406-fed3cdda1897",
+Cell[561, 20, 2456, 57, 188, "Input",ExpressionUUID->"7f263dd8-07d2-4f48-bb3c-a295618a6fe2",
  InitializationCell->True],
-Cell[4470, 124, 2837, 70, 258, "Input",ExpressionUUID->"8aabc7ba-f3a6-4233-b01f-e4d08c305e9c",
+Cell[3020, 79, 3923, 101, 422, "Input",ExpressionUUID->"7fce9d87-8bea-48d7-b406-fed3cdda1897",
  InitializationCell->True],
-Cell[7310, 196, 8266, 198, 458, "Input",ExpressionUUID->"d39e8a1d-8c65-46e3-a504-f42383d51c74",
+Cell[6946, 182, 2858, 70, 292, "Input",ExpressionUUID->"8aabc7ba-f3a6-4233-b01f-e4d08c305e9c",
  InitializationCell->True],
-Cell[15579, 396, 7996, 190, 458, "Input",ExpressionUUID->"f3d7a6a9-5253-43ad-a7a5-18910a5e700c",
+Cell[9807, 254, 8288, 198, 526, "Input",ExpressionUUID->"d39e8a1d-8c65-46e3-a504-f42383d51c74",
  InitializationCell->True],
-Cell[23578, 588, 8124, 194, 458, "Input",ExpressionUUID->"57039bef-d7ed-4873-91d6-486d723e8f02",
+Cell[18098, 454, 8018, 190, 526, "Input",ExpressionUUID->"f3d7a6a9-5253-43ad-a7a5-18910a5e700c",
  InitializationCell->True],
-Cell[31705, 784, 8003, 191, 458, "Input",ExpressionUUID->"861d22ac-0f4b-4e81-bfc5-79658aa7ba12",
+Cell[26119, 646, 8146, 194, 526, "Input",ExpressionUUID->"57039bef-d7ed-4873-91d6-486d723e8f02",
  InitializationCell->True],
-Cell[39711, 977, 5827, 147, 533, "Input",ExpressionUUID->"0ab6b7fb-1394-472c-b1c4-16ad6f744dd5",
+Cell[34268, 842, 8025, 191, 526, "Input",ExpressionUUID->"861d22ac-0f4b-4e81-bfc5-79658aa7ba12",
  InitializationCell->True],
-Cell[45541, 1126, 3222, 80, 283, "Input",ExpressionUUID->"be966cff-ad28-4f1e-a25a-8a4e2c453732",
+Cell[42296, 1035, 5849, 147, 552, "Input",ExpressionUUID->"0ab6b7fb-1394-472c-b1c4-16ad6f744dd5",
  InitializationCell->True],
-Cell[48766, 1208, 8932, 214, 583, "Input",ExpressionUUID->"27e607d8-22df-4f50-8e1f-fb17b4c7f34f",
+Cell[48148, 1184, 3244, 80, 292, "Input",ExpressionUUID->"be966cff-ad28-4f1e-a25a-8a4e2c453732",
  InitializationCell->True],
-Cell[57701, 1424, 8654, 205, 558, "Input",ExpressionUUID->"5ff6d2bd-2222-4328-87f0-2d094b4f909a",
+Cell[51395, 1266, 9454, 199, 630, "Input",ExpressionUUID->"7941ced0-5d2a-4091-ac97-8c48d5326baf",
  InitializationCell->True],
-Cell[66358, 1631, 8786, 209, 558, "Input",ExpressionUUID->"e76f80ca-3b53-429f-869c-3e44ee8b7e88",
+Cell[60852, 1467, 2771, 66, 292, "Input",ExpressionUUID->"5ff6d2bd-2222-4328-87f0-2d094b4f909a",
  InitializationCell->True],
-Cell[75147, 1842, 8665, 206, 558, "Input",ExpressionUUID->"c53853cf-fc32-48bf-894c-eeb8580a494b",
+Cell[63626, 1535, 2773, 66, 292, "Input",ExpressionUUID->"e76f80ca-3b53-429f-869c-3e44ee8b7e88",
  InitializationCell->True],
-Cell[83815, 2050, 7938, 191, 458, "Input",ExpressionUUID->"aef927fb-7f1e-4cbf-a81e-717c1f30fbfa",
+Cell[66402, 1603, 2774, 66, 292, "Input",ExpressionUUID->"c53853cf-fc32-48bf-894c-eeb8580a494b",
  InitializationCell->True],
-Cell[91756, 2243, 7651, 183, 433, "Input",ExpressionUUID->"0d772db2-faa8-4640-bd7a-c2eed01187ff",
+Cell[69179, 1671, 7960, 191, 526, "Input",ExpressionUUID->"aef927fb-7f1e-4cbf-a81e-717c1f30fbfa",
  InitializationCell->True],
-Cell[99410, 2428, 7781, 187, 458, "Input",ExpressionUUID->"a7370945-53f1-4692-8fb0-d0f2517b5123",
+Cell[77142, 1864, 7673, 183, 526, "Input",ExpressionUUID->"0d772db2-faa8-4640-bd7a-c2eed01187ff",
  InitializationCell->True],
-Cell[107194, 2617, 7546, 181, 433, "Input",ExpressionUUID->"a5d0783c-f3ce-4b41-9fd3-b130e6f883d2",
+Cell[84818, 2049, 7803, 187, 526, "Input",ExpressionUUID->"a7370945-53f1-4692-8fb0-d0f2517b5123",
  InitializationCell->True],
-Cell[114743, 2800, 8539, 203, 533, "Input",ExpressionUUID->"c6983cd0-d3a5-447a-9c99-01d6f75e7ee1",
+Cell[92624, 2238, 7568, 181, 500, "Input",ExpressionUUID->"a5d0783c-f3ce-4b41-9fd3-b130e6f883d2",
  InitializationCell->True],
-Cell[123285, 3005, 8251, 196, 558, "Input",ExpressionUUID->"d2bf08ce-66ca-4e24-bb80-7bdaa5403350",
+Cell[100195, 2421, 8561, 203, 656, "Input",ExpressionUUID->"c6983cd0-d3a5-447a-9c99-01d6f75e7ee1",
  InitializationCell->True],
-Cell[131539, 3203, 8383, 200, 558, "Input",ExpressionUUID->"c20c69d4-65ad-4e90-921e-87904058c0bd",
+Cell[108759, 2626, 8273, 196, 682, "Input",ExpressionUUID->"d2bf08ce-66ca-4e24-bb80-7bdaa5403350",
  InitializationCell->True],
-Cell[139925, 3405, 8256, 196, 558, "Input",ExpressionUUID->"1699e10f-a326-49bd-8a01-0704e1c16ca6",
+Cell[117035, 2824, 8405, 200, 682, "Input",ExpressionUUID->"c20c69d4-65ad-4e90-921e-87904058c0bd",
  InitializationCell->True],
-Cell[148184, 3603, 8368, 203, 733, "Input",ExpressionUUID->"a89d7cb5-5190-40d4-a104-25350594c059",
+Cell[125443, 3026, 8278, 196, 682, "Input",ExpressionUUID->"1699e10f-a326-49bd-8a01-0704e1c16ca6",
  InitializationCell->True],
-Cell[156555, 3808, 8384, 204, 583, "Input",ExpressionUUID->"75820726-92d0-40f1-abc8-869c625fdee0",
+Cell[133724, 3224, 8390, 203, 760, "Input",ExpressionUUID->"a89d7cb5-5190-40d4-a104-25350594c059",
  InitializationCell->True],
-Cell[164942, 4014, 9185, 221, 608, "Input",ExpressionUUID->"9ecafd3e-6249-4b5c-bc33-664458084771",
+Cell[142117, 3429, 8406, 204, 582, "Input",ExpressionUUID->"75820726-92d0-40f1-abc8-869c625fdee0",
  InitializationCell->True],
-Cell[174130, 4237, 11454, 277, 633, "Input",ExpressionUUID->"1cd2bc4b-7209-4a3f-b295-1e4e09fe0cf5",
+Cell[150526, 3635, 9207, 221, 682, "Input",ExpressionUUID->"9ecafd3e-6249-4b5c-bc33-664458084771",
  InitializationCell->True],
-Cell[185587, 4516, 12870, 309, 808, "Input",ExpressionUUID->"6891424c-8dc1-4f40-b87d-3378d9dadafb",
+Cell[159736, 3858, 11476, 277, 786, "Input",ExpressionUUID->"1cd2bc4b-7209-4a3f-b295-1e4e09fe0cf5",
  InitializationCell->True],
-Cell[198460, 4827, 9049, 216, 558, "Input",ExpressionUUID->"296f885d-ee1d-4c8b-aa05-f4f066748ee4",
+Cell[171215, 4137, 12892, 309, 968, "Input",ExpressionUUID->"6891424c-8dc1-4f40-b87d-3378d9dadafb",
  InitializationCell->True],
-Cell[207512, 5045, 9182, 221, 508, "Input",ExpressionUUID->"0c102125-85ea-4afa-b528-b41d13132dc8",
+Cell[184110, 4448, 9071, 216, 656, "Input",ExpressionUUID->"296f885d-ee1d-4c8b-aa05-f4f066748ee4",
  InitializationCell->True],
-Cell[216697, 5268, 9852, 236, 608, "Input",ExpressionUUID->"3d63ef53-0b46-4b59-b221-e6d6278f80de",
+Cell[193184, 4666, 9204, 221, 578, "Input",ExpressionUUID->"0c102125-85ea-4afa-b528-b41d13132dc8",
  InitializationCell->True],
-Cell[226552, 5506, 14809, 343, 908, "Input",ExpressionUUID->"783ab603-a697-48b9-bcd2-82c6fd74e767",
+Cell[202391, 4889, 9874, 236, 708, "Input",ExpressionUUID->"3d63ef53-0b46-4b59-b221-e6d6278f80de",
  InitializationCell->True],
-Cell[241364, 5851, 21924, 509, 1333, "Input",ExpressionUUID->"f9c84fca-b923-45db-a8d2-e0cb12aba546",
+Cell[212268, 5127, 14831, 343, 1072, "Input",ExpressionUUID->"783ab603-a697-48b9-bcd2-82c6fd74e767",
  InitializationCell->True],
-Cell[263291, 6362, 14797, 343, 908, "Input",ExpressionUUID->"215be85e-4524-4d2b-a322-77528f628530",
+Cell[227102, 5472, 21946, 509, 1566, "Input",ExpressionUUID->"f9c84fca-b923-45db-a8d2-e0cb12aba546",
  InitializationCell->True],
-Cell[278091, 6707, 21912, 509, 1333, "Input",ExpressionUUID->"b368744f-7d7d-4553-9706-ddf077210cf5",
+Cell[249051, 5983, 14819, 343, 1072, "Input",ExpressionUUID->"215be85e-4524-4d2b-a322-77528f628530",
  InitializationCell->True],
-Cell[300006, 7218, 19201, 436, 1158, "Input",ExpressionUUID->"6831d880-0520-4d0d-950a-d01d32379c78",
+Cell[263873, 6328, 21934, 509, 1566, "Input",ExpressionUUID->"b368744f-7d7d-4553-9706-ddf077210cf5",
  InitializationCell->True],
-Cell[319210, 7656, 26286, 601, 1583, "Input",ExpressionUUID->"7bb361fb-ad51-4bc0-80c5-cc9850126c08",
+Cell[285810, 6839, 19223, 436, 1358, "Input",ExpressionUUID->"6831d880-0520-4d0d-950a-d01d32379c78",
  InitializationCell->True],
-Cell[345499, 8259, 15032, 350, 933, "Input",ExpressionUUID->"09d0b4df-6ac9-430b-a674-b4cb692f665b",
+Cell[305036, 7277, 26308, 601, 1852, "Input",ExpressionUUID->"7bb361fb-ad51-4bc0-80c5-cc9850126c08",
  InitializationCell->True],
-Cell[360534, 8611, 22170, 516, 1358, "Input",ExpressionUUID->"bcc742fa-ea86-4d0a-8b40-bfbb95f6aef6",
+Cell[331347, 7880, 15054, 350, 1098, "Input",ExpressionUUID->"09d0b4df-6ac9-430b-a674-b4cb692f665b",
  InitializationCell->True],
-Cell[382707, 9129, 15507, 360, 933, "Input",ExpressionUUID->"1d360be5-3667-4ef1-86e3-4667af4eacaa",
+Cell[346404, 8232, 22192, 516, 1592, "Input",ExpressionUUID->"bcc742fa-ea86-4d0a-8b40-bfbb95f6aef6",
  InitializationCell->True],
-Cell[398217, 9491, 22566, 523, 1358, "Input",ExpressionUUID->"33a82e4e-af31-4c3f-9f9e-fbb63f4d94ca",
+Cell[368599, 8750, 15529, 360, 1124, "Input",ExpressionUUID->"1d360be5-3667-4ef1-86e3-4667af4eacaa",
  InitializationCell->True],
-Cell[420786, 10016, 15026, 351, 933, "Input",ExpressionUUID->"b38a9e4f-f561-420e-b147-5b013e94a00a",
+Cell[384131, 9112, 22588, 523, 1357, "Input",ExpressionUUID->"33a82e4e-af31-4c3f-9f9e-fbb63f4d94ca",
  InitializationCell->True],
-Cell[435815, 10369, 22123, 515, 1358, "Input",ExpressionUUID->"b3f1e58f-1f74-44c8-8495-d19967e5abf5",
+Cell[406722, 9637, 15048, 351, 932, "Input",ExpressionUUID->"b38a9e4f-f561-420e-b147-5b013e94a00a",
  InitializationCell->True],
-Cell[457941, 10886, 15521, 360, 933, "Input",ExpressionUUID->"e980166c-100d-4834-ae62-6d85de107ff8",
+Cell[421773, 9990, 22145, 515, 1357, "Input",ExpressionUUID->"b3f1e58f-1f74-44c8-8495-d19967e5abf5",
  InitializationCell->True],
-Cell[473465, 11248, 22580, 523, 1358, "Input",ExpressionUUID->"d0fa67a3-8852-40cc-9528-9f87fa677484",
+Cell[443921, 10507, 15543, 360, 1150, "Input",ExpressionUUID->"e980166c-100d-4834-ae62-6d85de107ff8",
  InitializationCell->True],
-Cell[496048, 11773, 18246, 416, 1133, "Input",ExpressionUUID->"a25e7717-95e6-4cc3-8405-bcc06b19c645",
+Cell[459467, 10869, 22602, 523, 1618, "Input",ExpressionUUID->"d0fa67a3-8852-40cc-9528-9f87fa677484",
  InitializationCell->True],
-Cell[514297, 12191, 25359, 582, 1558, "Input",ExpressionUUID->"e620a891-bc6f-46e1-a812-c06f442a248e",
+Cell[482072, 11394, 18268, 416, 1132, "Input",ExpressionUUID->"a25e7717-95e6-4cc3-8405-bcc06b19c645",
  InitializationCell->True],
-Cell[539659, 12775, 18370, 418, 1133, "Input",ExpressionUUID->"5578d223-9b00-4224-83b1-d42df3c0437b",
+Cell[500343, 11812, 25381, 582, 1557, "Input",ExpressionUUID->"e620a891-bc6f-46e1-a812-c06f442a248e",
  InitializationCell->True],
-Cell[558032, 13195, 25404, 581, 1583, "Input",ExpressionUUID->"977ac369-ae26-45c0-a5cc-35f2bda21bd2",
+Cell[525727, 12396, 18392, 418, 1132, "Input",ExpressionUUID->"5578d223-9b00-4224-83b1-d42df3c0437b",
  InitializationCell->True],
-Cell[583439, 13778, 10212, 244, 633, "Input",ExpressionUUID->"91738216-0dea-4c9f-a42a-6c330aeb3568",
+Cell[544122, 12816, 25426, 581, 1582, "Input",ExpressionUUID->"977ac369-ae26-45c0-a5cc-35f2bda21bd2",
  InitializationCell->True],
-Cell[593654, 14024, 10905, 259, 708, "Input",ExpressionUUID->"d8bb9db2-d9fd-4092-aa9e-d9fcfc970258",
+Cell[569551, 13399, 10234, 244, 632, "Input",ExpressionUUID->"91738216-0dea-4c9f-a42a-6c330aeb3568",
  InitializationCell->True],
-Cell[604562, 14285, 18958, 431, 1183, "Input",ExpressionUUID->"919dd566-8045-4e67-9da9-442c80202b0e",
+Cell[579788, 13645, 10927, 259, 707, "Input",ExpressionUUID->"d8bb9db2-d9fd-4092-aa9e-d9fcfc970258",
  InitializationCell->True],
-Cell[623523, 14718, 26071, 597, 1608, "Input",ExpressionUUID->"54bfca44-1e8b-4689-8feb-d1c42f57e6f0",
+Cell[590718, 13906, 18980, 431, 1358, "Input",ExpressionUUID->"919dd566-8045-4e67-9da9-442c80202b0e",
  InitializationCell->True],
-Cell[649597, 15317, 9998, 240, 583, "Input",ExpressionUUID->"2f1b86f1-daef-4f94-a72f-32dc060f9c15",
+Cell[609701, 14339, 26093, 597, 1852, "Input",ExpressionUUID->"54bfca44-1e8b-4689-8feb-d1c42f57e6f0",
  InitializationCell->True],
-Cell[659598, 15559, 11182, 266, 758, "Input",ExpressionUUID->"bffbb52e-a2c8-4ce1-9fc4-b5ba193a39f2",
+Cell[635797, 14938, 10020, 240, 582, "Input",ExpressionUUID->"2f1b86f1-daef-4f94-a72f-32dc060f9c15",
  InitializationCell->True],
-Cell[670783, 15827, 21586, 494, 1308, "Input",ExpressionUUID->"4c1ec37c-d1ab-4569-a808-c826942bf515",
+Cell[645820, 15180, 11204, 266, 757, "Input",ExpressionUUID->"bffbb52e-a2c8-4ce1-9fc4-b5ba193a39f2",
  InitializationCell->True],
-Cell[692372, 16323, 29797, 686, 1883, "Input",ExpressionUUID->"ed23709c-3839-485a-aace-bade43a7b6c7",
+Cell[657027, 15448, 21608, 494, 1307, "Input",ExpressionUUID->"4c1ec37c-d1ab-4569-a808-c826942bf515",
  InitializationCell->True],
-Cell[722172, 17011, 10008, 240, 583, "Input",ExpressionUUID->"f5c06695-13b4-452b-983d-2ed3d45a529b",
+Cell[678638, 15944, 29819, 686, 1882, "Input",ExpressionUUID->"ed23709c-3839-485a-aace-bade43a7b6c7",
  InitializationCell->True],
-Cell[732183, 17253, 11173, 267, 758, "Input",ExpressionUUID->"f306e402-d45a-4737-9dd5-5f5e241d8c67",
+Cell[708460, 16632, 10030, 240, 682, "Input",ExpressionUUID->"f5c06695-13b4-452b-983d-2ed3d45a529b",
  InitializationCell->True],
-Cell[743359, 17522, 21603, 495, 1308, "Input",ExpressionUUID->"d57270ca-8f4b-48b0-9808-b199dc21a082",
+Cell[718493, 16874, 11195, 267, 864, "Input",ExpressionUUID->"f306e402-d45a-4737-9dd5-5f5e241d8c67",
  InitializationCell->True],
-Cell[764965, 18019, 29811, 686, 1883, "Input",ExpressionUUID->"1d0fe121-540c-4f05-b50e-3f9cf253a180",
+Cell[729691, 17143, 21625, 495, 1307, "Input",ExpressionUUID->"d57270ca-8f4b-48b0-9808-b199dc21a082",
  InitializationCell->True],
-Cell[794779, 18707, 11464, 274, 658, "Input",ExpressionUUID->"59d94e00-7ff5-44bb-99ef-f8566891b70e",
+Cell[751319, 17640, 29833, 686, 1882, "Input",ExpressionUUID->"1d0fe121-540c-4f05-b50e-3f9cf253a180",
  InitializationCell->True],
-Cell[806246, 18983, 13130, 310, 883, "Input",ExpressionUUID->"66e14e96-d97a-49b2-884d-92ea8a4d6d56",
+Cell[781155, 18328, 11486, 274, 657, "Input",ExpressionUUID->"59d94e00-7ff5-44bb-99ef-f8566891b70e",
  InitializationCell->True],
-Cell[819379, 19295, 24328, 557, 1458, "Input",ExpressionUUID->"192ffcad-800c-479f-a4c4-ccb26d62f866",
+Cell[792644, 18604, 13152, 310, 994, "Input",ExpressionUUID->"66e14e96-d97a-49b2-884d-92ea8a4d6d56",
  InitializationCell->True],
-Cell[843710, 19854, 33398, 768, 2108, "Input",ExpressionUUID->"998561fd-a479-4f76-91ec-967d9b1f7b9d",
+Cell[805799, 18916, 24350, 557, 1748, "Input",ExpressionUUID->"192ffcad-800c-479f-a4c4-ccb26d62f866",
  InitializationCell->True],
-Cell[877111, 20624, 13243, 314, 883, "Input",ExpressionUUID->"d2365d11-77c1-4f80-b5e1-8e63e007a021",
+Cell[830152, 19475, 33420, 768, 2107, "Input",ExpressionUUID->"998561fd-a479-4f76-91ec-967d9b1f7b9d",
  InitializationCell->True],
-Cell[890357, 20940, 15534, 358, 908, "Input",ExpressionUUID->"c06bb836-baf1-421d-9a32-d3820dc36cd8",
+Cell[863575, 20245, 13265, 314, 882, "Input",ExpressionUUID->"d2365d11-77c1-4f80-b5e1-8e63e007a021",
  InitializationCell->True],
-Cell[905894, 21300, 22656, 526, 1333, "Input",ExpressionUUID->"2f51730a-b19f-4097-9f28-5895ce9c4003",
+Cell[876843, 20561, 15556, 358, 907, "Input",ExpressionUUID->"c06bb836-baf1-421d-9a32-d3820dc36cd8",
  InitializationCell->True],
-Cell[928553, 21828, 38005, 882, 2208, "Input",ExpressionUUID->"24ba81d7-5bd8-4f99-90e1-aedbadca0fad",
+Cell[892402, 20921, 22678, 526, 1592, "Input",ExpressionUUID->"2f51730a-b19f-4097-9f28-5895ce9c4003",
  InitializationCell->True],
-Cell[966561, 22712, 20683, 468, 1158, "Input",ExpressionUUID->"64950165-21de-4dad-9464-cfeb6217ef2a",
+Cell[915083, 21449, 38027, 882, 2658, "Input",ExpressionUUID->"24ba81d7-5bd8-4f99-90e1-aedbadca0fad",
  InitializationCell->True],
-Cell[987247, 23182, 27788, 633, 1583, "Input",ExpressionUUID->"31930fe5-93ff-4f72-8cf1-52fe64a2c710",
+Cell[953113, 22333, 20705, 468, 1410, "Input",ExpressionUUID->"64950165-21de-4dad-9464-cfeb6217ef2a",
  InitializationCell->True],
-Cell[1015038, 23817, 8955, 213, 583, "Input",ExpressionUUID->"b0edc585-33b2-4fc1-8696-bd7639e1b447",
+Cell[973821, 22803, 27810, 633, 1904, "Input",ExpressionUUID->"31930fe5-93ff-4f72-8cf1-52fe64a2c710",
  InitializationCell->True],
-Cell[1023996, 24032, 10312, 245, 658, "Input",ExpressionUUID->"6951b17b-3f57-464a-bcd9-bf6e2f3258fc",
+Cell[1001634, 23438, 8977, 213, 682, "Input",ExpressionUUID->"b0edc585-33b2-4fc1-8696-bd7639e1b447",
  InitializationCell->True],
-Cell[1034311, 24279, 36176, 818, 2258, "Input",ExpressionUUID->"7a1e342b-b2f3-4587-8abf-35e9bcf3a84a",
+Cell[1010614, 23653, 10334, 245, 786, "Input",ExpressionUUID->"6951b17b-3f57-464a-bcd9-bf6e2f3258fc",
  InitializationCell->True],
-Cell[1070490, 25099, 26494, 611, 1633, "Input",ExpressionUUID->"af1165dd-a131-458d-854e-d5c6abaa436b",
+Cell[1020951, 23900, 36198, 818, 2580, "Input",ExpressionUUID->"7a1e342b-b2f3-4587-8abf-35e9bcf3a84a",
  InitializationCell->True],
-Cell[1096987, 25712, 11244, 267, 583, "Input",ExpressionUUID->"d3e7943a-0729-48f2-b559-05347bbfd179",
+Cell[1057152, 24720, 26516, 611, 1852, "Input",ExpressionUUID->"af1165dd-a131-458d-854e-d5c6abaa436b",
  InitializationCell->True],
-Cell[1108234, 25981, 13005, 306, 808, "Input",ExpressionUUID->"8e542dea-1b67-4227-a250-4ccd3e9a463e",
+Cell[1083671, 25333, 11266, 267, 682, "Input",ExpressionUUID->"d3e7943a-0729-48f2-b559-05347bbfd179",
  InitializationCell->True],
-Cell[1121242, 26289, 9446, 224, 533, "Input",ExpressionUUID->"ebc55b8a-d86d-4e9d-8e42-7bc917b103bc",
+Cell[1094940, 25602, 13027, 306, 994, "Input",ExpressionUUID->"8e542dea-1b67-4227-a250-4ccd3e9a463e",
  InitializationCell->True],
-Cell[1130691, 26515, 9230, 218, 508, "Input",ExpressionUUID->"e9db3d31-f384-4d57-8877-401cd8af0fc5",
+Cell[1107970, 25910, 9468, 224, 604, "Input",ExpressionUUID->"ebc55b8a-d86d-4e9d-8e42-7bc917b103bc",
  InitializationCell->True],
-Cell[1139924, 26735, 10321, 244, 658, "Input",ExpressionUUID->"929554fc-e034-4c47-875e-fe85767df8b3",
+Cell[1117441, 26136, 9252, 218, 508, "Input",ExpressionUUID->"e9db3d31-f384-4d57-8877-401cd8af0fc5",
  InitializationCell->True],
-Cell[1150248, 26981, 10104, 239, 633, "Input",ExpressionUUID->"c22b2659-38cb-4207-b514-d761f145bd43",
+Cell[1126696, 26356, 5108, 120, 383, "Input",ExpressionUUID->"929554fc-e034-4c47-875e-fe85767df8b3",
  InitializationCell->True],
-Cell[1160355, 27222, 9014, 215, 508, "Input",ExpressionUUID->"11f9d24a-7979-4039-bd09-f7720b72824c",
+Cell[1131807, 26478, 2897, 69, 284, "Input",ExpressionUUID->"c22b2659-38cb-4207-b514-d761f145bd43",
  InitializationCell->True],
-Cell[1169372, 27439, 8662, 206, 483, "Input",ExpressionUUID->"d1ce130b-8a43-47fe-bb10-5692bddc9c25",
+Cell[1134707, 26549, 9036, 215, 508, "Input",ExpressionUUID->"11f9d24a-7979-4039-bd09-f7720b72824c",
  InitializationCell->True],
-Cell[1178037, 27647, 9947, 235, 633, "Input",ExpressionUUID->"8dab4de3-c008-4ca5-863f-dadadb4a1a54",
+Cell[1143746, 26766, 8684, 206, 483, "Input",ExpressionUUID->"d1ce130b-8a43-47fe-bb10-5692bddc9c25",
  InitializationCell->True],
-Cell[1187987, 27884, 11814, 281, 808, "Input",ExpressionUUID->"bee19db7-009e-46c3-84f5-28a8718a4350",
+Cell[1152433, 26974, 9969, 235, 632, "Input",ExpressionUUID->"8dab4de3-c008-4ca5-863f-dadadb4a1a54",
  InitializationCell->True],
-Cell[1199804, 28167, 5118, 92, 508, "Input",ExpressionUUID->"5f95ea34-4289-4f1b-bd41-81b28c90f8f4",
+Cell[1162405, 27211, 11836, 281, 807, "Input",ExpressionUUID->"bee19db7-009e-46c3-84f5-28a8718a4350",
  InitializationCell->True],
-Cell[1204925, 28261, 19441, 455, 1283, "Input",ExpressionUUID->"976308e5-bca0-439c-ad76-ed75aa566830",
+Cell[1174244, 27494, 5144, 93, 507, "Input",ExpressionUUID->"5f95ea34-4289-4f1b-bd41-81b28c90f8f4",
  InitializationCell->True],
-Cell[1224369, 28718, 110116, 2633, 9109, "Input",ExpressionUUID->"83264349-b5df-4338-97df-38ea84c1151b",
+Cell[1179391, 27589, 19467, 456, 1282, "Input",ExpressionUUID->"976308e5-bca0-439c-ad76-ed75aa566830",
+ InitializationCell->True],
+Cell[1198861, 28047, 110142, 2634, 9108, "Input",ExpressionUUID->"83264349-b5df-4338-97df-38ea84c1151b",
  InitializationCell->True]
 }
 ]
