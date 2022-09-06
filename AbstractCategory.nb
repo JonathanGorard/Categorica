@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       161,          7]
-NotebookDataLength[   1340059,      31243]
-NotebookOptionsPosition[   1328733,      31057]
-NotebookOutlinePosition[   1329163,      31074]
-CellTagsIndexPosition[   1329120,      31071]
+NotebookDataLength[   1344366,      31479]
+NotebookOptionsPosition[   1333050,      31293]
+NotebookOutlinePosition[   1333466,      31310]
+CellTagsIndexPosition[   1333423,      31307]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -33,6 +33,7 @@ Cell[BoxData[
    RowBox[{
     RowBox[{"equivalenceClasses", "[", 
      RowBox[{"set_List", ",", " ", "elementEquivalences_List"}], "]"}], ":=", 
+    
     RowBox[{"ConnectedComponents", "[", 
      RowBox[{"Graph", "[", 
       RowBox[{"set", ",", 
@@ -50,6 +51,7 @@ Cell[BoxData[
      "representative", " ", "of", " ", "its", " ", "equivalence", " ", 
      "class", " ", "as", " ", "determined", " ", "by", " ", 
      "representativeSelectionFunction"}], " ", "*)"}], "\[IndentingNewLine]", 
+   
    RowBox[{
     RowBox[{"elementsToClassRepresentatives", "[", 
      RowBox[{
@@ -64,6 +66,7 @@ Cell[BoxData[
           RowBox[{
            RowBox[{"representativeSelectionFunction", "[", "#1", "]"}], ",", 
            RowBox[{"Length", "[", "#1", "]"}]}], "]"}]}], "]"}], "&"}], "/@", 
+      
       RowBox[{"equivalenceClasses", "[", 
        RowBox[{"set", ",", "elementEquivalences"}], "]"}]}], "]"}]}], 
    "\[IndentingNewLine]", 
@@ -87,7 +90,7 @@ Cell[BoxData[
   3.869994982138694*^9}, {3.869995092378495*^9, 3.8699950939638186`*^9}, {
   3.869995161854186*^9, 3.869995169366827*^9}},
  CellLabel->
-  "In[458]:=",ExpressionUUID->"7f263dd8-07d2-4f48-bb3c-a295618a6fe2"],
+  "In[158]:=",ExpressionUUID->"7f263dd8-07d2-4f48-bb3c-a295618a6fe2"],
 
 Cell[BoxData[{
  RowBox[{
@@ -105,6 +108,7 @@ Cell[BoxData[{
        RowBox[{
         RowBox[{"First", "[", 
          RowBox[{"First", "[", "objectEquivalences", "]"}], "]"}], "\[Rule]", 
+        
         RowBox[{"Last", "[", 
          RowBox[{"First", "[", "objectEquivalences", "]"}], "]"}]}]}], "]"}], 
      ",", 
@@ -120,7 +124,8 @@ Cell[BoxData[{
            RowBox[{"First", "[", "objectEquivalences", "]"}], "]"}]}]}], 
         "]"}], ",", "1"}], "]"}]}], "]"}], "/;", 
    RowBox[{
-    RowBox[{"Length", "[", "objectEquivalences", "]"}], ">", "0"}]}]}], "\n", 
+    RowBox[{"Length", "[", "objectEquivalences", "]"}], ">", 
+    "0"}]}]}], "\n", 
  RowBox[{
   RowBox[{"reduceArrowsInitial", "[", 
    RowBox[{"arrows_Association", ",", 
@@ -170,6 +175,7 @@ Cell[BoxData[{
        RowBox[{
         RowBox[{"First", "[", 
          RowBox[{"First", "[", "objectEquivalences", "]"}], "]"}], "\[Rule]", 
+        
         RowBox[{"Last", "[", 
          RowBox[{"First", "[", "objectEquivalences", "]"}], "]"}]}]}], "]"}], 
      ",", 
@@ -351,6 +357,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -551,6 +558,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -743,6 +751,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -939,6 +948,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -1313,6 +1323,7 @@ Cell[BoxData[
        RowBox[{"\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol_"}],
         ",", 
        RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol_"}], ",", 
+       
        RowBox[{
        "\"\<MorphismEquivalences\>\"", "\[Rule]", 
         "morphismEquivalences_List"}], ",", 
@@ -1341,8 +1352,8 @@ Cell[BoxData[
        RowBox[{
        "allMorphisms", ",", "objectReplacements", ",", "equivalences", ",", 
         "morphismAssociation", ",", "compositions", ",", "classLookup", ",", 
-        "newCompositions", ",", "eqCandidates", ",", "repSelectionFunction"}],
-        "}"}], ",", "\[IndentingNewLine]", 
+        "newCompositions", ",", "eqCandidates", ",", "repSelectionFunction", 
+        ",", "idMorphismNames"}], "}"}], ",", "\[IndentingNewLine]", 
       RowBox[{"(*", " ", 
        RowBox[{
         RowBox[{
@@ -1575,6 +1586,11 @@ Cell[BoxData[
           RowBox[{"(", 
            RowBox[{"already", " ", "existent"}], ")"}], " ", "set", " ", "of",
            " ", "morphisms"}]}], " ", "*)"}], "\[IndentingNewLine]", 
+       RowBox[{"idMorphismNames", "=", 
+        RowBox[{
+         RowBox[{
+          RowBox[{"identitySymbol", "[", "#", "]"}], "&"}], "/@", 
+         "objects"}]}], ";", "\[IndentingNewLine]", 
        RowBox[{"morphismAssociation", "=", 
         RowBox[{"arrows", "/.", "objectReplacements"}]}], ";", " ", 
        "\[IndentingNewLine]", 
@@ -1680,8 +1696,23 @@ Cell[BoxData[
            RowBox[{"Association", "[", 
             RowBox[{"elementsToClassRepresentatives", "[", 
              RowBox[{
-              RowBox[{"Keys", "[", "allMorphisms", "]"}], ",", 
-              "equivalences"}], "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+              RowBox[{"Keys", "[", "allMorphisms", "]"}], ",", "equivalences",
+               ",", "\[IndentingNewLine]", 
+              RowBox[{"Function", "[", 
+               RowBox[{"lst", ",", 
+                RowBox[{"If", "[", 
+                 RowBox[{
+                  RowBox[{
+                   RowBox[{"Intersection", "[", 
+                    RowBox[{"idMorphismNames", ",", "lst"}], "]"}], "!=", 
+                   RowBox[{"{", "}"}]}], ",", 
+                  RowBox[{
+                   RowBox[{"Intersection", "[", 
+                    RowBox[{"idMorphismNames", ",", "lst"}], "]"}], "[", 
+                   RowBox[{"[", "1", "]"}], "]"}], ",", 
+                  RowBox[{"lst", "[", 
+                   RowBox[{"[", "1", "]"}], "]"}]}], "]"}]}], "]"}]}], "]"}], 
+            "]"}]}], ";", "\[IndentingNewLine]", 
           RowBox[{"morphismAssociation", "=", 
            RowBox[{"Association", "[", 
             RowBox[{"Append", "[", 
@@ -1841,8 +1872,11 @@ Cell[BoxData[
    3.8699946626411605`*^9, 3.8699946970536146`*^9}, {3.869995219081419*^9, 
    3.8699952678411617`*^9}, {3.8699952979683604`*^9, 
    3.8699953262891755`*^9}, {3.8699954027223577`*^9, 
-   3.8699955073857565`*^9}},ExpressionUUID->"7941ced0-5d2a-4091-ac97-\
-8c48d5326baf"],
+   3.8699955073857565`*^9}, {3.87143565856497*^9, 3.871435673833342*^9}, {
+   3.8714357119787817`*^9, 3.871435712441204*^9}, {3.871435769139729*^9, 
+   3.871435845252919*^9}, {3.871436039278515*^9, 3.8714361528104067`*^9}},
+ CellLabel->
+  "In[300]:=",ExpressionUUID->"7941ced0-5d2a-4091-ac97-8c48d5326baf"],
 
 Cell[BoxData[
  RowBox[{
@@ -1882,11 +1916,13 @@ Cell[BoxData[
         RowBox[{"\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol"}],
          ",", 
         RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol"}], ",", 
+        
         RowBox[{
         "\"\<MorphismEquivalences\>\"", "\[Rule]", "morphismEquivalences"}], 
         ",", 
         RowBox[{
         "\"\<ObjectEquivalences\>\"", "\[Rule]", "objectEquivalences"}], ",", 
+        
         RowBox[{"\"\<Quiver\>\"", "\[Rule]", 
          RowBox[{
           RowBox[{"(", "abstractQuiver", ")"}], "[", 
@@ -1949,11 +1985,13 @@ Cell[BoxData[
         RowBox[{"\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol"}],
          ",", 
         RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol"}], ",", 
+        
         RowBox[{
         "\"\<MorphismEquivalences\>\"", "\[Rule]", "morphismEquivalences"}], 
         ",", 
         RowBox[{
         "\"\<ObjectEquivalences\>\"", "\[Rule]", "objectEquivalences"}], ",", 
+        
         RowBox[{"\"\<Quiver\>\"", "\[Rule]", 
          RowBox[{
           RowBox[{"(", "abstractQuiver", ")"}], "[", 
@@ -2016,11 +2054,13 @@ Cell[BoxData[
         RowBox[{"\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol"}],
          ",", 
         RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol"}], ",", 
+        
         RowBox[{
         "\"\<MorphismEquivalences\>\"", "\[Rule]", "morphismEquivalences"}], 
         ",", 
         RowBox[{
         "\"\<ObjectEquivalences\>\"", "\[Rule]", "objectEquivalences"}], ",", 
+        
         RowBox[{"\"\<Quiver\>\"", "\[Rule]", 
          RowBox[{
           RowBox[{"(", "abstractQuiver", ")"}], "[", 
@@ -2133,6 +2173,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -2325,6 +2366,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -2510,6 +2552,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -2699,6 +2742,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -2888,6 +2932,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -3093,6 +3138,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -3291,6 +3337,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -3493,6 +3540,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -3736,6 +3784,7 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{
           "\"\<ArrowEquivalences\>\"", "\[Rule]", "arrowEquivalences"}], ",", 
+          
           RowBox[{"\"\<Arrows\>\"", "\[Rule]", 
            RowBox[{"Association", "[", 
             RowBox[{
@@ -4321,6 +4370,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -4606,6 +4656,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -4914,6 +4965,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -5128,6 +5180,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -5222,6 +5275,7 @@ Cell[BoxData[
                 RowBox[{"DirectedEdge", "[", 
                  RowBox[{"#1", ",", "#1"}], "]"}]}]}], "]"}], "]"}]}]}], 
           "]"}], "&"}], ")"}], "/@", "objects"}], ";", "\[IndentingNewLine]", 
+      
       RowBox[{"Flatten", "[", 
        RowBox[{
         RowBox[{"(", 
@@ -5356,6 +5410,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -5591,6 +5646,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -5829,12 +5885,14 @@ Cell[BoxData[
                     RowBox[{"isMonomorphism", "=", "False"}]}], "]"}], ",", 
                     RowBox[{"isMonomorphism", "=", "False"}]}], "]"}]}], 
                   "]"}]}], "]"}], "&"}], ")"}], "/@", "morphismPairs"}], ";", 
+            
             RowBox[{"monomorphisms", "=", 
              RowBox[{"Append", "[", 
               RowBox[{"monomorphisms", ",", 
                RowBox[{
                 RowBox[{"First", "[", "morphism", "]"}], "\[Rule]", 
                 "isMonomorphism"}]}], "]"}]}]}]}], "]"}], "&"}], ")"}], "/@", 
+       
        RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ";", 
       RowBox[{"Association", "[", "monomorphisms", "]"}]}]}], "]"}], "/;", 
    RowBox[{
@@ -5937,6 +5995,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -6334,12 +6393,14 @@ Cell[BoxData[
                     RowBox[{"isMonomorphism", "=", "False"}]}], "]"}], ",", 
                     RowBox[{"isMonomorphism", "=", "False"}]}], "]"}]}], 
                   "]"}]}], "]"}], "&"}], ")"}], "/@", "morphismPairs"}], ";", 
+            
             RowBox[{"reducedMonomorphisms", "=", 
              RowBox[{"Append", "[", 
               RowBox[{"reducedMonomorphisms", ",", 
                RowBox[{
                 RowBox[{"First", "[", "morphism", "]"}], "\[Rule]", 
                 "isMonomorphism"}]}], "]"}]}]}]}], "]"}], "&"}], ")"}], "/@", 
+       
        RowBox[{"Normal", "[", 
         RowBox[{"reduceArrowsFinal", "[", 
          RowBox[{
@@ -6447,6 +6508,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -6685,6 +6747,7 @@ Cell[BoxData[
                     RowBox[{"isEpimorphism", "=", "False"}]}], "]"}], ",", 
                     RowBox[{"isEpimorphism", "=", "False"}]}], "]"}]}], 
                   "]"}]}], "]"}], "&"}], ")"}], "/@", "morphismPairs"}], ";", 
+            
             RowBox[{"epimorphisms", "=", 
              RowBox[{"Append", "[", 
               RowBox[{"epimorphisms", ",", 
@@ -6793,6 +6856,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -7190,6 +7254,7 @@ Cell[BoxData[
                     RowBox[{"isEpimorphism", "=", "False"}]}], "]"}], ",", 
                     RowBox[{"isEpimorphism", "=", "False"}]}], "]"}]}], 
                   "]"}]}], "]"}], "&"}], ")"}], "/@", "morphismPairs"}], ";", 
+            
             RowBox[{"reducedEpimorphisms", "=", 
              RowBox[{"Append", "[", 
               RowBox[{"reducedEpimorphisms", ",", 
@@ -7303,6 +7368,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -7742,6 +7808,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -8344,6 +8411,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -8574,6 +8642,7 @@ Cell[BoxData[
                     RowBox[{
                     "VertexList", "[", "morphismEquivalenceGraph", "]"}], ",", 
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"If", "[", 
                     RowBox[{
                     RowBox[{
@@ -8584,6 +8653,7 @@ Cell[BoxData[
                     RowBox[{
                     RowBox[{"First", "[", "morphism", "]"}], ",", 
                     RowBox[{"First", "[", "newMorphism", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], 
                     "]"}], ">", "0"}], ",", 
                     RowBox[{"isRetraction", "=", "True"}]}], "]"}]}], "]"}], 
@@ -8697,6 +8767,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -9086,6 +9157,7 @@ Cell[BoxData[
                     RowBox[{
                     "VertexList", "[", "morphismEquivalenceGraph", "]"}], ",", 
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"If", "[", 
                     RowBox[{
                     RowBox[{
@@ -9096,6 +9168,7 @@ Cell[BoxData[
                     RowBox[{
                     RowBox[{"First", "[", "morphism", "]"}], ",", 
                     RowBox[{"First", "[", "newMorphism", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], 
                     "]"}], ">", "0"}], ",", 
                     RowBox[{"isRetraction", "=", "True"}]}], "]"}]}], "]"}], 
@@ -9214,6 +9287,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -9449,6 +9523,7 @@ Cell[BoxData[
                     RowBox[{
                     "VertexList", "[", "morphismEquivalenceGraph", "]"}], ",", 
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"If", "[", 
                     RowBox[{
                     RowBox[{
@@ -9577,6 +9652,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -9969,6 +10045,7 @@ Cell[BoxData[
                     RowBox[{
                     "VertexList", "[", "morphismEquivalenceGraph", "]"}], ",", 
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"If", "[", 
                     RowBox[{
                     RowBox[{
@@ -10101,6 +10178,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -10331,6 +10409,7 @@ Cell[BoxData[
                     RowBox[{
                     "VertexList", "[", "morphismEquivalenceGraph", "]"}], ",", 
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"If", "[", 
                     RowBox[{
                     RowBox[{
@@ -10393,6 +10472,7 @@ Cell[BoxData[
            "quiverObjectEquivalences_List"}], ",", 
           RowBox[{"\"\<Objects\>\"", "\[Rule]", "objects_List"}]}], "]"}], 
         "]"}]}]}], "]"}], "]"}], "[", "\"\<ReducedSections\>\"", "]"}], ":=", 
+  
   RowBox[{
    RowBox[{"Module", "[", 
     RowBox[{
@@ -10455,6 +10535,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -10843,6 +10924,7 @@ Cell[BoxData[
                     RowBox[{
                     "VertexList", "[", "morphismEquivalenceGraph", "]"}], ",", 
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"If", "[", 
                     RowBox[{
                     RowBox[{
@@ -10971,6 +11053,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -11206,6 +11289,7 @@ Cell[BoxData[
                     RowBox[{
                     "VertexList", "[", "morphismEquivalenceGraph", "]"}], ",", 
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"If", "[", 
                     RowBox[{
                     RowBox[{
@@ -11216,6 +11300,7 @@ Cell[BoxData[
                     RowBox[{
                     RowBox[{"First", "[", "morphism", "]"}], ",", 
                     RowBox[{"First", "[", "newMorphism", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], 
                     "]"}], ">", "0"}], ",", 
                     RowBox[{"rightInverseList", "=", 
@@ -11334,6 +11419,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -11726,6 +11812,7 @@ Cell[BoxData[
                     RowBox[{
                     "VertexList", "[", "morphismEquivalenceGraph", "]"}], ",", 
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"If", "[", 
                     RowBox[{
                     RowBox[{
@@ -11736,6 +11823,7 @@ Cell[BoxData[
                     RowBox[{
                     RowBox[{"First", "[", "morphism", "]"}], ",", 
                     RowBox[{"First", "[", "newMorphism", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], 
                     "]"}], ">", "0"}], ",", 
                     RowBox[{"rightInverseList", "=", 
@@ -11858,6 +11946,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -12102,6 +12191,7 @@ Cell[BoxData[
                     RowBox[{
                     "VertexList", "[", "morphismEquivalenceGraph", "]"}], ",", 
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"If", "[", 
                     RowBox[{
                     RowBox[{
@@ -12112,6 +12202,7 @@ Cell[BoxData[
                     RowBox[{
                     RowBox[{"First", "[", "morphism", "]"}], ",", 
                     RowBox[{"First", "[", "newMorphism", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], 
                     "]"}], ">", "0"}], ",", 
                     RowBox[{"isRetraction", "=", "True"}]}], "]"}]}], "]"}], 
@@ -12152,6 +12243,7 @@ Cell[BoxData[
                     RowBox[{
                     "VertexList", "[", "morphismEquivalenceGraph", "]"}], ",", 
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"If", "[", 
                     RowBox[{
                     RowBox[{
@@ -12277,6 +12369,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -12680,6 +12773,7 @@ Cell[BoxData[
                     RowBox[{
                     "VertexList", "[", "morphismEquivalenceGraph", "]"}], ",", 
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"If", "[", 
                     RowBox[{
                     RowBox[{
@@ -12690,6 +12784,7 @@ Cell[BoxData[
                     RowBox[{
                     RowBox[{"First", "[", "morphism", "]"}], ",", 
                     RowBox[{"First", "[", "newMorphism", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], 
                     "]"}], ">", "0"}], ",", 
                     RowBox[{"isRetraction", "=", "True"}]}], "]"}]}], "]"}], 
@@ -12730,6 +12825,7 @@ Cell[BoxData[
                     RowBox[{
                     "VertexList", "[", "morphismEquivalenceGraph", "]"}], ",", 
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"If", "[", 
                     RowBox[{
                     RowBox[{
@@ -12860,6 +12956,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -13099,6 +13196,7 @@ Cell[BoxData[
                     RowBox[{
                     "VertexList", "[", "morphismEquivalenceGraph", "]"}], ",", 
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"If", "[", 
                     RowBox[{
                     RowBox[{
@@ -13109,6 +13207,7 @@ Cell[BoxData[
                     RowBox[{
                     RowBox[{"First", "[", "morphism", "]"}], ",", 
                     RowBox[{"First", "[", "newMorphism", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], 
                     "]"}], ">", "0"}], ",", 
                     RowBox[{"isRetraction", "=", "True"}]}], "]"}]}], "]"}], 
@@ -13149,6 +13248,7 @@ Cell[BoxData[
                     RowBox[{
                     "VertexList", "[", "morphismEquivalenceGraph", "]"}], ",", 
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"If", "[", 
                     RowBox[{
                     RowBox[{
@@ -13219,6 +13319,7 @@ Cell[BoxData[
            "quiverObjectEquivalences_List"}], ",", 
           RowBox[{"\"\<Objects\>\"", "\[Rule]", "objects_List"}]}], "]"}], 
         "]"}]}]}], "]"}], "]"}], "[", "\"\<ReducedInverses\>\"", "]"}], ":=", 
+  
   RowBox[{
    RowBox[{"Module", "[", 
     RowBox[{
@@ -13281,6 +13382,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -13677,6 +13779,7 @@ Cell[BoxData[
                     RowBox[{
                     "VertexList", "[", "morphismEquivalenceGraph", "]"}], ",", 
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"If", "[", 
                     RowBox[{
                     RowBox[{
@@ -13687,6 +13790,7 @@ Cell[BoxData[
                     RowBox[{
                     RowBox[{"First", "[", "morphism", "]"}], ",", 
                     RowBox[{"First", "[", "newMorphism", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], 
                     "]"}], ">", "0"}], ",", 
                     RowBox[{"isRetraction", "=", "True"}]}], "]"}]}], "]"}], 
@@ -13727,6 +13831,7 @@ Cell[BoxData[
                     RowBox[{
                     "VertexList", "[", "morphismEquivalenceGraph", "]"}], ",", 
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"If", "[", 
                     RowBox[{
                     RowBox[{
@@ -13862,6 +13967,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -14008,6 +14114,7 @@ Cell[BoxData[
                RowBox[{
                 RowBox[{"First", "[", "morphism", "]"}], "\[Rule]", 
                 "isEndomorphism"}]}], "]"}]}]}]}], "]"}], "&"}], ")"}], "/@", 
+       
        RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ";", 
       RowBox[{"Association", "[", "endomorphisms", "]"}]}]}], "]"}], "/;", 
    RowBox[{
@@ -14113,6 +14220,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -14264,6 +14372,7 @@ Cell[BoxData[
                RowBox[{
                 RowBox[{"First", "[", "morphism", "]"}], "\[Rule]", 
                 "isEndomorphism"}]}], "]"}]}]}]}], "]"}], "&"}], ")"}], "/@", 
+       
        RowBox[{"Normal", "[", 
         RowBox[{"reduceArrowsFinal", "[", 
          RowBox[{
@@ -14370,6 +14479,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -14568,8 +14678,8 @@ Cell[BoxData[
                     RowBox[{"identitySymbol", "[", "#1", "]"}], "\[Rule]", 
                     RowBox[{"DirectedEdge", "[", 
                     RowBox[{"#1", ",", "#1"}], "]"}]}], ")"}]}], ",", 
-                 RowBox[{"isSection", "=", "True"}]}], "]"}], "&"}], ")"}], "/@",
-              "objects"}], ";", "\[IndentingNewLine]", 
+                 RowBox[{"isSection", "=", "True"}]}], "]"}], "&"}], ")"}], "/@", \
+"objects"}], ";", "\[IndentingNewLine]", 
             RowBox[{
              RowBox[{"(", 
               RowBox[{
@@ -14615,6 +14725,7 @@ Cell[BoxData[
                     RowBox[{
                     "VertexList", "[", "morphismEquivalenceGraph", "]"}], ",", 
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"If", "[", 
                     RowBox[{
                     RowBox[{
@@ -14625,6 +14736,7 @@ Cell[BoxData[
                     RowBox[{
                     RowBox[{"First", "[", "morphism", "]"}], ",", 
                     RowBox[{"First", "[", "newMorphism", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], 
                     "]"}], ">", "0"}], ",", 
                     RowBox[{"isRetraction", "=", "True"}]}], "]"}]}], "]"}], 
@@ -14665,6 +14777,7 @@ Cell[BoxData[
                     RowBox[{
                     "VertexList", "[", "morphismEquivalenceGraph", "]"}], ",", 
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"If", "[", 
                     RowBox[{
                     RowBox[{
@@ -14804,6 +14917,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -15208,6 +15322,7 @@ Cell[BoxData[
                     RowBox[{
                     "VertexList", "[", "morphismEquivalenceGraph", "]"}], ",", 
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"If", "[", 
                     RowBox[{
                     RowBox[{
@@ -15218,6 +15333,7 @@ Cell[BoxData[
                     RowBox[{
                     RowBox[{"First", "[", "morphism", "]"}], ",", 
                     RowBox[{"First", "[", "newMorphism", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], 
                     "]"}], ">", "0"}], ",", 
                     RowBox[{"isRetraction", "=", "True"}]}], "]"}]}], "]"}], 
@@ -15258,6 +15374,7 @@ Cell[BoxData[
                     RowBox[{
                     "VertexList", "[", "morphismEquivalenceGraph", "]"}], ",", 
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"If", "[", 
                     RowBox[{
                     RowBox[{
@@ -15401,6 +15518,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -15649,6 +15767,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -15912,6 +16031,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -16156,6 +16276,7 @@ Cell[BoxData[
                     RowBox[{
                     "VertexList", "[", "morphismEquivalenceGraph", "]"}], ",", 
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"If", "[", 
                     RowBox[{
                     RowBox[{
@@ -16166,6 +16287,7 @@ Cell[BoxData[
                     RowBox[{
                     RowBox[{"First", "[", "morphism", "]"}], ",", 
                     RowBox[{"First", "[", "newMorphism", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], 
                     "]"}], ">", "0"}], ",", 
                     RowBox[{"isRetraction", "=", "True"}]}], "]"}]}], "]"}], 
@@ -16206,6 +16328,7 @@ Cell[BoxData[
                     RowBox[{
                     "VertexList", "[", "morphismEquivalenceGraph", "]"}], ",", 
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"If", "[", 
                     RowBox[{
                     RowBox[{
@@ -16263,6 +16386,7 @@ Cell[BoxData[
                    RowBox[{"Select", "[", 
                     RowBox[{
                     RowBox[{"Normal", "[", "morphismAssociation", "]"}], ",", 
+                    
                     RowBox[{
                     RowBox[{
                     RowBox[{"Last", "[", 
@@ -16411,6 +16535,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -16814,6 +16939,7 @@ Cell[BoxData[
                     RowBox[{
                     "VertexList", "[", "morphismEquivalenceGraph", "]"}], ",", 
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"If", "[", 
                     RowBox[{
                     RowBox[{
@@ -16824,6 +16950,7 @@ Cell[BoxData[
                     RowBox[{
                     RowBox[{"First", "[", "morphism", "]"}], ",", 
                     RowBox[{"First", "[", "newMorphism", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], 
                     "]"}], ">", "0"}], ",", 
                     RowBox[{"isRetraction", "=", "True"}]}], "]"}]}], "]"}], 
@@ -16864,6 +16991,7 @@ Cell[BoxData[
                     RowBox[{
                     "VertexList", "[", "morphismEquivalenceGraph", "]"}], ",", 
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"If", "[", 
                     RowBox[{
                     RowBox[{
@@ -17035,6 +17163,7 @@ Cell[BoxData[
            "quiverObjectEquivalences_List"}], ",", 
           RowBox[{"\"\<Objects\>\"", "\[Rule]", "objects_List"}]}], "]"}], 
         "]"}]}]}], "]"}], "]"}], "[", "\"\<TerminalObjects\>\"", "]"}], ":=", 
+  
   RowBox[{
    RowBox[{"Module", "[", 
     RowBox[{
@@ -17095,6 +17224,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -17343,6 +17473,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -17608,6 +17739,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -17852,6 +17984,7 @@ Cell[BoxData[
                     RowBox[{
                     "VertexList", "[", "morphismEquivalenceGraph", "]"}], ",", 
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"If", "[", 
                     RowBox[{
                     RowBox[{
@@ -17862,6 +17995,7 @@ Cell[BoxData[
                     RowBox[{
                     RowBox[{"First", "[", "morphism", "]"}], ",", 
                     RowBox[{"First", "[", "newMorphism", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], 
                     "]"}], ">", "0"}], ",", 
                     RowBox[{"isRetraction", "=", "True"}]}], "]"}]}], "]"}], 
@@ -17902,6 +18036,7 @@ Cell[BoxData[
                     RowBox[{
                     "VertexList", "[", "morphismEquivalenceGraph", "]"}], ",", 
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"If", "[", 
                     RowBox[{
                     RowBox[{
@@ -17959,6 +18094,7 @@ Cell[BoxData[
                    RowBox[{"Select", "[", 
                     RowBox[{
                     RowBox[{"Normal", "[", "morphismAssociation", "]"}], ",", 
+                    
                     RowBox[{
                     RowBox[{
                     RowBox[{"First", "[", 
@@ -18107,6 +18243,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -18510,6 +18647,7 @@ Cell[BoxData[
                     RowBox[{
                     "VertexList", "[", "morphismEquivalenceGraph", "]"}], ",", 
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"If", "[", 
                     RowBox[{
                     RowBox[{
@@ -18520,6 +18658,7 @@ Cell[BoxData[
                     RowBox[{
                     RowBox[{"First", "[", "morphism", "]"}], ",", 
                     RowBox[{"First", "[", "newMorphism", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], 
                     "]"}], ">", "0"}], ",", 
                     RowBox[{"isRetraction", "=", "True"}]}], "]"}]}], "]"}], 
@@ -18560,6 +18699,7 @@ Cell[BoxData[
                     RowBox[{
                     "VertexList", "[", "morphismEquivalenceGraph", "]"}], ",", 
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"If", "[", 
                     RowBox[{
                     RowBox[{
@@ -18791,6 +18931,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -19072,6 +19213,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -19380,6 +19522,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -19624,6 +19767,7 @@ Cell[BoxData[
                     RowBox[{
                     "VertexList", "[", "morphismEquivalenceGraph", "]"}], ",", 
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"If", "[", 
                     RowBox[{
                     RowBox[{
@@ -19634,6 +19778,7 @@ Cell[BoxData[
                     RowBox[{
                     RowBox[{"First", "[", "morphism", "]"}], ",", 
                     RowBox[{"First", "[", "newMorphism", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], 
                     "]"}], ">", "0"}], ",", 
                     RowBox[{"isRetraction", "=", "True"}]}], "]"}]}], "]"}], 
@@ -19674,6 +19819,7 @@ Cell[BoxData[
                     RowBox[{
                     "VertexList", "[", "morphismEquivalenceGraph", "]"}], ",", 
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"If", "[", 
                     RowBox[{
                     RowBox[{
@@ -19733,6 +19879,7 @@ Cell[BoxData[
                    RowBox[{"Select", "[", 
                     RowBox[{
                     RowBox[{"Normal", "[", "morphismAssociation", "]"}], ",", 
+                    
                     RowBox[{
                     RowBox[{
                     RowBox[{"Last", "[", 
@@ -19793,6 +19940,7 @@ Cell[BoxData[
                    RowBox[{"Select", "[", 
                     RowBox[{
                     RowBox[{"Normal", "[", "morphismAssociation", "]"}], ",", 
+                    
                     RowBox[{
                     RowBox[{
                     RowBox[{"First", "[", 
@@ -19941,6 +20089,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -20344,6 +20493,7 @@ Cell[BoxData[
                     RowBox[{
                     "VertexList", "[", "morphismEquivalenceGraph", "]"}], ",", 
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"If", "[", 
                     RowBox[{
                     RowBox[{
@@ -20354,6 +20504,7 @@ Cell[BoxData[
                     RowBox[{
                     RowBox[{"First", "[", "morphism", "]"}], ",", 
                     RowBox[{"First", "[", "newMorphism", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], 
                     "]"}], ">", "0"}], ",", 
                     RowBox[{"isRetraction", "=", "True"}]}], "]"}]}], "]"}], 
@@ -20394,6 +20545,7 @@ Cell[BoxData[
                     RowBox[{
                     "VertexList", "[", "morphismEquivalenceGraph", "]"}], ",", 
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"If", "[", 
                     RowBox[{
                     RowBox[{
@@ -20713,6 +20865,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -21025,6 +21178,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -21387,6 +21541,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -21913,6 +22068,7 @@ Cell[BoxData[{
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -22270,6 +22426,7 @@ Cell[BoxData[{
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -22797,6 +22954,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -23268,6 +23426,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -23904,6 +24063,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -24121,6 +24281,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -24366,6 +24527,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -24977,6 +25139,7 @@ Cell[BoxData[
                     RowBox[{
                     "VertexList", "[", "morphismEquivalenceGraph", "]"}], ",", 
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"If", "[", 
                     RowBox[{
                     RowBox[{
@@ -24987,6 +25150,7 @@ Cell[BoxData[
                     RowBox[{
                     RowBox[{"First", "[", "morphism", "]"}], ",", 
                     RowBox[{"First", "[", "newMorphism", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], 
                     "]"}], ">", "0"}], ",", 
                     RowBox[{"isRetraction", "=", "True"}]}], "]"}]}], "]"}], 
@@ -25027,6 +25191,7 @@ Cell[BoxData[
                     RowBox[{
                     "VertexList", "[", "morphismEquivalenceGraph", "]"}], ",", 
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"If", "[", 
                     RowBox[{
                     RowBox[{
@@ -25185,6 +25350,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -25429,6 +25595,7 @@ Cell[BoxData[
                     RowBox[{
                     "VertexList", "[", "morphismEquivalenceGraph", "]"}], ",", 
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"If", "[", 
                     RowBox[{
                     RowBox[{
@@ -25439,6 +25606,7 @@ Cell[BoxData[
                     RowBox[{
                     RowBox[{"First", "[", "morphism", "]"}], ",", 
                     RowBox[{"First", "[", "newMorphism", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], 
                     "]"}], ">", "0"}], ",", 
                     RowBox[{"isRetraction", "=", "True"}]}], "]"}]}], "]"}], 
@@ -25479,6 +25647,7 @@ Cell[BoxData[
                     RowBox[{
                     "VertexList", "[", "morphismEquivalenceGraph", "]"}], ",", 
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"If", "[", 
                     RowBox[{
                     RowBox[{
@@ -25849,6 +26018,7 @@ Cell[BoxData[
                   RowBox[{"Append", "[", 
                    RowBox[{
                     RowBox[{"Normal", "[", "morphismAssociation", "]"}], ",", 
+                    
                     RowBox[{
                     RowBox[{"compositionSymbol", "[", 
                     RowBox[{
@@ -25943,6 +26113,7 @@ Cell[BoxData[
                    RowBox[{"First", "[", "#1", "]"}], "\[Rule]", 
                    RowBox[{"DirectedEdge", "@@", 
                     RowBox[{"Last", "[", "#1", "]"}]}]}], "&"}], ")"}], "/@", 
+                
                 RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
                "Last"}], "]"}], ",", 
              RowBox[{
@@ -26146,6 +26317,7 @@ Cell[BoxData[
                   RowBox[{"Append", "[", 
                    RowBox[{
                     RowBox[{"Normal", "[", "morphismAssociation", "]"}], ",", 
+                    
                     RowBox[{
                     RowBox[{"compositionSymbol", "[", 
                     RowBox[{
@@ -26245,6 +26417,7 @@ Cell[BoxData[
                    RowBox[{"First", "[", "#1", "]"}], "\[Rule]", 
                    RowBox[{"DirectedEdge", "@@", 
                     RowBox[{"Last", "[", "#1", "]"}]}]}], "&"}], ")"}], "/@", 
+                
                 RowBox[{"Normal", "[", 
                  RowBox[{"reduceArrowsFinal", "[", 
                   RowBox[{
@@ -26371,6 +26544,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -26597,6 +26771,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -27008,6 +27183,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -27225,6 +27401,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -27439,6 +27616,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -27676,6 +27854,7 @@ Cell[BoxData[{
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -27814,8 +27993,8 @@ Cell[BoxData[{
       ",", 
       RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol_"}], ",", 
       RowBox[{
-      "\"\<MorphismEquivalences\>\"", "\[Rule]", "morphismEquivalences_List"}]
-       , ",", 
+      "\"\<MorphismEquivalences\>\"", "\[Rule]", 
+       "morphismEquivalences_List"}], ",", 
       RowBox[{
       "\"\<ObjectEquivalences\>\"", "\[Rule]", "objectEquivalences_List"}], 
       ",", 
@@ -27833,12 +28012,14 @@ Cell[BoxData[{
            "quiverObjectEquivalences_List"}], ",", 
           RowBox[{"\"\<Objects\>\"", "\[Rule]", "objects_List"}]}], "]"}], 
         "]"}]}]}], "]"}], "]"}], "[", "\"\<AssociationForm\>\"", "]"}], ":=", 
+  
   RowBox[{
    RowBox[{"Association", "[", 
     RowBox[{
      RowBox[{"\"\<Quiver\>\"", "\[Rule]", 
       RowBox[{
        RowBox[{"ResourceFunction", "[", "\"\<AbstractQuiver\>\"", "]"}], "[", 
+       
        RowBox[{"Association", "[", 
         RowBox[{
          RowBox[{
@@ -27987,6 +28168,7 @@ Cell[BoxData[
             "\"\<ArrowEquivalences\>\"", "\[Rule]", 
              "arrowEquivalences_List"}], ",", 
             RowBox[{"\"\<Arrows\>\"", "\[Rule]", "arrows_Association"}], ",", 
+            
             RowBox[{
             "\"\<ObjectEquivalences\>\"", "\[Rule]", 
              "quiverObjectEquivalences_List"}], ",", 
@@ -28054,6 +28236,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -28348,6 +28531,7 @@ Cell[BoxData[
             RowBox[{
              RowBox[{"DirectedEdge", "@@", 
               RowBox[{"Last", "[", "#1", "]"}]}], "&"}]}], "]"}], "]"}], ",", 
+         
          RowBox[{
           RowBox[{
            RowBox[{"Last", "[", "#1", "]"}], "\[Equal]", "1"}], "&"}]}], 
@@ -28365,6 +28549,7 @@ Cell[BoxData[
           RowBox[{"reduceObjects", "[", 
            RowBox[{"objects", ",", "quiverObjectEquivalences"}], "]"}], ",", 
           "objectEquivalences"}], "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      
       RowBox[{"reducedMorphismCount", "=", 
        RowBox[{"Length", "[", 
         RowBox[{"Normal", "[", 
@@ -28377,6 +28562,7 @@ Cell[BoxData[
       RowBox[{"BoxForm`ArrangeSummaryBox", "[", 
        RowBox[{
        "\"\<AbstractCategory\>\"", ",", "abstractCategory", ",", "icon", ",", 
+        
         RowBox[{"{", 
          RowBox[{
           RowBox[{"{", 
@@ -28434,6 +28620,7 @@ Cell[BoxData[{
      RowBox[{"\"\<Quiver\>\"", "\[Rule]", 
       RowBox[{
        RowBox[{"ResourceFunction", "[", "\"\<AbstractQuiver\>\"", "]"}], "[", 
+       
        RowBox[{"Association", "[", 
         RowBox[{
          RowBox[{"\"\<ArrowEquivalences\>\"", "\[Rule]", 
@@ -28501,6 +28688,7 @@ Cell[BoxData[{
     RowBox[{"!", 
      RowBox[{"KeyExistsQ", "[", 
       RowBox[{"arrows", ",", "\"\<MorphismEquivalences\>\""}], "]"}]}], "&&", 
+    
     RowBox[{"!", 
      RowBox[{"KeyExistsQ", "[", 
       RowBox[{"arrows", ",", "\"\<ObjectEquivalences\>\""}], "]"}]}], "&&", 
@@ -28522,6 +28710,7 @@ Cell[BoxData[{
      RowBox[{"\"\<Quiver\>\"", "\[Rule]", 
       RowBox[{
        RowBox[{"ResourceFunction", "[", "\"\<AbstractQuiver\>\"", "]"}], "[", 
+       
        RowBox[{"Association", "[", 
         RowBox[{
          RowBox[{"\"\<ArrowEquivalences\>\"", "\[Rule]", 
@@ -28578,6 +28767,7 @@ Cell[BoxData[{
     RowBox[{"!", 
      RowBox[{"KeyExistsQ", "[", 
       RowBox[{"arrows", ",", "\"\<MorphismEquivalences\>\""}], "]"}]}], "&&", 
+    
     RowBox[{"!", 
      RowBox[{"KeyExistsQ", "[", 
       RowBox[{"arrows", ",", "\"\<ObjectEquivalences\>\""}], "]"}]}], "&&", 
@@ -28663,6 +28853,7 @@ Cell[BoxData[{
     RowBox[{"!", 
      RowBox[{"KeyExistsQ", "[", 
       RowBox[{"arrows", ",", "\"\<MorphismEquivalences\>\""}], "]"}]}], "&&", 
+    
     RowBox[{"!", 
      RowBox[{"KeyExistsQ", "[", 
       RowBox[{"arrows", ",", "\"\<ObjectEquivalences\>\""}], "]"}]}], "&&", 
@@ -28754,6 +28945,7 @@ Cell[BoxData[{
     RowBox[{"!", 
      RowBox[{"KeyExistsQ", "[", 
       RowBox[{"arrows", ",", "\"\<MorphismEquivalences\>\""}], "]"}]}], "&&", 
+    
     RowBox[{"!", 
      RowBox[{"KeyExistsQ", "[", 
       RowBox[{"arrows", ",", "\"\<ObjectEquivalences\>\""}], "]"}]}], "&&", 
@@ -28781,6 +28973,7 @@ Cell[BoxData[{
      RowBox[{"\"\<Quiver\>\"", "\[Rule]", 
       RowBox[{
        RowBox[{"ResourceFunction", "[", "\"\<AbstractQuiver\>\"", "]"}], "[", 
+       
        RowBox[{"Association", "[", 
         RowBox[{
          RowBox[{"\"\<ArrowEquivalences\>\"", "\[Rule]", 
@@ -28839,6 +29032,7 @@ Cell[BoxData[{
     RowBox[{"!", 
      RowBox[{"KeyExistsQ", "[", 
       RowBox[{"arrows", ",", "\"\<MorphismEquivalences\>\""}], "]"}]}], "&&", 
+    
     RowBox[{"!", 
      RowBox[{"KeyExistsQ", "[", 
       RowBox[{"arrows", ",", "\"\<ObjectEquivalences\>\""}], "]"}]}], "&&", 
@@ -28862,6 +29056,7 @@ Cell[BoxData[{
      RowBox[{"\"\<Quiver\>\"", "\[Rule]", 
       RowBox[{
        RowBox[{"ResourceFunction", "[", "\"\<AbstractQuiver\>\"", "]"}], "[", 
+       
        RowBox[{"Association", "[", 
         RowBox[{
          RowBox[{"\"\<ArrowEquivalences\>\"", "\[Rule]", 
@@ -28921,6 +29116,7 @@ Cell[BoxData[{
     RowBox[{"!", 
      RowBox[{"KeyExistsQ", "[", 
       RowBox[{"arrows", ",", "\"\<MorphismEquivalences\>\""}], "]"}]}], "&&", 
+    
     RowBox[{"!", 
      RowBox[{"KeyExistsQ", "[", 
       RowBox[{"arrows", ",", "\"\<ObjectEquivalences\>\""}], "]"}]}], "&&", 
@@ -29007,6 +29203,7 @@ Cell[BoxData[{
     RowBox[{"!", 
      RowBox[{"KeyExistsQ", "[", 
       RowBox[{"arrows", ",", "\"\<MorphismEquivalences\>\""}], "]"}]}], "&&", 
+    
     RowBox[{"!", 
      RowBox[{"KeyExistsQ", "[", 
       RowBox[{"arrows", ",", "\"\<ObjectEquivalences\>\""}], "]"}]}], "&&", 
@@ -29097,6 +29294,7 @@ Cell[BoxData[{
     RowBox[{"!", 
      RowBox[{"KeyExistsQ", "[", 
       RowBox[{"arrows", ",", "\"\<MorphismEquivalences\>\""}], "]"}]}], "&&", 
+    
     RowBox[{"!", 
      RowBox[{"KeyExistsQ", "[", 
       RowBox[{"arrows", ",", "\"\<ObjectEquivalences\>\""}], "]"}]}], "&&", 
@@ -29188,6 +29386,7 @@ Cell[BoxData[{
     RowBox[{"!", 
      RowBox[{"KeyExistsQ", "[", 
       RowBox[{"arrows", ",", "\"\<MorphismEquivalences\>\""}], "]"}]}], "&&", 
+    
     RowBox[{"!", 
      RowBox[{"KeyExistsQ", "[", 
       RowBox[{"arrows", ",", "\"\<ObjectEquivalences\>\""}], "]"}]}], "&&", 
@@ -29285,6 +29484,7 @@ Cell[BoxData[{
     RowBox[{"!", 
      RowBox[{"KeyExistsQ", "[", 
       RowBox[{"arrows", ",", "\"\<MorphismEquivalences\>\""}], "]"}]}], "&&", 
+    
     RowBox[{"!", 
      RowBox[{"KeyExistsQ", "[", 
       RowBox[{"arrows", ",", "\"\<ObjectEquivalences\>\""}], "]"}]}], "&&", 
@@ -29337,6 +29537,7 @@ Cell[BoxData[{
     RowBox[{"!", 
      RowBox[{"KeyExistsQ", "[", 
       RowBox[{"arrows", ",", "\"\<MorphismEquivalences\>\""}], "]"}]}], "&&", 
+    
     RowBox[{"!", 
      RowBox[{"KeyExistsQ", "[", 
       RowBox[{"arrows", ",", "\"\<ObjectEquivalences\>\""}], "]"}]}], "&&", 
@@ -29388,6 +29589,7 @@ Cell[BoxData[{
     RowBox[{"!", 
      RowBox[{"KeyExistsQ", "[", 
       RowBox[{"arrows", ",", "\"\<MorphismEquivalences\>\""}], "]"}]}], "&&", 
+    
     RowBox[{"!", 
      RowBox[{"KeyExistsQ", "[", 
       RowBox[{"arrows", ",", "\"\<ObjectEquivalences\>\""}], "]"}]}], "&&", 
@@ -29437,6 +29639,7 @@ Cell[BoxData[{
     RowBox[{"!", 
      RowBox[{"KeyExistsQ", "[", 
       RowBox[{"arrows", ",", "\"\<MorphismEquivalences\>\""}], "]"}]}], "&&", 
+    
     RowBox[{"!", 
      RowBox[{"KeyExistsQ", "[", 
       RowBox[{"arrows", ",", "\"\<ObjectEquivalences\>\""}], "]"}]}], "&&", 
@@ -29490,6 +29693,7 @@ Cell[BoxData[{
     RowBox[{"!", 
      RowBox[{"KeyExistsQ", "[", 
       RowBox[{"arrows", ",", "\"\<MorphismEquivalences\>\""}], "]"}]}], "&&", 
+    
     RowBox[{"!", 
      RowBox[{"KeyExistsQ", "[", 
       RowBox[{"arrows", ",", "\"\<ObjectEquivalences\>\""}], "]"}]}], "&&", 
@@ -29544,6 +29748,7 @@ Cell[BoxData[{
     RowBox[{"!", 
      RowBox[{"KeyExistsQ", "[", 
       RowBox[{"arrows", ",", "\"\<MorphismEquivalences\>\""}], "]"}]}], "&&", 
+    
     RowBox[{"!", 
      RowBox[{"KeyExistsQ", "[", 
       RowBox[{"arrows", ",", "\"\<ObjectEquivalences\>\""}], "]"}]}], "&&", 
@@ -29597,6 +29802,7 @@ Cell[BoxData[{
     RowBox[{"!", 
      RowBox[{"KeyExistsQ", "[", 
       RowBox[{"arrows", ",", "\"\<MorphismEquivalences\>\""}], "]"}]}], "&&", 
+    
     RowBox[{"!", 
      RowBox[{"KeyExistsQ", "[", 
       RowBox[{"arrows", ",", "\"\<ObjectEquivalences\>\""}], "]"}]}], "&&", 
@@ -29652,6 +29858,7 @@ Cell[BoxData[{
     RowBox[{"!", 
      RowBox[{"KeyExistsQ", "[", 
       RowBox[{"arrows", ",", "\"\<MorphismEquivalences\>\""}], "]"}]}], "&&", 
+    
     RowBox[{"!", 
      RowBox[{"KeyExistsQ", "[", 
       RowBox[{"arrows", ",", "\"\<ObjectEquivalences\>\""}], "]"}]}], "&&", 
@@ -29709,6 +29916,7 @@ Cell[BoxData[{
     RowBox[{"!", 
      RowBox[{"KeyExistsQ", "[", 
       RowBox[{"arrows", ",", "\"\<MorphismEquivalences\>\""}], "]"}]}], "&&", 
+    
     RowBox[{"!", 
      RowBox[{"KeyExistsQ", "[", 
       RowBox[{"arrows", ",", "\"\<ObjectEquivalences\>\""}], "]"}]}], "&&", 
@@ -29750,6 +29958,7 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{
           "\"\<ArrowEquivalences\>\"", "\[Rule]", "arrowEquivalences"}], ",", 
+          
           RowBox[{"\"\<Arrows\>\"", "\[Rule]", "arrows"}], ",", 
           RowBox[{
           "\"\<ObjectEquivalences\>\"", "\[Rule]", "objectEquivalences"}], 
@@ -29793,6 +30002,7 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{
           "\"\<ArrowEquivalences\>\"", "\[Rule]", "arrowEquivalences"}], ",", 
+          
           RowBox[{"\"\<Arrows\>\"", "\[Rule]", "arrows"}], ",", 
           RowBox[{
           "\"\<ObjectEquivalences\>\"", "\[Rule]", "objectEquivalences"}], 
@@ -29839,6 +30049,7 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{
           "\"\<ArrowEquivalences\>\"", "\[Rule]", "arrowEquivalences"}], ",", 
+          
           RowBox[{"\"\<Arrows\>\"", "\[Rule]", "arrows"}], ",", 
           RowBox[{
           "\"\<ObjectEquivalences\>\"", "\[Rule]", "objectEquivalences"}], 
@@ -29886,6 +30097,7 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{
           "\"\<ArrowEquivalences\>\"", "\[Rule]", "arrowEquivalences"}], ",", 
+          
           RowBox[{"\"\<Arrows\>\"", "\[Rule]", "arrows"}], ",", 
           RowBox[{
           "\"\<ObjectEquivalences\>\"", "\[Rule]", 
@@ -29930,6 +30142,7 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{
           "\"\<ArrowEquivalences\>\"", "\[Rule]", "arrowEquivalences"}], ",", 
+          
           RowBox[{"\"\<Arrows\>\"", "\[Rule]", "arrows"}], ",", 
           RowBox[{
           "\"\<ObjectEquivalences\>\"", "\[Rule]", 
@@ -29973,6 +30186,7 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{
           "\"\<ArrowEquivalences\>\"", "\[Rule]", "arrowEquivalences"}], ",", 
+          
           RowBox[{"\"\<Arrows\>\"", "\[Rule]", "arrows"}], ",", 
           RowBox[{
           "\"\<ObjectEquivalences\>\"", "\[Rule]", 
@@ -30021,6 +30235,7 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{
           "\"\<ArrowEquivalences\>\"", "\[Rule]", "arrowEquivalences"}], ",", 
+          
           RowBox[{"\"\<Arrows\>\"", "\[Rule]", "arrows"}], ",", 
           RowBox[{
           "\"\<ObjectEquivalences\>\"", "\[Rule]", 
@@ -30068,6 +30283,7 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{
           "\"\<ArrowEquivalences\>\"", "\[Rule]", "arrowEquivalences"}], ",", 
+          
           RowBox[{"\"\<Arrows\>\"", "\[Rule]", "arrows"}], ",", 
           RowBox[{
           "\"\<ObjectEquivalences\>\"", "\[Rule]", 
@@ -30118,6 +30334,7 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{
           "\"\<ArrowEquivalences\>\"", "\[Rule]", "arrowEquivalences"}], ",", 
+          
           RowBox[{"\"\<Arrows\>\"", "\[Rule]", "arrows"}], ",", 
           RowBox[{
           "\"\<ObjectEquivalences\>\"", "\[Rule]", 
@@ -30146,6 +30363,7 @@ Cell[BoxData[{
      RowBox[{"\"\<Quiver\>\"", "\[Rule]", 
       RowBox[{
        RowBox[{"ResourceFunction", "[", "\"\<AbstractQuiver\>\"", "]"}], "[", 
+       
        RowBox[{"Association", "[", 
         RowBox[{
          RowBox[{"\"\<ArrowEquivalences\>\"", "\[Rule]", 
@@ -30279,6 +30497,7 @@ Cell[BoxData[{
      RowBox[{"\"\<Quiver\>\"", "\[Rule]", 
       RowBox[{
        RowBox[{"ResourceFunction", "[", "\"\<AbstractQuiver\>\"", "]"}], "[", 
+       
        RowBox[{"Association", "[", 
         RowBox[{
          RowBox[{"\"\<ArrowEquivalences\>\"", "\[Rule]", 
@@ -30321,6 +30540,7 @@ Cell[BoxData[{
      RowBox[{"\"\<Quiver\>\"", "\[Rule]", 
       RowBox[{
        RowBox[{"ResourceFunction", "[", "\"\<AbstractQuiver\>\"", "]"}], "[", 
+       
        RowBox[{"Association", "[", 
         RowBox[{
          RowBox[{"\"\<ArrowEquivalences\>\"", "\[Rule]", 
@@ -30568,6 +30788,7 @@ Cell[BoxData[{
        RowBox[{"\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol_"}],
         ",", 
        RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol_"}], ",", 
+       
        RowBox[{
        "\"\<MorphismEquivalences\>\"", "\[Rule]", 
         "morphismEquivalences_List"}], ",", 
@@ -30607,6 +30828,7 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{
           "\"\<ArrowEquivalences\>\"", "\[Rule]", "arrowEquivalences"}], ",", 
+          
           RowBox[{"\"\<Arrows\>\"", "\[Rule]", "arrows"}], ",", 
           RowBox[{
           "\"\<ObjectEquivalences\>\"", "\[Rule]", 
@@ -30628,6 +30850,7 @@ Cell[BoxData[{
        RowBox[{"\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol_"}],
         ",", 
        RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol_"}], ",", 
+       
        RowBox[{
        "\"\<MorphismEquivalences\>\"", "\[Rule]", 
         "morphismEquivalences_List"}], ",", 
@@ -30668,6 +30891,7 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{
           "\"\<ArrowEquivalences\>\"", "\[Rule]", "arrowEquivalences"}], ",", 
+          
           RowBox[{"\"\<Arrows\>\"", "\[Rule]", "arrows"}], ",", 
           RowBox[{
           "\"\<ObjectEquivalences\>\"", "\[Rule]", 
@@ -30691,6 +30915,7 @@ Cell[BoxData[{
        RowBox[{"\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol_"}],
         ",", 
        RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol_"}], ",", 
+       
        RowBox[{
        "\"\<MorphismEquivalences\>\"", "\[Rule]", 
         "morphismEquivalences_List"}], ",", 
@@ -30731,6 +30956,7 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{
           "\"\<ArrowEquivalences\>\"", "\[Rule]", "arrowEquivalences"}], ",", 
+          
           RowBox[{"\"\<Arrows\>\"", "\[Rule]", "arrows"}], ",", 
           RowBox[{
           "\"\<ObjectEquivalences\>\"", "\[Rule]", 
@@ -30754,6 +30980,7 @@ Cell[BoxData[{
        RowBox[{"\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol_"}],
         ",", 
        RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol_"}], ",", 
+       
        RowBox[{
        "\"\<MorphismEquivalences\>\"", "\[Rule]", 
         "morphismEquivalences_List"}], ",", 
@@ -30795,6 +31022,7 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{
           "\"\<ArrowEquivalences\>\"", "\[Rule]", "arrowEquivalences"}], ",", 
+          
           RowBox[{"\"\<Arrows\>\"", "\[Rule]", "arrows"}], ",", 
           RowBox[{
           "\"\<ObjectEquivalences\>\"", "\[Rule]", 
@@ -30818,6 +31046,7 @@ Cell[BoxData[{
        RowBox[{"\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol_"}],
         ",", 
        RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol_"}], ",", 
+       
        RowBox[{
        "\"\<MorphismEquivalences\>\"", "\[Rule]", 
         "morphismEquivalences_List"}], ",", 
@@ -30858,6 +31087,7 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{
           "\"\<ArrowEquivalences\>\"", "\[Rule]", "arrowEquivalences"}], ",", 
+          
           RowBox[{"\"\<Arrows\>\"", "\[Rule]", "arrows"}], ",", 
           RowBox[{
           "\"\<ObjectEquivalences\>\"", "\[Rule]", 
@@ -30876,6 +31106,7 @@ Cell[BoxData[{
        RowBox[{"\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol_"}],
         ",", 
        RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol_"}], ",", 
+       
        RowBox[{
        "\"\<MorphismEquivalences\>\"", "\[Rule]", 
         "morphismEquivalences_List"}], ",", 
@@ -30916,6 +31147,7 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{
           "\"\<ArrowEquivalences\>\"", "\[Rule]", "arrowEquivalences"}], ",", 
+          
           RowBox[{"\"\<Arrows\>\"", "\[Rule]", "arrows"}], ",", 
           RowBox[{
           "\"\<ObjectEquivalences\>\"", "\[Rule]", 
@@ -30934,6 +31166,7 @@ Cell[BoxData[{
        RowBox[{"\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol_"}],
         ",", 
        RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol_"}], ",", 
+       
        RowBox[{
        "\"\<MorphismEquivalences\>\"", "\[Rule]", 
         "morphismEquivalences_List"}], ",", 
@@ -30974,6 +31207,7 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{
           "\"\<ArrowEquivalences\>\"", "\[Rule]", "arrowEquivalences"}], ",", 
+          
           RowBox[{"\"\<Arrows\>\"", "\[Rule]", "arrows"}], ",", 
           RowBox[{
           "\"\<ObjectEquivalences\>\"", "\[Rule]", 
@@ -30995,6 +31229,7 @@ Cell[BoxData[{
        RowBox[{"\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol_"}],
         ",", 
        RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol_"}], ",", 
+       
        RowBox[{
        "\"\<MorphismEquivalences\>\"", "\[Rule]", 
         "morphismEquivalences_List"}], ",", 
@@ -31036,6 +31271,7 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{
           "\"\<ArrowEquivalences\>\"", "\[Rule]", "arrowEquivalences"}], ",", 
+          
           RowBox[{"\"\<Arrows\>\"", "\[Rule]", "arrows"}], ",", 
           RowBox[{
           "\"\<ObjectEquivalences\>\"", "\[Rule]", 
@@ -31055,10 +31291,10 @@ Cell[BoxData[{
  CellLabel->
   "In[103]:=",ExpressionUUID->"83264349-b5df-4338-97df-38ea84c1151b"]
 },
-WindowSize->{1600, 817},
-WindowMargins->{{-8, Automatic}, {Automatic, -8}},
-Magnification:>1.4 Inherited,
-FrontEndVersion->"12.1 for Microsoft Windows (64-bit) (March 20, 2020)",
+WindowSize->{1440, 762},
+WindowMargins->{{Automatic, 214}, {121, Automatic}},
+Magnification->1.5,
+FrontEndVersion->"13.1 for Mac OS X ARM (64-bit) (June 21, 2022)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"69be60fe-1250-467d-9bc4-c8003ae687de"
 ]
@@ -31073,177 +31309,177 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[561, 20, 3112, 69, 257, "Input",ExpressionUUID->"7f263dd8-07d2-4f48-bb3c-a295618a6fe2",
+Cell[561, 20, 3128, 72, 318, "Input",ExpressionUUID->"7f263dd8-07d2-4f48-bb3c-a295618a6fe2",
  InitializationCell->True],
-Cell[3676, 91, 3923, 101, 455, "Input",ExpressionUUID->"7fce9d87-8bea-48d7-b406-fed3cdda1897",
+Cell[3692, 94, 3946, 104, 535, "Input",ExpressionUUID->"7fce9d87-8bea-48d7-b406-fed3cdda1897",
  InitializationCell->True],
-Cell[7602, 194, 2859, 70, 315, "Input",ExpressionUUID->"8aabc7ba-f3a6-4233-b01f-e4d08c305e9c",
+Cell[7641, 200, 2859, 70, 349, "Input",ExpressionUUID->"8aabc7ba-f3a6-4233-b01f-e4d08c305e9c",
  InitializationCell->True],
-Cell[10464, 266, 8288, 198, 539, "Input",ExpressionUUID->"d39e8a1d-8c65-46e3-a504-f42383d51c74",
+Cell[10503, 272, 8306, 199, 722, "Input",ExpressionUUID->"d39e8a1d-8c65-46e3-a504-f42383d51c74",
  InitializationCell->True],
-Cell[18755, 466, 8018, 190, 539, "Input",ExpressionUUID->"f3d7a6a9-5253-43ad-a7a5-18910a5e700c",
+Cell[18812, 473, 8036, 191, 691, "Input",ExpressionUUID->"f3d7a6a9-5253-43ad-a7a5-18910a5e700c",
  InitializationCell->True],
-Cell[26776, 658, 8146, 194, 539, "Input",ExpressionUUID->"57039bef-d7ed-4873-91d6-486d723e8f02",
+Cell[26851, 666, 8164, 195, 691, "Input",ExpressionUUID->"57039bef-d7ed-4873-91d6-486d723e8f02",
  InitializationCell->True],
-Cell[34925, 854, 8025, 191, 539, "Input",ExpressionUUID->"861d22ac-0f4b-4e81-bfc5-79658aa7ba12",
+Cell[35018, 863, 8043, 192, 691, "Input",ExpressionUUID->"861d22ac-0f4b-4e81-bfc5-79658aa7ba12",
  InitializationCell->True],
-Cell[42953, 1047, 5849, 147, 595, "Input",ExpressionUUID->"0ab6b7fb-1394-472c-b1c4-16ad6f744dd5",
+Cell[43064, 1057, 5849, 147, 815, "Input",ExpressionUUID->"0ab6b7fb-1394-472c-b1c4-16ad6f744dd5",
  InitializationCell->True],
-Cell[48805, 1196, 3244, 80, 315, "Input",ExpressionUUID->"be966cff-ad28-4f1e-a25a-8a4e2c453732",
+Cell[48916, 1206, 3244, 80, 474, "Input",ExpressionUUID->"be966cff-ad28-4f1e-a25a-8a4e2c453732",
  InitializationCell->True],
-Cell[52052, 1278, 28543, 566, 1491, "Input",ExpressionUUID->"7941ced0-5d2a-4091-ac97-8c48d5326baf",
+Cell[52163, 1288, 29685, 590, 2144, "Input",ExpressionUUID->"7941ced0-5d2a-4091-ac97-8c48d5326baf",
  InitializationCell->True],
-Cell[80598, 1846, 2767, 65, 315, "Input",ExpressionUUID->"5ff6d2bd-2222-4328-87f0-2d094b4f909a",
+Cell[81851, 1880, 2785, 67, 381, "Input",ExpressionUUID->"5ff6d2bd-2222-4328-87f0-2d094b4f909a",
  InitializationCell->True],
-Cell[83368, 1913, 2769, 65, 315, "Input",ExpressionUUID->"e76f80ca-3b53-429f-869c-3e44ee8b7e88",
+Cell[84639, 1949, 2787, 67, 381, "Input",ExpressionUUID->"e76f80ca-3b53-429f-869c-3e44ee8b7e88",
  InitializationCell->True],
-Cell[86140, 1980, 2770, 65, 315, "Input",ExpressionUUID->"c53853cf-fc32-48bf-894c-eeb8580a494b",
+Cell[87429, 2018, 2788, 67, 381, "Input",ExpressionUUID->"c53853cf-fc32-48bf-894c-eeb8580a494b",
  InitializationCell->True],
-Cell[88913, 2047, 7960, 191, 539, "Input",ExpressionUUID->"aef927fb-7f1e-4cbf-a81e-717c1f30fbfa",
+Cell[90220, 2087, 7978, 192, 784, "Input",ExpressionUUID->"aef927fb-7f1e-4cbf-a81e-717c1f30fbfa",
  InitializationCell->True],
-Cell[96876, 2240, 7673, 183, 539, "Input",ExpressionUUID->"0d772db2-faa8-4640-bd7a-c2eed01187ff",
+Cell[98201, 2281, 7691, 184, 577, "Input",ExpressionUUID->"0d772db2-faa8-4640-bd7a-c2eed01187ff",
  InitializationCell->True],
-Cell[104552, 2425, 7803, 187, 539, "Input",ExpressionUUID->"a7370945-53f1-4692-8fb0-d0f2517b5123",
+Cell[105895, 2467, 7821, 188, 577, "Input",ExpressionUUID->"a7370945-53f1-4692-8fb0-d0f2517b5123",
  InitializationCell->True],
-Cell[112358, 2614, 7568, 181, 511, "Input",ExpressionUUID->"a5d0783c-f3ce-4b41-9fd3-b130e6f883d2",
+Cell[113719, 2657, 7586, 182, 547, "Input",ExpressionUUID->"a5d0783c-f3ce-4b41-9fd3-b130e6f883d2",
  InitializationCell->True],
-Cell[119929, 2797, 8561, 203, 651, "Input",ExpressionUUID->"c6983cd0-d3a5-447a-9c99-01d6f75e7ee1",
+Cell[121308, 2841, 8579, 204, 697, "Input",ExpressionUUID->"c6983cd0-d3a5-447a-9c99-01d6f75e7ee1",
  InitializationCell->True],
-Cell[128493, 3002, 8273, 196, 651, "Input",ExpressionUUID->"d2bf08ce-66ca-4e24-bb80-7bdaa5403350",
+Cell[129890, 3047, 8291, 197, 697, "Input",ExpressionUUID->"d2bf08ce-66ca-4e24-bb80-7bdaa5403350",
  InitializationCell->True],
-Cell[136769, 3200, 8405, 200, 651, "Input",ExpressionUUID->"c20c69d4-65ad-4e90-921e-87904058c0bd",
+Cell[138184, 3246, 8423, 201, 697, "Input",ExpressionUUID->"c20c69d4-65ad-4e90-921e-87904058c0bd",
  InitializationCell->True],
-Cell[145177, 3402, 8278, 196, 651, "Input",ExpressionUUID->"1699e10f-a326-49bd-8a01-0704e1c16ca6",
+Cell[146610, 3449, 8296, 197, 697, "Input",ExpressionUUID->"1699e10f-a326-49bd-8a01-0704e1c16ca6",
  InitializationCell->True],
-Cell[153458, 3600, 8390, 203, 819, "Input",ExpressionUUID->"a89d7cb5-5190-40d4-a104-25350594c059",
+Cell[154909, 3648, 8401, 204, 877, "Input",ExpressionUUID->"a89d7cb5-5190-40d4-a104-25350594c059",
  InitializationCell->True],
-Cell[161851, 3805, 8406, 204, 651, "Input",ExpressionUUID->"75820726-92d0-40f1-abc8-869c625fdee0",
+Cell[163313, 3854, 8406, 204, 697, "Input",ExpressionUUID->"75820726-92d0-40f1-abc8-869c625fdee0",
  InitializationCell->True],
-Cell[170260, 4011, 9207, 221, 735, "Input",ExpressionUUID->"9ecafd3e-6249-4b5c-bc33-664458084771",
+Cell[171722, 4060, 9207, 221, 787, "Input",ExpressionUUID->"9ecafd3e-6249-4b5c-bc33-664458084771",
  InitializationCell->True],
-Cell[179470, 4234, 11476, 277, 819, "Input",ExpressionUUID->"1cd2bc4b-7209-4a3f-b295-1e4e09fe0cf5",
+Cell[180932, 4283, 11494, 278, 877, "Input",ExpressionUUID->"1cd2bc4b-7209-4a3f-b295-1e4e09fe0cf5",
  InitializationCell->True],
-Cell[190949, 4513, 12892, 309, 987, "Input",ExpressionUUID->"6891424c-8dc1-4f40-b87d-3378d9dadafb",
+Cell[192429, 4563, 12910, 310, 1057, "Input",ExpressionUUID->"6891424c-8dc1-4f40-b87d-3378d9dadafb",
  InitializationCell->True],
-Cell[203844, 4824, 9071, 216, 651, "Input",ExpressionUUID->"296f885d-ee1d-4c8b-aa05-f4f066748ee4",
+Cell[205342, 4875, 9089, 217, 697, "Input",ExpressionUUID->"296f885d-ee1d-4c8b-aa05-f4f066748ee4",
  InitializationCell->True],
-Cell[212918, 5042, 9204, 221, 595, "Input",ExpressionUUID->"0c102125-85ea-4afa-b528-b41d13132dc8",
+Cell[214434, 5094, 9229, 223, 637, "Input",ExpressionUUID->"0c102125-85ea-4afa-b528-b41d13132dc8",
  InitializationCell->True],
-Cell[222125, 5265, 9874, 236, 707, "Input",ExpressionUUID->"3d63ef53-0b46-4b59-b221-e6d6278f80de",
+Cell[223666, 5319, 9892, 237, 757, "Input",ExpressionUUID->"3d63ef53-0b46-4b59-b221-e6d6278f80de",
  InitializationCell->True],
-Cell[232002, 5503, 14831, 343, 1127, "Input",ExpressionUUID->"783ab603-a697-48b9-bcd2-82c6fd74e767",
+Cell[233561, 5558, 14870, 346, 1207, "Input",ExpressionUUID->"783ab603-a697-48b9-bcd2-82c6fd74e767",
  InitializationCell->True],
-Cell[246836, 5848, 21946, 509, 1631, "Input",ExpressionUUID->"f9c84fca-b923-45db-a8d2-e0cb12aba546",
+Cell[248434, 5906, 21985, 512, 1747, "Input",ExpressionUUID->"f9c84fca-b923-45db-a8d2-e0cb12aba546",
  InitializationCell->True],
-Cell[268785, 6359, 14819, 343, 1127, "Input",ExpressionUUID->"215be85e-4524-4d2b-a322-77528f628530",
+Cell[270422, 6420, 14850, 345, 1207, "Input",ExpressionUUID->"215be85e-4524-4d2b-a322-77528f628530",
  InitializationCell->True],
-Cell[283607, 6704, 21934, 509, 1631, "Input",ExpressionUUID->"b368744f-7d7d-4553-9706-ddf077210cf5",
+Cell[285275, 6767, 21965, 511, 1747, "Input",ExpressionUUID->"b368744f-7d7d-4553-9706-ddf077210cf5",
  InitializationCell->True],
-Cell[305544, 7215, 19223, 436, 1461, "Input",ExpressionUUID->"6831d880-0520-4d0d-950a-d01d32379c78",
+Cell[307243, 7280, 19241, 437, 1565, "Input",ExpressionUUID->"6831d880-0520-4d0d-950a-d01d32379c78",
  InitializationCell->True],
-Cell[324770, 7653, 26308, 601, 1993, "Input",ExpressionUUID->"7bb361fb-ad51-4bc0-80c5-cc9850126c08",
+Cell[326487, 7719, 26326, 602, 2135, "Input",ExpressionUUID->"7bb361fb-ad51-4bc0-80c5-cc9850126c08",
  InitializationCell->True],
-Cell[351081, 8256, 15054, 350, 1181, "Input",ExpressionUUID->"09d0b4df-6ac9-430b-a674-b4cb692f665b",
+Cell[352816, 8323, 15114, 353, 1265, "Input",ExpressionUUID->"09d0b4df-6ac9-430b-a674-b4cb692f665b",
  InitializationCell->True],
-Cell[366138, 8608, 22192, 516, 1713, "Input",ExpressionUUID->"bcc742fa-ea86-4d0a-8b40-bfbb95f6aef6",
+Cell[367933, 8678, 22252, 519, 1835, "Input",ExpressionUUID->"bcc742fa-ea86-4d0a-8b40-bfbb95f6aef6",
  InitializationCell->True],
-Cell[388333, 9126, 15529, 360, 1209, "Input",ExpressionUUID->"1d360be5-3667-4ef1-86e3-4667af4eacaa",
+Cell[390188, 9199, 15568, 362, 1295, "Input",ExpressionUUID->"1d360be5-3667-4ef1-86e3-4667af4eacaa",
  InitializationCell->True],
-Cell[403865, 9488, 22588, 523, 1460, "Input",ExpressionUUID->"33a82e4e-af31-4c3f-9f9e-fbb63f4d94ca",
+Cell[405759, 9563, 22627, 525, 1564, "Input",ExpressionUUID->"33a82e4e-af31-4c3f-9f9e-fbb63f4d94ca",
  InitializationCell->True],
-Cell[426456, 10013, 15048, 351, 1002, "Input",ExpressionUUID->"b38a9e4f-f561-420e-b147-5b013e94a00a",
+Cell[428389, 10090, 15087, 353, 1073, "Input",ExpressionUUID->"b38a9e4f-f561-420e-b147-5b013e94a00a",
  InitializationCell->True],
-Cell[441507, 10366, 22145, 515, 1460, "Input",ExpressionUUID->"b3f1e58f-1f74-44c8-8495-d19967e5abf5",
+Cell[443479, 10445, 22187, 518, 1564, "Input",ExpressionUUID->"b3f1e58f-1f74-44c8-8495-d19967e5abf5",
  InitializationCell->True],
-Cell[463655, 10883, 15543, 360, 1237, "Input",ExpressionUUID->"e980166c-100d-4834-ae62-6d85de107ff8",
+Cell[465669, 10965, 15603, 363, 1325, "Input",ExpressionUUID->"e980166c-100d-4834-ae62-6d85de107ff8",
  InitializationCell->True],
-Cell[479201, 11245, 22602, 523, 1741, "Input",ExpressionUUID->"d0fa67a3-8852-40cc-9528-9f87fa677484",
+Cell[481275, 11330, 22662, 526, 1865, "Input",ExpressionUUID->"d0fa67a3-8852-40cc-9528-9f87fa677484",
  InitializationCell->True],
-Cell[501806, 11770, 18268, 416, 1218, "Input",ExpressionUUID->"a25e7717-95e6-4cc3-8405-bcc06b19c645",
+Cell[503940, 11858, 18349, 420, 1305, "Input",ExpressionUUID->"a25e7717-95e6-4cc3-8405-bcc06b19c645",
  InitializationCell->True],
-Cell[520077, 12188, 25381, 582, 1675, "Input",ExpressionUUID->"e620a891-bc6f-46e1-a812-c06f442a248e",
+Cell[522292, 12280, 25462, 586, 1794, "Input",ExpressionUUID->"e620a891-bc6f-46e1-a812-c06f442a248e",
  InitializationCell->True],
-Cell[545461, 12772, 18392, 418, 1218, "Input",ExpressionUUID->"5578d223-9b00-4224-83b1-d42df3c0437b",
+Cell[547757, 12868, 18473, 422, 1305, "Input",ExpressionUUID->"5578d223-9b00-4224-83b1-d42df3c0437b",
  InitializationCell->True],
-Cell[563856, 13192, 25426, 581, 1702, "Input",ExpressionUUID->"977ac369-ae26-45c0-a5cc-35f2bda21bd2",
+Cell[566233, 13292, 25510, 586, 1823, "Input",ExpressionUUID->"977ac369-ae26-45c0-a5cc-35f2bda21bd2",
  InitializationCell->True],
-Cell[589285, 13775, 10234, 244, 679, "Input",ExpressionUUID->"91738216-0dea-4c9f-a42a-6c330aeb3568",
+Cell[591746, 13880, 10260, 246, 727, "Input",ExpressionUUID->"91738216-0dea-4c9f-a42a-6c330aeb3568",
  InitializationCell->True],
-Cell[599522, 14021, 10927, 259, 760, "Input",ExpressionUUID->"d8bb9db2-d9fd-4092-aa9e-d9fcfc970258",
+Cell[602009, 14128, 10953, 261, 814, "Input",ExpressionUUID->"d8bb9db2-d9fd-4092-aa9e-d9fcfc970258",
  InitializationCell->True],
-Cell[610452, 14282, 18980, 431, 1461, "Input",ExpressionUUID->"919dd566-8045-4e67-9da9-442c80202b0e",
+Cell[612965, 14391, 19049, 435, 1565, "Input",ExpressionUUID->"919dd566-8045-4e67-9da9-442c80202b0e",
  InitializationCell->True],
-Cell[629435, 14715, 26093, 597, 1993, "Input",ExpressionUUID->"54bfca44-1e8b-4689-8feb-d1c42f57e6f0",
+Cell[632017, 14828, 26174, 601, 2135, "Input",ExpressionUUID->"54bfca44-1e8b-4689-8feb-d1c42f57e6f0",
  InitializationCell->True],
-Cell[655531, 15314, 10020, 240, 625, "Input",ExpressionUUID->"2f1b86f1-daef-4f94-a72f-32dc060f9c15",
+Cell[658194, 15431, 10038, 241, 669, "Input",ExpressionUUID->"2f1b86f1-daef-4f94-a72f-32dc060f9c15",
  InitializationCell->True],
-Cell[665554, 15556, 11204, 266, 814, "Input",ExpressionUUID->"bffbb52e-a2c8-4ce1-9fc4-b5ba193a39f2",
+Cell[668235, 15674, 11222, 267, 872, "Input",ExpressionUUID->"bffbb52e-a2c8-4ce1-9fc4-b5ba193a39f2",
  InitializationCell->True],
-Cell[676761, 15824, 21608, 494, 1406, "Input",ExpressionUUID->"4c1ec37c-d1ab-4569-a808-c826942bf515",
+Cell[679460, 15943, 21710, 499, 1506, "Input",ExpressionUUID->"4c1ec37c-d1ab-4569-a808-c826942bf515",
  InitializationCell->True],
-Cell[698372, 16320, 29819, 686, 2025, "Input",ExpressionUUID->"ed23709c-3839-485a-aace-bade43a7b6c7",
+Cell[701173, 16444, 29900, 690, 2169, "Input",ExpressionUUID->"ed23709c-3839-485a-aace-bade43a7b6c7",
  InitializationCell->True],
-Cell[728194, 17008, 10030, 240, 733, "Input",ExpressionUUID->"f5c06695-13b4-452b-983d-2ed3d45a529b",
+Cell[731076, 17136, 10051, 242, 785, "Input",ExpressionUUID->"f5c06695-13b4-452b-983d-2ed3d45a529b",
  InitializationCell->True],
-Cell[738227, 17250, 11195, 267, 929, "Input",ExpressionUUID->"f306e402-d45a-4737-9dd5-5f5e241d8c67",
+Cell[741130, 17380, 11213, 268, 995, "Input",ExpressionUUID->"f306e402-d45a-4737-9dd5-5f5e241d8c67",
  InitializationCell->True],
-Cell[749425, 17519, 21625, 495, 1406, "Input",ExpressionUUID->"d57270ca-8f4b-48b0-9808-b199dc21a082",
+Cell[752346, 17650, 21727, 500, 1506, "Input",ExpressionUUID->"d57270ca-8f4b-48b0-9808-b199dc21a082",
  InitializationCell->True],
-Cell[771053, 18016, 29833, 686, 2025, "Input",ExpressionUUID->"1d0fe121-540c-4f05-b50e-3f9cf253a180",
+Cell[774076, 18152, 29914, 690, 2169, "Input",ExpressionUUID->"1d0fe121-540c-4f05-b50e-3f9cf253a180",
  InitializationCell->True],
-Cell[800889, 18704, 11486, 274, 706, "Input",ExpressionUUID->"59d94e00-7ff5-44bb-99ef-f8566891b70e",
+Cell[803993, 18844, 11504, 275, 756, "Input",ExpressionUUID->"59d94e00-7ff5-44bb-99ef-f8566891b70e",
  InitializationCell->True],
-Cell[812378, 18980, 13152, 310, 1069, "Input",ExpressionUUID->"66e14e96-d97a-49b2-884d-92ea8a4d6d56",
+Cell[815500, 19121, 13170, 311, 1145, "Input",ExpressionUUID->"66e14e96-d97a-49b2-884d-92ea8a4d6d56",
  InitializationCell->True],
-Cell[825533, 19292, 24350, 557, 1881, "Input",ExpressionUUID->"192ffcad-800c-479f-a4c4-ccb26d62f866",
+Cell[828673, 19434, 24473, 563, 2015, "Input",ExpressionUUID->"192ffcad-800c-479f-a4c4-ccb26d62f866",
  InitializationCell->True],
-Cell[849886, 19851, 33420, 768, 2268, "Input",ExpressionUUID->"998561fd-a479-4f76-91ec-967d9b1f7b9d",
+Cell[853149, 19999, 33501, 772, 2430, "Input",ExpressionUUID->"998561fd-a479-4f76-91ec-967d9b1f7b9d",
  InitializationCell->True],
-Cell[883309, 20621, 13265, 314, 948, "Input",ExpressionUUID->"d2365d11-77c1-4f80-b5e1-8e63e007a021",
+Cell[886653, 20773, 13283, 315, 1015, "Input",ExpressionUUID->"d2365d11-77c1-4f80-b5e1-8e63e007a021",
  InitializationCell->True],
-Cell[896577, 20937, 15556, 358, 975, "Input",ExpressionUUID->"c06bb836-baf1-421d-9a32-d3820dc36cd8",
+Cell[899939, 21090, 15574, 359, 1044, "Input",ExpressionUUID->"c06bb836-baf1-421d-9a32-d3820dc36cd8",
  InitializationCell->True],
-Cell[912136, 21297, 22678, 526, 1713, "Input",ExpressionUUID->"2f51730a-b19f-4097-9f28-5895ce9c4003",
+Cell[915516, 21451, 22696, 527, 1835, "Input",ExpressionUUID->"2f51730a-b19f-4097-9f28-5895ce9c4003",
  InitializationCell->True],
-Cell[934817, 21825, 38027, 882, 2861, "Input",ExpressionUUID->"24ba81d7-5bd8-4f99-90e1-aedbadca0fad",
+Cell[938215, 21980, 38063, 884, 3065, "Input",ExpressionUUID->"24ba81d7-5bd8-4f99-90e1-aedbadca0fad",
  InitializationCell->True],
-Cell[972847, 22709, 20705, 468, 1517, "Input",ExpressionUUID->"64950165-21de-4dad-9464-cfeb6217ef2a",
+Cell[976281, 22866, 20723, 469, 1625, "Input",ExpressionUUID->"64950165-21de-4dad-9464-cfeb6217ef2a",
  InitializationCell->True],
-Cell[993555, 23179, 27810, 633, 2049, "Input",ExpressionUUID->"31930fe5-93ff-4f72-8cf1-52fe64a2c710",
+Cell[997007, 23337, 27828, 634, 2195, "Input",ExpressionUUID->"31930fe5-93ff-4f72-8cf1-52fe64a2c710",
  InitializationCell->True],
-Cell[1021368, 23814, 8977, 213, 733, "Input",ExpressionUUID->"b0edc585-33b2-4fc1-8696-bd7639e1b447",
+Cell[1024838, 23973, 8995, 214, 785, "Input",ExpressionUUID->"b0edc585-33b2-4fc1-8696-bd7639e1b447",
  InitializationCell->True],
-Cell[1030348, 24029, 10334, 245, 845, "Input",ExpressionUUID->"6951b17b-3f57-464a-bcd9-bf6e2f3258fc",
+Cell[1033836, 24189, 10352, 246, 905, "Input",ExpressionUUID->"6951b17b-3f57-464a-bcd9-bf6e2f3258fc",
  InitializationCell->True],
-Cell[1040685, 24276, 36198, 818, 2777, "Input",ExpressionUUID->"7a1e342b-b2f3-4587-8abf-35e9bcf3a84a",
+Cell[1044191, 24437, 36279, 822, 2975, "Input",ExpressionUUID->"7a1e342b-b2f3-4587-8abf-35e9bcf3a84a",
  InitializationCell->True],
-Cell[1076886, 25096, 26516, 611, 1993, "Input",ExpressionUUID->"af1165dd-a131-458d-854e-d5c6abaa436b",
+Cell[1080473, 25261, 26597, 615, 2135, "Input",ExpressionUUID->"af1165dd-a131-458d-854e-d5c6abaa436b",
  InitializationCell->True],
-Cell[1103405, 25709, 11266, 267, 733, "Input",ExpressionUUID->"d3e7943a-0729-48f2-b559-05347bbfd179",
+Cell[1107073, 25878, 11304, 269, 785, "Input",ExpressionUUID->"d3e7943a-0729-48f2-b559-05347bbfd179",
  InitializationCell->True],
-Cell[1114674, 25978, 13027, 306, 1069, "Input",ExpressionUUID->"8e542dea-1b67-4227-a250-4ccd3e9a463e",
+Cell[1118380, 26149, 13065, 308, 1145, "Input",ExpressionUUID->"8e542dea-1b67-4227-a250-4ccd3e9a463e",
  InitializationCell->True],
-Cell[1127704, 26286, 9468, 224, 649, "Input",ExpressionUUID->"ebc55b8a-d86d-4e9d-8e42-7bc917b103bc",
+Cell[1131448, 26459, 9486, 225, 695, "Input",ExpressionUUID->"ebc55b8a-d86d-4e9d-8e42-7bc917b103bc",
  InitializationCell->True],
-Cell[1137175, 26512, 9252, 218, 546, "Input",ExpressionUUID->"e9db3d31-f384-4d57-8877-401cd8af0fc5",
+Cell[1140937, 26686, 9270, 219, 585, "Input",ExpressionUUID->"e9db3d31-f384-4d57-8877-401cd8af0fc5",
  InitializationCell->True],
-Cell[1146430, 26732, 5104, 119, 411, "Input",ExpressionUUID->"929554fc-e034-4c47-875e-fe85767df8b3",
+Cell[1150210, 26907, 5104, 119, 440, "Input",ExpressionUUID->"929554fc-e034-4c47-875e-fe85767df8b3",
  InitializationCell->True],
-Cell[1151537, 26853, 2893, 68, 304, "Input",ExpressionUUID->"c22b2659-38cb-4207-b514-d761f145bd43",
+Cell[1155317, 27028, 2893, 68, 325, "Input",ExpressionUUID->"c22b2659-38cb-4207-b514-d761f145bd43",
  InitializationCell->True],
-Cell[1154433, 26923, 9036, 215, 546, "Input",ExpressionUUID->"11f9d24a-7979-4039-bd09-f7720b72824c",
+Cell[1158213, 27098, 9054, 216, 585, "Input",ExpressionUUID->"11f9d24a-7979-4039-bd09-f7720b72824c",
  InitializationCell->True],
-Cell[1163472, 27140, 8684, 206, 519, "Input",ExpressionUUID->"d1ce130b-8a43-47fe-bb10-5692bddc9c25",
+Cell[1167270, 27316, 8702, 207, 556, "Input",ExpressionUUID->"d1ce130b-8a43-47fe-bb10-5692bddc9c25",
  InitializationCell->True],
-Cell[1172159, 27348, 9969, 235, 679, "Input",ExpressionUUID->"8dab4de3-c008-4ca5-863f-dadadb4a1a54",
+Cell[1175975, 27525, 9987, 236, 727, "Input",ExpressionUUID->"8dab4de3-c008-4ca5-863f-dadadb4a1a54",
  InitializationCell->True],
-Cell[1182131, 27585, 11836, 281, 868, "Input",ExpressionUUID->"bee19db7-009e-46c3-84f5-28a8718a4350",
+Cell[1185965, 27763, 11865, 284, 930, "Input",ExpressionUUID->"bee19db7-009e-46c3-84f5-28a8718a4350",
  InitializationCell->True],
-Cell[1193970, 27868, 5144, 93, 546, "Input",ExpressionUUID->"5f95ea34-4289-4f1b-bd41-81b28c90f8f4",
+Cell[1197833, 28049, 5144, 93, 585, "Input",ExpressionUUID->"5f95ea34-4289-4f1b-bd41-81b28c90f8f4",
  InitializationCell->True],
-Cell[1199117, 27963, 19467, 456, 1379, "Input",ExpressionUUID->"976308e5-bca0-439c-ad76-ed75aa566830",
+Cell[1202980, 28144, 19524, 461, 1477, "Input",ExpressionUUID->"976308e5-bca0-439c-ad76-ed75aa566830",
  InitializationCell->True],
-Cell[1218587, 28421, 110142, 2634, 9807, "Input",ExpressionUUID->"83264349-b5df-4338-97df-38ea84c1151b",
+Cell[1222507, 28607, 110539, 2684, 10507, "Input",ExpressionUUID->"83264349-b5df-4338-97df-38ea84c1151b",
  InitializationCell->True]
 }
 ]

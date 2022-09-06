@@ -10,10 +10,10 @@
 NotebookFileLineBreakTest
 NotebookFileLineBreakTest
 NotebookDataPosition[       161,          7]
-NotebookDataLength[   1374829,      31899]
-NotebookOptionsPosition[   1365836,      31749]
-NotebookOutlinePosition[   1366264,      31766]
-CellTagsIndexPosition[   1366221,      31763]
+NotebookDataLength[   1378430,      32217]
+NotebookOptionsPosition[   1369440,      32067]
+NotebookOutlinePosition[   1369864,      32084]
+CellTagsIndexPosition[   1369821,      32081]
 WindowFrame->Normal*)
 
 (* Beginning of Notebook Content *)
@@ -34,6 +34,7 @@ Cell[BoxData[{
        RowBox[{
         RowBox[{"First", "[", 
          RowBox[{"First", "[", "objectEquivalences", "]"}], "]"}], "\[Rule]", 
+        
         RowBox[{"Last", "[", 
          RowBox[{"First", "[", "objectEquivalences", "]"}], "]"}]}]}], "]"}], 
      ",", 
@@ -55,7 +56,7 @@ Cell[BoxData[{
  CellChangeTimes->{{3.869658318418605*^9, 3.8696583184341974`*^9}, 
    3.869738631533656*^9},
  CellLabel->
-  "In[714]:=",ExpressionUUID->"48849ee8-0b41-47ae-9c53-507f88eb016b"],
+  "In[161]:=",ExpressionUUID->"48849ee8-0b41-47ae-9c53-507f88eb016b"],
 
 Cell[BoxData[{
  RowBox[{
@@ -107,6 +108,7 @@ Cell[BoxData[{
        RowBox[{
         RowBox[{"First", "[", 
          RowBox[{"First", "[", "objectEquivalences", "]"}], "]"}], "\[Rule]", 
+        
         RowBox[{"Last", "[", 
          RowBox[{"First", "[", "objectEquivalences", "]"}], "]"}]}]}], "]"}], 
      ",", 
@@ -128,7 +130,7 @@ Cell[BoxData[{
  CellChangeTimes->{{3.869658318418605*^9, 3.8696583184341974`*^9}, {
   3.869738631533656*^9, 3.869738638737885*^9}},
  CellLabel->
-  "In[599]:=",ExpressionUUID->"3aad200f-6169-4972-b03a-8d60b790477e"],
+  "In[278]:=",ExpressionUUID->"3aad200f-6169-4972-b03a-8d60b790477e"],
 
 Cell[BoxData[{
  RowBox[{
@@ -157,7 +159,8 @@ Cell[BoxData[{
           RowBox[{"First", "[", "objectEquivalences", "]"}], "]"}]}]}], ",", 
        "1"}], "]"}]}], "]"}], "/;", 
    RowBox[{
-    RowBox[{"Length", "[", "objectEquivalences", "]"}], ">", "0"}]}]}], "\n", 
+    RowBox[{"Length", "[", "objectEquivalences", "]"}], ">", 
+    "0"}]}]}], "\n", 
  RowBox[{
   RowBox[{"reduceArrowsInitialWithDuplicates", "[", 
    RowBox[{"arrows_List", ",", 
@@ -180,6 +183,7 @@ Cell[BoxData[{
         RowBox[{
          RowBox[{"First", "[", 
           RowBox[{"First", "[", "arrowEquivalences", "]"}], "]"}], "\[Rule]", 
+         
          RowBox[{"Last", "[", 
           RowBox[{"First", "[", "arrowEquivalences", "]"}], "]"}]}]}], ",", 
        "1"}], "]"}]}], "]"}], "/;", 
@@ -217,7 +221,7 @@ Cell[BoxData[{
  CellChangeTimes->{{3.869658318418605*^9, 3.8696583184341974`*^9}, {
   3.869738631533656*^9, 3.869738661935497*^9}},
  CellLabel->
-  "In[603]:=",ExpressionUUID->"4c14218e-32bb-4cd5-bf3b-cb458b5770a2"],
+  "In[167]:=",ExpressionUUID->"4c14218e-32bb-4cd5-bf3b-cb458b5770a2"],
 
 Cell[BoxData[
  RowBox[{
@@ -227,6 +231,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -262,6 +267,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -296,7 +302,7 @@ Cell[BoxData[
  CellChangeTimes->{{3.869658318418605*^9, 3.8696583184341974`*^9}, {
   3.869738631533656*^9, 3.8697386717596025`*^9}},
  CellLabel->
-  "In[609]:=",ExpressionUUID->"aa2aee7e-09dc-4bd1-b39b-3491611c4689"],
+  "In[173]:=",ExpressionUUID->"aa2aee7e-09dc-4bd1-b39b-3491611c4689"],
 
 Cell[BoxData[
  RowBox[{
@@ -306,6 +312,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -341,6 +348,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -495,6 +503,7 @@ Cell[BoxData[
             RowBox[{"MemberQ", "[", 
              RowBox[{
               RowBox[{"Normal", "[", "domainMorphismAssociation", "]"}], ",", 
+              
               RowBox[{
                RowBox[{"identitySymbol", "[", "#1", "]"}], "\[Rule]", 
                RowBox[{"DirectedEdge", "[", 
@@ -686,6 +695,7 @@ Cell[BoxData[
              RowBox[{"Append", "[", 
               RowBox[{
                RowBox[{"Normal", "[", "imageMorphismAssociation", "]"}], ",", 
+               
                RowBox[{
                 RowBox[{"newIdentitySymbol", "[", "#1", "]"}], "\[Rule]", 
                 RowBox[{"DirectedEdge", "[", 
@@ -715,7 +725,7 @@ Cell[BoxData[
  CellChangeTimes->{{3.869658318418605*^9, 3.8696583184341974`*^9}, {
   3.869738631533656*^9, 3.8697386983188696`*^9}},
  CellLabel->
-  "In[610]:=",ExpressionUUID->"ba56e082-0488-443f-860f-c0a6dec85f39"],
+  "In[174]:=",ExpressionUUID->"ba56e082-0488-443f-860f-c0a6dec85f39"],
 
 Cell[BoxData[
  RowBox[{
@@ -725,6 +735,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -760,6 +771,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -794,7 +806,7 @@ Cell[BoxData[
  CellChangeTimes->{{3.869658318418605*^9, 3.8696583184341974`*^9}, {
   3.869738631533656*^9, 3.8697387059090786`*^9}},
  CellLabel->
-  "In[611]:=",ExpressionUUID->"67ceed6b-cb96-4349-9f67-d0b4a1e66cb0"],
+  "In[175]:=",ExpressionUUID->"67ceed6b-cb96-4349-9f67-d0b4a1e66cb0"],
 
 Cell[BoxData[
  RowBox[{
@@ -804,6 +816,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -839,6 +852,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -874,7 +888,7 @@ Cell[BoxData[
  CellChangeTimes->{{3.869658318418605*^9, 3.8696583184341974`*^9}, {
   3.869738631533656*^9, 3.869738717394701*^9}},
  CellLabel->
-  "In[612]:=",ExpressionUUID->"b4d0f398-1513-4e0e-9408-af1e60f2606e"],
+  "In[176]:=",ExpressionUUID->"b4d0f398-1513-4e0e-9408-af1e60f2606e"],
 
 Cell[BoxData[
  RowBox[{
@@ -884,6 +898,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -919,6 +934,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -968,6 +984,7 @@ Cell[BoxData[
                RowBox[{"x_", ",", 
                 RowBox[{"newCompositionSymbol", "[", 
                  RowBox[{"y_", ",", "z_"}], "]"}]}], "]"}], "\[RuleDelayed]", 
+              
               RowBox[{"newCompositionSymbol", "[", 
                RowBox[{"z", ",", 
                 RowBox[{"newCompositionSymbol", "[", 
@@ -999,7 +1016,7 @@ Cell[BoxData[
  CellChangeTimes->{{3.869658318418605*^9, 3.8696583184341974`*^9}, {
   3.869738631533656*^9, 3.869738717394701*^9}},
  CellLabel->
-  "In[613]:=",ExpressionUUID->"b98724c2-2ad4-41c4-ae46-4759ea93a126"],
+  "In[177]:=",ExpressionUUID->"b98724c2-2ad4-41c4-ae46-4759ea93a126"],
 
 Cell[BoxData[
  RowBox[{
@@ -1009,6 +1026,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -1044,6 +1062,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -1125,7 +1144,7 @@ Cell[BoxData[
  CellChangeTimes->{{3.869658318418605*^9, 3.8696583184341974`*^9}, {
   3.869738631533656*^9, 3.869738762122237*^9}},
  CellLabel->
-  "In[614]:=",ExpressionUUID->"1106ba00-ae0e-425d-8fb8-8aa239949cb9"],
+  "In[178]:=",ExpressionUUID->"1106ba00-ae0e-425d-8fb8-8aa239949cb9"],
 
 Cell[BoxData[
  RowBox[{
@@ -1135,6 +1154,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -1170,6 +1190,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -1221,7 +1242,7 @@ Cell[BoxData[
  CellChangeTimes->{{3.869658318418605*^9, 3.8696583184341974`*^9}, {
   3.869738631533656*^9, 3.869738762122237*^9}},
  CellLabel->
-  "In[615]:=",ExpressionUUID->"ca1a9e12-9ab1-478d-8b3b-bfb0569cab66"],
+  "In[179]:=",ExpressionUUID->"ca1a9e12-9ab1-478d-8b3b-bfb0569cab66"],
 
 Cell[BoxData[
  RowBox[{
@@ -1231,6 +1252,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -1266,6 +1288,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -1430,6 +1453,7 @@ Cell[BoxData[
             RowBox[{"MemberQ", "[", 
              RowBox[{
               RowBox[{"Normal", "[", "domainMorphismAssociation", "]"}], ",", 
+              
               RowBox[{
                RowBox[{"identitySymbol", "[", "#1", "]"}], "\[Rule]", 
                RowBox[{"DirectedEdge", "[", 
@@ -1710,6 +1734,7 @@ Cell[BoxData[
              RowBox[{"Append", "[", 
               RowBox[{
                RowBox[{"Normal", "[", "imageMorphismAssociation", "]"}], ",", 
+               
                RowBox[{
                 RowBox[{"newIdentitySymbol", "[", "#1", "]"}], "\[Rule]", 
                 RowBox[{"DirectedEdge", "[", 
@@ -1748,7 +1773,7 @@ Cell[BoxData[
  CellChangeTimes->{{3.869658318418605*^9, 3.8696583184341974`*^9}, {
   3.869738631533656*^9, 3.8697387591684303`*^9}},
  CellLabel->
-  "In[616]:=",ExpressionUUID->"0a41cdc6-5ff7-42cd-aaa4-2e1766dc3ff5"],
+  "In[180]:=",ExpressionUUID->"0a41cdc6-5ff7-42cd-aaa4-2e1766dc3ff5"],
 
 Cell[BoxData[
  RowBox[{
@@ -1758,6 +1783,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -1793,6 +1819,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -1819,7 +1846,7 @@ Cell[BoxData[
  CellChangeTimes->{{3.869658318418605*^9, 3.8696583184341974`*^9}, {
   3.869738631533656*^9, 3.8697387524050417`*^9}},
  CellLabel->
-  "In[617]:=",ExpressionUUID->"508f2666-7341-4440-97cc-29b1803456bb"],
+  "In[181]:=",ExpressionUUID->"508f2666-7341-4440-97cc-29b1803456bb"],
 
 Cell[BoxData[
  RowBox[{
@@ -1829,6 +1856,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -1864,6 +1892,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -1890,7 +1919,7 @@ Cell[BoxData[
  CellChangeTimes->{{3.869658318418605*^9, 3.8696583184341974`*^9}, {
   3.869738631533656*^9, 3.869738748059249*^9}},
  CellLabel->
-  "In[618]:=",ExpressionUUID->"6606b242-8e13-4330-9d38-621f05dec918"],
+  "In[182]:=",ExpressionUUID->"6606b242-8e13-4330-9d38-621f05dec918"],
 
 Cell[BoxData[
  RowBox[{
@@ -1900,6 +1929,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -1935,6 +1965,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -1970,7 +2001,7 @@ Cell[BoxData[
  CellChangeTimes->{{3.869658318418605*^9, 3.8696583184341974`*^9}, {
   3.869738631533656*^9, 3.869738748059249*^9}},
  CellLabel->
-  "In[619]:=",ExpressionUUID->"a9fd887c-e1ae-44ec-a5a1-36245ebda9a5"],
+  "In[183]:=",ExpressionUUID->"a9fd887c-e1ae-44ec-a5a1-36245ebda9a5"],
 
 Cell[BoxData[
  RowBox[{
@@ -1980,6 +2011,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -2015,6 +2047,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -2052,7 +2085,7 @@ Cell[BoxData[
  CellChangeTimes->{{3.869658318418605*^9, 3.8696583184341974`*^9}, {
   3.869738631533656*^9, 3.8697387333713517`*^9}},
  CellLabel->
-  "In[620]:=",ExpressionUUID->"ebba9de9-c714-4438-9607-8d9fa404c3de"],
+  "In[184]:=",ExpressionUUID->"ebba9de9-c714-4438-9607-8d9fa404c3de"],
 
 Cell[BoxData[
  RowBox[{
@@ -2062,6 +2095,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -2097,6 +2131,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -2156,7 +2191,7 @@ Cell[BoxData[
  CellChangeTimes->{{3.869658318418605*^9, 3.8696583184341974`*^9}, {
   3.869738631533656*^9, 3.8697387306070585`*^9}},
  CellLabel->
-  "In[621]:=",ExpressionUUID->"74c22533-1d98-4ea3-b330-60ef081cdee1"],
+  "In[185]:=",ExpressionUUID->"74c22533-1d98-4ea3-b330-60ef081cdee1"],
 
 Cell[BoxData[{
  RowBox[{
@@ -2166,6 +2201,7 @@ Cell[BoxData[{
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -2201,6 +2237,7 @@ Cell[BoxData[{
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -2264,6 +2301,7 @@ Cell[BoxData[{
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -2299,6 +2337,7 @@ Cell[BoxData[{
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -2387,7 +2426,7 @@ Cell[BoxData[{
  CellChangeTimes->{{3.869658318418605*^9, 3.8696583184341974`*^9}, {
    3.869738631533656*^9, 3.869738725269229*^9}, 3.869738771543952*^9},
  CellLabel->
-  "In[622]:=",ExpressionUUID->"250dc498-d42e-4b46-8480-aa783bd2910f"],
+  "In[186]:=",ExpressionUUID->"250dc498-d42e-4b46-8480-aa783bd2910f"],
 
 Cell[BoxData[
  RowBox[{
@@ -2397,6 +2436,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -2432,6 +2472,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -2523,7 +2564,7 @@ Cell[BoxData[
   3.869738631533656*^9, 3.869738725269229*^9}, {3.869738771543952*^9, 
   3.8697387748834057`*^9}},
  CellLabel->
-  "In[624]:=",ExpressionUUID->"1d99ebbb-cd7e-41db-a1c0-c7f222054b45"],
+  "In[188]:=",ExpressionUUID->"1d99ebbb-cd7e-41db-a1c0-c7f222054b45"],
 
 Cell[BoxData[
  RowBox[{
@@ -2533,6 +2574,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -2568,6 +2610,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -2846,6 +2889,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -2984,7 +3028,7 @@ Cell[BoxData[
   3.869738631533656*^9, 3.869738725269229*^9}, {3.869738771543952*^9, 
   3.869738781780657*^9}},
  CellLabel->
-  "In[625]:=",ExpressionUUID->"e1c3bb7f-3072-40b4-91e3-e6ca070d1227"],
+  "In[189]:=",ExpressionUUID->"e1c3bb7f-3072-40b4-91e3-e6ca070d1227"],
 
 Cell[BoxData[
  RowBox[{
@@ -2994,6 +3038,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -3029,6 +3074,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -3307,6 +3353,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -3447,7 +3494,7 @@ Cell[BoxData[
   3.869738631533656*^9, 3.869738725269229*^9}, {3.869738771543952*^9, 
   3.8697387868885956`*^9}},
  CellLabel->
-  "In[626]:=",ExpressionUUID->"342a91aa-5d2e-4b9e-9327-151aee4ccfb5"],
+  "In[190]:=",ExpressionUUID->"342a91aa-5d2e-4b9e-9327-151aee4ccfb5"],
 
 Cell[BoxData[
  RowBox[{
@@ -3457,6 +3504,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -3492,6 +3540,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -3876,6 +3925,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -4018,7 +4068,7 @@ Cell[BoxData[
   3.869738631533656*^9, 3.869738725269229*^9}, {3.869738771543952*^9, 
   3.8697387974665313`*^9}},
  CellLabel->
-  "In[627]:=",ExpressionUUID->"7164a3b8-cd60-4789-9659-d194e52f9cf5"],
+  "In[191]:=",ExpressionUUID->"7164a3b8-cd60-4789-9659-d194e52f9cf5"],
 
 Cell[BoxData[
  RowBox[{
@@ -4028,6 +4078,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -4063,6 +4114,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -4447,6 +4499,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -4592,7 +4645,7 @@ Cell[BoxData[
   3.869738631533656*^9, 3.869738725269229*^9}, {3.869738771543952*^9, 
   3.8697388040324106`*^9}},
  CellLabel->
-  "In[628]:=",ExpressionUUID->"8503a1c0-b078-4530-973d-bec8bfc342ec"],
+  "In[192]:=",ExpressionUUID->"8503a1c0-b078-4530-973d-bec8bfc342ec"],
 
 Cell[BoxData[
  RowBox[{
@@ -4602,6 +4655,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -4637,6 +4691,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -4670,7 +4725,7 @@ Cell[BoxData[
   3.869738631533656*^9, 3.869738725269229*^9}, {3.869738771543952*^9, 
   3.8697388106014967`*^9}},
  CellLabel->
-  "In[629]:=",ExpressionUUID->"40988e54-678d-4d31-a943-021be91d7f23"],
+  "In[193]:=",ExpressionUUID->"40988e54-678d-4d31-a943-021be91d7f23"],
 
 Cell[BoxData[
  RowBox[{
@@ -4680,6 +4735,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -4715,6 +4771,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -4750,7 +4807,7 @@ Cell[BoxData[
   3.869738631533656*^9, 3.869738725269229*^9}, {3.869738771543952*^9, 
   3.869738814033862*^9}},
  CellLabel->
-  "In[630]:=",ExpressionUUID->"ecd7033a-1198-4953-9912-8fdac3bbfee8"],
+  "In[194]:=",ExpressionUUID->"ecd7033a-1198-4953-9912-8fdac3bbfee8"],
 
 Cell[BoxData[
  RowBox[{
@@ -4760,6 +4817,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -4795,6 +4853,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -4865,7 +4924,7 @@ Cell[BoxData[
   3.869738631533656*^9, 3.869738725269229*^9}, {3.869738771543952*^9, 
   3.8697388181279545`*^9}},
  CellLabel->
-  "In[631]:=",ExpressionUUID->"9ec8e5d1-8c39-4893-85d4-e7fcdaf4d6e5"],
+  "In[195]:=",ExpressionUUID->"9ec8e5d1-8c39-4893-85d4-e7fcdaf4d6e5"],
 
 Cell[BoxData[
  RowBox[{
@@ -4875,6 +4934,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -4910,6 +4970,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -4983,7 +5044,7 @@ Cell[BoxData[
   3.869738631533656*^9, 3.869738725269229*^9}, {3.869738771543952*^9, 
   3.869738821586835*^9}},
  CellLabel->
-  "In[632]:=",ExpressionUUID->"72506e5c-2f61-476b-a39e-f69b8776d355"],
+  "In[196]:=",ExpressionUUID->"72506e5c-2f61-476b-a39e-f69b8776d355"],
 
 Cell[BoxData[
  RowBox[{
@@ -4993,6 +5054,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -5028,6 +5090,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -5062,7 +5125,7 @@ Cell[BoxData[
   3.869738631533656*^9, 3.869738725269229*^9}, {3.869738771543952*^9, 
   3.8697388248975554`*^9}},
  CellLabel->
-  "In[633]:=",ExpressionUUID->"61e9b785-3da4-43d7-9bd0-b3e032077146"],
+  "In[197]:=",ExpressionUUID->"61e9b785-3da4-43d7-9bd0-b3e032077146"],
 
 Cell[BoxData[
  RowBox[{
@@ -5072,6 +5135,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -5107,6 +5171,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -5143,7 +5208,7 @@ Cell[BoxData[
   3.869738631533656*^9, 3.869738725269229*^9}, {3.869738771543952*^9, 
   3.869738830972613*^9}},
  CellLabel->
-  "In[634]:=",ExpressionUUID->"8871aab8-51d4-4261-8f12-40fdaf46c322"],
+  "In[198]:=",ExpressionUUID->"8871aab8-51d4-4261-8f12-40fdaf46c322"],
 
 Cell[BoxData[
  RowBox[{
@@ -5153,6 +5218,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -5188,6 +5254,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -5524,7 +5591,7 @@ Cell[BoxData[
    3.869738631533656*^9, 3.869738725269229*^9}, {3.869738771543952*^9, 
    3.869738830972613*^9}, 3.869738896509601*^9},
  CellLabel->
-  "In[635]:=",ExpressionUUID->"490d1565-fe56-4e08-8b72-ab4dff58bf9a"],
+  "In[199]:=",ExpressionUUID->"490d1565-fe56-4e08-8b72-ab4dff58bf9a"],
 
 Cell[BoxData[
  RowBox[{
@@ -5534,6 +5601,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -5569,6 +5637,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -5907,7 +5976,7 @@ Cell[BoxData[
   3.869738631533656*^9, 3.869738725269229*^9}, {3.869738771543952*^9, 
   3.869738830972613*^9}, {3.869738896509601*^9, 3.8697389084894276`*^9}},
  CellLabel->
-  "In[636]:=",ExpressionUUID->"c82f97ed-76e7-43e3-87f4-7d5c03a6de37"],
+  "In[200]:=",ExpressionUUID->"c82f97ed-76e7-43e3-87f4-7d5c03a6de37"],
 
 Cell[BoxData[
  RowBox[{
@@ -5917,6 +5986,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -5952,6 +6022,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -6357,6 +6428,7 @@ Cell[BoxData[
                     RowBox[{
                     RowBox[{"newCompositionSymbol", "[", 
                     RowBox[{"z", ",", "y"}], "]"}], ",", "x"}], "]"}]}], ",", 
+                   
                    RowBox[{
                     RowBox[{"newCompositionSymbol", "[", 
                     RowBox[{"x_", ",", "y_"}], "]"}], "\[RuleDelayed]", 
@@ -6389,7 +6461,7 @@ Cell[BoxData[
    3.869738830972613*^9}, {3.869738896509601*^9, 3.8697389084894276`*^9}, 
    3.869738945573786*^9},
  CellLabel->
-  "In[637]:=",ExpressionUUID->"4755fb35-2716-452b-a507-813ddd437c79"],
+  "In[201]:=",ExpressionUUID->"4755fb35-2716-452b-a507-813ddd437c79"],
 
 Cell[BoxData[
  RowBox[{
@@ -6399,6 +6471,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -6434,6 +6507,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -6839,6 +6913,7 @@ Cell[BoxData[
                     RowBox[{
                     RowBox[{"newCompositionSymbol", "[", 
                     RowBox[{"z", ",", "y"}], "]"}], ",", "x"}], "]"}]}], ",", 
+                   
                    RowBox[{
                     RowBox[{"newCompositionSymbol", "[", 
                     RowBox[{"x_", ",", "y_"}], "]"}], "\[RuleDelayed]", 
@@ -6873,7 +6948,7 @@ Cell[BoxData[
   3.869738830972613*^9}, {3.869738896509601*^9, 3.8697389084894276`*^9}, {
   3.869738945573786*^9, 3.869738963847807*^9}},
  CellLabel->
-  "In[638]:=",ExpressionUUID->"6df51058-9413-46b8-a775-1082576129ce"],
+  "In[202]:=",ExpressionUUID->"6df51058-9413-46b8-a775-1082576129ce"],
 
 Cell[BoxData[
  RowBox[{
@@ -6883,6 +6958,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -6918,6 +6994,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -6950,6 +7027,7 @@ Cell[BoxData[
          RowBox[{
           RowBox[{
           "\"\<ArrowEquivalences\>\"", "\[Rule]", "arrowEquivalences"}], ",", 
+          
           RowBox[{"\"\<Arrows\>\"", "\[Rule]", "arrows"}], ",", 
           RowBox[{
           "\"\<ObjectEquivalences\>\"", "\[Rule]", 
@@ -6967,9 +7045,9 @@ Cell[BoxData[
  CellChangeTimes->{{3.869658318418605*^9, 3.8696583184341974`*^9}, {
    3.869738631533656*^9, 3.869738725269229*^9}, {3.869738771543952*^9, 
    3.869738830972613*^9}, {3.869738896509601*^9, 3.8697389084894276`*^9}, {
-   3.869738945573786*^9, 3.8697389705819683`*^9}, 
-   3.8697394734201574`*^9},ExpressionUUID->"4c280c4c-2d83-4ed4-a4ab-\
-771dd61077a6"],
+   3.869738945573786*^9, 3.8697389705819683`*^9}, 3.8697394734201574`*^9},
+ CellLabel->
+  "In[203]:=",ExpressionUUID->"4c280c4c-2d83-4ed4-a4ab-771dd61077a6"],
 
 Cell[BoxData[
  RowBox[{
@@ -6979,6 +7057,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -7014,6 +7093,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -7155,9 +7235,9 @@ Cell[BoxData[
  CellChangeTimes->{{3.869658318418605*^9, 3.8696583184341974`*^9}, {
    3.869738631533656*^9, 3.869738725269229*^9}, {3.869738771543952*^9, 
    3.869738830972613*^9}, {3.869738896509601*^9, 3.8697389084894276`*^9}, {
-   3.869738945573786*^9, 3.8697389768803463`*^9}, 
-   3.869739473435814*^9},ExpressionUUID->"10e28597-a216-4fbd-b782-\
-c6ba4ca6e316"],
+   3.869738945573786*^9, 3.8697389768803463`*^9}, 3.869739473435814*^9},
+ CellLabel->
+  "In[204]:=",ExpressionUUID->"10e28597-a216-4fbd-b782-c6ba4ca6e316"],
 
 Cell[BoxData[
  RowBox[{
@@ -7167,6 +7247,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -7202,6 +7283,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -7366,6 +7448,7 @@ Cell[BoxData[
             RowBox[{"MemberQ", "[", 
              RowBox[{
               RowBox[{"Normal", "[", "domainMorphismAssociation", "]"}], ",", 
+              
               RowBox[{
                RowBox[{"identitySymbol", "[", "#1", "]"}], "\[Rule]", 
                RowBox[{"DirectedEdge", "[", 
@@ -7427,6 +7510,7 @@ Cell[BoxData[
           RowBox[{"categoryObjectEquivalences", "/.", 
            RowBox[{"Normal", "[", "objectMappings", "]"}]}], ",", 
           "objectEquivalences"}], "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      
       RowBox[{"imageMorphismEquivalences", "=", 
        RowBox[{"DeleteDuplicates", "[", 
         RowBox[{"Join", "[", 
@@ -7621,6 +7705,7 @@ Cell[BoxData[
              RowBox[{"Append", "[", 
               RowBox[{
                RowBox[{"Normal", "[", "imageMorphismAssociation", "]"}], ",", 
+               
                RowBox[{
                 RowBox[{"newIdentitySymbol", "[", "#1", "]"}], "\[Rule]", 
                 RowBox[{"DirectedEdge", "[", 
@@ -7675,7 +7760,7 @@ Cell[BoxData[
   3.869738830972613*^9}, {3.869738896509601*^9, 3.8697389084894276`*^9}, {
   3.869738945573786*^9, 3.869738984441947*^9}},
  CellLabel->
-  "In[641]:=",ExpressionUUID->"bb0b302a-f62e-43d6-bc50-2e735d54b523"],
+  "In[205]:=",ExpressionUUID->"bb0b302a-f62e-43d6-bc50-2e735d54b523"],
 
 Cell[BoxData[
  RowBox[{
@@ -7685,6 +7770,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -7720,6 +7806,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -7763,6 +7850,7 @@ Cell[BoxData[
                 "newObjects"}], "]"}], "]"}], ",", 
              RowBox[{"quiverObjectEquivalences", "/.", 
               RowBox[{"Normal", "[", "objectMappings", "]"}]}]}], "]"}], ",", 
+           
            RowBox[{"DeleteDuplicates", "[", 
             RowBox[{"Join", "[", 
              RowBox[{
@@ -7778,6 +7866,7 @@ Cell[BoxData[
                RowBox[{"Normal", "[", "objectMappings", "]"}]}], "]"}], ",", 
              RowBox[{"quiverObjectEquivalences", "/.", 
               RowBox[{"Normal", "[", "objectMappings", "]"}]}]}], "]"}], ",", 
+           
            RowBox[{"DeleteDuplicates", "[", 
             RowBox[{"Join", "[", 
              RowBox[{
@@ -8172,6 +8261,7 @@ Cell[BoxData[
                      "}"}]}], "]"}], "\[Rule]", 
                     RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
                   RowBox[{"Normal", "[", "morphismAssociation", "]"}]}], ",", 
+                 
                  RowBox[{
                   RowBox[{"StringDelete", "[", 
                    RowBox[{
@@ -8661,6 +8751,7 @@ Cell[BoxData[
                     RowBox[{
                     RowBox[{"newCompositionSymbol", "[", 
                     RowBox[{"z", ",", "y"}], "]"}], ",", "x"}], "]"}]}], ",", 
+                   
                    RowBox[{
                     RowBox[{"newCompositionSymbol", "[", 
                     RowBox[{"x_", ",", "y_"}], "]"}], "\[RuleDelayed]", 
@@ -8725,7 +8816,7 @@ Cell[BoxData[
   3.869738830972613*^9}, {3.869738896509601*^9, 3.8697389084894276`*^9}, {
   3.869738945573786*^9, 3.8697389984915247`*^9}},
  CellLabel->
-  "In[642]:=",ExpressionUUID->"c37a4049-d31c-4fd8-b301-6012b2dee896"],
+  "In[206]:=",ExpressionUUID->"c37a4049-d31c-4fd8-b301-6012b2dee896"],
 
 Cell[BoxData[
  RowBox[{
@@ -8735,6 +8826,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -8770,6 +8862,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -9225,6 +9318,7 @@ Cell[BoxData[
                     RowBox[{
                     RowBox[{"newCompositionSymbol", "[", 
                     RowBox[{"z", ",", "y"}], "]"}], ",", "x"}], "]"}]}], ",", 
+                   
                    RowBox[{
                     RowBox[{"newCompositionSymbol", "[", 
                     RowBox[{"x_", ",", "y_"}], "]"}], "\[RuleDelayed]", 
@@ -9293,7 +9387,7 @@ Cell[BoxData[
   3.869738830972613*^9}, {3.869738896509601*^9, 3.8697389084894276`*^9}, {
   3.869738945573786*^9, 3.8697390062031975`*^9}},
  CellLabel->
-  "In[643]:=",ExpressionUUID->"088a6630-59f5-4116-bf31-7ee8df9c1336"],
+  "In[207]:=",ExpressionUUID->"088a6630-59f5-4116-bf31-7ee8df9c1336"],
 
 Cell[BoxData[
  RowBox[{
@@ -9303,6 +9397,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -9338,6 +9433,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -9504,6 +9600,7 @@ Cell[BoxData[
             RowBox[{"MemberQ", "[", 
              RowBox[{
               RowBox[{"Normal", "[", "domainMorphismAssociation", "]"}], ",", 
+              
               RowBox[{
                RowBox[{"identitySymbol", "[", "#1", "]"}], "\[Rule]", 
                RowBox[{"DirectedEdge", "[", 
@@ -9768,6 +9865,7 @@ Cell[BoxData[
              RowBox[{"Append", "[", 
               RowBox[{
                RowBox[{"Normal", "[", "imageMorphismAssociation", "]"}], ",", 
+               
                RowBox[{
                 RowBox[{"newIdentitySymbol", "[", "#1", "]"}], "\[Rule]", 
                 RowBox[{"DirectedEdge", "[", 
@@ -9890,6 +9988,7 @@ Cell[BoxData[
                     ")"}]}]}], "&"}]}], "]"}], "]"}]}], ",", 
              RowBox[{"isFullFunctor", "=", "False"}]}], "]"}]}], "]"}], "&"}],
          ")"}], "/@", "objectPairs"}], ";", "isFullFunctor"}]}], "]"}], "/;", 
+   
    RowBox[{
     RowBox[{
      RowBox[{"SymbolName", "[", "abstractQuiver", "]"}], "===", 
@@ -9903,7 +10002,7 @@ Cell[BoxData[
   3.869738830972613*^9}, {3.869738896509601*^9, 3.8697389084894276`*^9}, {
   3.869738945573786*^9, 3.869739015560318*^9}},
  CellLabel->
-  "In[644]:=",ExpressionUUID->"d021f57e-9d92-4737-993c-26005cc9e408"],
+  "In[208]:=",ExpressionUUID->"d021f57e-9d92-4737-993c-26005cc9e408"],
 
 Cell[BoxData[
  RowBox[{
@@ -9913,6 +10012,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -9948,6 +10048,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -10114,6 +10215,7 @@ Cell[BoxData[
             RowBox[{"MemberQ", "[", 
              RowBox[{
               RowBox[{"Normal", "[", "domainMorphismAssociation", "]"}], ",", 
+              
               RowBox[{
                RowBox[{"identitySymbol", "[", "#1", "]"}], "\[Rule]", 
                RowBox[{"DirectedEdge", "[", 
@@ -10378,6 +10480,7 @@ Cell[BoxData[
              RowBox[{"Append", "[", 
               RowBox[{
                RowBox[{"Normal", "[", "imageMorphismAssociation", "]"}], ",", 
+               
                RowBox[{
                 RowBox[{"newIdentitySymbol", "[", "#1", "]"}], "\[Rule]", 
                 RowBox[{"DirectedEdge", "[", 
@@ -10449,6 +10552,7 @@ Cell[BoxData[
             RowBox[{"objects", ",", "quiverObjectEquivalences"}], "]"}], ",", 
            "categoryObjectEquivalences"}], "]"}], ",", "2"}], "]"}]}], ";", 
       RowBox[{"isFaithfulFunctor", "=", "True"}], ";", "\[IndentingNewLine]", 
+      
       RowBox[{
        RowBox[{"(", 
         RowBox[{
@@ -10514,7 +10618,7 @@ Cell[BoxData[
   3.869738830972613*^9}, {3.869738896509601*^9, 3.8697389084894276`*^9}, {
   3.869738945573786*^9, 3.869739025013877*^9}},
  CellLabel->
-  "In[645]:=",ExpressionUUID->"4110b943-71a0-40e2-9436-edc0561bf7e7"],
+  "In[209]:=",ExpressionUUID->"4110b943-71a0-40e2-9436-edc0561bf7e7"],
 
 Cell[BoxData[
  RowBox[{
@@ -10524,6 +10628,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -10559,6 +10664,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -10725,6 +10831,7 @@ Cell[BoxData[
             RowBox[{"MemberQ", "[", 
              RowBox[{
               RowBox[{"Normal", "[", "domainMorphismAssociation", "]"}], ",", 
+              
               RowBox[{
                RowBox[{"identitySymbol", "[", "#1", "]"}], "\[Rule]", 
                RowBox[{"DirectedEdge", "[", 
@@ -10989,6 +11096,7 @@ Cell[BoxData[
              RowBox[{"Append", "[", 
               RowBox[{
                RowBox[{"Normal", "[", "imageMorphismAssociation", "]"}], ",", 
+               
                RowBox[{
                 RowBox[{"newIdentitySymbol", "[", "#1", "]"}], "\[Rule]", 
                 RowBox[{"DirectedEdge", "[", 
@@ -11126,7 +11234,7 @@ Cell[BoxData[
   3.869738830972613*^9}, {3.869738896509601*^9, 3.8697389084894276`*^9}, {
   3.869738945573786*^9, 3.8697390347926273`*^9}},
  CellLabel->
-  "In[646]:=",ExpressionUUID->"85834c94-b75a-4bcb-ad84-655a4bb9a0a9"],
+  "In[210]:=",ExpressionUUID->"85834c94-b75a-4bcb-ad84-655a4bb9a0a9"],
 
 Cell[BoxData[
  RowBox[{
@@ -11136,6 +11244,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -11171,6 +11280,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -11280,11 +11390,13 @@ Cell[BoxData[
                RowBox[{
                 RowBox[{
                 "VertexList", "[", "imageObjectEquivalenceGraph", "]"}], ",", 
+                
                 RowBox[{"First", "[", "objectPair", "]"}]}], "]"}], "&&", 
               RowBox[{"MemberQ", "[", 
                RowBox[{
                 RowBox[{
                 "VertexList", "[", "imageObjectEquivalenceGraph", "]"}], ",", 
+                
                 RowBox[{"Last", "[", "objectPair", "]"}]}], "]"}]}], ",", 
              RowBox[{"If", "[", 
               RowBox[{
@@ -11349,7 +11461,7 @@ Cell[BoxData[
   3.869738830972613*^9}, {3.869738896509601*^9, 3.8697389084894276`*^9}, {
   3.869738945573786*^9, 3.869739039739482*^9}},
  CellLabel->
-  "In[647]:=",ExpressionUUID->"7cfa7922-f825-4e87-a419-e14ba6297bcf"],
+  "In[211]:=",ExpressionUUID->"7cfa7922-f825-4e87-a419-e14ba6297bcf"],
 
 Cell[BoxData[
  RowBox[{
@@ -11359,6 +11471,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -11394,6 +11507,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -11556,6 +11670,7 @@ Cell[BoxData[
             RowBox[{"MemberQ", "[", 
              RowBox[{
               RowBox[{"Normal", "[", "domainMorphismAssociation", "]"}], ",", 
+              
               RowBox[{
                RowBox[{"identitySymbol", "[", "#1", "]"}], "\[Rule]", 
                RowBox[{"DirectedEdge", "[", 
@@ -11723,6 +11838,7 @@ Cell[BoxData[
                     "VertexList", "[", "domainMorphismEquivalenceGraph", 
                     "]"}], ",", 
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"If", "[", 
                     RowBox[{
                     RowBox[{
@@ -11733,6 +11849,7 @@ Cell[BoxData[
                     RowBox[{
                     RowBox[{"First", "[", "morphism", "]"}], ",", 
                     RowBox[{"First", "[", "newMorphism", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], 
                     "]"}], ">", "0"}], ",", 
                     RowBox[{"isRetraction", "=", "True"}]}], "]"}]}], "]"}], 
@@ -11775,6 +11892,7 @@ Cell[BoxData[
                     "VertexList", "[", "domainMorphismEquivalenceGraph", 
                     "]"}], ",", 
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"If", "[", 
                     RowBox[{
                     RowBox[{
@@ -11806,6 +11924,7 @@ Cell[BoxData[
          RowBox[{"Apply", "[", 
           RowBox[{"Equal", ",", 
            RowBox[{"DeleteDuplicates", "[", "domainIsomorphisms", "]"}], ",", 
+           
            RowBox[{"{", "1", "}"}]}], "]"}], ",", 
          RowBox[{
           RowBox[{"#1", "=!=", "True"}], "&"}]}], "]"}]}], ";", 
@@ -11987,6 +12106,7 @@ Cell[BoxData[
              RowBox[{"Append", "[", 
               RowBox[{
                RowBox[{"Normal", "[", "imageMorphismAssociation", "]"}], ",", 
+               
                RowBox[{
                 RowBox[{"newIdentitySymbol", "[", "#1", "]"}], "\[Rule]", 
                 RowBox[{"DirectedEdge", "[", 
@@ -12130,6 +12250,7 @@ Cell[BoxData[
              RowBox[{"Select", "[", 
               RowBox[{
                RowBox[{"Normal", "[", "imageMorphismAssociation", "]"}], ",", 
+               
                RowBox[{
                 RowBox[{
                  RowBox[{
@@ -12161,6 +12282,7 @@ Cell[BoxData[
                   RowBox[{"(", 
                    RowBox[{
                     RowBox[{"newIdentitySymbol", "[", "#1", "]"}], "\[Rule]", 
+                    
                     RowBox[{"DirectedEdge", "[", 
                     RowBox[{"#1", ",", "#1"}], "]"}]}], ")"}]}], ",", 
                  RowBox[{"isRetraction", "=", "True"}]}], "]"}], "&"}], ")"}],
@@ -12180,6 +12302,7 @@ Cell[BoxData[
                   RowBox[{"(", 
                    RowBox[{
                     RowBox[{"newIdentitySymbol", "[", "#1", "]"}], "\[Rule]", 
+                    
                     RowBox[{"DirectedEdge", "[", 
                     RowBox[{"#1", ",", "#1"}], "]"}]}], ")"}]}], ",", 
                  RowBox[{"isSection", "=", "True"}]}], "]"}], "&"}], ")"}], "/@", 
@@ -12247,6 +12370,7 @@ Cell[BoxData[
                     RowBox[{
                     RowBox[{"First", "[", "morphism", "]"}], ",", 
                     RowBox[{"First", "[", "newMorphism", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"newIdentitySymbol", "[", "#1", "]"}]}], "]"}], 
                     "]"}], ">", "0"}], ",", 
                     RowBox[{"isRetraction", "=", "True"}]}], "]"}]}], "]"}], 
@@ -12415,11 +12539,13 @@ Cell[BoxData[
                RowBox[{
                 RowBox[{
                 "VertexList", "[", "imageObjectIsomorphismGraph", "]"}], ",", 
+                
                 RowBox[{"First", "[", "objectPair", "]"}]}], "]"}], "&&", 
               RowBox[{"MemberQ", "[", 
                RowBox[{
                 RowBox[{
                 "VertexList", "[", "imageObjectIsomorphismGraph", "]"}], ",", 
+                
                 RowBox[{"Last", "[", "objectPair", "]"}]}], "]"}]}], ",", 
              RowBox[{"If", "[", 
               RowBox[{
@@ -12484,7 +12610,7 @@ Cell[BoxData[
   3.869738830972613*^9}, {3.869738896509601*^9, 3.8697389084894276`*^9}, {
   3.869738945573786*^9, 3.869739059472056*^9}},
  CellLabel->
-  "In[648]:=",ExpressionUUID->"9c3bcf00-4fa3-4850-8e5d-aac6ad47c60b"],
+  "In[212]:=",ExpressionUUID->"9c3bcf00-4fa3-4850-8e5d-aac6ad47c60b"],
 
 Cell[BoxData[{
  RowBox[{
@@ -12494,6 +12620,7 @@ Cell[BoxData[{
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -12529,6 +12656,7 @@ Cell[BoxData[{
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -12594,6 +12722,7 @@ Cell[BoxData[{
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -12629,6 +12758,7 @@ Cell[BoxData[{
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -12641,6 +12771,7 @@ Cell[BoxData[{
       RowBox[{
       "\"\<ObjectMappings\>\"", "\[Rule]", "objectMappings_Association"}]}], 
      "]"}], "]"}], "[", "\"\<EssentiallySurjectiveFunctorQ\>\"", "]"}], ":=", 
+  
   RowBox[{
    RowBox[{"Module", "[", 
     RowBox[{
@@ -12829,6 +12960,7 @@ Cell[BoxData[{
              RowBox[{"Append", "[", 
               RowBox[{
                RowBox[{"Normal", "[", "imageMorphismAssociation", "]"}], ",", 
+               
                RowBox[{
                 RowBox[{"newIdentitySymbol", "[", "#1", "]"}], "\[Rule]", 
                 RowBox[{"DirectedEdge", "[", 
@@ -12972,6 +13104,7 @@ Cell[BoxData[{
              RowBox[{"Select", "[", 
               RowBox[{
                RowBox[{"Normal", "[", "imageMorphismAssociation", "]"}], ",", 
+               
                RowBox[{
                 RowBox[{
                  RowBox[{
@@ -13003,6 +13136,7 @@ Cell[BoxData[{
                   RowBox[{"(", 
                    RowBox[{
                     RowBox[{"newIdentitySymbol", "[", "#1", "]"}], "\[Rule]", 
+                    
                     RowBox[{"DirectedEdge", "[", 
                     RowBox[{"#1", ",", "#1"}], "]"}]}], ")"}]}], ",", 
                  RowBox[{"isRetraction", "=", "True"}]}], "]"}], "&"}], ")"}],
@@ -13022,10 +13156,10 @@ Cell[BoxData[{
                   RowBox[{"(", 
                    RowBox[{
                     RowBox[{"newIdentitySymbol", "[", "#1", "]"}], "\[Rule]", 
+                    
                     RowBox[{"DirectedEdge", "[", 
                     RowBox[{"#1", ",", "#1"}], "]"}]}], ")"}]}], ",", 
-                 RowBox[{"isSection", "=", "True"}]}], "]"}], "&"}], ")"}], 
-             "/@", 
+                 RowBox[{"isSection", "=", "True"}]}], "]"}], "&"}], ")"}], "/@", 
              RowBox[{"DeleteDuplicates", "[", 
               RowBox[{"Join", "[", 
                RowBox[{
@@ -13090,6 +13224,7 @@ Cell[BoxData[{
                     RowBox[{
                     RowBox[{"First", "[", "morphism", "]"}], ",", 
                     RowBox[{"First", "[", "newMorphism", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"newIdentitySymbol", "[", "#1", "]"}]}], "]"}], 
                     "]"}], ">", "0"}], ",", 
                     RowBox[{"isRetraction", "=", "True"}]}], "]"}]}], "]"}], 
@@ -13190,6 +13325,7 @@ Cell[BoxData[{
               RowBox[{"DeleteDuplicates", "[", 
                RowBox[{"objects", "/.", 
                 RowBox[{"Normal", "[", "objectMappings", "]"}]}], "]"}], ",", 
+              
               RowBox[{"quiverObjectEquivalences", "/.", 
                RowBox[{"Normal", "[", "objectMappings", "]"}]}]}], "]"}], ",", 
             RowBox[{"Join", "[", 
@@ -13215,7 +13351,7 @@ Cell[BoxData[{
   3.869738830972613*^9}, {3.869738896509601*^9, 3.8697389084894276`*^9}, {
   3.869738945573786*^9, 3.8697390707686663`*^9}},
  CellLabel->
-  "In[649]:=",ExpressionUUID->"9b9b680f-f391-4099-8411-4aacaade3fa4"],
+  "In[213]:=",ExpressionUUID->"9b9b680f-f391-4099-8411-4aacaade3fa4"],
 
 Cell[BoxData[
  RowBox[{
@@ -13225,6 +13361,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -13260,6 +13397,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -13369,11 +13507,13 @@ Cell[BoxData[
                RowBox[{
                 RowBox[{
                 "VertexList", "[", "imageObjectEquivalenceGraph", "]"}], ",", 
+                
                 RowBox[{"First", "[", "objectPair", "]"}]}], "]"}], "&&", 
               RowBox[{"MemberQ", "[", 
                RowBox[{
                 RowBox[{
                 "VertexList", "[", "imageObjectEquivalenceGraph", "]"}], ",", 
+                
                 RowBox[{"Last", "[", "objectPair", "]"}]}], "]"}]}], ",", 
              RowBox[{"If", "[", 
               RowBox[{
@@ -13479,7 +13619,7 @@ Cell[BoxData[
   3.869738830972613*^9}, {3.869738896509601*^9, 3.8697389084894276`*^9}, {
   3.869738945573786*^9, 3.8697390771134777`*^9}},
  CellLabel->
-  "In[651]:=",ExpressionUUID->"049e7213-ddba-4d04-9034-8f6415213148"],
+  "In[215]:=",ExpressionUUID->"049e7213-ddba-4d04-9034-8f6415213148"],
 
 Cell[BoxData[
  RowBox[{
@@ -13489,6 +13629,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -13524,6 +13665,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -13686,6 +13828,7 @@ Cell[BoxData[
             RowBox[{"MemberQ", "[", 
              RowBox[{
               RowBox[{"Normal", "[", "domainMorphismAssociation", "]"}], ",", 
+              
               RowBox[{
                RowBox[{"identitySymbol", "[", "#1", "]"}], "\[Rule]", 
                RowBox[{"DirectedEdge", "[", 
@@ -13853,6 +13996,7 @@ Cell[BoxData[
                     "VertexList", "[", "domainMorphismEquivalenceGraph", 
                     "]"}], ",", 
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"If", "[", 
                     RowBox[{
                     RowBox[{
@@ -13863,6 +14007,7 @@ Cell[BoxData[
                     RowBox[{
                     RowBox[{"First", "[", "morphism", "]"}], ",", 
                     RowBox[{"First", "[", "newMorphism", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], 
                     "]"}], ">", "0"}], ",", 
                     RowBox[{"isRetraction", "=", "True"}]}], "]"}]}], "]"}], 
@@ -13905,6 +14050,7 @@ Cell[BoxData[
                     "VertexList", "[", "domainMorphismEquivalenceGraph", 
                     "]"}], ",", 
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"If", "[", 
                     RowBox[{
                     RowBox[{
@@ -14118,6 +14264,7 @@ Cell[BoxData[
              RowBox[{"Append", "[", 
               RowBox[{
                RowBox[{"Normal", "[", "imageMorphismAssociation", "]"}], ",", 
+               
                RowBox[{
                 RowBox[{"newIdentitySymbol", "[", "#1", "]"}], "\[Rule]", 
                 RowBox[{"DirectedEdge", "[", 
@@ -14261,6 +14408,7 @@ Cell[BoxData[
              RowBox[{"Select", "[", 
               RowBox[{
                RowBox[{"Normal", "[", "imageMorphismAssociation", "]"}], ",", 
+               
                RowBox[{
                 RowBox[{
                  RowBox[{
@@ -14292,6 +14440,7 @@ Cell[BoxData[
                   RowBox[{"(", 
                    RowBox[{
                     RowBox[{"newIdentitySymbol", "[", "#1", "]"}], "\[Rule]", 
+                    
                     RowBox[{"DirectedEdge", "[", 
                     RowBox[{"#1", ",", "#1"}], "]"}]}], ")"}]}], ",", 
                  RowBox[{"isRetraction", "=", "True"}]}], "]"}], "&"}], ")"}],
@@ -14311,6 +14460,7 @@ Cell[BoxData[
                   RowBox[{"(", 
                    RowBox[{
                     RowBox[{"newIdentitySymbol", "[", "#1", "]"}], "\[Rule]", 
+                    
                     RowBox[{"DirectedEdge", "[", 
                     RowBox[{"#1", ",", "#1"}], "]"}]}], ")"}]}], ",", 
                  RowBox[{"isSection", "=", "True"}]}], "]"}], "&"}], ")"}], "/@", 
@@ -14378,6 +14528,7 @@ Cell[BoxData[
                     RowBox[{
                     RowBox[{"First", "[", "morphism", "]"}], ",", 
                     RowBox[{"First", "[", "newMorphism", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"newIdentitySymbol", "[", "#1", "]"}]}], "]"}], 
                     "]"}], ">", "0"}], ",", 
                     RowBox[{"isRetraction", "=", "True"}]}], "]"}]}], "]"}], 
@@ -14546,11 +14697,13 @@ Cell[BoxData[
                RowBox[{
                 RowBox[{
                 "VertexList", "[", "imageObjectIsomorphismGraph", "]"}], ",", 
+                
                 RowBox[{"First", "[", "objectPair", "]"}]}], "]"}], "&&", 
               RowBox[{"MemberQ", "[", 
                RowBox[{
                 RowBox[{
                 "VertexList", "[", "imageObjectIsomorphismGraph", "]"}], ",", 
+                
                 RowBox[{"Last", "[", "objectPair", "]"}]}], "]"}]}], ",", 
              RowBox[{"If", "[", 
               RowBox[{
@@ -14662,7 +14815,7 @@ Cell[BoxData[
   3.869738830972613*^9}, {3.869738896509601*^9, 3.8697389084894276`*^9}, {
   3.869738945573786*^9, 3.869739087313184*^9}},
  CellLabel->
-  "In[652]:=",ExpressionUUID->"dd5762b1-fa1d-4a89-adb3-8029a70db7f0"],
+  "In[216]:=",ExpressionUUID->"dd5762b1-fa1d-4a89-adb3-8029a70db7f0"],
 
 Cell[BoxData[
  RowBox[{
@@ -14672,6 +14825,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -14707,6 +14861,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -14870,6 +15025,7 @@ Cell[BoxData[
             RowBox[{"MemberQ", "[", 
              RowBox[{
               RowBox[{"Normal", "[", "domainMorphismAssociation", "]"}], ",", 
+              
               RowBox[{
                RowBox[{"identitySymbol", "[", "#1", "]"}], "\[Rule]", 
                RowBox[{"DirectedEdge", "[", 
@@ -15037,6 +15193,7 @@ Cell[BoxData[
                     "VertexList", "[", "domainMorphismEquivalenceGraph", 
                     "]"}], ",", 
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"If", "[", 
                     RowBox[{
                     RowBox[{
@@ -15047,6 +15204,7 @@ Cell[BoxData[
                     RowBox[{
                     RowBox[{"First", "[", "morphism", "]"}], ",", 
                     RowBox[{"First", "[", "newMorphism", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], 
                     "]"}], ">", "0"}], ",", 
                     RowBox[{"isRetraction", "=", "True"}]}], "]"}]}], "]"}], 
@@ -15089,6 +15247,7 @@ Cell[BoxData[
                     "VertexList", "[", "domainMorphismEquivalenceGraph", 
                     "]"}], ",", 
                     RowBox[{"identitySymbol", "[", "#1", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"If", "[", 
                     RowBox[{
                     RowBox[{
@@ -15290,6 +15449,7 @@ Cell[BoxData[
              RowBox[{"Append", "[", 
               RowBox[{
                RowBox[{"Normal", "[", "imageMorphismAssociation", "]"}], ",", 
+               
                RowBox[{
                 RowBox[{"newIdentitySymbol", "[", "#1", "]"}], "\[Rule]", 
                 RowBox[{"DirectedEdge", "[", 
@@ -15433,6 +15593,7 @@ Cell[BoxData[
              RowBox[{"Select", "[", 
               RowBox[{
                RowBox[{"Normal", "[", "imageMorphismAssociation", "]"}], ",", 
+               
                RowBox[{
                 RowBox[{
                  RowBox[{
@@ -15464,6 +15625,7 @@ Cell[BoxData[
                   RowBox[{"(", 
                    RowBox[{
                     RowBox[{"newIdentitySymbol", "[", "#1", "]"}], "\[Rule]", 
+                    
                     RowBox[{"DirectedEdge", "[", 
                     RowBox[{"#1", ",", "#1"}], "]"}]}], ")"}]}], ",", 
                  RowBox[{"isRetraction", "=", "True"}]}], "]"}], "&"}], ")"}],
@@ -15483,6 +15645,7 @@ Cell[BoxData[
                   RowBox[{"(", 
                    RowBox[{
                     RowBox[{"newIdentitySymbol", "[", "#1", "]"}], "\[Rule]", 
+                    
                     RowBox[{"DirectedEdge", "[", 
                     RowBox[{"#1", ",", "#1"}], "]"}]}], ")"}]}], ",", 
                  RowBox[{"isSection", "=", "True"}]}], "]"}], "&"}], ")"}], "/@", 
@@ -15550,6 +15713,7 @@ Cell[BoxData[
                     RowBox[{
                     RowBox[{"First", "[", "morphism", "]"}], ",", 
                     RowBox[{"First", "[", "newMorphism", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"newIdentitySymbol", "[", "#1", "]"}]}], "]"}], 
                     "]"}], ">", "0"}], ",", 
                     RowBox[{"isRetraction", "=", "True"}]}], "]"}]}], "]"}], 
@@ -15954,7 +16118,7 @@ Cell[BoxData[
   3.869738830972613*^9}, {3.869738896509601*^9, 3.8697389084894276`*^9}, {
   3.869738945573786*^9, 3.8697390978294325`*^9}},
  CellLabel->
-  "In[653]:=",ExpressionUUID->"52870e07-2df5-4c03-98b4-f3a05e3e9f24"],
+  "In[217]:=",ExpressionUUID->"52870e07-2df5-4c03-98b4-f3a05e3e9f24"],
 
 Cell[BoxData[
  RowBox[{
@@ -15964,6 +16128,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -15999,6 +16164,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -16183,6 +16349,7 @@ Cell[BoxData[
               RowBox[{
                RowBox[{
                "Normal", "[", "reducedDomainMorphismAssociation", "]"}], ",", 
+               
                RowBox[{
                 RowBox[{"identitySymbol", "[", "#1", "]"}], "\[Rule]", 
                 RowBox[{"DirectedEdge", "[", 
@@ -16199,6 +16366,7 @@ Cell[BoxData[
           "reducedDomainMorphismAssociation", ",", 
            "categoryMorphismEquivalences"}], "]"}], ",", 
          "categoryObjectEquivalences"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      
       RowBox[{"imageObjects", "=", 
        RowBox[{"DeleteDuplicates", "[", 
         RowBox[{"Join", "[", 
@@ -16746,6 +16914,7 @@ Cell[BoxData[
              RowBox[{"Append", "[", 
               RowBox[{
                RowBox[{"Normal", "[", "imageMorphismAssociation", "]"}], ",", 
+               
                RowBox[{
                 RowBox[{"newIdentitySymbol", "[", "#1", "]"}], "\[Rule]", 
                 RowBox[{"DirectedEdge", "[", 
@@ -16874,6 +17043,7 @@ Cell[BoxData[
              RowBox[{"Select", "[", 
               RowBox[{
                RowBox[{"Normal", "[", "imageMorphismAssociation", "]"}], ",", 
+               
                RowBox[{
                 RowBox[{
                  RowBox[{
@@ -16905,6 +17075,7 @@ Cell[BoxData[
                   RowBox[{"(", 
                    RowBox[{
                     RowBox[{"newIdentitySymbol", "[", "#1", "]"}], "\[Rule]", 
+                    
                     RowBox[{"DirectedEdge", "[", 
                     RowBox[{"#1", ",", "#1"}], "]"}]}], ")"}]}], ",", 
                  RowBox[{"isRetraction", "=", "True"}]}], "]"}], "&"}], ")"}],
@@ -16924,6 +17095,7 @@ Cell[BoxData[
                   RowBox[{"(", 
                    RowBox[{
                     RowBox[{"newIdentitySymbol", "[", "#1", "]"}], "\[Rule]", 
+                    
                     RowBox[{"DirectedEdge", "[", 
                     RowBox[{"#1", ",", "#1"}], "]"}]}], ")"}]}], ",", 
                  RowBox[{"isSection", "=", "True"}]}], "]"}], "&"}], ")"}], "/@", 
@@ -16991,6 +17163,7 @@ Cell[BoxData[
                     RowBox[{
                     RowBox[{"First", "[", "morphism", "]"}], ",", 
                     RowBox[{"First", "[", "newMorphism", "]"}]}], "]"}], ",", 
+                    
                     RowBox[{"newIdentitySymbol", "[", "#1", "]"}]}], "]"}], 
                     "]"}], ">", "0"}], ",", 
                     RowBox[{"isRetraction", "=", "True"}]}], "]"}]}], "]"}], 
@@ -17119,7 +17292,7 @@ Cell[BoxData[
   3.869738830972613*^9}, {3.869738896509601*^9, 3.8697389084894276`*^9}, {
   3.869738945573786*^9, 3.8697391128316603`*^9}},
  CellLabel->
-  "In[654]:=",ExpressionUUID->"80aba1f0-7797-4090-aa53-6763fa225e3c"],
+  "In[218]:=",ExpressionUUID->"80aba1f0-7797-4090-aa53-6763fa225e3c"],
 
 Cell[BoxData[
  RowBox[{
@@ -17129,6 +17302,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -17164,6 +17338,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -17548,6 +17723,7 @@ Cell[BoxData[
              RowBox[{"Association", "[", 
               RowBox[{"DeleteDuplicates", "[", "domainMorphismList", "]"}], 
               "]"}], "]"}]}]}]}], "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      
       RowBox[{"imageQuiverObjectEquivalences", "=", 
        RowBox[{"quiverObjectEquivalences", "/.", 
         RowBox[{"Normal", "[", "objectMappings", "]"}]}]}], ";", 
@@ -17613,6 +17789,7 @@ Cell[BoxData[
                   RowBox[{
                    RowBox[{"newCompositionSymbol", "[", 
                     RowBox[{"z", ",", "y"}], "]"}], ",", "x"}], "]"}]}], ",", 
+                
                 RowBox[{
                  RowBox[{"newCompositionSymbol", "[", 
                   RowBox[{"x_", ",", "y_"}], "]"}], "\[RuleDelayed]", 
@@ -17670,6 +17847,7 @@ Cell[BoxData[
              RowBox[{"Association", "[", 
               RowBox[{"DeleteDuplicates", "[", "imageMorphismList", "]"}], 
               "]"}], "]"}]}]}]}], "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      
       RowBox[{"fiberCategories", "=", 
        RowBox[{"{", "}"}]}], ";", 
       RowBox[{
@@ -17866,9 +18044,9 @@ Cell[BoxData[
  CellChangeTimes->{{3.869658318418605*^9, 3.8696583184341974`*^9}, {
    3.869738631533656*^9, 3.869738725269229*^9}, {3.869738771543952*^9, 
    3.869738830972613*^9}, {3.869738896509601*^9, 3.8697389084894276`*^9}, {
-   3.869738945573786*^9, 3.869739119286109*^9}, 
-   3.8697394734827013`*^9},ExpressionUUID->"91253aaf-eb7b-47d0-ae61-\
-78d301847f3b"],
+   3.869738945573786*^9, 3.869739119286109*^9}, 3.8697394734827013`*^9},
+ CellLabel->
+  "In[219]:=",ExpressionUUID->"91253aaf-eb7b-47d0-ae61-78d301847f3b"],
 
 Cell[BoxData[
  RowBox[{
@@ -17878,6 +18056,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -17913,6 +18092,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -18297,6 +18477,7 @@ Cell[BoxData[
              RowBox[{"Association", "[", 
               RowBox[{"DeleteDuplicates", "[", "domainMorphismList", "]"}], 
               "]"}], "]"}]}]}]}], "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      
       RowBox[{"imageQuiverObjectEquivalences", "=", 
        RowBox[{"quiverObjectEquivalences", "/.", 
         RowBox[{"Normal", "[", "objectMappings", "]"}]}]}], ";", 
@@ -18362,6 +18543,7 @@ Cell[BoxData[
                   RowBox[{
                    RowBox[{"newCompositionSymbol", "[", 
                     RowBox[{"z", ",", "y"}], "]"}], ",", "x"}], "]"}]}], ",", 
+                
                 RowBox[{
                  RowBox[{"newCompositionSymbol", "[", 
                   RowBox[{"x_", ",", "y_"}], "]"}], "\[RuleDelayed]", 
@@ -18419,6 +18601,7 @@ Cell[BoxData[
              RowBox[{"Association", "[", 
               RowBox[{"DeleteDuplicates", "[", "imageMorphismList", "]"}], 
               "]"}], "]"}]}]}]}], "]"}], "]"}]}], ";", "\[IndentingNewLine]", 
+      
       RowBox[{"reducedFiberCategories", "=", 
        RowBox[{"{", "}"}]}], ";", 
       RowBox[{
@@ -18629,9 +18812,9 @@ Cell[BoxData[
  CellChangeTimes->{{3.869658318418605*^9, 3.8696583184341974`*^9}, {
    3.869738631533656*^9, 3.869738725269229*^9}, {3.869738771543952*^9, 
    3.869738830972613*^9}, {3.869738896509601*^9, 3.8697389084894276`*^9}, {
-   3.869738945573786*^9, 3.8697391254637227`*^9}, 
-   3.8697394735295734`*^9},ExpressionUUID->"b0625b82-57de-44ae-98b0-\
-770fdb3a332f"],
+   3.869738945573786*^9, 3.8697391254637227`*^9}, 3.8697394735295734`*^9},
+ CellLabel->
+  "In[220]:=",ExpressionUUID->"b0625b82-57de-44ae-98b0-770fdb3a332f"],
 
 Cell[BoxData[
  RowBox[{
@@ -18641,6 +18824,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -18676,6 +18860,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -18845,6 +19030,7 @@ Cell[BoxData[
             RowBox[{"MemberQ", "[", 
              RowBox[{
               RowBox[{"Normal", "[", "domainMorphismAssociation", "]"}], ",", 
+              
               RowBox[{
                RowBox[{"identitySymbol", "[", "#1", "]"}], "\[Rule]", 
                RowBox[{"DirectedEdge", "[", 
@@ -19104,6 +19290,7 @@ Cell[BoxData[
              RowBox[{"Append", "[", 
               RowBox[{
                RowBox[{"Normal", "[", "imageMorphismAssociation", "]"}], ",", 
+               
                RowBox[{
                 RowBox[{"newIdentitySymbol", "[", "#1", "]"}], "\[Rule]", 
                 RowBox[{"DirectedEdge", "[", 
@@ -19516,6 +19703,7 @@ Cell[BoxData[
                     RowBox[{
                     RowBox[{"newCompositionSymbol", "[", 
                     RowBox[{"z", ",", "y"}], "]"}], ",", "x"}], "]"}]}], ",", 
+                   
                    RowBox[{
                     RowBox[{"newCompositionSymbol", "[", 
                     RowBox[{"x_", ",", "y_"}], "]"}], "\[RuleDelayed]", 
@@ -19623,7 +19811,7 @@ Cell[BoxData[
   3.869738830972613*^9}, {3.869738896509601*^9, 3.8697389084894276`*^9}, {
   3.869738945573786*^9, 3.869739139177472*^9}},
  CellLabel->
-  "In[657]:=",ExpressionUUID->"0beb59f7-5f8e-41b8-babe-eb1ee94656ed"],
+  "In[221]:=",ExpressionUUID->"0beb59f7-5f8e-41b8-babe-eb1ee94656ed"],
 
 Cell[BoxData[
  RowBox[{
@@ -19633,6 +19821,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -19668,6 +19857,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -19832,6 +20022,7 @@ Cell[BoxData[
             RowBox[{"MemberQ", "[", 
              RowBox[{
               RowBox[{"Normal", "[", "domainMorphismAssociation", "]"}], ",", 
+              
               RowBox[{
                RowBox[{"identitySymbol", "[", "#1", "]"}], "\[Rule]", 
                RowBox[{"DirectedEdge", "[", 
@@ -20088,6 +20279,7 @@ Cell[BoxData[
              RowBox[{"Append", "[", 
               RowBox[{
                RowBox[{"Normal", "[", "imageMorphismAssociation", "]"}], ",", 
+               
                RowBox[{
                 RowBox[{"newIdentitySymbol", "[", "#1", "]"}], "\[Rule]", 
                 RowBox[{"DirectedEdge", "[", 
@@ -20140,7 +20332,7 @@ Cell[BoxData[
   3.869738830972613*^9}, {3.869738896509601*^9, 3.8697389084894276`*^9}, {
   3.869738945573786*^9, 3.8697391581064157`*^9}},
  CellLabel->
-  "In[658]:=",ExpressionUUID->"b70125d4-d911-43a9-a0ca-7746908afbee"],
+  "In[222]:=",ExpressionUUID->"b70125d4-d911-43a9-a0ca-7746908afbee"],
 
 Cell[BoxData[
  RowBox[{
@@ -20150,6 +20342,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -20185,6 +20378,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -20351,6 +20545,7 @@ Cell[BoxData[
             RowBox[{"MemberQ", "[", 
              RowBox[{
               RowBox[{"Normal", "[", "domainMorphismAssociation", "]"}], ",", 
+              
               RowBox[{
                RowBox[{"identitySymbol", "[", "#1", "]"}], "\[Rule]", 
                RowBox[{"DirectedEdge", "[", 
@@ -20615,6 +20810,7 @@ Cell[BoxData[
              RowBox[{"Append", "[", 
               RowBox[{
                RowBox[{"Normal", "[", "imageMorphismAssociation", "]"}], ",", 
+               
                RowBox[{
                 RowBox[{"newIdentitySymbol", "[", "#1", "]"}], "\[Rule]", 
                 RowBox[{"DirectedEdge", "[", 
@@ -20770,7 +20966,7 @@ Cell[BoxData[
   3.869738830972613*^9}, {3.869738896509601*^9, 3.8697389084894276`*^9}, {
   3.869738945573786*^9, 3.869739163395461*^9}},
  CellLabel->
-  "In[659]:=",ExpressionUUID->"d23b20de-4261-450a-9841-951206a22beb"],
+  "In[223]:=",ExpressionUUID->"d23b20de-4261-450a-9841-951206a22beb"],
 
 Cell[BoxData[
  RowBox[{
@@ -20780,6 +20976,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -20815,6 +21012,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -20930,11 +21128,13 @@ Cell[BoxData[
                RowBox[{
                 RowBox[{
                 "VertexList", "[", "imageObjectEquivalenceGraph", "]"}], ",", 
+                
                 RowBox[{"First", "[", "objectPair", "]"}]}], "]"}], "&&", 
               RowBox[{"MemberQ", "[", 
                RowBox[{
                 RowBox[{
                 "VertexList", "[", "imageObjectEquivalenceGraph", "]"}], ",", 
+                
                 RowBox[{"Last", "[", "objectPair", "]"}]}], "]"}]}], ",", 
              RowBox[{"If", "[", 
               RowBox[{
@@ -21127,6 +21327,7 @@ Cell[BoxData[
             RowBox[{"MemberQ", "[", 
              RowBox[{
               RowBox[{"Normal", "[", "domainMorphismAssociation", "]"}], ",", 
+              
               RowBox[{
                RowBox[{"identitySymbol", "[", "#1", "]"}], "\[Rule]", 
                RowBox[{"DirectedEdge", "[", 
@@ -21391,6 +21592,7 @@ Cell[BoxData[
              RowBox[{"Append", "[", 
               RowBox[{
                RowBox[{"Normal", "[", "imageMorphismAssociation", "]"}], ",", 
+               
                RowBox[{
                 RowBox[{"newIdentitySymbol", "[", "#1", "]"}], "\[Rule]", 
                 RowBox[{"DirectedEdge", "[", 
@@ -21462,6 +21664,7 @@ Cell[BoxData[
             RowBox[{"objects", ",", "quiverObjectEquivalences"}], "]"}], ",", 
            "categoryObjectEquivalences"}], "]"}], ",", "2"}], "]"}]}], ";", 
       RowBox[{"isFaithfulFunctor", "=", "True"}], ";", "\[IndentingNewLine]", 
+      
       RowBox[{
        RowBox[{"(", 
         RowBox[{
@@ -21528,7 +21731,7 @@ Cell[BoxData[
   3.869738830972613*^9}, {3.869738896509601*^9, 3.8697389084894276`*^9}, {
   3.869738945573786*^9, 3.869739170175997*^9}},
  CellLabel->
-  "In[660]:=",ExpressionUUID->"43dc5aea-094d-4842-a643-d9fcf1916de7"],
+  "In[224]:=",ExpressionUUID->"43dc5aea-094d-4842-a643-d9fcf1916de7"],
 
 Cell[BoxData[
  RowBox[{
@@ -21538,6 +21741,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -21573,6 +21777,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -21688,11 +21893,13 @@ Cell[BoxData[
                RowBox[{
                 RowBox[{
                 "VertexList", "[", "imageObjectEquivalenceGraph", "]"}], ",", 
+                
                 RowBox[{"First", "[", "objectPair", "]"}]}], "]"}], "&&", 
               RowBox[{"MemberQ", "[", 
                RowBox[{
                 RowBox[{
                 "VertexList", "[", "imageObjectEquivalenceGraph", "]"}], ",", 
+                
                 RowBox[{"Last", "[", "objectPair", "]"}]}], "]"}]}], ",", 
              RowBox[{"If", "[", 
               RowBox[{
@@ -21885,6 +22092,7 @@ Cell[BoxData[
             RowBox[{"MemberQ", "[", 
              RowBox[{
               RowBox[{"Normal", "[", "domainMorphismAssociation", "]"}], ",", 
+              
               RowBox[{
                RowBox[{"identitySymbol", "[", "#1", "]"}], "\[Rule]", 
                RowBox[{"DirectedEdge", "[", 
@@ -22149,6 +22357,7 @@ Cell[BoxData[
              RowBox[{"Append", "[", 
               RowBox[{
                RowBox[{"Normal", "[", "imageMorphismAssociation", "]"}], ",", 
+               
                RowBox[{
                 RowBox[{"newIdentitySymbol", "[", "#1", "]"}], "\[Rule]", 
                 RowBox[{"DirectedEdge", "[", 
@@ -22288,7 +22497,7 @@ Cell[BoxData[
   3.869738830972613*^9}, {3.869738896509601*^9, 3.8697389084894276`*^9}, {
   3.869738945573786*^9, 3.8697391806744084`*^9}},
  CellLabel->
-  "In[661]:=",ExpressionUUID->"0603920b-9b55-4a12-b578-1f60774f9224"],
+  "In[225]:=",ExpressionUUID->"0603920b-9b55-4a12-b578-1f60774f9224"],
 
 Cell[BoxData[
  RowBox[{
@@ -22298,6 +22507,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -22333,6 +22543,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -22356,6 +22567,7 @@ Cell[BoxData[
          RowBox[{
           RowBox[{
           "\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol"}], ",", 
+          
           RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol"}], 
           ",", 
           RowBox[{
@@ -22435,9 +22647,9 @@ Cell[BoxData[
  CellChangeTimes->{{3.869658318418605*^9, 3.8696583184341974`*^9}, {
    3.869738631533656*^9, 3.869738725269229*^9}, {3.869738771543952*^9, 
    3.869738830972613*^9}, {3.869738896509601*^9, 3.8697389084894276`*^9}, {
-   3.869738945573786*^9, 3.869739187663907*^9}, 
-   3.8697394735451937`*^9},ExpressionUUID->"e79d3665-11b5-45ce-9cc8-\
-5712ffc01797"],
+   3.869738945573786*^9, 3.869739187663907*^9}, 3.8697394735451937`*^9},
+ CellLabel->
+  "In[226]:=",ExpressionUUID->"e79d3665-11b5-45ce-9cc8-5712ffc01797"],
 
 Cell[BoxData[
  RowBox[{
@@ -22447,6 +22659,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -22482,6 +22695,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -22512,7 +22726,7 @@ Cell[BoxData[
   3.869738830972613*^9}, {3.869738896509601*^9, 3.8697389084894276`*^9}, {
   3.869738945573786*^9, 3.869739202969207*^9}},
  CellLabel->
-  "In[663]:=",ExpressionUUID->"6ce64539-e6b8-4b31-9faf-2f4913b26167"],
+  "In[227]:=",ExpressionUUID->"6ce64539-e6b8-4b31-9faf-2f4913b26167"],
 
 Cell[BoxData[{
  RowBox[{
@@ -22522,6 +22736,7 @@ Cell[BoxData[{
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -22557,6 +22772,7 @@ Cell[BoxData[{
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -22588,6 +22804,7 @@ Cell[BoxData[{
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -22623,6 +22840,7 @@ Cell[BoxData[{
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -22777,6 +22995,7 @@ Cell[BoxData[{
             RowBox[{"MemberQ", "[", 
              RowBox[{
               RowBox[{"Normal", "[", "domainMorphismAssociation", "]"}], ",", 
+              
               RowBox[{
                RowBox[{"identitySymbol", "[", "#1", "]"}], "\[Rule]", 
                RowBox[{"DirectedEdge", "[", 
@@ -22968,6 +23187,7 @@ Cell[BoxData[{
              RowBox[{"Append", "[", 
               RowBox[{
                RowBox[{"Normal", "[", "imageMorphismAssociation", "]"}], ",", 
+               
                RowBox[{
                 RowBox[{"newIdentitySymbol", "[", "#1", "]"}], "\[Rule]", 
                 RowBox[{"DirectedEdge", "[", 
@@ -23071,7 +23291,7 @@ Cell[BoxData[{
   3.869738830972613*^9}, {3.869738896509601*^9, 3.8697389084894276`*^9}, {
   3.869738945573786*^9, 3.8697392092512813`*^9}},
  CellLabel->
-  "In[664]:=",ExpressionUUID->"51d03892-cccb-4a39-8a22-e003cc326f00"],
+  "In[228]:=",ExpressionUUID->"51d03892-cccb-4a39-8a22-e003cc326f00"],
 
 Cell[BoxData[
  RowBox[{
@@ -23081,6 +23301,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -23116,6 +23337,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -23270,6 +23492,7 @@ Cell[BoxData[
             RowBox[{"MemberQ", "[", 
              RowBox[{
               RowBox[{"Normal", "[", "domainMorphismAssociation", "]"}], ",", 
+              
               RowBox[{
                RowBox[{"identitySymbol", "[", "#1", "]"}], "\[Rule]", 
                RowBox[{"DirectedEdge", "[", 
@@ -23461,6 +23684,7 @@ Cell[BoxData[
              RowBox[{"Append", "[", 
               RowBox[{
                RowBox[{"Normal", "[", "imageMorphismAssociation", "]"}], ",", 
+               
                RowBox[{
                 RowBox[{"newIdentitySymbol", "[", "#1", "]"}], "\[Rule]", 
                 RowBox[{"DirectedEdge", "[", 
@@ -23552,7 +23776,7 @@ Cell[BoxData[
   3.869738830972613*^9}, {3.869738896509601*^9, 3.8697389084894276`*^9}, {
   3.869738945573786*^9, 3.869739217094249*^9}},
  CellLabel->
-  "In[666]:=",ExpressionUUID->"1f010519-90df-4aed-b9c6-3ca19931dff0"],
+  "In[230]:=",ExpressionUUID->"1f010519-90df-4aed-b9c6-3ca19931dff0"],
 
 Cell[BoxData[
  RowBox[{
@@ -23562,6 +23786,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -23597,6 +23822,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -23761,6 +23987,7 @@ Cell[BoxData[
             RowBox[{"MemberQ", "[", 
              RowBox[{
               RowBox[{"Normal", "[", "domainMorphismAssociation", "]"}], ",", 
+              
               RowBox[{
                RowBox[{"identitySymbol", "[", "#1", "]"}], "\[Rule]", 
                RowBox[{"DirectedEdge", "[", 
@@ -24041,6 +24268,7 @@ Cell[BoxData[
              RowBox[{"Append", "[", 
               RowBox[{
                RowBox[{"Normal", "[", "imageMorphismAssociation", "]"}], ",", 
+               
                RowBox[{
                 RowBox[{"newIdentitySymbol", "[", "#1", "]"}], "\[Rule]", 
                 RowBox[{"DirectedEdge", "[", 
@@ -24158,7 +24386,7 @@ Cell[BoxData[
   3.869738830972613*^9}, {3.869738896509601*^9, 3.8697389084894276`*^9}, {
   3.869738945573786*^9, 3.8697392301109705`*^9}},
  CellLabel->
-  "In[667]:=",ExpressionUUID->"ac63ece8-ce1c-450f-b5af-f8b6a7e47e0b"],
+  "In[231]:=",ExpressionUUID->"ac63ece8-ce1c-450f-b5af-f8b6a7e47e0b"],
 
 Cell[BoxData[
  RowBox[{
@@ -24168,6 +24396,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -24203,6 +24432,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -24367,6 +24597,7 @@ Cell[BoxData[
             RowBox[{"MemberQ", "[", 
              RowBox[{
               RowBox[{"Normal", "[", "domainMorphismAssociation", "]"}], ",", 
+              
               RowBox[{
                RowBox[{"identitySymbol", "[", "#1", "]"}], "\[Rule]", 
                RowBox[{"DirectedEdge", "[", 
@@ -24647,6 +24878,7 @@ Cell[BoxData[
              RowBox[{"Append", "[", 
               RowBox[{
                RowBox[{"Normal", "[", "imageMorphismAssociation", "]"}], ",", 
+               
                RowBox[{
                 RowBox[{"newIdentitySymbol", "[", "#1", "]"}], "\[Rule]", 
                 RowBox[{"DirectedEdge", "[", 
@@ -24752,7 +24984,7 @@ Cell[BoxData[
   3.869738830972613*^9}, {3.869738896509601*^9, 3.8697389084894276`*^9}, {
   3.869738945573786*^9, 3.869739237915484*^9}},
  CellLabel->
-  "In[668]:=",ExpressionUUID->"0e30ff79-b996-423d-bf2c-8969fc4f5dde"],
+  "In[232]:=",ExpressionUUID->"0e30ff79-b996-423d-bf2c-8969fc4f5dde"],
 
 Cell[BoxData[
  RowBox[{
@@ -24762,6 +24994,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -24797,6 +25030,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -25120,6 +25354,7 @@ Cell[BoxData[
             RowBox[{"DeleteDuplicatesBy", "[", 
              RowBox[{
               RowBox[{"Normal", "[", "domainMorphismAssociation", "]"}], ",", 
+              
               RowBox[{
                RowBox[{"DirectedEdge", "@@", 
                 RowBox[{"Last", "[", "#1", "]"}]}], "&"}]}], "]"}], ",", 
@@ -25221,7 +25456,7 @@ Cell[BoxData[
   3.869738830972613*^9}, {3.869738896509601*^9, 3.8697389084894276`*^9}, {
   3.869738945573786*^9, 3.8697392438947015`*^9}},
  CellLabel->
-  "In[669]:=",ExpressionUUID->"b876dfa3-97d5-4db7-b7bb-16a0fddbd442"],
+  "In[233]:=",ExpressionUUID->"b876dfa3-97d5-4db7-b7bb-16a0fddbd442"],
 
 Cell[BoxData[
  RowBox[{
@@ -25231,6 +25466,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -25266,6 +25502,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -25583,6 +25820,7 @@ Cell[BoxData[
             RowBox[{"DeleteDuplicatesBy", "[", 
              RowBox[{
               RowBox[{"Normal", "[", "domainMorphismAssociation", "]"}], ",", 
+              
               RowBox[{
                RowBox[{"DirectedEdge", "@@", 
                 RowBox[{"Last", "[", "#1", "]"}]}], "&"}]}], "]"}], ",", 
@@ -25678,7 +25916,7 @@ Cell[BoxData[
   3.869738830972613*^9}, {3.869738896509601*^9, 3.8697389084894276`*^9}, {
   3.869738945573786*^9, 3.8697392516627493`*^9}},
  CellLabel->
-  "In[670]:=",ExpressionUUID->"a6fca516-07d5-43df-b636-0b5d195e77a0"],
+  "In[234]:=",ExpressionUUID->"a6fca516-07d5-43df-b636-0b5d195e77a0"],
 
 Cell[BoxData[
  RowBox[{
@@ -25688,6 +25926,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -25723,6 +25962,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -26263,7 +26503,7 @@ Cell[BoxData[
   3.869738830972613*^9}, {3.869738896509601*^9, 3.8697389084894276`*^9}, {
   3.869738945573786*^9, 3.869739259061327*^9}},
  CellLabel->
-  "In[671]:=",ExpressionUUID->"c28cabe4-22c2-4ad3-97da-c39b3eb1a8c9"],
+  "In[235]:=",ExpressionUUID->"c28cabe4-22c2-4ad3-97da-c39b3eb1a8c9"],
 
 Cell[BoxData[
  RowBox[{
@@ -26273,6 +26513,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -26308,6 +26549,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -26836,7 +27078,7 @@ Cell[BoxData[
   3.869738830972613*^9}, {3.869738896509601*^9, 3.8697389084894276`*^9}, {
   3.869738945573786*^9, 3.8697392748510923`*^9}},
  CellLabel->
-  "In[672]:=",ExpressionUUID->"4775ceeb-97f5-4bc8-8332-eb16227e51e0"],
+  "In[236]:=",ExpressionUUID->"4775ceeb-97f5-4bc8-8332-eb16227e51e0"],
 
 Cell[BoxData[
  RowBox[{
@@ -26882,6 +27124,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -26950,9 +27193,9 @@ Cell[BoxData[
  CellChangeTimes->{{3.869658318418605*^9, 3.8696583184341974`*^9}, {
    3.869738631533656*^9, 3.869738725269229*^9}, {3.869738771543952*^9, 
    3.869738830972613*^9}, {3.869738896509601*^9, 3.8697389084894276`*^9}, {
-   3.869738945573786*^9, 3.869739283352889*^9}, 
-   3.869739473576359*^9},ExpressionUUID->"f2e43dc8-9c6e-4dc0-a7a5-\
-6c9eb43cda95"],
+   3.869738945573786*^9, 3.869739283352889*^9}, 3.869739473576359*^9},
+ CellLabel->
+  "In[237]:=",ExpressionUUID->"f2e43dc8-9c6e-4dc0-a7a5-6c9eb43cda95"],
 
 Cell[BoxData[
  RowBox[{
@@ -26962,6 +27205,7 @@ Cell[BoxData[
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -26997,6 +27241,7 @@ Cell[BoxData[
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -27063,7 +27308,7 @@ Cell[BoxData[
   3.869738830972613*^9}, {3.869738896509601*^9, 3.8697389084894276`*^9}, {
   3.869738945573786*^9, 3.869739288837407*^9}},
  CellLabel->
-  "In[674]:=",ExpressionUUID->"fac9bdfb-945d-417a-9af0-b6c3cac7489b"],
+  "In[238]:=",ExpressionUUID->"fac9bdfb-945d-417a-9af0-b6c3cac7489b"],
 
 Cell[BoxData[
  RowBox[{"AbstractFunctor", "/:", 
@@ -27274,6 +27519,7 @@ Cell[BoxData[
             RowBox[{"MemberQ", "[", 
              RowBox[{
               RowBox[{"Normal", "[", "domainMorphismAssociation", "]"}], ",", 
+              
               RowBox[{
                RowBox[{"identitySymbol", "[", "#1", "]"}], "\[Rule]", 
                RowBox[{"DirectedEdge", "[", 
@@ -27462,6 +27708,7 @@ Cell[BoxData[
              RowBox[{"Append", "[", 
               RowBox[{
                RowBox[{"Normal", "[", "imageMorphismAssociation", "]"}], ",", 
+               
                RowBox[{
                 RowBox[{"newIdentitySymbol", "[", "#1", "]"}], "\[Rule]", 
                 RowBox[{"DirectedEdge", "[", 
@@ -27628,6 +27875,7 @@ Cell[BoxData[
               RowBox[{
                RowBox[{
                "Normal", "[", "reducedDomainMorphismAssociation", "]"}], ",", 
+               
                RowBox[{
                 RowBox[{"identitySymbol", "[", "#1", "]"}], "\[Rule]", 
                 RowBox[{"DirectedEdge", "[", 
@@ -27926,6 +28174,7 @@ Cell[BoxData[
               RowBox[{"DirectedEdge", "@@", 
                RowBox[{"Last", "[", "#1", "]"}]}], "&"}], ")"}], "/@", 
             RowBox[{"Normal", "[", "domainMorphismAssociation", "]"}]}], ",", 
+           
            RowBox[{"VertexSize", "\[Rule]", "0.3"}], ",", 
            RowBox[{"VertexStyle", "\[Rule]", 
             RowBox[{"Directive", "[", 
@@ -28079,7 +28328,7 @@ Cell[BoxData[
   3.869738830972613*^9}, {3.869738896509601*^9, 3.8697389084894276`*^9}, {
   3.869738945573786*^9, 3.8697393043667965`*^9}},
  CellLabel->
-  "In[675]:=",ExpressionUUID->"c30a2bf0-4f55-4018-b2ac-eb9b2694d017"],
+  "In[239]:=",ExpressionUUID->"c30a2bf0-4f55-4018-b2ac-eb9b2694d017"],
 
 Cell[BoxData[{
  RowBox[{
@@ -28123,6 +28372,7 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{
           "\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol"}], ",", 
+          
           RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol"}], 
           ",", 
           RowBox[{
@@ -28177,6 +28427,7 @@ Cell[BoxData[{
        RowBox[{"\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol_"}],
         ",", 
        RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol_"}], ",", 
+       
        RowBox[{
        "\"\<MorphismEquivalences\>\"", "\[Rule]", 
         "categoryMorphismEquivalences_List"}], ",", 
@@ -28210,6 +28461,7 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{
           "\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol"}], ",", 
+          
           RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol"}], 
           ",", 
           RowBox[{
@@ -28264,6 +28516,7 @@ Cell[BoxData[{
        RowBox[{"\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol_"}],
         ",", 
        RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol_"}], ",", 
+       
        RowBox[{
        "\"\<MorphismEquivalences\>\"", "\[Rule]", 
         "categoryMorphismEquivalences_List"}], ",", 
@@ -28296,6 +28549,7 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{
           "\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol"}], ",", 
+          
           RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol"}], 
           ",", 
           RowBox[{
@@ -28350,6 +28604,7 @@ Cell[BoxData[{
        RowBox[{"\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol_"}],
         ",", 
        RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol_"}], ",", 
+       
        RowBox[{
        "\"\<MorphismEquivalences\>\"", "\[Rule]", 
         "categoryMorphismEquivalences_List"}], ",", 
@@ -28382,6 +28637,7 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{
           "\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol"}], ",", 
+          
           RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol"}], 
           ",", 
           RowBox[{
@@ -28435,6 +28691,7 @@ Cell[BoxData[{
        RowBox[{"\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol_"}],
         ",", 
        RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol_"}], ",", 
+       
        RowBox[{
        "\"\<MorphismEquivalences\>\"", "\[Rule]", 
         "categoryMorphismEquivalences_List"}], ",", 
@@ -28468,6 +28725,7 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{
           "\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol"}], ",", 
+          
           RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol"}], 
           ",", 
           RowBox[{
@@ -28520,6 +28778,7 @@ Cell[BoxData[{
        RowBox[{"\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol_"}],
         ",", 
        RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol_"}], ",", 
+       
        RowBox[{
        "\"\<MorphismEquivalences\>\"", "\[Rule]", 
         "categoryMorphismEquivalences_List"}], ",", 
@@ -28553,6 +28812,7 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{
           "\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol"}], ",", 
+          
           RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol"}], 
           ",", 
           RowBox[{
@@ -28605,6 +28865,7 @@ Cell[BoxData[{
        RowBox[{"\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol_"}],
         ",", 
        RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol_"}], ",", 
+       
        RowBox[{
        "\"\<MorphismEquivalences\>\"", "\[Rule]", 
         "categoryMorphismEquivalences_List"}], ",", 
@@ -28639,6 +28900,7 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{
           "\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol"}], ",", 
+          
           RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol"}], 
           ",", 
           RowBox[{
@@ -28692,6 +28954,7 @@ Cell[BoxData[{
        RowBox[{"\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol_"}],
         ",", 
        RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol_"}], ",", 
+       
        RowBox[{
        "\"\<MorphismEquivalences\>\"", "\[Rule]", 
         "categoryMorphismEquivalences_List"}], ",", 
@@ -28725,6 +28988,7 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{
           "\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol"}], ",", 
+          
           RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol"}], 
           ",", 
           RowBox[{
@@ -28780,6 +29044,7 @@ Cell[BoxData[{
        RowBox[{"\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol_"}],
         ",", 
        RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol_"}], ",", 
+       
        RowBox[{
        "\"\<MorphismEquivalences\>\"", "\[Rule]", 
         "categoryMorphismEquivalences_List"}], ",", 
@@ -28814,6 +29079,7 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{
           "\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol"}], ",", 
+          
           RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol"}], 
           ",", 
           RowBox[{
@@ -28869,6 +29135,7 @@ Cell[BoxData[{
        RowBox[{"\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol_"}],
         ",", 
        RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol_"}], ",", 
+       
        RowBox[{
        "\"\<MorphismEquivalences\>\"", "\[Rule]", 
         "categoryMorphismEquivalences_List"}], ",", 
@@ -28903,6 +29170,7 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{
           "\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol"}], ",", 
+          
           RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol"}], 
           ",", 
           RowBox[{
@@ -28959,6 +29227,7 @@ Cell[BoxData[{
        RowBox[{"\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol_"}],
         ",", 
        RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol_"}], ",", 
+       
        RowBox[{
        "\"\<MorphismEquivalences\>\"", "\[Rule]", 
         "categoryMorphismEquivalences_List"}], ",", 
@@ -28993,6 +29262,7 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{
           "\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol"}], ",", 
+          
           RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol"}], 
           ",", 
           RowBox[{
@@ -29051,6 +29321,7 @@ Cell[BoxData[{
        RowBox[{"\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol_"}],
         ",", 
        RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol_"}], ",", 
+       
        RowBox[{
        "\"\<MorphismEquivalences\>\"", "\[Rule]", 
         "categoryMorphismEquivalences_List"}], ",", 
@@ -29085,6 +29356,7 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{
           "\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol"}], ",", 
+          
           RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol"}], 
           ",", 
           RowBox[{
@@ -29143,6 +29415,7 @@ Cell[BoxData[{
        RowBox[{"\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol_"}],
         ",", 
        RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol_"}], ",", 
+       
        RowBox[{
        "\"\<MorphismEquivalences\>\"", "\[Rule]", 
         "categoryMorphismEquivalences_List"}], ",", 
@@ -29178,6 +29451,7 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{
           "\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol"}], ",", 
+          
           RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol"}], 
           ",", 
           RowBox[{
@@ -29237,6 +29511,7 @@ Cell[BoxData[{
        RowBox[{"\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol_"}],
         ",", 
        RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol_"}], ",", 
+       
        RowBox[{
        "\"\<MorphismEquivalences\>\"", "\[Rule]", 
         "categoryMorphismEquivalences_List"}], ",", 
@@ -29269,6 +29544,7 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{
           "\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol"}], ",", 
+          
           RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol"}], 
           ",", 
           RowBox[{
@@ -29323,6 +29599,7 @@ Cell[BoxData[{
        RowBox[{"\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol_"}],
         ",", 
        RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol_"}], ",", 
+       
        RowBox[{
        "\"\<MorphismEquivalences\>\"", "\[Rule]", 
         "categoryMorphismEquivalences_List"}], ",", 
@@ -29356,6 +29633,7 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{
           "\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol"}], ",", 
+          
           RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol"}], 
           ",", 
           RowBox[{
@@ -29410,6 +29688,7 @@ Cell[BoxData[{
        RowBox[{"\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol_"}],
         ",", 
        RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol_"}], ",", 
+       
        RowBox[{
        "\"\<MorphismEquivalences\>\"", "\[Rule]", 
         "categoryMorphismEquivalences_List"}], ",", 
@@ -29442,6 +29721,7 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{
           "\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol"}], ",", 
+          
           RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol"}], 
           ",", 
           RowBox[{
@@ -29496,6 +29776,7 @@ Cell[BoxData[{
        RowBox[{"\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol_"}],
         ",", 
        RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol_"}], ",", 
+       
        RowBox[{
        "\"\<MorphismEquivalences\>\"", "\[Rule]", 
         "categoryMorphismEquivalences_List"}], ",", 
@@ -29528,6 +29809,7 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{
           "\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol"}], ",", 
+          
           RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol"}], 
           ",", 
           RowBox[{
@@ -29581,6 +29863,7 @@ Cell[BoxData[{
        RowBox[{"\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol_"}],
         ",", 
        RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol_"}], ",", 
+       
        RowBox[{
        "\"\<MorphismEquivalences\>\"", "\[Rule]", 
         "categoryMorphismEquivalences_List"}], ",", 
@@ -29614,6 +29897,7 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{
           "\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol"}], ",", 
+          
           RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol"}], 
           ",", 
           RowBox[{
@@ -29666,6 +29950,7 @@ Cell[BoxData[{
        RowBox[{"\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol_"}],
         ",", 
        RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol_"}], ",", 
+       
        RowBox[{
        "\"\<MorphismEquivalences\>\"", "\[Rule]", 
         "categoryMorphismEquivalences_List"}], ",", 
@@ -29699,6 +29984,7 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{
           "\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol"}], ",", 
+          
           RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol"}], 
           ",", 
           RowBox[{
@@ -29751,6 +30037,7 @@ Cell[BoxData[{
        RowBox[{"\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol_"}],
         ",", 
        RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol_"}], ",", 
+       
        RowBox[{
        "\"\<MorphismEquivalences\>\"", "\[Rule]", 
         "categoryMorphismEquivalences_List"}], ",", 
@@ -29785,6 +30072,7 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{
           "\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol"}], ",", 
+          
           RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol"}], 
           ",", 
           RowBox[{
@@ -29838,6 +30126,7 @@ Cell[BoxData[{
        RowBox[{"\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol_"}],
         ",", 
        RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol_"}], ",", 
+       
        RowBox[{
        "\"\<MorphismEquivalences\>\"", "\[Rule]", 
         "categoryMorphismEquivalences_List"}], ",", 
@@ -29871,6 +30160,7 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{
           "\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol"}], ",", 
+          
           RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol"}], 
           ",", 
           RowBox[{
@@ -29926,6 +30216,7 @@ Cell[BoxData[{
        RowBox[{"\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol_"}],
         ",", 
        RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol_"}], ",", 
+       
        RowBox[{
        "\"\<MorphismEquivalences\>\"", "\[Rule]", 
         "categoryMorphismEquivalences_List"}], ",", 
@@ -29960,6 +30251,7 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{
           "\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol"}], ",", 
+          
           RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol"}], 
           ",", 
           RowBox[{
@@ -30015,6 +30307,7 @@ Cell[BoxData[{
        RowBox[{"\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol_"}],
         ",", 
        RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol_"}], ",", 
+       
        RowBox[{
        "\"\<MorphismEquivalences\>\"", "\[Rule]", 
         "categoryMorphismEquivalences_List"}], ",", 
@@ -30049,6 +30342,7 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{
           "\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol"}], ",", 
+          
           RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol"}], 
           ",", 
           RowBox[{
@@ -30105,6 +30399,7 @@ Cell[BoxData[{
        RowBox[{"\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol_"}],
         ",", 
        RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol_"}], ",", 
+       
        RowBox[{
        "\"\<MorphismEquivalences\>\"", "\[Rule]", 
         "categoryMorphismEquivalences_List"}], ",", 
@@ -30139,6 +30434,7 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{
           "\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol"}], ",", 
+          
           RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol"}], 
           ",", 
           RowBox[{
@@ -30197,6 +30493,7 @@ Cell[BoxData[{
        RowBox[{"\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol_"}],
         ",", 
        RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol_"}], ",", 
+       
        RowBox[{
        "\"\<MorphismEquivalences\>\"", "\[Rule]", 
         "categoryMorphismEquivalences_List"}], ",", 
@@ -30231,6 +30528,7 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{
           "\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol"}], ",", 
+          
           RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol"}], 
           ",", 
           RowBox[{
@@ -30289,6 +30587,7 @@ Cell[BoxData[{
        RowBox[{"\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol_"}],
         ",", 
        RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol_"}], ",", 
+       
        RowBox[{
        "\"\<MorphismEquivalences\>\"", "\[Rule]", 
         "categoryMorphismEquivalences_List"}], ",", 
@@ -30324,6 +30623,7 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{
           "\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol"}], ",", 
+          
           RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol"}], 
           ",", 
           RowBox[{
@@ -30400,6 +30700,7 @@ Cell[BoxData[{
             "\"\<ArrowEquivalences\>\"", "\[Rule]", 
              "arrowEquivalences_List"}], ",", 
             RowBox[{"\"\<Arrows\>\"", "\[Rule]", "arrows_Association"}], ",", 
+            
             RowBox[{
             "\"\<ObjectEquivalences\>\"", "\[Rule]", 
              "quiverObjectEquivalences_List"}], ",", 
@@ -30425,6 +30726,7 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{
           "\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol"}], ",", 
+          
           RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol"}], 
           ",", 
           RowBox[{
@@ -30486,6 +30788,7 @@ Cell[BoxData[{
        RowBox[{"\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol_"}],
         ",", 
        RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol_"}], ",", 
+       
        RowBox[{
        "\"\<MorphismEquivalences\>\"", "\[Rule]", 
         "categoryMorphismEquivalences_List"}], ",", 
@@ -30526,6 +30829,7 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{
           "\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol"}], ",", 
+          
           RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol"}], 
           ",", 
           RowBox[{
@@ -30673,6 +30977,7 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{
           "\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol"}], ",", 
+          
           RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol"}], 
           ",", 
           RowBox[{
@@ -30786,6 +31091,7 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{
           "\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol"}], ",", 
+          
           RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol"}], 
           ",", 
           RowBox[{
@@ -30898,6 +31204,7 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{
           "\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol"}], ",", 
+          
           RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol"}], 
           ",", 
           RowBox[{
@@ -31013,6 +31320,7 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{
           "\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol"}], ",", 
+          
           RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol"}], 
           ",", 
           RowBox[{
@@ -31129,6 +31437,7 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{
           "\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol"}], ",", 
+          
           RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol"}], 
           ",", 
           RowBox[{
@@ -31244,6 +31553,7 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{
           "\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol"}], ",", 
+          
           RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol"}], 
           ",", 
           RowBox[{
@@ -31277,6 +31587,7 @@ Cell[BoxData[{
        ",", 
       RowBox[{
       "\"\<NewIdentitySymbol\>\"", "\[Rule]", "functorIdentitySymbol"}], ",", 
+      
       RowBox[{"\"\<NewObjects\>\"", "\[Rule]", "newObjects"}], ",", 
       RowBox[{"\"\<ObjectEquivalences\>\"", "\[Rule]", "objectEquivalences"}],
        ",", 
@@ -31361,6 +31672,7 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{
           "\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol"}], ",", 
+          
           RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol"}], 
           ",", 
           RowBox[{
@@ -31394,6 +31706,7 @@ Cell[BoxData[{
        ",", 
       RowBox[{
       "\"\<NewIdentitySymbol\>\"", "\[Rule]", "functorIdentitySymbol"}], ",", 
+      
       RowBox[{"\"\<NewObjects\>\"", "\[Rule]", "newObjects"}], ",", 
       RowBox[{
       "\"\<ObjectEquivalences\>\"", "\[Rule]", "newObjectEquivalences"}], ",", 
@@ -31479,6 +31792,7 @@ Cell[BoxData[{
          RowBox[{
           RowBox[{
           "\"\<CompositionSymbol\>\"", "\[Rule]", "compositionSymbol"}], ",", 
+          
           RowBox[{"\"\<IdentitySymbol\>\"", "\[Rule]", "identitySymbol"}], 
           ",", 
           RowBox[{
@@ -31512,6 +31826,7 @@ Cell[BoxData[{
        ",", 
       RowBox[{
       "\"\<NewIdentitySymbol\>\"", "\[Rule]", "functorIdentitySymbol"}], ",", 
+      
       RowBox[{"\"\<NewObjects\>\"", "\[Rule]", "newObjects"}], ",", 
       RowBox[{
       "\"\<ObjectEquivalences\>\"", "\[Rule]", "newObjectEquivalences"}], ",", 
@@ -31535,6 +31850,7 @@ Cell[BoxData[{
      RowBox[{
       RowBox[{
       "\"\<ArrowMappings\>\"", "\[Rule]", "arrowMappings_Association"}], ",", 
+      
       RowBox[{"\"\<Category\>\"", "\[Rule]", 
        RowBox[{
         RowBox[{"(", "abstractCategory_", ")"}], "[", 
@@ -31570,6 +31886,7 @@ Cell[BoxData[{
       "\"\<MorphismEquivalences\>\"", "\[Rule]", 
        "morphismEquivalences_List"}], ",", 
       RowBox[{"\"\<NewArrows\>\"", "\[Rule]", "newArrows_Association"}], ",", 
+      
       RowBox[{
       "\"\<NewCompositionSymbol\>\"", "\[Rule]", "newCompositionSymbol_"}], 
       ",", 
@@ -31744,13 +32061,14 @@ Cell[BoxData[{
   3.869738631533656*^9, 3.869738725269229*^9}, {3.869738771543952*^9, 
   3.869738830972613*^9}, {3.869738896509601*^9, 3.8697389084894276`*^9}, {
   3.869738945573786*^9, 3.8697393043667965`*^9}, {3.8697394737169914`*^9, 
-  3.8697394765754566`*^9}},ExpressionUUID->"cc588c26-f873-4cd9-b33a-\
-f999fd3c7a4d"]
+  3.8697394765754566`*^9}},
+ CellLabel->
+  "In[240]:=",ExpressionUUID->"cc588c26-f873-4cd9-b33a-f999fd3c7a4d"]
 },
 WindowSize->{1584, 801},
-WindowMargins->{{0, Automatic}, {Automatic, 0}},
+WindowMargins->{{Automatic, 148}, {6, Automatic}},
 Magnification:>1.2 Inherited,
-FrontEndVersion->"12.1 for Microsoft Windows (64-bit) (March 20, 2020)",
+FrontEndVersion->"13.1 for Mac OS X ARM (64-bit) (June 21, 2022)",
 StyleDefinitions->"Default.nb",
 ExpressionUUID->"7de09153-a67d-4459-b399-12f143481dc4"
 ]
@@ -31765,141 +32083,141 @@ CellTagsIndex->{}
 *)
 (*NotebookFileOutline
 Notebook[{
-Cell[561, 20, 1373, 37, 128, "Input",ExpressionUUID->"48849ee8-0b41-47ae-9c53-507f88eb016b",
+Cell[561, 20, 1382, 38, 132, "Input",ExpressionUUID->"48849ee8-0b41-47ae-9c53-507f88eb016b",
  InitializationCell->True],
-Cell[1937, 59, 2737, 71, 224, "Input",ExpressionUUID->"3aad200f-6169-4972-b03a-8d60b790477e",
+Cell[1946, 60, 2746, 72, 261, "Input",ExpressionUUID->"3aad200f-6169-4972-b03a-8d60b790477e",
  InitializationCell->True],
-Cell[4677, 132, 3457, 87, 320, "Input",ExpressionUUID->"4c14218e-32bb-4cd5-bf3b-cb458b5770a2",
+Cell[4695, 134, 3472, 89, 332, "Input",ExpressionUUID->"4c14218e-32bb-4cd5-bf3b-cb458b5770a2",
  InitializationCell->True],
-Cell[8137, 221, 3150, 77, 272, "Input",ExpressionUUID->"aa2aee7e-09dc-4bd1-b39b-3491611c4689",
+Cell[8170, 225, 3164, 79, 282, "Input",ExpressionUUID->"aa2aee7e-09dc-4bd1-b39b-3491611c4689",
  InitializationCell->True],
-Cell[11290, 300, 17703, 417, 1088, "Input",ExpressionUUID->"ba56e082-0488-443f-860f-c0a6dec85f39",
+Cell[11337, 306, 17748, 421, 1132, "Input",ExpressionUUID->"ba56e082-0488-443f-860f-c0a6dec85f39",
  InitializationCell->True],
-Cell[28996, 719, 3203, 77, 272, "Input",ExpressionUUID->"67ceed6b-cb96-4349-9f67-d0b4a1e66cb0",
+Cell[29088, 729, 3217, 79, 307, "Input",ExpressionUUID->"67ceed6b-cb96-4349-9f67-d0b4a1e66cb0",
  InitializationCell->True],
-Cell[32202, 798, 3249, 78, 296, "Input",ExpressionUUID->"b4d0f398-1513-4e0e-9408-af1e60f2606e",
+Cell[32308, 810, 3263, 80, 307, "Input",ExpressionUUID->"b4d0f398-1513-4e0e-9408-af1e60f2606e",
  InitializationCell->True],
-Cell[35454, 878, 5246, 123, 440, "Input",ExpressionUUID->"b98724c2-2ad4-41c4-ae46-4759ea93a126",
+Cell[35574, 892, 5275, 126, 457, "Input",ExpressionUUID->"b98724c2-2ad4-41c4-ae46-4759ea93a126",
  InitializationCell->True],
-Cell[40703, 1003, 5340, 124, 440, "Input",ExpressionUUID->"1106ba00-ae0e-425d-8fb8-8aa239949cb9",
+Cell[40852, 1020, 5354, 126, 440, "Input",ExpressionUUID->"1106ba00-ae0e-425d-8fb8-8aa239949cb9",
  InitializationCell->True],
-Cell[46046, 1129, 3903, 94, 344, "Input",ExpressionUUID->"ca1a9e12-9ab1-478d-8b3b-bfb0569cab66",
+Cell[46209, 1148, 3917, 96, 344, "Input",ExpressionUUID->"ca1a9e12-9ab1-478d-8b3b-bfb0569cab66",
  InitializationCell->True],
-Cell[49952, 1225, 22707, 525, 1544, "Input",ExpressionUUID->"0a41cdc6-5ff7-42cd-aaa4-2e1766dc3ff5",
+Cell[50129, 1246, 22752, 529, 1544, "Input",ExpressionUUID->"0a41cdc6-5ff7-42cd-aaa4-2e1766dc3ff5",
  InitializationCell->True],
-Cell[72662, 1752, 2891, 69, 248, "Input",ExpressionUUID->"508f2666-7341-4440-97cc-29b1803456bb",
+Cell[72884, 1777, 2905, 71, 248, "Input",ExpressionUUID->"508f2666-7341-4440-97cc-29b1803456bb",
  InitializationCell->True],
-Cell[75556, 1823, 2880, 69, 248, "Input",ExpressionUUID->"6606b242-8e13-4330-9d38-621f05dec918",
+Cell[75792, 1850, 2894, 71, 248, "Input",ExpressionUUID->"6606b242-8e13-4330-9d38-621f05dec918",
  InitializationCell->True],
-Cell[78439, 1894, 3202, 78, 272, "Input",ExpressionUUID->"a9fd887c-e1ae-44ec-a5a1-36245ebda9a5",
+Cell[78689, 1923, 3216, 80, 272, "Input",ExpressionUUID->"a9fd887c-e1ae-44ec-a5a1-36245ebda9a5",
  InitializationCell->True],
-Cell[81644, 1974, 3258, 80, 272, "Input",ExpressionUUID->"ebba9de9-c714-4438-9607-8d9fa404c3de",
+Cell[81908, 2005, 3272, 82, 272, "Input",ExpressionUUID->"ebba9de9-c714-4438-9607-8d9fa404c3de",
  InitializationCell->True],
-Cell[84905, 2056, 4261, 102, 344, "Input",ExpressionUUID->"74c22533-1d98-4ea3-b330-60ef081cdee1",
+Cell[85183, 2089, 4275, 104, 344, "Input",ExpressionUUID->"74c22533-1d98-4ea3-b330-60ef081cdee1",
  InitializationCell->True],
-Cell[89169, 2160, 9535, 229, 752, "Input",ExpressionUUID->"250dc498-d42e-4b46-8480-aa783bd2910f",
+Cell[89461, 2195, 9563, 233, 752, "Input",ExpressionUUID->"250dc498-d42e-4b46-8480-aa783bd2910f",
  InitializationCell->True],
-Cell[98707, 2391, 5676, 134, 440, "Input",ExpressionUUID->"1d99ebbb-cd7e-41db-a1c0-c7f222054b45",
+Cell[99027, 2430, 5690, 136, 440, "Input",ExpressionUUID->"1d99ebbb-cd7e-41db-a1c0-c7f222054b45",
  InitializationCell->True],
-Cell[104386, 2527, 19500, 459, 1232, "Input",ExpressionUUID->"e1c3bb7f-3072-40b4-91e3-e6ca070d1227",
+Cell[104720, 2568, 19532, 462, 1232, "Input",ExpressionUUID->"e1c3bb7f-3072-40b4-91e3-e6ca070d1227",
  InitializationCell->True],
-Cell[123889, 2988, 19621, 461, 1256, "Input",ExpressionUUID->"342a91aa-5d2e-4b9e-9327-151aee4ccfb5",
+Cell[124255, 3032, 19653, 464, 1256, "Input",ExpressionUUID->"342a91aa-5d2e-4b9e-9327-151aee4ccfb5",
  InitializationCell->True],
-Cell[143513, 3451, 24678, 569, 1808, "Input",ExpressionUUID->"7164a3b8-cd60-4789-9659-d194e52f9cf5",
+Cell[143911, 3498, 24710, 572, 1808, "Input",ExpressionUUID->"7164a3b8-cd60-4789-9659-d194e52f9cf5",
  InitializationCell->True],
-Cell[168194, 4022, 24837, 572, 1808, "Input",ExpressionUUID->"8503a1c0-b078-4530-973d-bec8bfc342ec",
+Cell[168624, 4072, 24869, 575, 1808, "Input",ExpressionUUID->"8503a1c0-b078-4530-973d-bec8bfc342ec",
  InitializationCell->True],
-Cell[193034, 4596, 3089, 76, 272, "Input",ExpressionUUID->"40988e54-678d-4d31-a943-021be91d7f23",
+Cell[193496, 4649, 3103, 78, 272, "Input",ExpressionUUID->"40988e54-678d-4d31-a943-021be91d7f23",
  InitializationCell->True],
-Cell[196126, 4674, 3175, 78, 272, "Input",ExpressionUUID->"ecd7033a-1198-4953-9912-8fdac3bbfee8",
+Cell[196602, 4729, 3189, 80, 272, "Input",ExpressionUUID->"ecd7033a-1198-4953-9912-8fdac3bbfee8",
  InitializationCell->True],
-Cell[199304, 4754, 4672, 113, 392, "Input",ExpressionUUID->"9ec8e5d1-8c39-4893-85d4-e7fcdaf4d6e5",
+Cell[199794, 4811, 4686, 115, 392, "Input",ExpressionUUID->"9ec8e5d1-8c39-4893-85d4-e7fcdaf4d6e5",
  InitializationCell->True],
-Cell[203979, 4869, 4838, 116, 416, "Input",ExpressionUUID->"72506e5c-2f61-476b-a39e-f69b8776d355",
+Cell[204483, 4928, 4852, 118, 416, "Input",ExpressionUUID->"72506e5c-2f61-476b-a39e-f69b8776d355",
  InitializationCell->True],
-Cell[208820, 4987, 3120, 77, 272, "Input",ExpressionUUID->"61e9b785-3da4-43d7-9bd0-b3e032077146",
+Cell[209338, 5048, 3134, 79, 272, "Input",ExpressionUUID->"61e9b785-3da4-43d7-9bd0-b3e032077146",
  InitializationCell->True],
-Cell[211943, 5066, 3210, 79, 272, "Input",ExpressionUUID->"8871aab8-51d4-4261-8f12-40fdaf46c322",
+Cell[212475, 5129, 3224, 81, 272, "Input",ExpressionUUID->"8871aab8-51d4-4261-8f12-40fdaf46c322",
  InitializationCell->True],
-Cell[215156, 5147, 15935, 379, 944, "Input",ExpressionUUID->"490d1565-fe56-4e08-8b72-ab4dff58bf9a",
+Cell[215702, 5212, 15949, 381, 944, "Input",ExpressionUUID->"490d1565-fe56-4e08-8b72-ab4dff58bf9a",
  InitializationCell->True],
-Cell[231094, 5528, 16052, 381, 944, "Input",ExpressionUUID->"c82f97ed-76e7-43e3-87f4-7d5c03a6de37",
+Cell[231654, 5595, 16066, 383, 944, "Input",ExpressionUUID->"c82f97ed-76e7-43e3-87f4-7d5c03a6de37",
  InitializationCell->True],
-Cell[247149, 5911, 20861, 480, 1376, "Input",ExpressionUUID->"4755fb35-2716-452b-a507-813ddd437c79",
+Cell[247723, 5980, 20895, 483, 1376, "Input",ExpressionUUID->"4755fb35-2716-452b-a507-813ddd437c79",
  InitializationCell->True],
-Cell[268013, 6393, 20975, 482, 1376, "Input",ExpressionUUID->"6df51058-9413-46b8-a775-1082576129ce",
+Cell[268621, 6465, 21009, 485, 1376, "Input",ExpressionUUID->"6df51058-9413-46b8-a775-1082576129ce",
  InitializationCell->True],
-Cell[288991, 6877, 3995, 94, 344, "Input",ExpressionUUID->"4c280c4c-2d83-4ed4-a4ab-771dd61077a6",
+Cell[289633, 6952, 4042, 97, 344, "Input",ExpressionUUID->"4c280c4c-2d83-4ed4-a4ab-771dd61077a6",
  InitializationCell->True],
-Cell[292989, 6973, 8318, 186, 608, "Input",ExpressionUUID->"10e28597-a216-4fbd-b782-c6ba4ca6e316",
+Cell[293678, 7051, 8354, 188, 608, "Input",ExpressionUUID->"10e28597-a216-4fbd-b782-c6ba4ca6e316",
  InitializationCell->True],
-Cell[301310, 7161, 22286, 516, 1448, "Input",ExpressionUUID->"bb0b302a-f62e-43d6-bc50-2e735d54b523",
+Cell[302035, 7241, 22338, 521, 1448, "Input",ExpressionUUID->"bb0b302a-f62e-43d6-bc50-2e735d54b523",
  InitializationCell->True],
-Cell[323599, 7679, 45593, 1048, 3080, "Input",ExpressionUUID->"c37a4049-d31c-4fd8-b301-6012b2dee896",
+Cell[324376, 7764, 45669, 1054, 3080, "Input",ExpressionUUID->"c37a4049-d31c-4fd8-b301-6012b2dee896",
  InitializationCell->True],
-Cell[369195, 8729, 24606, 566, 1664, "Input",ExpressionUUID->"088a6630-59f5-4116-bf31-7ee8df9c1336",
+Cell[370048, 8820, 24640, 569, 1664, "Input",ExpressionUUID->"088a6630-59f5-4116-bf31-7ee8df9c1336",
  InitializationCell->True],
-Cell[393804, 9297, 26365, 608, 1688, "Input",ExpressionUUID->"d021f57e-9d92-4737-993c-26005cc9e408",
+Cell[394691, 9391, 26414, 613, 1688, "Input",ExpressionUUID->"d021f57e-9d92-4737-993c-26005cc9e408",
  InitializationCell->True],
-Cell[420172, 9907, 26417, 609, 1688, "Input",ExpressionUUID->"4110b943-71a0-40e2-9436-edc0561bf7e7",
+Cell[421108, 10006, 26469, 614, 1688, "Input",ExpressionUUID->"4110b943-71a0-40e2-9436-edc0561bf7e7",
  InitializationCell->True],
-Cell[446592, 10518, 26462, 610, 1688, "Input",ExpressionUUID->"85834c94-b75a-4bcb-ad84-655a4bb9a0a9",
+Cell[447580, 10622, 26507, 614, 1688, "Input",ExpressionUUID->"85834c94-b75a-4bcb-ad84-655a4bb9a0a9",
  InitializationCell->True],
-Cell[473057, 11130, 9410, 221, 752, "Input",ExpressionUUID->"7cfa7922-f825-4e87-a419-e14ba6297bcf",
+Cell[474090, 11238, 9458, 225, 752, "Input",ExpressionUUID->"7cfa7922-f825-4e87-a419-e14ba6297bcf",
  InitializationCell->True],
-Cell[482470, 11353, 50123, 1133, 3392, "Input",ExpressionUUID->"9c3bcf00-4fa3-4850-8e5d-aac6ad47c60b",
+Cell[483551, 11465, 50356, 1147, 3392, "Input",ExpressionUUID->"9c3bcf00-4fa3-4850-8e5d-aac6ad47c60b",
  InitializationCell->True],
-Cell[532596, 12488, 32003, 729, 2216, "Input",ExpressionUUID->"9b9b680f-f391-4099-8411-4aacaade3fa4",
+Cell[533910, 12614, 32130, 739, 2216, "Input",ExpressionUUID->"9b9b680f-f391-4099-8411-4aacaade3fa4",
  InitializationCell->True],
-Cell[564602, 13219, 11221, 262, 872, "Input",ExpressionUUID->"049e7213-ddba-4d04-9034-8f6415213148",
+Cell[566043, 13355, 11269, 266, 872, "Input",ExpressionUUID->"049e7213-ddba-4d04-9034-8f6415213148",
  InitializationCell->True],
-Cell[575826, 13483, 52211, 1181, 3536, "Input",ExpressionUUID->"dd5762b1-fa1d-4a89-adb3-8029a70db7f0",
+Cell[577315, 13623, 52432, 1194, 3536, "Input",ExpressionUUID->"dd5762b1-fa1d-4a89-adb3-8029a70db7f0",
  InitializationCell->True],
-Cell[628040, 14666, 56703, 1290, 3584, "Input",ExpressionUUID->"52870e07-2df5-4c03-98b4-f3a05e3e9f24",
+Cell[629750, 14819, 56890, 1301, 3584, "Input",ExpressionUUID->"52870e07-2df5-4c03-98b4-f3a05e3e9f24",
  InitializationCell->True],
-Cell[684746, 15958, 50917, 1163, 3368, "Input",ExpressionUUID->"80aba1f0-7797-4090-aa53-6763fa225e3c",
+Cell[686643, 16122, 51049, 1172, 3368, "Input",ExpressionUUID->"80aba1f0-7797-4090-aa53-6763fa225e3c",
  InitializationCell->True],
-Cell[735666, 17123, 32362, 747, 2120, "Input",ExpressionUUID->"91253aaf-eb7b-47d0-ae61-78d301847f3b",
+Cell[737695, 17296, 32429, 752, 2120, "Input",ExpressionUUID->"91253aaf-eb7b-47d0-ae61-78d301847f3b",
  InitializationCell->True],
-Cell[768031, 17872, 32995, 761, 2144, "Input",ExpressionUUID->"b0625b82-57de-44ae-98b0-770fdb3a332f",
+Cell[770127, 18050, 33062, 766, 2144, "Input",ExpressionUUID->"b0625b82-57de-44ae-98b0-770fdb3a332f",
  InitializationCell->True],
-Cell[801029, 18635, 43134, 990, 2744, "Input",ExpressionUUID->"0beb59f7-5f8e-41b8-babe-eb1ee94656ed",
+Cell[803192, 18818, 43199, 995, 2744, "Input",ExpressionUUID->"0beb59f7-5f8e-41b8-babe-eb1ee94656ed",
  InitializationCell->True],
-Cell[844166, 19627, 22239, 515, 1448, "Input",ExpressionUUID->"b70125d4-d911-43a9-a0ca-7746908afbee",
+Cell[846394, 19815, 22284, 519, 1448, "Input",ExpressionUUID->"b70125d4-d911-43a9-a0ca-7746908afbee",
  InitializationCell->True],
-Cell[866408, 20144, 27246, 628, 1784, "Input",ExpressionUUID->"d23b20de-4261-450a-9841-951206a22beb",
+Cell[868681, 20336, 27291, 632, 1784, "Input",ExpressionUUID->"d23b20de-4261-450a-9841-951206a22beb",
  InitializationCell->True],
-Cell[893657, 20774, 32800, 756, 2192, "Input",ExpressionUUID->"43dc5aea-094d-4842-a643-d9fcf1916de7",
+Cell[895975, 20970, 32886, 763, 2192, "Input",ExpressionUUID->"43dc5aea-094d-4842-a643-d9fcf1916de7",
  InitializationCell->True],
-Cell[926460, 21532, 32852, 758, 2192, "Input",ExpressionUUID->"0603920b-9b55-4a12-b578-1f60774f9224",
+Cell[928864, 21735, 32931, 764, 2192, "Input",ExpressionUUID->"0603920b-9b55-4a12-b578-1f60774f9224",
  InitializationCell->True],
-Cell[959315, 22292, 6348, 147, 488, "Input",ExpressionUUID->"e79d3665-11b5-45ce-9cc8-5712ffc01797",
+Cell[961798, 22501, 6395, 150, 488, "Input",ExpressionUUID->"e79d3665-11b5-45ce-9cc8-5712ffc01797",
  InitializationCell->True],
-Cell[965666, 22441, 3060, 73, 248, "Input",ExpressionUUID->"6ce64539-e6b8-4b31-9faf-2f4913b26167",
+Cell[968196, 22653, 3074, 75, 248, "Input",ExpressionUUID->"6ce64539-e6b8-4b31-9faf-2f4913b26167",
  InitializationCell->True],
-Cell[968729, 22516, 23700, 557, 1448, "Input",ExpressionUUID->"51d03892-cccb-4a39-8a22-e003cc326f00",
+Cell[971273, 22730, 23759, 563, 1448, "Input",ExpressionUUID->"51d03892-cccb-4a39-8a22-e003cc326f00",
  InitializationCell->True],
-Cell[992432, 23075, 20571, 479, 1208, "Input",ExpressionUUID->"1f010519-90df-4aed-b9c6-3ca19931dff0",
+Cell[995035, 23295, 20616, 483, 1208, "Input",ExpressionUUID->"1f010519-90df-4aed-b9c6-3ca19931dff0",
  InitializationCell->True],
-Cell[1013006, 23556, 26273, 604, 1736, "Input",ExpressionUUID->"ac63ece8-ce1c-450f-b5af-f8b6a7e47e0b",
+Cell[1015654, 23780, 26318, 608, 1736, "Input",ExpressionUUID->"ac63ece8-ce1c-450f-b5af-f8b6a7e47e0b",
  InitializationCell->True],
-Cell[1039282, 24162, 25821, 592, 1736, "Input",ExpressionUUID->"0e30ff79-b996-423d-bf2c-8969fc4f5dde",
+Cell[1041975, 24390, 25866, 596, 1736, "Input",ExpressionUUID->"0e30ff79-b996-423d-bf2c-8969fc4f5dde",
  InitializationCell->True],
-Cell[1065106, 24756, 19901, 467, 1160, "Input",ExpressionUUID->"b876dfa3-97d5-4db7-b7bb-16a0fddbd442",
+Cell[1067844, 24988, 19930, 470, 1160, "Input",ExpressionUUID->"b876dfa3-97d5-4db7-b7bb-16a0fddbd442",
  InitializationCell->True],
-Cell[1085010, 25225, 19451, 455, 1160, "Input",ExpressionUUID->"a6fca516-07d5-43df-b636-0b5d195e77a0",
+Cell[1087777, 25460, 19480, 458, 1160, "Input",ExpressionUUID->"a6fca516-07d5-43df-b636-0b5d195e77a0",
  InitializationCell->True],
-Cell[1104464, 25682, 25483, 583, 1688, "Input",ExpressionUUID->"c28cabe4-22c2-4ad3-97da-c39b3eb1a8c9",
+Cell[1107260, 25920, 25497, 585, 1688, "Input",ExpressionUUID->"c28cabe4-22c2-4ad3-97da-c39b3eb1a8c9",
  InitializationCell->True],
-Cell[1129950, 26267, 25035, 571, 1688, "Input",ExpressionUUID->"4775ceeb-97f5-4bc8-8332-eb16227e51e0",
+Cell[1132760, 26507, 25049, 573, 1688, "Input",ExpressionUUID->"4775ceeb-97f5-4bc8-8332-eb16227e51e0",
  InitializationCell->True],
-Cell[1154988, 26840, 4929, 114, 416, "Input",ExpressionUUID->"f2e43dc8-9c6e-4dc0-a7a5-6c9eb43cda95",
+Cell[1157812, 27082, 4958, 115, 416, "Input",ExpressionUUID->"f2e43dc8-9c6e-4dc0-a7a5-6c9eb43cda95",
  InitializationCell->True],
-Cell[1159920, 26956, 5516, 109, 512, "Input",ExpressionUUID->"fac9bdfb-945d-417a-9af0-b6c3cac7489b",
+Cell[1162773, 27199, 5530, 111, 512, "Input",ExpressionUUID->"fac9bdfb-945d-417a-9af0-b6c3cac7489b",
  InitializationCell->True],
-Cell[1165439, 27067, 43712, 1014, 2792, "Input",ExpressionUUID->"c30a2bf0-4f55-4018-b2ac-eb9b2694d017",
+Cell[1168306, 27312, 43771, 1018, 2792, "Input",ExpressionUUID->"c30a2bf0-4f55-4018-b2ac-eb9b2694d017",
  InitializationCell->True],
-Cell[1209154, 28083, 156678, 3664, 13232, "Input",ExpressionUUID->"cc588c26-f873-4cd9-b33a-f999fd3c7a4d",
+Cell[1212080, 28332, 157356, 3733, 13232, "Input",ExpressionUUID->"cc588c26-f873-4cd9-b33a-f999fd3c7a4d",
  InitializationCell->True]
 }
 ]
